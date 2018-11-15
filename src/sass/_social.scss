@@ -1,0 +1,15 @@
+//Social
+
+.socialWrap {
+    position:absolute;
+    top: 2.3rem;
+    left: 2rem;
+    z-index: 1;
+    color:white;
+    display:grid;
+    grid-template-columns: 2vw 2vw 2vw;
+    grid-gap: 5px;
+    
+}
+
+// ICONS -> FONT AWESOME - style same as in the footer

@@ -1,0 +1,123 @@
+// Gallery
+.a{
+    grid-area: a;
+    background: honeydew;
+    overflow: hidden;
+    background-image: url(../images/mercedes_red.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:hover {
+        transform: scale(1.02);
+        transition: 0.3s ease-in-out ;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+.b{
+    grid-area: b;
+    background: grey;
+        &:hover {
+            transform: scale(1.03);
+            transition: 0.3s ease-in-out ;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+}
+.c{
+    grid-area: c;
+    background: goldenrod;
+    &:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out ;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+.d{
+    grid-area:d;
+    background:green;
+    &:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out ;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+.follow {
+    grid-area: follow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(212, 81, 64);
+    color:white;
+    font-size: 1.5em;
+    padding:20px;
+    .fab {
+        font-size: 2em;
+        color:transparent;
+        }
+    &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+        animation: biggerFont 0.5s forwards;
+        
+        .fab {
+            color:rgb(227, 243, 227);
+            animation-name: slideIconIn;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+                      
+        }
+    }
+}
+
+.galleryWrap{
+    padding:20px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 30vh 30vh ;       
+    grid-gap: 15px;
+    grid-template-areas: 
+        "a a follow c"
+        "a a b d ";
+}
+.photoBox {
+    // border: 1px solid black;
+    padding:20px;
+    background-image: url(../images/mercedes_red.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+@keyframes biggerFont {
+    from {
+        font-size: 1.3em; 
+    }
+    to {
+        font-size: 2.0em; 
+    }
+}
+@keyframes slideIconIn {
+    0%{
+        margin-left: 150%;
+        opacity: 0;
+    }
+    50% {
+        margin-left: 50%;
+    }
+    70% {
+        margin-left: 65%;
+    }
+    90% {
+        margin-left: 57%;
+    }
+    100% {
+        margin-left: 59%;
+        opacity: 1;
+    }
+}

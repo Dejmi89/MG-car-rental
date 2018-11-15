@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import form from './sass/_form.scss';
 
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="right">
         dada
       </div>
     );

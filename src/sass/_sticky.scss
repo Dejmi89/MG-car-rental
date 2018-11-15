@@ -1,0 +1,67 @@
+
+#fixedMenuWrapperOff{
+    display: none;
+    justify-content: center;
+}
+#fixedMenuWrapperOn {
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    animation-name: stickyComesIn;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+.fixedMenu {
+    position:fixed;
+    top:0vh;
+    font-size:1em;
+    background-color: yellow;
+    width:100%;
+    z-index: 1;
+    display:flex;
+    
+    // grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
+    // grid-template-rows: 4rem ;
+}
+
+#stickyParent {
+    margin-top: 2vh;
+    margin-bottom: 50vh;
+   
+    hr {
+        animation-name: widerAndOpacity;
+        animation-duration: 6s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.sticky{
+    position: -webkit-fixed;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: green;
+    animation-name: stickyComesIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes stickyComesIn {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes widerAndOpacity {
+    0% {
+        width:5%;
+        opacity: 0;
+    }
+    100% {
+        width: 80%;
+        opacity: 1;
+    }
+};

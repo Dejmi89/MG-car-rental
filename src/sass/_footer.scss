@@ -1,0 +1,36 @@
+// Footer
+
+.footerWrap {
+    margin: 0 auto;
+    width:80%;
+    height: 5vh;
+    display:grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 20px;
+}
+.footerBox {
+    // border: 2px solid rgb(194, 49, 49);
+    display: flex;
+    justify-content: center;
+}
+
+.fab {
+    margin-left: 20px;
+    font-size: 1.9em;
+    color:rgb(211, 200, 200);
+}
+.fa-facebook-square {
+    &:hover {
+        color:rgb(24, 52, 216);
+    }   
+}
+.fa-instagram{
+    &:hover {
+        color:rgb(233, 74, 172);
+    } 
+}
+.fa-youtube{
+    &:hover {
+        color:red;
+    } 
+}

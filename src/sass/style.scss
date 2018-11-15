@@ -1,0 +1,22 @@
+// MG website
+.body{
+    width:100%;
+    font-size: 16px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+hr {
+    width: 5%;
+
+}
+
+@import 'header';
+@import 'social';
+@import 'offer';
+@import 'gallery';
+@import 'form';
+@import 'footer';
+@import 'sticky';
+
