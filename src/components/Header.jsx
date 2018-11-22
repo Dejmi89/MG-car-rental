@@ -5,7 +5,7 @@ import React from 'react';
 import Sticky from './Sticky.jsx';
 
 
-class Header extends React.Component { 
+class Header extends React.Component {
 
     render() {
         return (
