@@ -70,7 +70,7 @@ const Menu = styled.div`
     display:flex;
     flex-direction: row;
     justify-self: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border: 2px solid black;
     
 `;

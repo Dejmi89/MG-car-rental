@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from '../src/components/form';
 import Header from './Header';
+import Offer from './Offer';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
     return (
       <div >
         <Header></Header>
+        <Offer></Offer>
        {/* <Form></Form> */}
         {this.state.apiResponse}
       </div>
