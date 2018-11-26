@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MediaQueries from 'react-responsive';
+import Fade from 'react-reveal';
 
 import img from '../src/resources/images/CabrioLsniace.jpg';
 import FacebookIcon from '../src/resources/icons/facebook_blue.png';
@@ -76,7 +77,8 @@ const Menu = styled.div`
 `;
 
 const CarAnimation = styled.div`
-    
+    font-family: 'Satisfy', cursive;
+    font-size: 2em;
 `;
 
 const MenuText = styled.h2`
@@ -101,7 +103,7 @@ const Header = () => {
                         <Menu>
                             <div>Home</div>
                             <div>Offer</div>
-                            <CarAnimation>*</CarAnimation>
+                            <CarAnimation>Czerwony Kabriolet</CarAnimation>
                             <div>Gallery</div>
                             <div>Contact</div>
                         </Menu>

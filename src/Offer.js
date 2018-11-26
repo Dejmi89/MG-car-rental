@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal';
+
 
 const OfferSection = styled.div`
     width:100%;
@@ -58,8 +60,10 @@ const Offer = () => {
                     </OfferContainer>
                     <OfferContainer>
                         <OfferArticleWrapper>
-                            <OfferArticleHeading>s</OfferArticleHeading>
-                            <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
+                            <Fade bottom>
+                                <OfferArticleHeading>s</OfferArticleHeading>
+                                <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
+                            </Fade>
                         </OfferArticleWrapper>
                     </OfferContainer>
                     <OfferContainer>
