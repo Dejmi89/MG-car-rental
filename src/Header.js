@@ -104,7 +104,7 @@ const Header = () => {
                             <div>Home</div>
                             <div>Offer</div>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
-                            <div>Gallery</div>
+                            <div>Galleryy</div>
                             <div>Contact</div>
                         </Menu>
                         <MenuText>
