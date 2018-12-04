@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal';
 
+import gearbox from '../src/resources/images/gearbox_stick.jpg';
+
+
+
 
 const OfferSection = styled.div`
     width:100%;
@@ -28,6 +32,9 @@ const OfferContainer = styled.div`
     justify-content: center;
     display: flex;
     align-items: center;
+    background-image: ${props => `url(${props.image})`};
+    background-size:cover;
+    background-position:center;
 `;
 
 const OfferArticleWrapper = styled.div`
@@ -53,11 +60,12 @@ const Offer = () => {
         <div>
             <OfferSection>
                 <OfferWrapper>
-                    <OfferContainer>
-                        <OfferArticleWrapper>
+                        
+                        <OfferContainer image={gearbox}>
+                            <OfferArticleWrapper>
 
-                        </OfferArticleWrapper>
-                    </OfferContainer>
+                            </OfferArticleWrapper>
+                        </OfferContainer>
                     <OfferContainer>
                         <OfferArticleWrapper>
                             <Fade bottom>
@@ -68,8 +76,10 @@ const Offer = () => {
                     </OfferContainer>
                     <OfferContainer>
                         <OfferArticleWrapper>
-                            <OfferArticleHeading>d</OfferArticleHeading>
-                            <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
+                            <Fade>
+                                <OfferArticleHeading>d</OfferArticleHeading>
+                                <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
+                            </Fade>
                         </OfferArticleWrapper>
                     </OfferContainer>
                     <OfferContainer>
@@ -82,8 +92,11 @@ const Offer = () => {
                     </OfferContainer>
                     <OfferContainer>
                         <OfferArticleWrapper>
-                            <OfferArticleHeading>f</OfferArticleHeading>
-                            <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
+                            <Fade>
+                                <OfferArticleHeading>f</OfferArticleHeading>
+                                <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
+                            </Fade>
+                            
                         </OfferArticleWrapper>
                     </OfferContainer>
                 </OfferWrapper>

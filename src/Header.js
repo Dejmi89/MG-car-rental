@@ -101,7 +101,7 @@ const Header = () => {
                     </SCWrapper>
                     <MenuWrapper>
                         <Menu>
-                            <div>Home</div>
+                            <div><a target="_blank" href="https://www.flashscore.pl/">Home</a></div>
                             <div>Offer</div>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
                             <div>Galleryy</div>

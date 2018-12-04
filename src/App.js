@@ -3,6 +3,8 @@ import Form from '../src/components/form';
 import Header from './Header';
 import Offer from './Offer';
 
+import { Router, Route, hashHistory } from 'react-router-dom';
+
 class App extends Component {
 
   constructor(props) {
