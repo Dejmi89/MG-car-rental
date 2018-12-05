@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import MediaQueries from 'react-responsive';
 import Fade from 'react-reveal';
 
-import img from '../src/resources/images/CabrioLsniace.jpg';
+import img from '../src/resources/images/carIntheWoods.jpg';
 import FacebookIcon from '../src/resources/icons/facebook_blue.png';
 import InstagramIcon from '../src/resources/icons/instagram.png';
 import YouTubeIcon from '../src/resources/icons/youtube.png';
 
 
 const HeaderSection = styled.div`
-    /* background-image: url(${img}); */
+    background-image: url(${img});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
+    background-position-y:65%;
     height:100vh;
     width: 100%;
     border: 2px solid black;
@@ -67,12 +68,16 @@ const MenuWrapper = styled.div`
 
 const Menu = styled.div`
     width: 80%;
-    height: 50%;
+    height: 30%;
     display:flex;
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
     border: 2px solid black;
+    color: white;
+    font-size: 1.5em;
+    /* position:fixed; */
+    top: 1%;
     
 `;
 
@@ -86,7 +91,9 @@ const MenuText = styled.h2`
     height: 30%;
     border: 2px solid black;
     text-align: center;
-    
+    font-family: 'Satisfy', cursive;
+    color: #ffffff;
+        
 `;
 
 const Header = () => {
@@ -101,10 +108,10 @@ const Header = () => {
                     </SCWrapper>
                     <MenuWrapper>
                         <Menu>
-                            <div><a target="_blank" href="https://www.flashscore.pl/">Home</a></div>
+                            <div>Home</div>
                             <div>Offer</div>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
-                            <div>Galleryy</div>
+                            <div>Gallery</div>
                             <div>Contact</div>
                         </Menu>
                         <MenuText>

@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal';
 
-import gearbox from '../src/resources/images/gearbox_stick.jpg';
+import ImageGearbox from '../src/resources/images/gearbox_stick.jpg';
+import ImageKolo from '../src/resources/images/steering_wheel.jpg';
+import ImageWnetrze from '../src/resources/images/wnetrzeAuta.jpg';
 
 
 
@@ -18,7 +20,7 @@ const OfferSection = styled.div`
 `;
 
 const OfferWrapper = styled.div`
-    width:95%;
+    width:100%;
     height: 90%;
     display: flex;
     flex-direction: row;
@@ -31,6 +33,7 @@ const OfferContainer = styled.div`
     border: 2px solid black;
     justify-content: center;
     display: flex;
+    min-height:50vh;
     align-items: center;
     background-image: ${props => `url(${props.image})`};
     background-size:cover;
@@ -61,7 +64,7 @@ const Offer = () => {
             <OfferSection>
                 <OfferWrapper>
                         
-                        <OfferContainer image={gearbox}>
+                        <OfferContainer image={ImageGearbox}>
                             <OfferArticleWrapper>
 
                             </OfferArticleWrapper>
@@ -82,11 +85,11 @@ const Offer = () => {
                             </Fade>
                         </OfferArticleWrapper>
                     </OfferContainer>
-                    <OfferContainer>
+                    <OfferContainer image={ImageKolo}>
                         <OfferArticleWrapper>
                         </OfferArticleWrapper>
                     </OfferContainer>
-                    <OfferContainer>
+                    <OfferContainer image={ImageWnetrze}>
                         <OfferArticleWrapper>
                         </OfferArticleWrapper>
                     </OfferContainer>
