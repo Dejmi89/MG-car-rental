@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+import makeCarousel from 'react-reveal/makeCarousel';
 import Fade from 'react-reveal';
+
 
 import ImageGearbox from '../src/resources/images/gearbox_stick.jpg';
 import ImageKolo from '../src/resources/images/steering_wheel.jpg';
 import ImageWnetrze from '../src/resources/images/wnetrzeAuta.jpg';
-
-
 
 
 const OfferSection = styled.div`
@@ -17,6 +17,7 @@ const OfferSection = styled.div`
     align-items: center;
     margin-top: 5px;
     border: 2px solid black;
+    overflow:hidden;
 `;
 
 const OfferWrapper = styled.div`
@@ -38,10 +39,21 @@ const OfferContainer = styled.div`
     background-image: ${props => `url(${props.image})`};
     background-size:cover;
     background-position:center;
+    
+        opacity:0.7;
+    
+`;
+
+
+const OfferContainerGlass = styled.div`
+    width:100%;
+    height:100%;
+    background-color: green;
+    animation: ${disappear} 3s forwards;
 `;
 
 const OfferArticleWrapper = styled.div`
-    width: 80%;
+    /* width: 100%; */
     height:90%;
     border: 2px solid black;
 `;
@@ -52,23 +64,36 @@ const OfferArticleHeading = styled.h2`
 `;
 
 const OfferArticle = styled.div`
-    width: 90%;
+    /* width: 90%; */
     height:70%;
     border: 2px solid black;
     text-align:center;
 `;
+
+const disappear = keyframes`
+    from{
+        background-color:green;
+  height:100%;
+  width:100%;
+}
+to {
+  height:0;
+  width:0;
+  background-color: transparent;
+}
+`;
+
+
 
 const Offer = () => {
     return (
         <div>
             <OfferSection>
                 <OfferWrapper>
-                        
-                        <OfferContainer image={ImageGearbox}>
-                            <OfferArticleWrapper>
 
-                            </OfferArticleWrapper>
-                        </OfferContainer>
+                    <OfferContainer image={ImageGearbox}>
+
+                    </OfferContainer>
                     <OfferContainer>
                         <OfferArticleWrapper>
                             <Fade bottom>
@@ -86,12 +111,10 @@ const Offer = () => {
                         </OfferArticleWrapper>
                     </OfferContainer>
                     <OfferContainer image={ImageKolo}>
-                        <OfferArticleWrapper>
-                        </OfferArticleWrapper>
+
                     </OfferContainer>
                     <OfferContainer image={ImageWnetrze}>
-                        <OfferArticleWrapper>
-                        </OfferArticleWrapper>
+
                     </OfferContainer>
                     <OfferContainer>
                         <OfferArticleWrapper>
@@ -99,7 +122,7 @@ const Offer = () => {
                                 <OfferArticleHeading>f</OfferArticleHeading>
                                 <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
                             </Fade>
-                            
+
                         </OfferArticleWrapper>
                     </OfferContainer>
                 </OfferWrapper>

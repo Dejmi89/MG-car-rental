@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import MediaQueries from 'react-responsive';
 import Fade from 'react-reveal';
+import Zoom from 'react-reveal';
+import scrollToComponent from 'react-scroll-to-component';
 
 import img from '../src/resources/images/carIntheWoods.jpg';
 import FacebookIcon from '../src/resources/icons/facebook_blue.png';
 import InstagramIcon from '../src/resources/icons/instagram.png';
 import YouTubeIcon from '../src/resources/icons/youtube.png';
+
+
 
 
 const HeaderSection = styled.div`
@@ -15,7 +19,7 @@ const HeaderSection = styled.div`
     background-size: cover;
     /* background-position: center; */
     background-position-y:65%;
-    height:100vh;
+    min-height:100vh;
     width: 100%;
     border: 2px solid black;
     display:flex;
@@ -78,7 +82,11 @@ const Menu = styled.div`
     font-size: 1.5em;
     /* position:fixed; */
     top: 1%;
-    
+        div {
+            &:hover{
+                opacity: ${props => `${props.opacity}`};
+            }
+        }
 `;
 
 const CarAnimation = styled.div`
@@ -93,36 +101,47 @@ const MenuText = styled.h2`
     text-align: center;
     font-family: 'Satisfy', cursive;
     color: #ffffff;
-        
+            
 `;
 
-const Header = () => {
-    return (
-        <div>
+
+class Header extends React.Component {
+    render() {
+        
+        return (
+            
+                <div>
             <HeaderSection>
                 <HeaderWrapper>
+                    
                     <SCWrapper>
                          <SocialIcon image={FacebookIcon}></SocialIcon>
                          <SocialIcon image={InstagramIcon}></SocialIcon>
                          <SocialIcon image={YouTubeIcon}></SocialIcon>
                     </SCWrapper>
-                    <MenuWrapper>
-                        <Menu>
-                            <div>Home</div>
-                            <div>Offer</div>
+                    
+                        <MenuWrapper>
+                        
+                        <Menu opacity={0.7}>
+                            <Fade><div>Home</div></Fade>
+                            <Fade><div>Offer</div></Fade>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
-                            <div>Gallery</div>
-                            <div>Contact</div>
-                        </Menu>
+                            <Fade><div>Gallery</div></Fade>
+                            <Fade><div>Contact</div></Fade>                       
+                         </Menu>
+                        
                         <MenuText>
-                            <h4>Piękno Styl Elegancja</h4>
+                            <Fade><h4>Piękno Styl Elegancja</h4></Fade>
                         </MenuText>
                     </MenuWrapper>
+                    
             </HeaderWrapper>
             </HeaderSection>
             
-        </div>
-            );
-        };
         
+            </div>
+        );
+    }
+}
+
 export default Header;

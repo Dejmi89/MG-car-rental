@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Form from '../src/components/form';
 import Header from './Header';
 import Offer from './Offer';
+import Gallery from './Gallery';
+import scrollToComponent from 'react-scroll-to-component';
 
 import { Router, Route, hashHistory } from 'react-router-dom';
 
@@ -12,10 +14,15 @@ class App extends Component {
     this.state = { apiResponse: "" };
   }
 
+
   callAPI() {
     fetch("http://localhost:9000/testAPI")
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
+  }
+
+  componentDidMount() {
+    scrollToComponent(this.Gallery, { offset: 0, align: 'top', duration: 1000, ease:'inExpo'});
   }
 
   componentWillMount() {
@@ -25,10 +32,11 @@ class App extends Component {
   render() {
     return (
       <div >
-        <Header></Header>
-        <Offer></Offer>
-       {/* <Form></Form> */}
-        {this.state.apiResponse}
+        <Header onClick={() => scrollToComponent(this.Gallery)}></Header>
+        <Offer ></Offer>
+        <Gallery ref={(section) => { this.Gallery = section; }}></Gallery>
+        {/* <Form></Form> */}
+        {/* {this.state.apiResponse} */}
       </div>
     );
   }
