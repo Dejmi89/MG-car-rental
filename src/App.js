@@ -14,6 +14,8 @@ class App extends Component {
     this.state = { apiResponse: "" };
   }
 
+  
+
 
   callAPI() {
     fetch("http://localhost:9000/testAPI")
@@ -33,7 +35,7 @@ class App extends Component {
     return (
       <div >
         <Header onClick={() => scrollToComponent(this.Gallery)}></Header>
-        <Offer ></Offer>
+        {/* <Offer ></Offer> */}
         <Gallery ref={(section) => { this.Gallery = section; }}></Gallery>
         {/* <Form></Form> */}
         {/* {this.state.apiResponse} */}
