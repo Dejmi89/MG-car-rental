@@ -39,8 +39,7 @@ const OfferContainer = styled.div`
     background-image: ${props => `url(${props.image})`};
     background-size:cover;
     background-position:center;
-    
-        opacity:0.7;
+    opacity:0.7;
     
 `;
 

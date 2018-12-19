@@ -110,7 +110,7 @@ class Header extends React.Component {
         
         return (
             
-                <div>
+        <div>
             <HeaderSection>
                 <HeaderWrapper>
                     

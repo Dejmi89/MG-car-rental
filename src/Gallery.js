@@ -1,59 +1,89 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 import {Grid, Cell} from 'styled-css-grid';
-import Fade from 'react-reveal';
+import Fade, {Zoom} from 'react-reveal';
 
 import img1 from './resources/images/wnetrzeAuta.jpg';
 import img2 from './resources/images/gearbox_stick.jpg';
+import img3 from './resources/images/mercedes_red.jpg';
+import img4 from './resources/images/maskaPrzod.jpg';
+import img5 from './resources/images/gearbox_stick.jpg';
+
 
 class Gallery extends Component {
     render() {
 
         const GalleryGrid = () => (
             <Grid
-                columns={'repeat(9,1fr)'}
-                rows={'repeat(6, 1fr)'}
+                columns={'repeat(9,minmax(max-content,auto))'}
+                rows={'repeat(6, minmax(150px, auto))'}
                 gap='5px'
-            >
-                <Cell width={3} height={3} left={2} top={2}>
-                    <First>
-
-                        <ImageContainer image={img1}></ImageContainer>
-
+            >   
+                <Cell width={7} height={1} left={2} top={1}>
+                    <First style={{textAlign:"center", border:'0px'}}>
+                        <h1>Galeria</h1>
                     </First>
                 </Cell>
-                <Cell width={2} height={2} left={5} top={2}>
-                    <First>c</First>
-                </Cell>
-                <Cell width={1} height={1} left={7} top={2}>
-                    <First>d</First>
-                </Cell>
-                <Cell width={1} height={1} left={8} top={2}>
-                    <First>e</First>
-                </Cell>
-                <Cell width={1} height={1} left={2} top={5}>
-                    <First>f</First>
-                </Cell>
-                <Cell width={1} height={1} left={3} top={5}>
-                    <First>g</First>
-                </Cell>
-                <Cell width={1} height={1} left={4} top={5}>
-                    <First>h</First>
-                </Cell>
-                <Cell width={2} height={2} left={5} top={4}>
-                    <First>h</First>
-                </Cell>
-                <Cell width={2} height={2} left={7} top={3}>
-                    <First>h</First>
-                </Cell>
-                <Cell width={1} height={1} left={7} top={5}>
+                <Cell width={3} height={3} left={2} top={2}>
                     <First>
                         <ImageContainer image={img2}></ImageContainer>
                     </First>
-
                 </Cell>
+                
+                <Cell width={2} height={2} left={5} top={2}>
+                    <First>
+                        <ImageContainer image={img3}></ImageContainer>
+                    </First>
+                </Cell>
+                
+                <Cell width={1} height={1} left={7} top={2}>
+                    <First>
+                        <ImageContainer image={img4}></ImageContainer>
+                        </First>
+                </Cell>
+                    
+                <Cell width={1} height={1} left={8} top={2}>
+                        <First>
+                            <ImageContainer image={img3}></ImageContainer>
+                        </First>
+                </Cell>
+                    
+                <Cell width={1} height={1} left={2} top={5}>
+                        <First>
+                            <ImageContainer image={img1}></ImageContainer>
+                        </First>
+                </Cell>
+                    
+                <Cell width={1} height={1} left={3} top={5}>
+                        <First><ImageContainer image={img4}></ImageContainer></First>
+                </Cell>
+                    
+                <Cell width={1} height={1} left={4} top={5}>
+                        <First><ImageContainer image={img3}></ImageContainer></First>
+                </Cell>
+                    
+                <Cell width={2} height={2} left={5} top={4}>
+                        <First><ImageContainer image={img5}></ImageContainer>
+                        </First>
+                </Cell>
+                    
+                <Cell width={2} height={2} left={7} top={3}>
+                        <First><ImageContainer image={img3}></ImageContainer>
+                        </First>
+                </Cell>
+                    
+                <Cell width={1} height={1} left={7} top={5}>
+                        <First>
+                            <ImageContainer image={img1}></ImageContainer>
+                        </First>
+                </Cell>
+                
                 <Cell width={1} height={1} left={8} top={5}>
-                    <First>d</First>
+                        
+                        <First>
+                            <ImageContainer image={img3}></ImageContainer>
+                        </First>
+                        
                 </Cell>
             </Grid>
         )
@@ -62,8 +92,9 @@ class Gallery extends Component {
         border: 2px solid black;
         width: 100%;
         height: 100%;
-            
+        
         `;
+       
 
         const ImageContainer = styled.div`
             background-image: ${props => `url(${props.image})`};
@@ -71,13 +102,20 @@ class Gallery extends Component {
             background-size:cover;
             width:100%;
             height:100%;
+            &:hover {
+                opacity:0.7;
+                animation: ${props => `${props.animation}`};
+            }
         `;
 
         return (
             <div>
-                <GalleryGrid>
+                <Fade>
+                    <GalleryGrid/>
+                </Fade>
+                
 
-                </GalleryGrid>
+                
             </div>
         );
     }
