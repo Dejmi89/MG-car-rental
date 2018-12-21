@@ -4,8 +4,10 @@ import Header from './Header';
 import Offer from './Offer';
 import Gallery from './Gallery';
 import scrollToComponent from 'react-scroll-to-component';
+import Example from './example_component';
 
 import { Router, Route, hashHistory } from 'react-router-dom';
+import example_component from './example_component';
 
 class App extends Component {
 
@@ -35,6 +37,7 @@ class App extends Component {
     return (
       <div >
         <Header onClick={() => scrollToComponent(this.Gallery)}></Header>
+        {/* <Example></Example> */}
         {/* <Offer ></Offer> */}
         <Gallery ref={(section) => { this.Gallery = section; }}></Gallery>
         {/* <Form></Form> */}

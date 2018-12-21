@@ -21,7 +21,7 @@ const HeaderSection = styled.div`
     background-position-y:65%;
     min-height:100vh;
     width: 100%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display:flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,7 @@ const HeaderSection = styled.div`
 const HeaderWrapper = styled.div`
     width:90%;
     height: 80vh;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display:flex;
     
 `;
@@ -39,7 +39,7 @@ const HeaderWrapper = styled.div`
 const SCWrapper = styled.div`
     width: 10%;
     height: 8%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display:flex;
     flex-direction: row;
     justify-content:center;
@@ -54,13 +54,13 @@ const SocialIcon = styled.div`
     background-repeat: no-repeat;
     width: 30%;
     height: 80%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 `;
 
 const MenuWrapper = styled.div`
     width: 80%;
     height: 50%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin-left: 10px;
     display: flex;
     align-self: flex-start;
@@ -77,7 +77,7 @@ const Menu = styled.div`
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     color: white;
     font-size: 1.5em;
     /* position:fixed; */
@@ -90,16 +90,16 @@ const Menu = styled.div`
 `;
 
 const CarAnimation = styled.div`
-    font-family: 'Satisfy', cursive;
+    /* font-family: 'Satisfy', cursive; */
     font-size: 2em;
 `;
 
 const MenuText = styled.h2`
     width: 50%;
     height: 30%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     text-align: center;
-    font-family: 'Satisfy', cursive;
+    /* font-family: 'Satisfy', cursive; */
     color: #ffffff;
             
 `;

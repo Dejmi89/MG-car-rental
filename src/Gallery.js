@@ -7,14 +7,62 @@ import img1 from './resources/images/wnetrzeAuta.jpg';
 import img2 from './resources/images/gearbox_stick.jpg';
 import img3 from './resources/images/mercedes_red.jpg';
 import img4 from './resources/images/maskaPrzod.jpg';
-import img5 from './resources/images/gearbox_stick.jpg';
-
+import img5 from './resources/images/mg_hood.jpg';
+import img6 from './resources/images/steering_wheel.jpg';
+import img7 from './resources/images/pexels-photo.jpg';
+import img8 from './resources/images/mercedes_garage.jpg';
+import img9 from './resources/images/mercedes_front.jpg';
+import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
+import img11 from './resources/images/gearbox_stick.jpg';
 
 class Gallery extends Component {
+constructor(props){
+    super(props);
+      this.state = {
+          display:'none',
+          foto:'',
+          background: '',
+          opacity: '1'
+      }  
+    
+}
+
     render() {
+        const showFoto = () => {
+            
+            let fota = this.props.images;
+            console.log(fota);
+
+
+            this.setState({
+                foto: img4,
+                opacity: '0.1'
+           });
+
+           if (this.state.display == 'none'){
+               this.setState({
+                   display:'block'
+               })
+           }else {
+               this.setState({
+                   display:'none'
+               })
+           }
+           if (this.state.opacity == '1'){
+            this.setState({
+                opacity:'0.4'
+            })
+        }else {
+            this.setState({
+                opacity:'1'
+            })
+        }
+
+        }
 
         const GalleryGrid = () => (
             <Grid
+                style={{opacity:this.state.opacity}}
                 columns={'repeat(9,minmax(max-content,auto))'}
                 rows={'repeat(6, minmax(150px, auto))'}
                 gap='5px'
@@ -32,7 +80,9 @@ class Gallery extends Component {
                 
                 <Cell width={2} height={2} left={5} top={2}>
                     <First>
-                        <ImageContainer image={img3}></ImageContainer>
+                        <ImageContainer image={img3}>
+                            
+                        </ImageContainer>
                     </First>
                 </Cell>
                 
@@ -44,44 +94,44 @@ class Gallery extends Component {
                     
                 <Cell width={1} height={1} left={8} top={2}>
                         <First>
-                            <ImageContainer image={img3}></ImageContainer>
+                            <ImageContainer image={img5}></ImageContainer>
                         </First>
                 </Cell>
                     
                 <Cell width={1} height={1} left={2} top={5}>
                         <First>
-                            <ImageContainer image={img1}></ImageContainer>
+                            <ImageContainer image={img6}></ImageContainer>
                         </First>
                 </Cell>
                     
                 <Cell width={1} height={1} left={3} top={5}>
-                        <First><ImageContainer image={img4}></ImageContainer></First>
+                        <First><ImageContainer image={img7}></ImageContainer></First>
                 </Cell>
                     
                 <Cell width={1} height={1} left={4} top={5}>
-                        <First><ImageContainer image={img3}></ImageContainer></First>
+                        <First><ImageContainer image={img8}></ImageContainer></First>
                 </Cell>
                     
                 <Cell width={2} height={2} left={5} top={4}>
-                        <First><ImageContainer image={img5}></ImageContainer>
+                        <First><ImageContainer image={img9}></ImageContainer>
                         </First>
                 </Cell>
                     
                 <Cell width={2} height={2} left={7} top={3}>
-                        <First><ImageContainer image={img3}></ImageContainer>
+                        <First><ImageContainer image={img10}></ImageContainer>
                         </First>
                 </Cell>
                     
                 <Cell width={1} height={1} left={7} top={5}>
                         <First>
-                            <ImageContainer image={img1}></ImageContainer>
+                            <ImageContainer onClick={showFoto} image={img1}></ImageContainer>
                         </First>
                 </Cell>
                 
                 <Cell width={1} height={1} left={8} top={5}>
                         
                         <First>
-                            <ImageContainer image={img3}></ImageContainer>
+                            <ImageContainer onClick={showFoto} image={img11} ></ImageContainer>
                         </First>
                         
                 </Cell>
@@ -108,11 +158,27 @@ class Gallery extends Component {
             }
         `;
 
+            const ImageClicked = styled.div `
+            position:absolute;
+            top:10%;
+            left:10%;
+            width: 80%;
+            height: 50vh;
+            border: 2px solid black;
+            /* background-color:green; */
+            background-image: ${props => `url(${props.foto})`};
+            background-position:center;
+
+        `;
+
         return (
-            <div>
+            <div style={{position:'relative', width:'100%'}}>
                 <Fade>
                     <GalleryGrid/>
                 </Fade>
+                
+                    <ImageClicked style={{display:this.state.display}} foto={this.state.foto}></ImageClicked>
+               
                 
 
                 
