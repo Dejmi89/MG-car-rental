@@ -131,7 +131,9 @@ constructor(props){
                 <Cell width={1} height={1} left={8} top={5}>
                         
                         <First>
+                            <a href='www.wp.pl' target='_blank'>
                             <ImageContainer onClick={showFoto} image={img11} ></ImageContainer>
+                            </a>
                         </First>
                         
                 </Cell>

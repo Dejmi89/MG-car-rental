@@ -115,7 +115,7 @@ class Header extends React.Component {
                 <HeaderWrapper>
                     
                     <SCWrapper>
-                         <SocialIcon image={FacebookIcon}></SocialIcon>
+                         <SocialIcon image={FacebookIcon} href='www.wp.pl'></SocialIcon>
                          <SocialIcon image={InstagramIcon}></SocialIcon>
                          <SocialIcon image={YouTubeIcon}></SocialIcon>
                     </SCWrapper>

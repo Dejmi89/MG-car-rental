@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    scrollToComponent(this.Gallery, { offset: 0, align: 'top', duration: 1000, ease:'inExpo'});
+    scrollToComponent(this.Gallery, { offset: 100, align: 'top', duration: 1000, ease:'inExpo'});
   }
 
   componentWillMount() {
@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div >
         <Header onClick={() => scrollToComponent(this.Gallery)}></Header>
-        {/* <Example></Example> */}
+        <Example></Example>
         {/* <Offer ></Offer> */}
         <Gallery ref={(section) => { this.Gallery = section; }}></Gallery>
         {/* <Form></Form> */}
