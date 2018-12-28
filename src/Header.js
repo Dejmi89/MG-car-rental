@@ -1,9 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import MediaQueries from 'react-responsive';
+import styled, {keyframes} from 'styled-components';
 import Fade from 'react-reveal';
-import Zoom from 'react-reveal';
-import scrollToComponent from 'react-scroll-to-component';
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 
 import img from '../src/resources/images/carIntheWoods.jpg';
 import FacebookIcon from '../src/resources/icons/facebook_blue.png';
@@ -54,7 +60,11 @@ const SocialIcon = styled.div`
     background-repeat: no-repeat;
     width: 30%;
     height: 80%;
-    /* border: 2px solid black; */
+    /* font-size:1em; */
+    text-align:center;
+        h3{
+            visibility:hidden;
+        }
 `;
 
 const MenuWrapper = styled.div`
@@ -104,8 +114,36 @@ const MenuText = styled.h2`
             
 `;
 
+const fadeIn = keyframes`
+    from{opacity:0}
+    to{opacity:1}
+`;
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            scrolling: false
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+    
+     handleScroll = () =>  {
+        if (window.scrollY <= 200 && this.state.scrolling === true) {
+            this.setState({ scrolling: false });
+        } else if (window.scrollY >= 200 && this.state.scrolling !== true) {
+            this.setState({ scrolling: true });
+        }
+    }
+    
+
     render() {
         
         return (
@@ -115,15 +153,19 @@ class Header extends React.Component {
                 <HeaderWrapper>
                     
                     <SCWrapper>
-                         <SocialIcon image={FacebookIcon} href='www.wp.pl'></SocialIcon>
-                         <SocialIcon image={InstagramIcon}></SocialIcon>
-                         <SocialIcon image={YouTubeIcon}></SocialIcon>
+                         <SocialIcon image={FacebookIcon} ><a href='www.facebook.com' target='_blank'><h3>l</h3></a></SocialIcon>
+                         <SocialIcon image={InstagramIcon}><a href='www.instagram.com' target='_blank'><h3>l</h3></a></SocialIcon>
+                         <SocialIcon image={YouTubeIcon}><a href='www.youtube.com' target='_blank'><h3>l</h3></a></SocialIcon>
                     </SCWrapper>
                     
                         <MenuWrapper>
                         
-                        <Menu opacity={0.7}>
-                            <Fade><div>Home</div></Fade>
+                        <Menu opacity={0.3} style={{position: this.state.scrolling ? 'fixed' : '',
+                                zIndex: 1,
+                                backgroundColor: this.state.scrolling ? 'red' : 'transparent',
+                                height: this.state.scrolling ? '6%' : '30%'
+                                }}>
+                            <Fade><div>Home </div></Fade>
                             <Fade><div>Offer</div></Fade>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
                             <Fade><div>Gallery</div></Fade>

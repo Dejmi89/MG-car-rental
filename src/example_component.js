@@ -5,14 +5,21 @@ import {Grid, Cell} from 'styled-css-grid';
 import img2 from './resources/images/gearbox_stick.jpg';
 import img3 from './resources/images/mercedes_red.jpg';
 
-const Cells = [{ width: 7, height: 2 ,left: 3,top: 2,  img: `url(/resources/images/mercedes_red.jpg)`
+
+const Cells = [{ width: 7, height: 2 ,left: 3,top: 2,  img: img2
 
 },
-{ width: 4, height: 2 ,left: 2,top: 2 , img: 'url(./resources/images/mercedes_red.jpg)'
+{ width: 4, height: 2 ,left: 2,top: 2 , img: img3
 },
-{ width: 3, height: 1 ,left: 3,top: 3, img: 'url(./resources/images/mercedes_red.jpg)'
+{ width: 3, height: 1 ,left: 3,top: 3, img: img2
 }
 ]
+
+const Beauty = styled.div`
+        background-image: url(${props => props.img});
+        width:100px;
+        height:200px;
+    `;
 
 class Example extends Component {
 
@@ -26,10 +33,12 @@ class Example extends Component {
                         width:'200px',
                         height:'200px',
                         backgroundColor: 'green',
-                        backgroundImage: this.props.img,
+                        // backgroundImage: url(${props => props.img}),
                         backgroundPosition:'center',
                         backgroundSize:'cover'
                     }}></div>
+                    <Beauty img={img2} />
+                    <Beauty img={img3} />
                     </Cell>
             
         ))
@@ -40,15 +49,12 @@ class Example extends Component {
 
     render() {
 
-        const Beauty = styled.div`
-        background-image: ${props => `url(${props.img})`};
-        width:100%;
-        height:20vh;
-    `;
+        
        
         return (
             <Grid>
                 {this.showHeroes()}
+                
             </Grid>
         );
     }

@@ -3,11 +3,17 @@ import Form from '../src/components/form';
 import Header from './Header';
 import Offer from './Offer';
 import Gallery from './Gallery';
-import scrollToComponent from 'react-scroll-to-component';
 import Example from './example_component';
 
-import { Router, Route, hashHistory } from 'react-router-dom';
-import example_component from './example_component';
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 
 class App extends Component {
 
@@ -25,21 +31,30 @@ class App extends Component {
       .then(res => this.setState({ apiResponse: res }));
   }
 
-  componentDidMount() {
-    scrollToComponent(this.Gallery, { offset: 100, align: 'top', duration: 1000, ease:'inExpo'});
-  }
-
   componentWillMount() {
     this.callAPI();
   }
 
+  scrollTo() {
+    scroller.scrollTo("scroll-to-element", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuint"
+    });
+  }
+
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+
+
   render() {
     return (
       <div >
-        <Header onClick={() => scrollToComponent(this.Gallery)}></Header>
-        <Example></Example>
+        <Header></Header>
+        {/* <Example></Example> */}
         {/* <Offer ></Offer> */}
-        <Gallery ref={(section) => { this.Gallery = section; }}></Gallery>
+        <Gallery ></Gallery>
         {/* <Form></Form> */}
         {/* {this.state.apiResponse} */}
       </div>
