@@ -5,40 +5,145 @@ import {Grid, Cell} from 'styled-css-grid';
 import img2 from './resources/images/gearbox_stick.jpg';
 import img3 from './resources/images/mercedes_red.jpg';
 
+const fadeIn = keyframes`
+    from{opacity:0}
+    to{opacity:1}
+`;
 
-const Cells = [{ width: 7, height: 2 ,left: 3,top: 2,  img: img2
+const Cells = [
+    {
+        width: 7,
+        height: 1,
+        left: 2,
+        top: 1,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 3,
+        height: 3,
+        left: 2,
+        top: 2,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 2,
+        height: 2,
+        left: 5,
+        top: 1,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 1,
+        height: 1,
+        left: 7,
+        top: 2,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 1,
+        height: 1,
+        left: 8,
+        top: 2,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 1,
+        height: 1,
+        left: 2,
+        top: 5,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 1,
+        height: 1,
+        left: 3,
+        top: 5,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 1,
+        height: 1,
+        left: 4,
+        top: 5,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 2,
+        height: 2,
+        left: 5,
+        top: 4,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 2,
+        height: 2,
+        left: 7,
+        top: 3,
+        img: img2,
+        animation: fadeIn
+    },
+    {
+        width: 1,
+        height: 1,
+        left: 7,
+        top: 5,
+        img: img2,
+        animation: fadeIn
+    },
 
-},
-{ width: 4, height: 2 ,left: 2,top: 2 , img: img3
-},
-{ width: 3, height: 1 ,left: 3,top: 3, img: img2
-}
 ]
 
-const Beauty = styled.div`
-        background-image: url(${props => props.img});
-        width:100px;
-        height:200px;
+const ImageContainerWrapper = styled.div`
+        border: 2px solid black;
+        width: 100%;
+        height: 100%;
+        
+        `;
+       
+
+const ImageContainer = styled.div`
+        background-image: ${props => `url(${props.image})`};
+        background-position:center;
+        background-size:cover;
+        width:100%;
+        height:100%;
+        &:hover {
+                opacity:0.7;
+                animation: ${props => `${props.animation}`};
+            }
     `;
 
-class Example extends Component {
+const CellFilling = styled.div`
+        background-image: url(${props => props.img});
+            `;
 
+class Example extends Component {
+    constructor(props){
+        super(props);
+          this.state = {
+            opacity: '1'
+          }  
+        
+    }
    
 
      showHeroes = () => 
         Cells.map((cell, i) => (
             
-                <Cell width={cell.width} height={cell.height} left={cell.left} img={cell.img}>
-                    <div style={{
-                        width:'200px',
-                        height:'200px',
-                        backgroundColor: 'green',
-                        // backgroundImage: url(${props => props.img}),
-                        backgroundPosition:'center',
-                        backgroundSize:'cover'
-                    }}></div>
-                    <Beauty img={img2} />
-                    <Beauty img={img3} />
+                <Cell width={cell.width} height={cell.height} left={cell.left} img={cell.img} animation={cell.animation}>
+                    <ImageContainerWrapper>
+                        <ImageContainer></ImageContainer>
+                    </ImageContainerWrapper>
+                    
                     </Cell>
             
         ))
@@ -52,9 +157,14 @@ class Example extends Component {
         
        
         return (
-            <Grid>
-                {this.showHeroes()}
-                
+            <Grid
+            name={this.props.name}
+            style={{opacity:this.state.opacity}}
+            columns={'repeat(9,minmax(max-content,auto))'}
+            rows={'repeat(6, minmax(150px, auto))'}
+            gap='5px'
+            >
+                {this.showHeroes()} 
             </Grid>
         );
     }

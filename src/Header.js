@@ -142,7 +142,13 @@ class Header extends React.Component {
             this.setState({ scrolling: true });
         }
     }
-    
+    scrollTo() {
+        scroller.scrollTo("scroll-to-element", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuint"
+        });
+      }
 
     render() {
         
@@ -165,7 +171,7 @@ class Header extends React.Component {
                                 backgroundColor: this.state.scrolling ? 'red' : 'transparent',
                                 height: this.state.scrolling ? '6%' : '30%'
                                 }}>
-                            <Fade><div>Home </div></Fade>
+                            <Fade><Link to='galeria' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Home </div></Link></Fade>
                             <Fade><div>Offer</div></Fade>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
                             <Fade><div>Gallery</div></Fade>

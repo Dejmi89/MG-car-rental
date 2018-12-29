@@ -62,6 +62,7 @@ constructor(props){
 
         const GalleryGrid = () => (
             <Grid
+                name={this.props.name}
                 style={{opacity:this.state.opacity}}
                 columns={'repeat(9,minmax(max-content,auto))'}
                 rows={'repeat(6, minmax(150px, auto))'}
@@ -72,7 +73,7 @@ constructor(props){
                         <h1>Galeria</h1>
                     </First>
                 </Cell>
-                <Cell width={3} height={3} left={2} top={2}>
+                <Cell width={3} height={3} left={2} top={2} onClick={this.props.toTop}>
                     <First>
                         <ImageContainer image={img2}></ImageContainer>
                     </First>

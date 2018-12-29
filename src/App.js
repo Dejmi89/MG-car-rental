@@ -51,10 +51,11 @@ class App extends Component {
   render() {
     return (
       <div >
-        <Header></Header>
-        {/* <Example></Example> */}
+        <Header scrollFunc={this.scrollTo}></Header>
+        <Example></Example>
         {/* <Offer ></Offer> */}
-        <Gallery ></Gallery>
+        <Gallery name="galeria" toTop={this.scrollToTop}></Gallery>
+        
         {/* <Form></Form> */}
         {/* {this.state.apiResponse} */}
       </div>
