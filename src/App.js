@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Form from '../src/components/form';
 import Header from './Header';
 import Offer from './Offer';
-import Gallery from './Gallery';
-import Example from './example_component';
+import Gallery from './example_component';
 
 import * as Scroll from "react-scroll";
 import {
@@ -52,8 +51,8 @@ class App extends Component {
     return (
       <div >
         <Header scrollFunc={this.scrollTo}></Header>
-        <Example></Example>
         {/* <Offer ></Offer> */}
+        <h1 style={{textAlign:'center'}}>Galeria</h1>
         <Gallery name="galeria" toTop={this.scrollToTop}></Gallery>
         
         {/* <Form></Form> */}

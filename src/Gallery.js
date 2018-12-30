@@ -15,7 +15,7 @@ import img9 from './resources/images/mercedes_front.jpg';
 import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
 import img11 from './resources/images/gearbox_stick.jpg';
 
-class Gallery extends Component {
+class FormerGallery extends Component {
 constructor(props){
     super(props);
       this.state = {
@@ -73,6 +73,7 @@ constructor(props){
                         <h1>Galeria</h1>
                     </First>
                 </Cell>
+                
                 <Cell width={3} height={3} left={2} top={2} onClick={this.props.toTop}>
                     <First>
                         <ImageContainer image={img2}></ImageContainer>
@@ -190,4 +191,4 @@ constructor(props){
     }
 }
 
-export default Gallery;
+export default FormerGallery;
