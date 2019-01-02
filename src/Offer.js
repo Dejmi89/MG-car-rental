@@ -1,133 +1,134 @@
-import React from 'react';
+import React , { Component }from 'react';
 import styled, {keyframes} from 'styled-components';
-import makeCarousel from 'react-reveal/makeCarousel';
+import {Grid, Cell} from 'styled-css-grid';
 import Fade from 'react-reveal';
 
+import img from './resources/images/gearbox_stick.jpg';
+import img2 from './resources/images/mg_hood.jpg';
+import img3 from './resources/images/maskaPrzod.jpg';
 
-import ImageGearbox from '../src/resources/images/gearbox_stick.jpg';
-import ImageKolo from '../src/resources/images/steering_wheel.jpg';
-import ImageWnetrze from '../src/resources/images/wnetrzeAuta.jpg';
 
 
-const OfferSection = styled.div`
-    width:100%;
-    height:100vh;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    margin-top: 5px;
-    border: 2px solid black;
-    overflow:hidden;
-`;
-
-const OfferWrapper = styled.div`
-    width:100%;
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 2px solid black;
-`;
-
-const OfferContainer = styled.div`
-    flex-basis: calc(50% - 14px);
-    border: 2px solid black;
-    justify-content: center;
-    display: flex;
-    min-height:50vh;
-    align-items: center;
-    background-image: ${props => `url(${props.image})`};
-    background-size:cover;
-    background-position:center;
-    opacity:0.7;
+const Cells = [
     
-`;
+ 
+    {
+        width: 1,
+        height: 2,
+        left:1,
+        top: 1,
+        img: img,
+        animation: ''   
+    },
+    {
+        width: 1,
+        height: 2,
+        left:2,
+        top: 1,
+        img: '',
+        animation: ''   
+    },
+    {
+        width: 1,
+        height: 2,
+        left:1,
+        top: 3,
+        img: '',
+        animation: ''   
+    },
+    {
+        width: 1,
+        height: 2,
+        left:2,
+        top: 3,
+        img: img2,
+        animation: ''   
+    },
+    {
+        width: 1,
+        height: 2,
+        left:1,
+        top: 5,
+        img: img3,
+        animation: ''   
+    },
+    {
+        width: 1,
+        height: 2,
+        left:2,
+        top: 5,
+        img: '',
+        animation: ''   
+    }
+    
+]
+
+const ImageContainerWrapper = styled.div`
+        /* border: 2px solid black; */
+        width: 100%;
+        height: 100%;
+        border-radius:1%;
+        overflow:hidden;
+        `;
 
 
-const OfferContainerGlass = styled.div`
-    width:100%;
-    height:100%;
-    background-color: green;
-    animation: ${disappear} 3s forwards;
-`;
+const ImageContainer = styled.div`
+        background-image:  url(${props => props.img});
+        background-position:center;
+        background-size:cover;
+        width:100%;
+        height:100%;
+        animation: ${props => props.animation} 3s;
+        &:hover{
+            opacity:0.7
+        }
+    `;
 
-const OfferArticleWrapper = styled.div`
-    /* width: 100%; */
-    height:90%;
-    border: 2px solid black;
-`;
 
-const OfferArticleHeading = styled.h2`
-    text-align:center;
-    border: 2px solid black;
-`;
+class Offer extends Component {
+    constructor(props){
+        super(props);
+          this.state = {
+            opacity: '1'
+          }  
+        
+    }
 
-const OfferArticle = styled.div`
-    /* width: 90%; */
-    height:70%;
-    border: 2px solid black;
-    text-align:center;
-`;
-
-const disappear = keyframes`
-    from{
-        background-color:green;
-  height:100%;
-  width:100%;
+    showHeroes = () => 
+    Cells.map((cell, i) => (
+        
+            <Cell 
+            width={cell.width} 
+            height={cell.height} 
+            left={cell.left} 
+            top={cell.top} 
+            >
+                <ImageContainerWrapper>
+                    <ImageContainer img={cell.img} >
+                        
+                    </ImageContainer>
+                </ImageContainerWrapper>
+                
+                </Cell>
+        
+    ))
+    render() {
+        return (
+            <Grid
+            name={this.props.name}
+                style={{opacity:this.state.opacity}}
+                columns={'repeat(2,minmax(max-content,auto))'}
+                rows={'repeat(6, minmax(200px, auto))'}
+                gap='10px'
+                >
+            {this.showHeroes()}
+            </Grid>
+        );
+    }
 }
-to {
-  height:0;
-  width:0;
-  background-color: transparent;
-}
-`;
-
-
-
-const Offer = () => {
-    return (
-        <div>
-            <OfferSection>
-                <OfferWrapper>
-
-                    <OfferContainer image={ImageGearbox}>
-
-                    </OfferContainer>
-                    <OfferContainer>
-                        <OfferArticleWrapper>
-                            <Fade bottom>
-                                <OfferArticleHeading>s</OfferArticleHeading>
-                                <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
-                            </Fade>
-                        </OfferArticleWrapper>
-                    </OfferContainer>
-                    <OfferContainer>
-                        <OfferArticleWrapper>
-                            <Fade>
-                                <OfferArticleHeading>d</OfferArticleHeading>
-                                <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
-                            </Fade>
-                        </OfferArticleWrapper>
-                    </OfferContainer>
-                    <OfferContainer image={ImageKolo}>
-
-                    </OfferContainer>
-                    <OfferContainer image={ImageWnetrze}>
-
-                    </OfferContainer>
-                    <OfferContainer>
-                        <OfferArticleWrapper>
-                            <Fade>
-                                <OfferArticleHeading>f</OfferArticleHeading>
-                                <OfferArticle>Tempor anim officia proident irure. Id id est proident cupidatat minim qui est. Cupidatat non enim eiusmod aute velit voluptate est. Officia enim incididunt ad laborum non officia exercitation. Officia culpa eu cupidatat tempor amet minim magna laboris amet do duis exercitation. Adipisicing sit quis occaecat adipisicing nulla dolor minim minim ad ullamco qui.</OfferArticle>
-                            </Fade>
-
-                        </OfferArticleWrapper>
-                    </OfferContainer>
-                </OfferWrapper>
-            </OfferSection>
-        </div>
-    );
-};
 
 export default Offer;
+
+
+
+

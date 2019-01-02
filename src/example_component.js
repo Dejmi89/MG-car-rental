@@ -22,7 +22,24 @@ const fadeIn = keyframes`
         opacity:0
         }
 `;
-
+const shineEffect = keyframes`
+  0% {
+    
+   transform: translateX(-200px) skewX(-30deg);
+   opacity:0;
+   width: 0;
+    }
+  20%{
+    opacity:0.3;
+    
+  }
+  100% {
+    
+    transform: translateX(100px) skewX(-30deg);
+    opacity:0;
+    width:100%;
+  }
+`;
 
 
 const Cells = [
@@ -33,7 +50,7 @@ const Cells = [
         left:2,
         top: 1,
         img: img2,
-        animation: fadeIn
+        animation: shineEffect   
     },
     {
         width: 1,
@@ -41,7 +58,7 @@ const Cells = [
         left: 2,
         top: 4,
         img: img3,
-        animation: fadeIn
+        animation: shineEffect   
     },
     {
         width: 1,
@@ -49,7 +66,7 @@ const Cells = [
         left: 3,
         top: 4,
         img: img4,
-        animation: fadeIn
+        animation: shineEffect   
     },
     {
         width: 1,
@@ -57,7 +74,7 @@ const Cells = [
         left: 4,
         top: 4,
         img: img5,
-        animation: fadeIn
+        animation: shineEffect
     },
     {
         width: 1,
@@ -65,7 +82,7 @@ const Cells = [
         left: 7,
         top: 1,
         img: img6,
-        animation: fadeIn
+        animation: shineEffect
     },
     {
         width:1 ,
@@ -73,7 +90,7 @@ const Cells = [
         left: 8,
         top: 1,
         img: img7,
-        animation: fadeIn
+        animation: shineEffect
     },
     {
         width: 2,
@@ -81,7 +98,7 @@ const Cells = [
         left: 5,
         top: 1,
         img: img8,
-        animation: fadeIn
+        animation: shineEffect
     },
     {
         width: 2,
@@ -89,7 +106,7 @@ const Cells = [
         left: 5,
         top: 3,
         img: img9,
-        animation: fadeIn
+        animation: shineEffect
     },
     {
         width: 2,
@@ -97,7 +114,8 @@ const Cells = [
         left: 7,
         top: 2,
         img: img10,
-        animation: fadeIn
+        animation: shineEffect,
+        animationDelay: 3 
     },
     {
         width: 1,
@@ -105,7 +123,8 @@ const Cells = [
         left: 7,
         top: 4,
         img: img11,
-        animation: fadeIn
+        animation: shineEffect,
+        animationDelay:6 
     },
     {
         width: 1,
@@ -113,17 +132,18 @@ const Cells = [
         left: 8,
         top: 4,
         img: img1,
-        animation: fadeIn
+        animation: shineEffect
     },
     
 ]
 
 const ImageContainerWrapper = styled.div`
-        border: 2px solid black;
+        /* border: 2px solid black; */
         width: 100%;
         height: 100%;
         `;
-       
+
+      
 
 const ImageContainer = styled.div`
         background-image:  url(${props => props.img});
@@ -136,6 +156,15 @@ const ImageContainer = styled.div`
             opacity:0.7
         }
     `;
+
+const SquareToAnimate2 = styled.div`
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.3;
+
+    animation: ${shineEffect} 1s forwards;
+`;
 
 class Gallery extends Component {
     constructor(props){
@@ -158,7 +187,9 @@ class Gallery extends Component {
                 top={cell.top} 
                 >
                     <ImageContainerWrapper>
-                        <ImageContainer img={cell.img} animation={cell.animation}></ImageContainer>
+                        <ImageContainer img={cell.img} >
+                
+                        </ImageContainer>
                     </ImageContainerWrapper>
                     
                     </Cell>

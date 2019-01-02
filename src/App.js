@@ -51,7 +51,8 @@ class App extends Component {
     return (
       <div >
         <Header scrollFunc={this.scrollTo}></Header>
-        {/* <Offer ></Offer> */}
+        <h1 style={{textAlign:'center'}}>Oferta</h1>
+        <Offer ></Offer>
         <h1 style={{textAlign:'center'}}>Galeria</h1>
         <Gallery name="galeria" toTop={this.scrollToTop}></Gallery>
         
