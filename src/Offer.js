@@ -7,18 +7,29 @@ import img from './resources/images/gearbox_stick.jpg';
 import img2 from './resources/images/mg_hood.jpg';
 import img3 from './resources/images/maskaPrzod.jpg';
 
+const text1 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
+const text2 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
+const text3 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
+
+const fadeIn = keyframes`
+    from{
+        opacity:0
+        }
+    to{
+        opacity:1
+        }
+        `;
 
 
 const Cells = [
-    
- 
-    {
+  
+       {
         width: 1,
         height: 2,
         left:1,
         top: 1,
         img: img,
-        animation: ''   
+        animation: fadeIn  
     },
     {
         width: 1,
@@ -26,7 +37,8 @@ const Cells = [
         left:2,
         top: 1,
         img: '',
-        animation: ''   
+        animation: '',
+        text:text2   
     },
     {
         width: 1,
@@ -34,7 +46,8 @@ const Cells = [
         left:1,
         top: 3,
         img: '',
-        animation: ''   
+        animation: '',
+        text: text1   
     },
     {
         width: 1,
@@ -42,7 +55,7 @@ const Cells = [
         left:2,
         top: 3,
         img: img2,
-        animation: ''   
+        animation: fadeIn  
     },
     {
         width: 1,
@@ -50,7 +63,7 @@ const Cells = [
         left:1,
         top: 5,
         img: img3,
-        animation: ''   
+        animation: fadeIn   
     },
     {
         width: 1,
@@ -58,10 +71,13 @@ const Cells = [
         left:2,
         top: 5,
         img: '',
-        animation: ''   
+        animation: '',
+        text:text3   
     }
     
 ]
+
+
 
 const ImageContainerWrapper = styled.div`
         /* border: 2px solid black; */
@@ -85,6 +101,10 @@ const ImageContainer = styled.div`
     `;
 
 
+
+
+
+
 class Offer extends Component {
     constructor(props){
         super(props);
@@ -104,9 +124,18 @@ class Offer extends Component {
             top={cell.top} 
             >
                 <ImageContainerWrapper>
-                    <ImageContainer img={cell.img} >
-                        
+                    <ImageContainer 
+                    img={cell.img}
+                    animation={cell.animation ? cell.animation : ''}
+                    >
+                    <Fade>
+                    {cell.text ? cell.text : ''}
+                    </Fade>
+                    
                     </ImageContainer>
+                        
+                    
+                    
                 </ImageContainerWrapper>
                 
                 </Cell>

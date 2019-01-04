@@ -115,7 +115,7 @@ const Cells = [
         top: 2,
         img: img10,
         animation: shineEffect,
-        animationDelay: 3 
+        animationDelay: 3
     },
     {
         width: 1,
@@ -151,9 +151,10 @@ const ImageContainer = styled.div`
         background-size:cover;
         width:100%;
         height:100%;
-        animation: ${props => props.animation} 3s;
+        animation: ${props => props.animation} ;
+        overflow:hidden;
         &:hover{
-            opacity:0.7
+            animation: ${props => props.animation}; 
         }
     `;
 
@@ -187,8 +188,10 @@ class Gallery extends Component {
                 top={cell.top} 
                 >
                     <ImageContainerWrapper>
-                        <ImageContainer img={cell.img} >
-                
+                        <ImageContainer 
+                        img={cell.img}
+                        style={{animationDelay:`${cell.animationDelay}s`}} >
+                            <SquareToAnimate2/>
                         </ImageContainer>
                     </ImageContainerWrapper>
                     
