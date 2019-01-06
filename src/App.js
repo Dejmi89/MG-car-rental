@@ -50,13 +50,13 @@ class App extends Component {
   render() {
     return (
       <div >
-        <Header scrollFunc={this.scrollTo}></Header>
+        <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>
         <h1 style={{textAlign:'center'}}>Oferta</h1>
-        <Offer ></Offer>
+        <Offer name="offer" toTop={this.scrollToTop}></Offer>
         <h1 style={{textAlign:'center'}}>Galeria</h1>
-        <Gallery name="galeria" toTop={this.scrollToTop}></Gallery>
+        <Gallery name="gallery" toTop={this.scrollToTop}></Gallery>
         
-        {/* <Form></Form> */}
+        <Form name="contact" toTop={this.scrollToTop}></Form>
         {/* {this.state.apiResponse} */}
       </div>
     );

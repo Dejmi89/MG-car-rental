@@ -2,6 +2,14 @@ import React , { Component }from 'react';
 import styled, {keyframes} from 'styled-components';
 import {Grid, Cell} from 'styled-css-grid';
 import Fade from 'react-reveal';
+import {
+    Link,
+    Element,
+    Events,
+    animateScroll as scroll,
+    scrollSpy,
+    scroller
+  } from "react-scroll";
 
 import img from './resources/images/gearbox_stick.jpg';
 import img2 from './resources/images/mg_hood.jpg';
@@ -77,8 +85,6 @@ const Cells = [
     
 ]
 
-
-
 const ImageContainerWrapper = styled.div`
         /* border: 2px solid black; */
         width: 100%;
@@ -117,7 +123,7 @@ class Offer extends Component {
     showHeroes = () => 
     Cells.map((cell, i) => (
         
-            <Cell 
+            <Cell key={i+' offer'}
             width={cell.width} 
             height={cell.height} 
             left={cell.left} 
@@ -141,6 +147,15 @@ class Offer extends Component {
                 </Cell>
         
     ))
+
+    scrollTo() {
+        scroller.scrollTo("scroll-to-element", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuint"
+        });
+      }
+    
     render() {
         return (
             <Grid

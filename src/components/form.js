@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MediaQueries from 'react-responsive';
 import styled from 'styled-components';
+import {
+    Link,
+    Element,
+    Events,
+    animateScroll as scroll,
+    scrollSpy,
+    scroller
+  } from "react-scroll";
 
 class Form extends Component {
 
@@ -32,12 +40,18 @@ class Form extends Component {
         document.getElementById('contact-form').reset();
     }
 
-
+    scrollTo() {
+        scroller.scrollTo("scroll-to-element", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuint"
+        });
+      }
 
     render() {
 
         return (
-            <div>
+            <div name={this.props.name}>
                 <MediaQueries minDeviceWidth={1000}>
                     <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
                         <div className="form-group">

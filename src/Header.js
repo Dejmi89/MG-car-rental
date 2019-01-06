@@ -17,7 +17,23 @@ import InstagramIcon from '../src/resources/icons/instagram.png';
 import YouTubeIcon from '../src/resources/icons/youtube.png';
 
 
-
+const fadeIn = keyframes`
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+        }
+`;
+const bounceFromRight = keyframes`
+    0%{
+        width:90%
+    }
+    
+    100%{
+        width:50%
+        }
+`;
 
 const HeaderSection = styled.div`
     background-image: url(${img});
@@ -113,10 +129,38 @@ const MenuText = styled.h2`
     color: #ffffff;
             
 `;
-
-const fadeIn = keyframes`
-    from{opacity:0}
-    to{opacity:1}
+const HeaderOnScrollWrapper = styled.div`
+    display: flex;
+    align-items:center;
+    justify-content:right;
+    margin-right:0.3%;
+    flex-wrap:wrap;
+    position:fixed;
+    right:0;
+    width:8%;
+    height:20vh;
+    z-index:1;
+    animation:${fadeIn} 2s forwards; 
+    /* background-color:orange; */
+`;
+const HeaderOnScrollField = styled.div`
+    display: flex;
+    width:90%;
+    height:20%;
+    border:1px solid white;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    font-family: 'Satisfy', cursive;
+    font-size:1.3em;
+    animation: ${bounceFromRight} 1s forwards;
+    animation-delay: ${props=>props.delay}s;
+    &:hover {
+        background-color:black;
+        color:white;
+        border: 1px solid black;
+        
+    }
 `;
 
 class Header extends React.Component {
@@ -149,6 +193,7 @@ class Header extends React.Component {
           smooth: "easeInOutQuint"
         });
       }
+    
 
     render() {
         
@@ -165,17 +210,22 @@ class Header extends React.Component {
                     </SCWrapper>
                     
                         <MenuWrapper>
+                            {this.state.scrolling === true ? 
+                            <HeaderOnScrollWrapper>
+                                <HeaderOnScrollField  delay={0.2} onClick={this.props.toTop}>Do góry</HeaderOnScrollField>
+                                <HeaderOnScrollField  delay={0.3}><Link to='offer' smooth={true} duration={1000}>Oferta</Link></HeaderOnScrollField>
+                                <HeaderOnScrollField  delay={0.4}><Link to='gallery' smooth={true} duration={1000}>Galeria</Link></HeaderOnScrollField>
+                                <HeaderOnScrollField  delay={0.5}><Link to='contact' smooth={true} duration={1000}>Kontakt</Link></HeaderOnScrollField>
+                            </HeaderOnScrollWrapper>
                         
-                        <Menu opacity={0.3} style={{position: this.state.scrolling ? 'fixed' : '',
-                                zIndex: 1,
-                                backgroundColor: this.state.scrolling ? 'red' : 'transparent',
-                                height: this.state.scrolling ? '6%' : '30%'
-                                }}>
+                        
+                        : ''}
+                        <Menu opacity={0.3}>
                             <Fade><Link to='galeria' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Home </div></Link></Fade>
-                            <Fade><div>Offer</div></Fade>
+                            <Fade><Link to='offer' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Offer</div></Link></Fade>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
-                            <Fade><div>Gallery</div></Fade>
-                            <Fade><div>Contact</div></Fade>                       
+                            <Fade><Link to='gallery' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Gallery</div></Link></Fade>
+                            <Fade><Link to='contact' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Contact</div></Link></Fade>                       
                          </Menu>
                         
                         <MenuText>
