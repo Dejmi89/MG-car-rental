@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import Fade from 'react-reveal';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFacebookSquare, faLifeRing } from '@fortawesome/free-solid-svg-icons';
 import * as Scroll from "react-scroll";
 import {
   Link,
@@ -10,7 +13,6 @@ import {
   scrollSpy,
   scroller
 } from "react-scroll";
-
 import img from '../src/resources/images/carIntheWoods.jpg';
 import FacebookIcon from '../src/resources/icons/facebook_blue.png';
 import InstagramIcon from '../src/resources/icons/instagram.png';
@@ -204,7 +206,7 @@ class Header extends React.Component {
                 <HeaderWrapper>
                     
                     <SCWrapper>
-                         <SocialIcon image={FacebookIcon} ><a href='www.facebook.com' target='_blank'><h3>l</h3></a></SocialIcon>
+                         <SocialIcon image={FacebookIcon}><a href='www.facebook.com' target='_blank'><h3>l</h3></a></SocialIcon>
                          <SocialIcon image={InstagramIcon}><a href='www.instagram.com' target='_blank'><h3>l</h3></a></SocialIcon>
                          <SocialIcon image={YouTubeIcon}><a href='www.youtube.com' target='_blank'><h3>l</h3></a></SocialIcon>
                     </SCWrapper>
@@ -221,11 +223,39 @@ class Header extends React.Component {
                         
                         : ''}
                         <Menu opacity={0.3}>
-                            <Fade><Link to='galeria' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Home </div></Link></Fade>
-                            <Fade><Link to='offer' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Offer</div></Link></Fade>
+                            <Fade>
+                                <Link 
+                                to='galeria' 
+                                smooth={true} 
+                                duration={1000}>
+                                    <div onClick={this.props.scrollFunc}>Home </div>
+                                </Link>
+                            </Fade>
+                            <Fade>
+                                <Link 
+                                to='offer' 
+                                smooth={true} 
+                                duration={1000}>
+                                    <div onClick={this.props.scrollFunc}>Offer</div>
+                                </Link>
+                            </Fade>
                             <CarAnimation>Czerwony Kabriolet</CarAnimation>
-                            <Fade><Link to='gallery' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Gallery</div></Link></Fade>
-                            <Fade><Link to='contact' smooth={true} duration={1000}><div onClick={this.props.scrollFunc}>Contact</div></Link></Fade>                       
+                            <Fade>
+                                <Link 
+                                to='gallery' 
+                                smooth={true} 
+                                duration={1000}>
+                                    <div onClick={this.props.scrollFunc}>Gallery</div>
+                                </Link>
+                            </Fade>
+                            <Fade>
+                                <Link 
+                                to='contact' 
+                                smooth={true} 
+                                duration={1000}>
+                                    <div onClick={this.props.scrollFunc}>Contact</div>
+                                </Link>
+                            </Fade>                       
                          </Menu>
                         
                         <MenuText>

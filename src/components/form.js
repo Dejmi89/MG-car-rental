@@ -11,8 +11,10 @@ import {
     scroller
   } from "react-scroll";
 
-class Form extends Component {
+const Form2 = styled.form ``; 
 
+class Form extends Component {
+    
     handleSubmit(e) {
         e.preventDefault();
         const name = document.getElementById('name').value;
@@ -47,29 +49,57 @@ class Form extends Component {
           smooth: "easeInOutQuint"
         });
       }
+    
+    
 
     render() {
 
         return (
             <div name={this.props.name}>
-                <MediaQueries minDeviceWidth={1000}>
-                    <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                        <div className="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" className="form-control" id="name" />
+                
+                    <form 
+                    id="contact-form" 
+                    onSubmit={this.handleSubmit.bind(this)} 
+                    method="POST"
+                    style={{
+                        display:'flex',
+                        flexDirection:'column',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        flexWrap:'nowrap',
+                        border:'2px solid black',
+                        width:'40%',
+                        height:'30vh'
+                        }}>
+                        <div 
+                        className="form-group"
+                        style={{
+                            width:'40%',
+                            border:'2px solid black'
+                        }}>
+                            <label for="name" style={{color:'green'}}>Podaj imię</label>
+                            <input 
+                            type="text" 
+                            className="form-control" 
+                            id="name" 
+                            style={{
+                                width:'100%',
+                                marginLeft:'10px'
+                            }}
+                            />
                         </div>
                         <div className="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="exampleInputEmail1">Podaj E-mail</label>
                             <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
-                            <label for="message">Message</label>
+                            <label for="message">Twoja wiadomość</label>
                             <textarea className="form-control" rows="5" id="message"></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
 
-                </MediaQueries>
+                
 
             </div>
         );

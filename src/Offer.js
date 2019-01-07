@@ -1,7 +1,7 @@
 import React , { Component }from 'react';
 import styled, {keyframes} from 'styled-components';
 import {Grid, Cell} from 'styled-css-grid';
-import Fade from 'react-reveal';
+import Fade, {Zoom} from 'react-reveal';
 import {
     Link,
     Element,
@@ -89,11 +89,9 @@ const ImageContainerWrapper = styled.div`
         /* border: 2px solid black; */
         width: 100%;
         height: 100%;
-        border-radius:1%;
         overflow:hidden;
         `;
-
-
+        
 const ImageContainer = styled.div`
         background-image:  url(${props => props.img});
         background-position:center;
@@ -101,15 +99,8 @@ const ImageContainer = styled.div`
         width:100%;
         height:100%;
         animation: ${props => props.animation} 3s;
-        &:hover{
-            opacity:0.7
-        }
+       
     `;
-
-
-
-
-
 
 class Offer extends Component {
     constructor(props){
@@ -134,9 +125,9 @@ class Offer extends Component {
                     img={cell.img}
                     animation={cell.animation ? cell.animation : ''}
                     >
-                    <Fade>
+                    <Zoom>
                     {cell.text ? cell.text : ''}
-                    </Fade>
+                    </Zoom>
                     
                     </ImageContainer>
                         
