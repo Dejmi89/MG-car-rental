@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import Fade from 'react-reveal';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faFacebookSquare, faLifeRing } from '@fortawesome/free-solid-svg-icons';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Scroll from "react-scroll";
 import {
   Link,
@@ -18,6 +18,7 @@ import FacebookIcon from '../src/resources/icons/facebook_blue.png';
 import InstagramIcon from '../src/resources/icons/instagram.png';
 import YouTubeIcon from '../src/resources/icons/youtube.png';
 
+library.add(fab);
 
 const fadeIn = keyframes`
     from{
@@ -228,7 +229,7 @@ class Header extends React.Component {
                                 to='galeria' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Home </div>
+                                    <div onClick={this.props.scrollFunc}>Home <FontAwesomeIcon icon={['fab', 'facebook-f']}/></div>
                                 </Link>
                             </Fade>
                             <Fade>
