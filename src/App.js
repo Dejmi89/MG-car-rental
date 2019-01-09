@@ -58,7 +58,7 @@ class App extends Component {
         <h1 style={{textAlign:'center'}}>Galeria</h1>
         <Gallery name="gallery" toTop={this.scrollToTop}></Gallery>
         
-        <Form name="contact" toTop={this.scrollToTop}></Form>
+        {/* <Form name="contact" toTop={this.scrollToTop}></Form> */}
         {/* {this.state.apiResponse} */}
       </div>
     );

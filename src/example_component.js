@@ -176,24 +176,22 @@ const ImageContainer = styled.div`
     `;
 
 const SquareToAnimate2 = styled.div`
-        
-        /* height: 100%;
-        background-color: white;
-        opacity: 0.3; */
-        animation: ${props => props.isOn === true ? shineEffect : 'none'} 2s forwards;
-        /* animation-delay:${props => props.animationDelay}s; */
-`;
+     animation: ${props => props.isOn === true ? shineEffect : 'none'} 2s forwards;
+     `;
 
 const ImageClicked = styled.div`
-    position:absolute;
+    position:fixed;
+    top: 10%;
+    left: 10%;
+    display:block;
     z-index:1;
-    width: 100%;
-    height: 100vh;
+    width: 80%;
+    height: 80vh;
     border: 2px solid black;
     background-color:green;
     background-image: ${props => `url(${props.foto})`};
     background-position:center;
-    `
+    `;
 
 class Gallery extends Component {
     constructor(props){
@@ -215,6 +213,7 @@ class Gallery extends Component {
             fotoUrl: ''
         })
     }
+   
      showHeroes = () => 
         Cells.map((cell, i) => (
             
@@ -225,31 +224,24 @@ class Gallery extends Component {
                 top={cell.top} 
                 onClick={this.handleClick}
                 >
-                    <ImageContainerWrapper>
-                        <ImageContainer 
-                        img={cell.img}
+                    {/* <ImageContainerWrapper> */}
+                        <ImageContainer img={cell.img} 
                         >
-                            <SquareToAnimate2 
+                            {/* <SquareToAnimate2 
                             isOn={this.state.isOn}
                             animationDelay={cell.animationDelay}
-                            />
+                            /> */}
                         </ImageContainer>
-                    </ImageContainerWrapper> 
+                    {/* </ImageContainerWrapper>  */}
                 </Cell>
             
         ))
     
     render() {
         return (
-            <Fade onReveal={this.fireShineEffect}>
-                <div style={{position:'relative', width:'100%', height:'100vh'}}>
-                <ImageClicked 
-                    style={{display: this.state.imageClicked === true ? 'block' : 'none'}}
-                    fotoUrl={this.state.foto}
-                    onClick={this.handleClick}
-                    >
-            
-                    </ImageClicked>
+            // <Fade onReveal={this.fireShineEffect}> ---> powoduje miganie modala
+                
+                <div>
                     <Grid
                         name={this.props.name}
                         style={{opacity:this.state.opacity}}
@@ -257,16 +249,40 @@ class Gallery extends Component {
                         rows={'repeat(6, minmax(150px, auto))'}
                         gap='5px'
                     >
-                
-                        {this.showHeroes()} 
-                    </Grid>
-                    
-                </div>
             
-            </Fade>
+                        {this.showHeroes()} 
+                        
+                    </Grid>
+                    <ImageClicked style={{display: this.state.imageClicked ? 'block' : 'none'}}>
+                        
+                    </ImageClicked>
+                </div>    
+                
+            
+            // </Fade>
             
         );
     }
 }
 
 export default Gallery;
+
+
+
+class GalleryModal extends Component {
+    constructor(props) {
+        super(props);
+        this.state ={
+
+        }
+    }
+    
+    render() {
+        return (
+            <div>
+                
+            </div>
+        );
+    }
+}
+

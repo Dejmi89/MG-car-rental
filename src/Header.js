@@ -14,9 +14,7 @@ import {
   scroller
 } from "react-scroll";
 import img from '../src/resources/images/carIntheWoods.jpg';
-import FacebookIcon from '../src/resources/icons/facebook_blue.png';
-import InstagramIcon from '../src/resources/icons/instagram.png';
-import YouTubeIcon from '../src/resources/icons/youtube.png';
+
 
 library.add(fab);
 
@@ -42,48 +40,33 @@ const HeaderSection = styled.div`
     background-image: url(${img});
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
     background-position-y:65%;
     min-height:100vh;
     width: 100%;
     /* border: 2px solid black; */
     display:flex;
     align-items: center;
-    justify-content: center;
+    
 
 `;
 
 const HeaderWrapper = styled.div`
-    width:90%;
+    width:80%;
     height: 80vh;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     display:flex;
+    justify-content:center;
     
 `;
 
 const SCWrapper = styled.div`
     width: 10%;
-    height: 8%;
-    /* border: 2px solid black; */
+    height: 5%;
+    /* border: 2px solid white; */
     display:flex;
     flex-direction: row;
     justify-content:center;
-    align-items: center;
-    margin-left: 5px;
-    margin-top: 5px;
-`;
-
-const SocialIcon = styled.div`
-    background-image: ${props => `url(${props.image})`};
-    background-size:cover;
-    background-repeat: no-repeat;
-    width: 30%;
-    height: 80%;
-    /* font-size:1em; */
-    text-align:center;
-        h3{
-            visibility:hidden;
-        }
+    align-items: center;    
 `;
 
 const MenuWrapper = styled.div`
@@ -170,7 +153,10 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrolling: false
+            scrolling: false,
+            hovered: false,
+            hovered2: false,
+            hovered3: false
         };
     }
 
@@ -196,7 +182,21 @@ class Header extends React.Component {
           smooth: "easeInOutQuint"
         });
       }
-    
+    handleSocialIconStyle = () => {
+        this.setState({
+            hovered: !this.state.hovered,
+        })
+    }
+    handleSocialIconStyle2 = () => {
+        this.setState({
+            hovered2: !this.state.hovered2
+        })
+    }
+    handleSocialIconStyle3 = () => {
+        this.setState({
+            hovered3: !this.state.hovered3
+        })
+    }
 
     render() {
         
@@ -204,14 +204,33 @@ class Header extends React.Component {
             
         <div>
             <HeaderSection>
-                <HeaderWrapper>
-                    
-                    <SCWrapper>
-                         <SocialIcon image={FacebookIcon}><a href='www.facebook.com' target='_blank'><h3>l</h3></a></SocialIcon>
-                         <SocialIcon image={InstagramIcon}><a href='www.instagram.com' target='_blank'><h3>l</h3></a></SocialIcon>
-                         <SocialIcon image={YouTubeIcon}><a href='www.youtube.com' target='_blank'><h3>l</h3></a></SocialIcon>
+            <SCWrapper style={{alignSelf:'flex-start', marginTop:'1%'}}>
+                        <FontAwesomeIcon icon={['fab', 'facebook-f']} 
+                                        style={{
+                                            fontSize:'2em',
+                                            color: this.state.hovered ? 'lightblue' : 'white'
+                                            }}
+                                            onMouseEnter={this.handleSocialIconStyle}
+                                            onMouseLeave={this.handleSocialIconStyle}/>
+                        <FontAwesomeIcon icon={['fab', 'instagram']} 
+                                        style={{
+                                            fontSize:'2em', 
+                                            marginLeft:'15px',
+                                            color:this.state.hovered2 ? 'violet' : 'white'
+                                            }}
+                                            onMouseEnter={this.handleSocialIconStyle2}
+                                            onMouseLeave={this.handleSocialIconStyle2}/>
+                        <FontAwesomeIcon icon={['fab', 'youtube']} 
+                                        style={{
+                                            fontSize:'2em',
+                                            marginLeft:'15px',
+                                            color: this.state.hovered3? 'red' : 'white'
+                                            }}
+                                            onMouseEnter={this.handleSocialIconStyle3}
+                                            onMouseLeave={this.handleSocialIconStyle3}/>
                     </SCWrapper>
-                    
+
+                <HeaderWrapper>
                         <MenuWrapper>
                             {this.state.scrolling === true ? 
                             <HeaderOnScrollWrapper>
@@ -220,16 +239,15 @@ class Header extends React.Component {
                                 <HeaderOnScrollField  delay={0.4}><Link to='gallery' smooth={true} duration={1000}>Galeria</Link></HeaderOnScrollField>
                                 <HeaderOnScrollField  delay={0.5}><Link to='contact' smooth={true} duration={1000}>Kontakt</Link></HeaderOnScrollField>
                             </HeaderOnScrollWrapper>
-                        
-                        
                         : ''}
+
                         <Menu opacity={0.3}>
                             <Fade>
                                 <Link 
                                 to='galeria' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Home <FontAwesomeIcon icon={['fab', 'facebook-f']}/></div>
+                                    <div onClick={this.props.scrollFunc}>Home</div>
                                 </Link>
                             </Fade>
                             <Fade>
