@@ -12,7 +12,7 @@ import {
 import Form from '../src/components/form';
 import Header from './Header';
 import Offer from './Offer';
-import Gallery from './example_component';
+import Gallery from './Gallery';
 
 
 
