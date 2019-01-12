@@ -182,27 +182,41 @@ const SquareToAnimate2 = styled.div`
 const ClickedImageWrapper = styled.div`
     position:fixed;
     z-index:1;
-    width:50%;
-    height:50vh;
-    top:10%;
-    left:10%;
-    background-color:grey;
+    width:100%;
+    height:100vh;
+    top:0;
+    left:0;
+    background-color:rgba(0, 0, 0, 0.5);
+    
 `;
 
 const ClickedImage = styled.div`
-    /* position:fixed; */
-    top: 0;
-    left: 0;
+    position:fixed;
+    top:10%;
+    left:10%;
     z-index:1;
-    width: 50%;
-    height: 50vh;
-    border: 2px solid black;
-    background-color:green;
-    /* background-image: ${props => `url(${props.foto})`}; */
-    background-position:center;
+    width: 80%;
+    height: 80%;
+    border:5px solid white;
+        a{
+            color:black;
+            font-size:2.3em;
+            position:absolute;
+            right:0;
+            top:0;
+            background-color:white;
+            width:4%;
+            height:4%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-decoration:none;
+            border-radius:5%;
+            font-family: 'Satisfy', cursive;
+        }
         img{
-            width:50%;
-            height:50%;
+            width:100%;
+            height:100%;
         }
     `;
 
@@ -234,6 +248,22 @@ class Gallery extends Component {
             currentIndex: null
         })
     }
+    findPrev = (e) => {
+        if (e != undefined) {
+          e.preventDefault();
+        }
+        this.setState(prevState => ({
+          currentIndex: prevState.currentIndex -1
+        }));
+      }
+      findNext = (e) => {
+        if (e != undefined) {
+          e.preventDefault();
+        }
+        this.setState(prevState => ({
+          currentIndex: prevState.currentIndex + 1
+        }));
+      }
    
      showHeroes = () => 
         Cells.map((cell, i) => (
@@ -274,7 +304,11 @@ class Gallery extends Component {
                     </Grid>
                     <GalleryModal 
                         closeModal={this.closeModal} 
-                        imgSrc={this.state.currentIndex === null ? '' :Cells[this.state.currentIndex].img}
+                        findNext={this.findNext}
+                        findPrev={this.findPrev}
+                        imgSrc={this.state.currentIndex === null ? null :Cells[this.state.currentIndex].img}
+                        hasPrev={this.state.currentIndex  > 0}
+                        hasNext={this.state.currentIndex +1 < Cells.length}
                          />
                 </div>    
                 
@@ -293,18 +327,44 @@ class GalleryModal extends Component {
     constructor(props) {
         super(props);
         this.state ={
-
         }
+    }
+    componentDidMount() {
+        document.body.addEventListener('keydown', this.handleKeyDown);
+    }  
+    componentWillUnMount() {
+        document.body.removeEventListener('keydown', this.handleKeyDown);
+    }
+    handleKeyDown = (e) => {
+        if(e.keyCode === 27 )
+            this.props.closeModal();
+        if (e.keyCode === 37 && this.props.hasPrev)
+            this.props.findPrev();
+        if (e.keyCode === 39 && this.props.hasNext)
+            this.props.findNext();
     }
     
     render() {
-        const {closeModal, imgSrc } = this.props;
-       
+        const {closeModal, imgSrc, findNext,findPrev, hasNext, hasPrev } = this.props;
+        if(imgSrc === null){
+            return null;
+        }
 
         return (
             <div>
-                <ClickedImageWrapper onClick={closeModal}>
+                <ClickedImageWrapper>
                     <ClickedImage>
+                       <a href="..." onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
+                       {hasPrev && <a href="..." onClick={findPrev} className='left' onKeyDown={this.handleKeyDown}
+                                style={{
+                                    left:0,
+                                    top:'50%'
+                                }}>&lsaquo;</a>}
+                       {hasNext && <a href="..." onClick={findNext} onKeyDown={this.handleKeyDown}
+                                style={{
+                                    right:0,
+                                    top:'50%'
+                                }}>&rsaquo;</a>}
                         <img src = {imgSrc} alt='carImage' />
                     </ClickedImage>
                 </ClickedImageWrapper>
