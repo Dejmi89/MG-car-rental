@@ -24,10 +24,10 @@ import img11 from './resources/images/gearbox_stick.jpg';
 
 const fadeIn = keyframes`
     from{
-        opacity:1
+        opacity:0
         }
     to{
-        opacity:0
+        opacity:1
         }
 `;
 
@@ -41,10 +41,8 @@ const shineEffect = keyframes`
     }
   20%{
     opacity:0.3;
-    
   }
   100% {
-    
     transform: translateX(100px) skewX(-30deg);
     opacity:0;
     width:100%;
@@ -225,7 +223,7 @@ class Gallery extends Component {
         super(props);
           this.state = {
             currentIndex: null,
-            // isOn: false
+            isOn: false
           }        
     }
     fireShineEffect = () => {
@@ -274,12 +272,9 @@ class Gallery extends Component {
                 left={cell.left} 
                 top={cell.top} 
                 onClick={(e) => this.openModal(e,i)} 
-                >
+                >   
                         <ImageContainer img={cell.img} key={cell.img}>
-                            {/* <SquareToAnimate2 
-                            isOn={this.state.isOn}
-                            animationDelay={cell.animationDelay}
-                            /> */}
+                            {/* <SquareToAnimate2 isOn={this.state.isOn}/> */}
                         </ImageContainer>
                     
                 </Cell>
@@ -288,8 +283,6 @@ class Gallery extends Component {
     
     render() {
         return (
-            // <Fade onReveal={this.fireShineEffect}> ---> powoduje miganie modala
-                
                 <div>
                     <Grid
                         name={this.props.name}
@@ -311,10 +304,6 @@ class Gallery extends Component {
                         hasNext={this.state.currentIndex +1 < Cells.length}
                          />
                 </div>    
-                
-            
-            // </Fade>
-            
         );
     }
 }

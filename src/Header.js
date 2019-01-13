@@ -26,6 +26,7 @@ const fadeIn = keyframes`
         opacity:1
         }
 `;
+
 const bounceFromRight = keyframes`
     0%{
         width:90%
@@ -61,7 +62,7 @@ const HeaderWrapper = styled.div`
 
 const SCWrapper = styled.div`
     width: 10%;
-    height: 5%;
+    height: 15vh;
     /* border: 2px solid white; */
     display:flex;
     flex-direction: row;
@@ -204,17 +205,18 @@ class Header extends React.Component {
             
         <div>
             <HeaderSection>
-            <SCWrapper style={{alignSelf:'flex-start', marginTop:'1%'}}>
+            <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
-                                            fontSize:'2em',
+                                            fontSize: this.state.hovered ? '3em': '2em',
                                             color: this.state.hovered ? 'lightblue' : 'white'
                                             }}
+                                             
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
-                                            fontSize:'2em', 
+                                            fontSize: this.state.hovered2 ? '3em': '2em', 
                                             marginLeft:'15px',
                                             color:this.state.hovered2 ? 'violet' : 'white'
                                             }}
@@ -222,7 +224,7 @@ class Header extends React.Component {
                                             onMouseLeave={this.handleSocialIconStyle2}/>
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
-                                            fontSize:'2em',
+                                            fontSize: this.state.hovered3 ? '3em': '2em',
                                             marginLeft:'15px',
                                             color: this.state.hovered3? 'red' : 'white'
                                             }}
