@@ -176,6 +176,7 @@ class Header extends React.Component {
             this.setState({ scrolling: true });
         }
     }
+    
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
           duration: 800,

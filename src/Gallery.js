@@ -174,7 +174,7 @@ const ImageContainer = styled.div`
     `;
 
 const SquareToAnimate2 = styled.div`
-     animation: ${props => props.isOn === true ? shineEffect : 'none'} 2s forwards;
+     animation: ${props => props.galleryReveal === true ? shineEffect :'none'} 2s forwards;
      `;
 
 const ClickedImageWrapper = styled.div`
@@ -185,6 +185,7 @@ const ClickedImageWrapper = styled.div`
     top:0;
     left:0;
     background-color:rgba(0, 0, 0, 0.5);
+    
     
 `;
 
@@ -223,15 +224,16 @@ class Gallery extends Component {
         super(props);
           this.state = {
             currentIndex: null,
-            isOn: false
+            isOn: true,
+            galleryReveal: false
           }        
     }
-    fireShineEffect = () => {
-        this.setState({
-            isOn:!this.state.isOn
-        })
-    }
-   
+
+//     fireShineEffect = () => {
+//         this.setState({
+//             galleryReveal:!this.state.galleryReveal
+//         })
+// }
     openModal = (e,index) => {
         this.setState({
             currentIndex: index
@@ -262,10 +264,10 @@ class Gallery extends Component {
           currentIndex: prevState.currentIndex + 1
         }));
       }
-   
+
      showHeroes = () => 
         Cells.map((cell, i) => (
-            
+                
                 <Cell key={i}
                 width={cell.width} 
                 height={cell.height} 
@@ -274,15 +276,16 @@ class Gallery extends Component {
                 onClick={(e) => this.openModal(e,i)} 
                 >   
                         <ImageContainer img={cell.img} key={cell.img}>
-                            {/* <SquareToAnimate2 isOn={this.state.isOn}/> */}
+                              <SquareToAnimate2 galleryReveal={this.props.galleryReveal} /> 
                         </ImageContainer>
                     
                 </Cell>
-            
+                
         ))
     
     render() {
         return (
+            
                 <div>
                     <Grid
                         name={this.props.name}
@@ -291,7 +294,7 @@ class Gallery extends Component {
                         rows={'repeat(6, minmax(150px, auto))'}
                         gap='5px'
                     >
-            
+                        
                         {this.showHeroes()} 
                         
                     </Grid>
@@ -303,7 +306,8 @@ class Gallery extends Component {
                         hasPrev={this.state.currentIndex  > 0}
                         hasNext={this.state.currentIndex +1 < Cells.length}
                          />
-                </div>    
+                </div>   
+            
         );
     }
 }
