@@ -15,7 +15,7 @@ import img from './resources/images/gearbox_stick.jpg';
 import img2 from './resources/images/mg_hood.jpg';
 import img3 from './resources/images/maskaPrzod.jpg';
 
-const text1 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
+const text1 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb sadasdasdasdasdas';
 const text2 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
 const text3 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
 
@@ -27,7 +27,68 @@ const fadeIn = keyframes`
         opacity:1
         }
         `;
-
+const lineGrow = keyframes`
+0% {
+width: 0;
+background-color:transparent;
+margin-right:0;
+}
+100% {
+background-color:goldenrod;
+width: 18%;
+margin-right:40%;
+}
+`;
+const lineGrow2 = keyframes`
+0% {
+width: 0;
+background-color:transparent;
+margin-left:0;
+}
+100% {
+background-color:goldenrod;
+width: 14%;
+margin-left:50%;
+}
+`;
+const bounceFromRight = keyframes`
+    0% {
+      opacity:0;
+    margin-left: 1000%;
+    }
+    20% {
+    margin-left: -150%;
+    }
+    40% {
+    margin-left: 100%;
+    }
+    60% {
+    margin-left: -100%;
+    }
+    70% {
+    margin-left: 50%;
+    }
+    80% {
+    margin-left: -50%;
+    }
+    90% {
+    margin-left: 25%;
+    }
+    95% {
+    margin-left: -25%;
+    }
+     97% {
+    margin-left: 13%;
+    }
+     99% {
+    margin-left: -7%;
+    }
+   
+    100% {
+      opacity:1;
+    margin-left: 0;
+    }
+`;
 
 const Cells = [
   
@@ -46,7 +107,8 @@ const Cells = [
         top: 1,
         img: '',
         animation: '',
-        text:text2   
+        text:text1,
+        title: 'Opcja 1'   
     },
     {
         width: 1,
@@ -55,7 +117,8 @@ const Cells = [
         top: 3,
         img: '',
         animation: '',
-        text: text1   
+        text: text2,
+        title: 'Opcja 2'   
     },
     {
         width: 1,
@@ -80,7 +143,8 @@ const Cells = [
         top: 5,
         img: '',
         animation: '',
-        text:text3   
+        text:text3,
+        title:'Opcja 3'   
     }
     
 ]
@@ -99,8 +163,34 @@ const ImageContainer = styled.div`
         width:100%;
         height:100%;
         animation: ${props => props.animation} 3s;
-       
+        /* border: 2px solid black; */
     `;
+
+const Line = styled.div`
+    height: 1px;
+    background-color: goldenrod;
+    margin: auto;
+    margin-top:-35px;
+    animation: ${lineGrow} 1s forwards;
+`;
+const Line2 = styled.div`
+    height: 2px;
+    margin: auto;
+    margin-top:5px;
+    animation: ${lineGrow2} 1s forwards;
+    animation-delay:1s;
+`;    
+const OfferTitle = styled.div`
+    width: 80%;
+    font-size:2.4em; 
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid black; */
+    p {
+    animation: ${bounceFromRight} 3s forwards;
+    }
+`;
 
 class Offer extends Component {
     constructor(props){
@@ -125,9 +215,15 @@ class Offer extends Component {
                     img={cell.img}
                     animation={cell.animation ? cell.animation : ''}
                     >
-                    <Zoom>
-                    {cell.text ? cell.text : ''}
-                    </Zoom>
+                    
+                    <OfferTitle style={{display: cell.text ? 'flex' : 'none'}}>
+                        <p>{cell.title}</p>
+                    </OfferTitle>
+                    <Line/>
+                    <Line2/>
+                    <div style={{textAlign:'center', marginTop:'10px'}}>
+                        {cell.text ? cell.text : ''}
+                    </div>
                     
                     </ImageContainer>
                         

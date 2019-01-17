@@ -43,7 +43,7 @@ class App extends Component {
   handleReveal = () =>  {
     if (window.scrollY <= 2000 && this.state.galleryReveal === true) {
         this.setState({ galleryReveal: false });
-    } else if (window.scrollY >= 2300 && this.state.galleryReveal !== true) {
+    } else if (window.scrollY >= 2100 && this.state.galleryReveal !== true) {
         this.setState({ galleryReveal: true });
     }
 }
@@ -63,7 +63,7 @@ class App extends Component {
 
   render() {
     return (
-      <div >
+      <div style={{fontFamily:'satisfy, cursive'}}>
         <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>
         <h1 style={{textAlign:'center', marginTop:'2%', marginBottom:'2%'}}>Oferta</h1>
         <Offer name="offer" toTop={this.scrollToTop}></Offer>
