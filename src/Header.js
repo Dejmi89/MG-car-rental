@@ -70,6 +70,7 @@ const SCWrapper = styled.div`
     align-items: center;    
 `;
 
+
 const MenuWrapper = styled.div`
     width: 80%;
     height: 50%;

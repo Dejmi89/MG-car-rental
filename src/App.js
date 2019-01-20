@@ -13,6 +13,7 @@ import Form from '../src/components/form';
 import Header from './Header';
 import Offer from './Offer';
 import Gallery from './Gallery';
+import Footer from './Footer';
 
 
 
@@ -72,6 +73,7 @@ class App extends Component {
         
         {/* <Form name="contact" toTop={this.scrollToTop}></Form> */}
         {/* {this.state.apiResponse} */}
+        <Footer/>
       </div>
     );
   }
