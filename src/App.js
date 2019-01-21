@@ -66,12 +66,18 @@ class App extends Component {
     return (
       <div style={{fontFamily:'satisfy, cursive'}}>
         <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>
-        <h1 style={{textAlign:'center', marginTop:'2%', marginBottom:'2%'}}>Oferta</h1>
-        <Offer name="offer" toTop={this.scrollToTop}></Offer>
-        <h1 style={{textAlign:'center'}} >Galeria</h1>
-        <Gallery name="gallery" toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
-        
-        {/* <Form name="contact" toTop={this.scrollToTop}></Form> */}
+        <h1 style={{
+          textAlign:'center', 
+          marginTop:'2%', 
+          marginBottom:'2%',
+          fontWeight:'500', 
+          fontSize:'2.3em',
+          }} name="offer">Oferta</h1>
+        <Offer toTop={this.scrollToTop}></Offer>
+        <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="gallery">Galeria</h1>
+        <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
+        <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="contact">Kontakt</h1>
+        <Form toTop={this.scrollToTop}></Form>
         {/* {this.state.apiResponse} */}
         <Footer/>
       </div>

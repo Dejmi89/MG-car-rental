@@ -55,48 +55,117 @@ class Form extends Component {
     render() {
 
         return (
-            <div name={this.props.name}>
+            <div name={this.props.name} 
+            style={{
+                display:'grid', 
+                gridTemplateColumns:'50% 50%', 
+                gridTemplateRows:'auto',
+                marginTop:'5%'}}>
                 
                     <form 
                     id="contact-form" 
                     onSubmit={this.handleSubmit.bind(this)} 
                     method="POST"
                     style={{
-                        display:'flex',
-                        flexDirection:'column',
-                        justifyContent:'center',
-                        alignItems:'center',
-                        flexWrap:'nowrap',
-                        border:'2px solid black',
-                        width:'40%',
-                        height:'30vh'
+                        display: "grid",
+                        gridColumn: "2/3",
+                        gridRow: "auto",
+                        gridTemplateColumns: "100%",
+                        gridTemplateRows: "auto",
+                        fontSize:'1.7em',
+                        // border: "2px solid black",
+                        width: "100%",
+                        height: "50vh"
                         }}>
                         <div 
                         className="form-group"
                         style={{
+                            display:'grid',
+                            justifySelf:'center',
+                            alignItems:'center',
                             width:'40%',
-                            border:'2px solid black'
+                            height:'5vh',
+                            // border:'2px solid black'
                         }}>
-                            <label for="name" style={{color:'green'}}>Podaj imię</label>
+                            <label for="name" 
+                                    style={{
+                                        justifySelf:'center'
+                                        }}>Podaj imie</label>
                             <input 
                             type="text" 
                             className="form-control" 
                             id="name" 
                             style={{
-                                width:'100%',
-                                marginLeft:'10px'
+                                width:'80%',
+                                height:'3vh',
+                                display:'grid',
+                                justifySelf:'center'
+                                
                             }}
                             />
                         </div>
-                        <div className="form-group">
-                            <label for="exampleInputEmail1">Podaj E-mail</label>
-                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+                        <div 
+                            className="form-group"
+                            style={{
+                                display:'grid',
+                                justifySelf:'center',
+                                // border: '2px solid black',
+                                alignItems:'center',
+                                width:'40%',
+                                height:'5vh'
+                            }}
+                        >
+                            <label 
+                                for="exampleInputEmail1"
+                                style={{
+                                    justifySelf:'center'
+                                }}>Podaj e-mail</label>
+                            <input 
+                            type="email" 
+                            className="form-control" 
+                            id="email" 
+                            aria-describedby="emailHelp" 
+                            style={{
+                                width:'80%',
+                                height:'3vh',
+                                justifySelf:'center'
+                            }}/>
                         </div>
-                        <div className="form-group">
-                            <label for="message">Twoja wiadomość</label>
-                            <textarea className="form-control" rows="5" id="message"></textarea>
+                        <div 
+                            className="form-group"
+                            style={{
+                                justifySelf:'center',
+                                display:'grid',
+                                // border:'2px solid black',
+                                width:'40%',
+                                height:'5vh',
+                            }}>
+                            <label 
+                                for="message"
+                                style={{
+                                    justifySelf:'center'
+                                }}>Twoja wiadomosc</label>
+                            <textarea 
+                            maxLength='350'
+                            className="form-control" 
+                            rows="7" 
+                            id="message"
+                            style={{
+                                width:'90%',
+                                justifySelf:'center',
+                                resize:'none',
+                                
+                            }}></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button 
+                            type="submit" 
+                            className="btn btn-primary"
+                            style={{
+                                justifySelf:'center',
+                                width:'20%',
+                                height:'5vh',
+                                marginTop:'10%'
+                                }}>Submit</button>
                     </form>
 
                 

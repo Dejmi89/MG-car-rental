@@ -229,11 +229,6 @@ class Gallery extends Component {
           }        
     }
 
-//     fireShineEffect = () => {
-//         this.setState({
-//             galleryReveal:!this.state.galleryReveal
-//         })
-// }
     openModal = (e,index) => {
         this.setState({
             currentIndex: index
@@ -293,6 +288,7 @@ class Gallery extends Component {
                         columns={'repeat(9,minmax(max-content,auto))'}
                         rows={'repeat(6, minmax(150px, auto))'}
                         gap='5px'
+                        
                     >
                         
                         {this.showHeroes()} 

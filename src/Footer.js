@@ -18,7 +18,7 @@ class Footer extends Component {
     }
     render() {
         return (
-            <div style={{display: 'flex', justifyContent:'flex-end'}}>
+            <div style={{display: 'flex', justifyContent:'flex-end', marginTop:'5%'}}>
                     <div style={{ marginRight:'2%'}}>
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
