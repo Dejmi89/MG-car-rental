@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MediaQueries from 'react-responsive';
+import InputAnimation from './inputAnimation';
 import styled from 'styled-components';
 import {
     Link,
@@ -11,7 +11,7 @@ import {
     scroller
   } from "react-scroll";
 
-const Form2 = styled.form ``; 
+
 
 class Form extends Component {
     
@@ -75,33 +75,36 @@ class Form extends Component {
                         fontSize:'1.7em',
                         // border: "2px solid black",
                         width: "100%",
-                        height: "50vh"
-                        }}>
+                        height: "40vh",
+                        // alignContent:'center'
+                        }}
+                        >
                         <div 
                         className="form-group"
                         style={{
                             display:'grid',
                             justifySelf:'center',
-                            alignItems:'center',
+                            // alignContent:'center',
                             width:'40%',
-                            height:'5vh',
+                            height:'3vh',
                             // border:'2px solid black'
                         }}>
                             <label for="name" 
                                     style={{
-                                        justifySelf:'center'
+                                        justifySelf:'center',
+                                        marginTop:'10%'
                                         }}>Podaj imie</label>
-                            <input 
+                            <InputAnimation 
                             type="text" 
                             className="form-control" 
                             id="name" 
-                            style={{
-                                width:'80%',
-                                height:'3vh',
-                                display:'grid',
-                                justifySelf:'center'
+                            // style={{
+                            //     width:'80%',
+                            //     height:'3vh',
+                            //     display:'grid',
+                            //     justifySelf:'center'
                                 
-                            }}
+                            // }}
                             />
                         </div>
                         <div 
@@ -118,19 +121,21 @@ class Form extends Component {
                             <label 
                                 for="exampleInputEmail1"
                                 style={{
-                                    justifySelf:'center'
+                                    justifySelf:'center',
+                                    marginTop:'-20%'
                                 }}>Podaj e-mail</label>
-                            <input 
+                            <InputAnimation 
                             type="email" 
                             className="form-control" 
                             id="email" 
                             aria-describedby="emailHelp" 
-                            style={{
-                                width:'80%',
-                                height:'3vh',
-                                justifySelf:'center'
-                            }}/>
-                        </div>
+                            // style={{
+                            //     width:'80%',
+                            //     height:'3vh',
+                            //     justifySelf:'center'
+                            // }}/
+                            >
+                        </InputAnimation>
                         <div 
                             className="form-group"
                             style={{
@@ -166,6 +171,7 @@ class Form extends Component {
                                 height:'5vh',
                                 marginTop:'10%'
                                 }}>Submit</button>
+                            </div>
                     </form>
 
                 

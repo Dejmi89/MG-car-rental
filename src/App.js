@@ -14,6 +14,8 @@ import Header from './Header';
 import Offer from './Offer';
 import Gallery from './Gallery';
 import Footer from './Footer';
+import InputAnimation from './components/inputAnimation';
+
 
 
 
@@ -80,6 +82,8 @@ class App extends Component {
         <Form toTop={this.scrollToTop}></Form>
         {/* {this.state.apiResponse} */}
         <Footer/>
+        <InputAnimation/>
+        
       </div>
     );
   }
