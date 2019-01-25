@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import InputAnimation from './inputAnimation';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import {
     Link,
     Element,
@@ -10,6 +10,30 @@ import {
     scrollSpy,
     scroller
   } from "react-scroll";
+
+  const changeButtonColor = keyframes `
+    0%{
+        background-color:white;
+        color:darkred;
+    }
+    100%{
+        background-color:darkred;
+        color:white;
+        border: 1px solid white;
+    }
+  `;
+
+  const ContactSubmit = styled.button`
+  width: 50%;
+  height: 4vh;
+  font-size: 1em;
+  color: darkred;
+  border: 1px solid darkred;
+  background-color: white;
+  &:hover {
+    animation: ${changeButtonColor} 1s forwards;
+  }
+`;
 
 
 
@@ -40,6 +64,10 @@ class Form extends Component {
 
     resetForm() {
         document.getElementById('contact-form').reset();
+    }
+    print = () => {
+        let nameComponent = styled.input``;
+        console.log(nameComponent);
     }
 
     scrollTo() {
@@ -94,7 +122,7 @@ class Form extends Component {
                                         justifySelf:'center',
                                         marginTop:'10%'
                                         }}>Podaj imie</label>
-                            <InputAnimation 
+                            <InputAnimation
                             type="text" 
                             className="form-control" 
                             id="name" 
@@ -124,26 +152,27 @@ class Form extends Component {
                                     justifySelf:'center',
                                     marginTop:'-20%'
                                 }}>Podaj e-mail</label>
-                            <InputAnimation 
+                            <InputAnimation
                             type="email" 
                             className="form-control" 
-                            id="email" 
+                            id="sc-jKJlTe"
                             aria-describedby="emailHelp" 
                             // style={{
                             //     width:'80%',
                             //     height:'3vh',
                             //     justifySelf:'center'
                             // }}/
-                            >
-                        </InputAnimation>
+                            />
+                        
                         <div 
                             className="form-group"
                             style={{
                                 justifySelf:'center',
                                 display:'grid',
                                 // border:'2px solid black',
-                                width:'40%',
+                                width:'90%',
                                 height:'5vh',
+                                
                             }}>
                             <label 
                                 for="message"
@@ -156,13 +185,14 @@ class Form extends Component {
                             rows="7" 
                             id="message"
                             style={{
-                                width:'90%',
+                                width:'100%',
                                 justifySelf:'center',
                                 resize:'none',
+                                border:'1px solid darkred'
                                 
                             }}></textarea>
                         </div>
-                        <button 
+                        <ContactSubmit onMouseEnter={this.print}
                             type="submit" 
                             className="btn btn-primary"
                             style={{
@@ -170,7 +200,8 @@ class Form extends Component {
                                 width:'20%',
                                 height:'5vh',
                                 marginTop:'10%'
-                                }}>Submit</button>
+                                }}>submit
+                                </ContactSubmit>
                             </div>
                     </form>
 

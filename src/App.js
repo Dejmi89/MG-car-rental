@@ -82,7 +82,6 @@ class App extends Component {
         <Form toTop={this.scrollToTop}></Form>
         {/* {this.state.apiResponse} */}
         <Footer/>
-        <InputAnimation/>
         
       </div>
     );
