@@ -25,7 +25,8 @@ class App extends Component {
     super(props);
     this.state = { 
       apiResponse: "",
-      galleryReveal:false
+      galleryReveal:false,
+      offerReveal:false
     };
   }
 
@@ -48,6 +49,12 @@ class App extends Component {
         this.setState({ galleryReveal: false });
     } else if (window.scrollY >= 2100 && this.state.galleryReveal !== true) {
         this.setState({ galleryReveal: true });
+    }
+    else if (window.scrollY <= 600 && this.state.offerReveal === true) {
+      this.setState({ offerReveal: false });
+    }
+    else if (window.scrollY >= 610 && this.state.offerReveal !== true) {
+      this.setState({ offerReveal: true });
     }
 }
 
@@ -75,7 +82,7 @@ class App extends Component {
           fontWeight:'500', 
           fontSize:'2.3em',
           }} name="offer">Oferta</h1>
-        <Offer toTop={this.scrollToTop}></Offer>
+        <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal}></Offer>
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="gallery">Galeria</h1>
         <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="contact">Kontakt</h1>

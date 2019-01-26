@@ -10,16 +10,33 @@ class Footer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrolling: false,
             hovered: false,
             hovered2: false,
             hovered3: false
         };
     }
+
+    handleSocialIconStyle = () => {
+        this.setState({
+            hovered: !this.state.hovered,
+        })
+    }
+    handleSocialIconStyle2 = () => {
+        this.setState({
+            hovered2: !this.state.hovered2
+        })
+    }
+    handleSocialIconStyle3 = () => {
+        this.setState({
+            hovered3: !this.state.hovered3
+        })
+    }
+
     render() {
         return (
-            <div style={{display: 'flex', justifyContent:'flex-end', marginTop:'5%'}}>
-                    <div style={{ marginRight:'2%'}}>
+            <div style={{display: 'flex', justifyContent:'flex-end'}}>
+                    <div style={{ marginRight:'2%', marginBottom:'1%', height:'5vh', width:'8%', display:'flex'}}>
+        
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -28,6 +45,7 @@ class Footer extends Component {
                                              
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
+                                            
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 

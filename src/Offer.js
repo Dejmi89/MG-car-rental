@@ -15,13 +15,13 @@ import img from './resources/images/gearbox_stick.jpg';
 import img2 from './resources/images/mg_hood.jpg';
 import img3 from './resources/images/maskaPrzod.jpg';
 
-const text1 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb sadasdasdasdasdas';
-const text2 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
-const text3 = 'kdsjgbkdjfgbjdkhgbjdfgbjdb';
+const text1 = 'Mozna troszke pojezdzic... ';
+const text2 = 'Mozna takze pofiglowac...';
+const text3 = 'Mozna rowniez przygazowac...';
 
 const fadeIn = keyframes`
     from{
-        opacity:0
+        opacity:0.6
         }
     to{
         opacity:1
@@ -162,8 +162,9 @@ const ImageContainer = styled.div`
         background-size:cover;
         width:100%;
         height:100%;
-        animation: ${props => props.animation} 3s;
+        animation: ${props => props.animation} 2s;
         /* border: 2px solid black; */
+        
     `;
 
 const Line = styled.div`
@@ -171,24 +172,26 @@ const Line = styled.div`
     background-color: goldenrod;
     margin: auto;
     margin-top:-35px;
-    animation: ${lineGrow} 1s forwards;
+    animation: ${lineGrow} 0.5s forwards;
 `;
 const Line2 = styled.div`
     height: 2px;
     margin: auto;
     margin-top:5px;
-    animation: ${lineGrow2} 1s forwards;
+    animation: ${lineGrow2} 0.5s forwards;
     animation-delay:1s;
 `;    
 const OfferTitle = styled.div`
     width: 80%;
-    font-size:2.4em; 
+    font-size:2.2em; 
     margin:auto;
+    margin-top:-3%;
     display: flex;
     justify-content: center;
     /* border: 2px solid black; */
     p {
-    animation: ${bounceFromRight} 3s forwards;
+    animation: ${fadeIn} 3s forwards;
+
     }
 `;
 
@@ -213,15 +216,15 @@ class Offer extends Component {
                 <ImageContainerWrapper>
                     <ImageContainer 
                     img={cell.img}
-                    animation={cell.animation ? cell.animation : ''}
+                    animation={cell.animation && this.props.offerReveal === true ? cell.animation : ''}
                     >
                     
-                    <OfferTitle style={{display: cell.text ? 'flex' : 'none'}}>
+                    <OfferTitle style={{display: cell.text ? 'flex' : 'none', fontFamily:'Arapey, cursive'}}>
                         <p>{cell.title}</p>
                     </OfferTitle>
                     <Line/>
                     <Line2/>
-                    <div style={{textAlign:'center', marginTop:'10px'}}>
+                    <div style={{textAlign:'center', marginTop:'10px', fontSize:'1.5em',fontFamily:'Arapey, cursive' }}>
                         {cell.text ? cell.text : ''}
                     </div>
                     
