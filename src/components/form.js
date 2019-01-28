@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import InputAnimation from './inputAnimation';
+import DivToAnimateLeft from './inputAnimation';
 import styled, {keyframes} from 'styled-components';
+
 import {
     Link,
     Element,
@@ -65,10 +66,7 @@ class Form extends Component {
     resetForm() {
         document.getElementById('contact-form').reset();
     }
-    print = () => {
-        let nameComponent = styled.input``;
-        console.log(nameComponent);
-    }
+    
 
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
@@ -99,43 +97,71 @@ class Form extends Component {
                         gridColumn: "2/3",
                         gridRow: "auto",
                         gridTemplateColumns: "100%",
-                        gridTemplateRows: "auto",
+                        gridTemplateRows: "10% 10% 10% 10% 10% 30% 10% 10%",
                         fontSize:'1.7em',
                         // border: "2px solid black",
                         width: "100%",
-                        height: "40vh",
-                        // alignContent:'center'
+                        height: "50vh",
+                        alignContent:'center',
+                        alignItems:'center'
+                        
                         }}
                         >
-                        <div 
+                        {/* <div 
                         className="form-group"
                         style={{
                             display:'grid',
                             justifySelf:'center',
                             // alignContent:'center',
-                            width:'40%',
+                            width:'50%',
                             height:'3vh',
-                            // border:'2px solid black'
-                        }}>
+                            gridTemplateColumns: "50% 50%",
+                            border:'2px solid black'
+                        }}> */}
+                            {/* <div
+                                style={{
+                                border: "2px solid black",
+                                // gridColumn: "1/3",
+                                // gridRow: "1/1",
+                                width:'80%',
+                                display: "grid",
+                                justifySelf:'center',
+                                alignContent: "start",
+                                justifyContent: "center",
+                                gridTemplateColumns: "1% 98% 1%",
+                                gridTemplateRows: "5% 45% 45% 5%"
+                                }}
+                                > */}
                             <label for="name" 
-                                    style={{
-                                        justifySelf:'center',
-                                        marginTop:'10%'
+                                        style={{
+                                            alignSelf:'start',
+                                            justifySelf:'center',
+                                            display:'grid',
+                                            gridRow:'1/2',
+                                            // height:'20%',
+                                            // border:'2px solid black'
                                         }}>Podaj imie</label>
-                            <InputAnimation
-                            type="text" 
-                            className="form-control" 
-                            id="name" 
-                            // style={{
-                            //     width:'80%',
-                            //     height:'3vh',
-                            //     display:'grid',
-                            //     justifySelf:'center'
-                                
-                            // }}
-                            />
-                        </div>
-                        <div 
+                                    
+                            <input
+                                        type="text" 
+                                        className="form-control" 
+                                        id="name" 
+                                        style={{
+                                            border: '1px solid darkred',
+                                            display:'grid',
+                                            gridRow:'2/3',
+                                            width: '50%',
+                                            height: '5vh',
+                                            fontSize: '1.2em',
+                                            backgroundColor: 'white',
+                                            justifySelf: 'center',
+                                            // alignSelf: 'center',
+                                            }}
+                                            />
+                            {/* </div> */}
+                            
+                        {/* </div> */}
+                            {/* <div 
                             className="form-group"
                             style={{
                                 display:'grid',
@@ -145,26 +171,29 @@ class Form extends Component {
                                 width:'40%',
                                 height:'5vh'
                             }}
-                        >
+                            > */}
                             <label 
                                 for="exampleInputEmail1"
                                 style={{
+                                    display:'grid',
+                                    gridRow:'3/4',
                                     justifySelf:'center',
-                                    marginTop:'-20%'
                                 }}>Podaj e-mail</label>
-                            <InputAnimation
+                            <input
                             type="email" 
                             className="form-control" 
-                            id="sc-jKJlTe"
+                            id="email"
                             aria-describedby="emailHelp" 
-                            // style={{
-                            //     width:'80%',
-                            //     height:'3vh',
-                            //     justifySelf:'center'
-                            // }}/
+                            style={{
+                                display:'grid',
+                                gridRow:'4/5',
+                                width:'50%',
+                                height:'3vh',
+                                justifySelf:'center'
+                            }}
                             />
                         
-                        <div 
+                        {/* <div 
                             className="form-group"
                             style={{
                                 justifySelf:'center',
@@ -173,36 +202,45 @@ class Form extends Component {
                                 width:'90%',
                                 height:'5vh',
                                 
-                            }}>
+                            }}> */}
                             <label 
                                 for="message"
                                 style={{
+                                    display:'grid',
+                                    gridRow:'5/6',
                                     justifySelf:'center'
                                 }}>Twoja wiadomosc</label>
                             <textarea 
                             maxLength='350'
                             className="form-control" 
-                            rows="7" 
+                            rows="5" 
                             id="message"
                             style={{
-                                width:'100%',
+                                display:'grid',
+                                gridRow:'6/7',
+                                width:'50%',
+                                height:'50%',
                                 justifySelf:'center',
                                 resize:'none',
-                                border:'1px solid darkred'
+                                border:'1px solid darkred',
+                                fontSize:'1em'
                                 
                             }}></textarea>
-                        </div>
+                        {/* </div> */}
                         <ContactSubmit onMouseEnter={this.print}
                             type="submit" 
                             className="btn btn-primary"
                             style={{
+                                display:'grid',
+                                gridRow:'7/8',
                                 justifySelf:'center',
                                 width:'20%',
-                                height:'5vh',
-                                marginTop:'10%'
+                                textAlign:'center'
+                                // height:'5vh',
+                                // marginTop:'10%'
                                 }}>submit
                                 </ContactSubmit>
-                            </div>
+                            {/* </div> */}
                     </form>
 
                 
