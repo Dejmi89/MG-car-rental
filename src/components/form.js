@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DivToAnimateLeft from './inputAnimation';
 import styled, {keyframes} from 'styled-components';
 
 import {
@@ -24,6 +23,92 @@ import {
     }
   `;
 
+const borderUp = keyframes`
+0% {
+width:0;
+transform:translate(200px);
+opacity:0;
+}
+100% {
+width:100%;
+opacity:1;
+}
+`;
+
+const borderDown = keyframes`
+    0% {
+    width:100%;
+    opacity:1;
+    }
+    50%{
+      width: 150%;
+      opacity:0.5
+    }
+    100% {
+    width:100%;
+    opacity:1;
+    color:yellow;
+  }
+`;
+
+const borderRight = keyframes`
+    0% {
+    height:0;
+    transform:translate(0,-200px);
+    opacity:0;
+    }
+    100% {
+    height:100%;
+    opacity:1;
+  }
+`;
+const borderLeft = keyframes`
+    0% {
+    height:0;
+    transform:translate(0,200px);
+    opacity:0;
+    }
+    100% {
+    height:100%;
+    opacity:1;
+  }
+`;
+
+const DivLeft = styled.div `
+  display:grid;
+  grid-column:1/1;
+  grid-row:1/4;
+  /* background-color:darkred; */
+  border-left:2px solid darkred;
+  animation:${borderLeft} 2s reverse forwards;
+`;
+const DivRight = styled.div `
+  display:grid;
+  grid-column:4/4;
+  grid-row:1/4;
+  /* background-color:darkred; */
+  border-left:2px solid darkred;
+  animation:${borderRight} 2s reverse forwards;
+`;
+
+const DivUp = styled.div `
+  display:grid;
+  grid-column:1/4;
+  grid-row:1/1;
+  background-color:darkred;
+  border-top:2px solid darkred;
+  animation:${borderUp} 2s reverse forwards;
+`;
+const DivDown = styled.div `
+  display:grid;
+  justify-self:center;
+  grid-column:1/4;
+  grid-row:4/4;
+  background-color:darkred;
+  /* border-bottom:2px solid darkred; */
+
+  animation:${borderDown} 2s forwards;
+`;
   const ContactSubmit = styled.button`
   width: 50%;
   height: 4vh;
@@ -35,8 +120,6 @@ import {
     animation: ${changeButtonColor} 1s forwards;
   }
 `;
-
-
 
 class Form extends Component {
     
@@ -149,7 +232,8 @@ class Form extends Component {
                                         style={{
                                             border: '1px solid darkred',
                                             display:'grid',
-                                            gridRow:'2/3',
+                                            gridRow:'1/2',
+                                            gridColumn:'2/3',
                                             width: '50%',
                                             height: '5vh',
                                             fontSize: '1.2em',
@@ -179,19 +263,41 @@ class Form extends Component {
                                     gridRow:'3/4',
                                     justifySelf:'center',
                                 }}>Podaj e-mail</label>
-                            <input
-                            type="email" 
-                            className="form-control" 
-                            id="email"
-                            aria-describedby="emailHelp" 
-                            style={{
-                                display:'grid',
-                                gridRow:'4/5',
-                                width:'50%',
-                                height:'3vh',
-                                justifySelf:'center'
-                            }}
-                            />
+                            <div style={{
+                                display:'grid', 
+                                gridRow:'4/5', 
+                                // border:'2px solid blue', 
+                                width:'50%', 
+                                height:'5vh',
+                                justifySelf:'center',
+                                gridTemplateColumns:'1% 98% 1%',
+                                gridTemplateRows: "4% 46% 46% 4%"
+                                }}>
+                                
+                                <DivUp/>
+                                <DivDown/>
+                                <input
+                                    type="email" 
+                                    className="form-control" 
+                                    id="email"
+                                    aria-describedby="emailHelp" 
+                                    style={{
+                                        // border: '1px solid blue',
+                                        border:'none',
+                                        // borderBottom:'2px solid darkred',
+                                        display:'grid',
+                                        gridRow:'2/4',
+                                        width: '99%',
+                                        height: '80%',
+                                        fontSize: '1.2em',
+                                        backgroundColor: 'white',
+                                        justifySelf: 'center',
+                                        alignSelf:'center'
+                                        }}
+                                />
+                                <DivLeft/>
+                                <DivRight/>
+                            </div>
                         
                         {/* <div 
                             className="form-group"
