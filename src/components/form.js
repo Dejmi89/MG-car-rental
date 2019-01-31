@@ -24,15 +24,15 @@ import {
   `;
 
 const borderUp = keyframes`
-0% {
-width:0;
-transform:translate(200px);
-opacity:0;
-}
-100% {
-width:100%;
-opacity:1;
-}
+    0% {
+    width:0;
+    transform:translate(200px);
+    opacity:0;
+    }   
+    100% {
+    width:100%;
+    opacity:1;
+    }
 `;
 
 const borderDown = keyframes`
@@ -74,41 +74,6 @@ const borderLeft = keyframes`
   }
 `;
 
-const DivLeft = styled.div `
-  display:grid;
-  grid-column:1/1;
-  grid-row:1/4;
-  /* background-color:darkred; */
-  border-left:2px solid darkred;
-  animation:${borderLeft} 2s reverse forwards;
-`;
-const DivRight = styled.div `
-  display:grid;
-  grid-column:4/4;
-  grid-row:1/4;
-  /* background-color:darkred; */
-  border-left:2px solid darkred;
-  animation:${borderRight} 2s reverse forwards;
-`;
-
-const DivUp = styled.div `
-  display:grid;
-  grid-column:1/4;
-  grid-row:1/1;
-  background-color:darkred;
-  border-top:2px solid darkred;
-  animation:${borderUp} 2s reverse forwards;
-`;
-const DivDown = styled.div `
-  display:grid;
-  justify-self:center;
-  grid-column:1/4;
-  grid-row:4/4;
-  background-color:darkred;
-  /* border-bottom:2px solid darkred; */
-
-  animation:${borderDown} 2s forwards;
-`;
   const ContactSubmit = styled.button`
   width: 50%;
   height: 4vh;
@@ -122,6 +87,13 @@ const DivDown = styled.div `
 `;
 
 class Form extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            emailOn: false,
+            nameOn: false
+        }
+    }
     
     handleSubmit(e) {
         e.preventDefault();
@@ -158,10 +130,53 @@ class Form extends Component {
           smooth: "easeInOutQuint"
         });
       }
-    
+    nameOnLauncher = () => {
+        this.setState({
+            nameOn:!this.state.nameOn
+        })
+    }
+    emailOnLauncher = () => {
+        this.setState({
+            emailOn:!this.state.emailOn
+        })
+    }
     
 
     render() {
+
+        const DivLeft = styled.div `
+            display:grid;
+            grid-column:1/1;
+            grid-row:1/4;
+            border-left:2px solid darkred;
+            animation:${props => props.animate === true? borderLeft : 'none' } 2s reverse forwards;
+            `;
+        const DivRight = styled.div `
+            display:grid;
+            grid-column:4/4;
+            grid-row:1/4;
+            border-left:2px solid darkred;
+            animation:${props => props.animate === true ? borderRight : 'none' } reverse 2s forwards;
+            `;
+
+        const DivUp = styled.div `
+            display:grid;
+            grid-column:1/4;
+            grid-row:1/1;
+            border-top:2px solid darkred;
+            animation:${props => props.animate === true ? borderUp : 'none' } 2s reverse forwards;
+            `;
+        const DivDown = styled.div `
+            display:grid;
+            justify-self:center;
+            grid-column:1/4;
+            grid-row:4/4;
+            border-bottom:2px solid darkred;
+            width: 100%;
+            animation:${props => props.animate ===true ? borderDown : 'none' } 2s forwards;
+            `;
+
+            
 
         return (
             <div name={this.props.name} 
@@ -190,31 +205,7 @@ class Form extends Component {
                         
                         }}
                         >
-                        {/* <div 
-                        className="form-group"
-                        style={{
-                            display:'grid',
-                            justifySelf:'center',
-                            // alignContent:'center',
-                            width:'50%',
-                            height:'3vh',
-                            gridTemplateColumns: "50% 50%",
-                            border:'2px solid black'
-                        }}> */}
-                            {/* <div
-                                style={{
-                                border: "2px solid black",
-                                // gridColumn: "1/3",
-                                // gridRow: "1/1",
-                                width:'80%',
-                                display: "grid",
-                                justifySelf:'center',
-                                alignContent: "start",
-                                justifyContent: "center",
-                                gridTemplateColumns: "1% 98% 1%",
-                                gridTemplateRows: "5% 45% 45% 5%"
-                                }}
-                                > */}
+                        
                             <label for="name" 
                                         style={{
                                             alignSelf:'start',
@@ -224,38 +215,39 @@ class Form extends Component {
                                             // height:'20%',
                                             // border:'2px solid black'
                                         }}>Podaj imie</label>
-                                    
-                            <input
+                            <div style={{
+                                display:'grid', 
+                                gridRow:'2/3',  
+                                width:'50%', 
+                                height:'5vh',
+                                justifySelf:'center',
+                                gridTemplateColumns:'1% 98% 1%',
+                                gridTemplateRows: "4% 46% 46% 4%"
+                            }}>     
+
+                                <DivUp nameOn={this.state.nameOn}/>
+                                <DivDown nameOn={this.state.nameOn}/>
+                                <input
+                                        onClick={this.nameOnLauncher}
                                         type="text" 
                                         className="form-control" 
                                         id="name" 
                                         style={{
-                                            border: '1px solid darkred',
                                             display:'grid',
-                                            gridRow:'1/2',
-                                            gridColumn:'2/3',
-                                            width: '50%',
-                                            height: '5vh',
+                                            gridRow:'2/4',
+                                            width: '99%',
+                                            height: '80%',
                                             fontSize: '1.2em',
                                             backgroundColor: 'white',
                                             justifySelf: 'center',
-                                            // alignSelf: 'center',
+                                            alignSelf:'center',
+                                            border:'none'
                                             }}
                                             />
-                            {/* </div> */}
-                            
-                        {/* </div> */}
-                            {/* <div 
-                            className="form-group"
-                            style={{
-                                display:'grid',
-                                justifySelf:'center',
-                                // border: '2px solid black',
-                                alignItems:'center',
-                                width:'40%',
-                                height:'5vh'
-                            }}
-                            > */}
+                                <DivLeft nameOn={this.state.nameOn}/>
+                                <DivRight nameOn={this.state.nameOn}/>
+                            </div>
+                       
                             <label 
                                 for="exampleInputEmail1"
                                 style={{
@@ -265,8 +257,7 @@ class Form extends Component {
                                 }}>Podaj e-mail</label>
                             <div style={{
                                 display:'grid', 
-                                gridRow:'4/5', 
-                                // border:'2px solid blue', 
+                                gridRow:'4/5',  
                                 width:'50%', 
                                 height:'5vh',
                                 justifySelf:'center',
@@ -274,9 +265,10 @@ class Form extends Component {
                                 gridTemplateRows: "4% 46% 46% 4%"
                                 }}>
                                 
-                                <DivUp/>
-                                <DivDown/>
+                                <DivUp animate={this.state.emailOn}/>
+                                <DivDown animate={this.state.emailOn}/>
                                 <input
+                                    onClick={this.emailOnLauncher}
                                     type="email" 
                                     className="form-control" 
                                     id="email"
@@ -295,26 +287,17 @@ class Form extends Component {
                                         alignSelf:'center'
                                         }}
                                 />
-                                <DivLeft/>
-                                <DivRight/>
+                                <DivLeft animate={this.state.emailOn}/>
+                                <DivRight animate={this.state.emailOn}/>
                             </div>
                         
-                        {/* <div 
-                            className="form-group"
-                            style={{
-                                justifySelf:'center',
-                                display:'grid',
-                                // border:'2px solid black',
-                                width:'90%',
-                                height:'5vh',
-                                
-                            }}> */}
                             <label 
                                 for="message"
                                 style={{
                                     display:'grid',
                                     gridRow:'5/6',
-                                    justifySelf:'center'
+                                    height:'3vh',
+                                    justifySelf:'center',
                                 }}>Twoja wiadomosc</label>
                             <textarea 
                             maxLength='350'
@@ -329,10 +312,11 @@ class Form extends Component {
                                 justifySelf:'center',
                                 resize:'none',
                                 border:'1px solid darkred',
-                                fontSize:'1em'
+                                fontSize:'1em',
+                                alignSelf:'start'
                                 
                             }}></textarea>
-                        {/* </div> */}
+                        
                         <ContactSubmit onMouseEnter={this.print}
                             type="submit" 
                             className="btn btn-primary"
@@ -342,11 +326,8 @@ class Form extends Component {
                                 justifySelf:'center',
                                 width:'20%',
                                 textAlign:'center'
-                                // height:'5vh',
-                                // marginTop:'10%'
                                 }}>submit
                                 </ContactSubmit>
-                            {/* </div> */}
                     </form>
 
                 
