@@ -19,6 +19,12 @@ const text1 = 'Mozna troszke pojezdzic... ';
 const text2 = 'Mozna takze pofiglowac...';
 const text3 = 'Mozna rowniez przygazowac...';
 
+const pStyle = {
+    fontSize:'2em', 
+    fontFamily:'Dosis, sans-serif', 
+    textAlign:'center',
+}
+
 const fadeIn = keyframes`
     from{
         opacity:0.6
@@ -107,7 +113,7 @@ const Cells = [
         top: 1,
         img: '',
         animation: '',
-        text:text1,
+        text:'kajsdhkjashdklajsdlaksdh askdhkasjhdkjashdk askdjaksdaksjdhifsadasd askdj akjsdhkalsjdhkasljdhuh a sudaksdhkass',
         title: 'Opcja 1'   
     },
     {
@@ -117,7 +123,7 @@ const Cells = [
         top: 3,
         img: '',
         animation: '',
-        text: text2,
+        text: 'asdjahgdsjasgdjkashgdjkasasassagdkajsgdjkashgdjahgdjasgdjhgsd  sadhgajksdhga  djaasdasdas asdasdas asdasshgdjahs',
         title: 'Opcja 2'   
     },
     {
@@ -206,25 +212,26 @@ class Offer extends Component {
 
     showHeroes = () => 
     Cells.map((cell, i) => (
-        
+            
             <Cell key={i+' offer'}
             width={cell.width} 
             height={cell.height} 
             left={cell.left} 
             top={cell.top} 
             >
-                <ImageContainerWrapper>
+                <ImageContainerWrapper >
                     <ImageContainer 
                     img={cell.img}
                     animation={cell.animation && this.props.offerReveal === true ? cell.animation : ''}
                     >
                     
-                    <OfferTitle style={{display: cell.text ? 'flex' : 'none', fontFamily:'Arapey, cursive'}}>
+                    <OfferTitle style={{display: cell.text ? 'flex' : 'none', fontFamily:'Dosis, cursive'}}>
                         <p>{cell.title}</p>
                     </OfferTitle>
                     <Line/>
                     <Line2/>
-                    <div style={{textAlign:'center', marginTop:'10px', fontSize:'1.5em',fontFamily:'Arapey, cursive' }}>
+                    <div style={{textAlign:'center',
+                    justifySelf:'center', marginTop:'10px', fontSize:'1.5em',fontFamily:'Dosis, cursive', border:'2px solid black', width:'70%' }}>
                         {cell.text ? cell.text : ''}
                     </div>
                     
@@ -248,15 +255,22 @@ class Offer extends Component {
     
     render() {
         return (
+            <div>
+                <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
+                    gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
+                    najważniejszego dnia w Waszym życiu ?
+                    </p>
+                    <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
             <Grid
             name={this.props.name}
-                style={{opacity:this.state.opacity}}
+                style={{opacity:this.state.opacity, marginTop:'5%'}}
                 columns={'repeat(2,minmax(max-content,auto))'}
                 rows={'repeat(6, minmax(200px, auto))'}
                 gap='10px'
                 >
             {this.showHeroes()}
             </Grid>
+            </div>
         );
     }
 }
