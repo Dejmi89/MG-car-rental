@@ -229,6 +229,7 @@ class Form extends Component {
                                 <DivDown nameOn={this.state.nameOn}/>
                                 <input
                                         onClick={this.nameOnLauncher}
+                                        autoComplete='off'
                                         type="text" 
                                         className="form-control" 
                                         id="name" 
@@ -269,6 +270,7 @@ class Form extends Component {
                                 <DivDown animate={this.state.emailOn}/>
                                 <input
                                     onClick={this.emailOnLauncher}
+                                    autoComplete='off'
                                     type="email" 
                                     className="form-control" 
                                     id="email"
