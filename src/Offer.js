@@ -19,13 +19,6 @@ const image1 = img;
 const image2 = img2;
 const image3 = img3;
 
-const pStyle = {
-    fontSize:'2em', 
-    fontFamily:'Dosis, sans-serif', 
-    textAlign:'center',
-    fontWeight:'100'
-}
-
 const fadeIn = keyframes`
     from{
         opacity:0.6
@@ -208,7 +201,12 @@ const offerStyle={
 const offerStyleText ={
     justifyContent:'center',
     alignContent:'center',
-
+}
+const pStyle = {
+    fontSize:'2em', 
+    fontFamily:'Work Sans, sans-serif', 
+    textAlign:'center',
+    fontWeight:'500'
 }
 
 class Offer extends Component {
@@ -305,7 +303,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Opcja 1</h2>
+                                <h2>MG model MGB, rocznik 1977</h2>
                              </div>
                              <div style={{
                                  ...offerStyle,
@@ -327,8 +325,26 @@ class Offer extends Component {
                              </div>
                              <div style={{
                                  ...offerStyle,
-                                 ...offerStyleText
-                             }}></div>
+                                //  ...offerStyleText,
+                                width:'90%'
+                             }}>
+                                <div style={{height:'80%'}}>
+                                    <div style={{display:'grid', justifyContent:'center'}}>
+                                    <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
+                                    takie jak:</p>
+                                    <div style={{display:'grid', justifyContent:'center'}}>
+                                        <ul style={{marginTop:'0'}}>
+                                            <li>Śluby</li>
+                                            <li>Sesje fotograficzne</li>
+                                            <li>Reklamy</li>
+                                            <li>Filmy</li>
+                                            <li>Imprezy okolicznościowe</li>
+                                            <li>Niespodzianki</li>
+                                         </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                             </div>
                         </div>
                         </div>
 
@@ -343,7 +359,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Opcja 2</h2>
+                                <h2>Dojazd</h2>
                              </div>
                              <div style={{
                                  ...offerStyle,
@@ -365,8 +381,13 @@ class Offer extends Component {
                              </div>
                              <div style={{
                                  ...offerStyle,
-                                 ...offerStyleText
-                             }}></div>
+                                 ...offerStyleText,
+                             }}>
+                                <p style={{textAlign:'center', fontSize:'1.3em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                    odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
+                                    z formularza kontaktowego.
+                                </p>
+                             </div>
                         </div>
                         
                         <div style={{
@@ -395,7 +416,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Opcja 3</h2>
+                                <h2>Dekoracje i rekwizyty</h2>
                              </div>
                              <div style={{
                                  ...offerStyle,
@@ -418,7 +439,12 @@ class Offer extends Component {
                              <div style={{
                                  ...offerStyle,
                                  ...offerStyleText
-                             }}></div>
+                             }}>
+                                <p style={{textAlign:'center', fontSize:'1.3em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                    oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
+                                    uroczystość. Oferujemy je Młodej Parze GRATIS!
+                                </p>
+                             </div>
                         </div>
                         </div>
                     </div>

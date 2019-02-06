@@ -29,7 +29,7 @@ class App extends Component {
       offerReveal:false
     };
   }
-
+  
   callAPI() {
     fetch("http://localhost:9000/testAPI")
       .then(res => res.text())
@@ -69,9 +69,10 @@ class App extends Component {
   scrollToTop() {
     scroll.scrollToTop();
   }
-
+  
 
   render() {
+    
     return (
       <div style={{fontFamily:'satisfy, cursive'}}>
         <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>

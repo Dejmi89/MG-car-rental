@@ -229,6 +229,8 @@ class Gallery extends Component {
           }        
     }
 
+    
+
     openModal = (e,index) => {
         this.setState({
             currentIndex: index
