@@ -10,15 +10,15 @@ import {
     scrollSpy,
     scroller
   } from "react-scroll";
-import img1 from './resources/images/wnetrzeAuta.jpg';
-import img2 from './resources/images/gearbox_stick.jpg';
-import img3 from './resources/images/mercedes_red.jpg';
-import img4 from './resources/images/maskaPrzod.jpg';
+import img1 from './resources/images/wedding/0022_M&D_1080p.jpg';
+import img2 from './resources/images/wedding/0189_M&D_1080p.jpg';
+import img3 from './resources/images/wedding/0071_M&D_1080p.jpg';
+import img4 from './resources/images/wedding/0070_M&D_1080p.jpg';
 import img5 from './resources/images/mg_hood.jpg';
 import img6 from './resources/images/steering_wheel.jpg';
-import img7 from './resources/images/pexels-photo.jpg';
-import img8 from './resources/images/mercedes_garage.jpg';
-import img9 from './resources/images/mercedes_front.jpg';
+import img7 from './resources/images/wedding/0191_M&D_1080p.jpg';
+import img8 from './resources/images/wedding/0186_M&D_1080p.jpg';
+import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
 import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
 import img11 from './resources/images/gearbox_stick.jpg';
 
@@ -191,11 +191,11 @@ const ClickedImageWrapper = styled.div`
 
 const ClickedImage = styled.div`
     position:fixed;
-    top:10%;
-    left:10%;
+    top:8%;
+    left:17%;
     z-index:1;
-    width: 80%;
-    height: 80%;
+    width: 65%;
+    height: 85%;
     border:5px solid white;
         a{
             color:black;

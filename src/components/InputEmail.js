@@ -52,19 +52,21 @@ const borderLeft = keyframes`
   }
 `;
 
+
+
 const DivLeft = styled.div `
 display:grid;
 grid-column:1/1;
 grid-row:1/4;
 border-left:2px solid darkred;
-animation:${props => props.animate === true? borderLeft : 'none' } 2s reverse forwards;
+animation:${props => props.emailOn === true? borderLeft : 'none' } 2s reverse forwards;
 `;
 const DivRight = styled.div `
 display:grid;
 grid-column:4/4;
 grid-row:1/4;
 border-left:2px solid darkred;
-animation:${props => props.animate === true ? borderRight : 'none' } reverse 2s forwards;
+animation:${props => props.emailOn === true ? borderRight : 'none' } reverse 2s forwards;
 `;
 
 const DivUp = styled.div `
@@ -72,7 +74,7 @@ display:grid;
 grid-column:1/4;
 grid-row:1/1;
 border-top:2px solid darkred;
-animation:${props => props.animate === true ? borderUp : 'none' } 2s reverse forwards;
+animation:${props => props.emailOn === true ? borderUp : 'none' } 2s reverse forwards;
 `;
 const DivDown = styled.div `
 display:grid;
@@ -81,17 +83,40 @@ grid-column:1/4;
 grid-row:4/4;
 border-bottom:2px solid darkred;
 width: 100%;
-animation:${props => props.animate ===true ? borderDown : 'none' } 2s forwards;
+animation:${props => props.emailOn ===true ? borderDown : 'none' } 2s forwards;
 `;
+ 
 
-class Input extends Component {
+class InputEmail extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            emailOn: false
+        }
+    }
+
+    emailOnLauncher = () => {
+        this.setState({
+            emailOn:!this.state.emailOn
+        })
+    }
+
     render() {
         return (
-            <div>
-                <DivUp nameOn={this.state.nameOn}/>
-                    <DivDown nameOn={this.state.nameOn}/>
+            <div style={{
+                display:'grid', 
+                gridRow:'4/5',  
+                width:'50%', 
+                height:'5vh',
+                justifySelf:'center',
+                gridTemplateColumns:'1% 98% 1%',
+                gridTemplateRows: "4% 46% 46% 4%"
+                }}
+            >
+                <DivUp emailOn={this.state.emailOn}/>
+                    <DivDown emailOn={this.state.emailOn}/>
                                 <input
-                                        onClick={this.nameOnLauncher}
+                                        onClick={this.emailOnLauncher}
                                         autoComplete='off'
                                         type="text" 
                                         className="form-control" 
@@ -101,18 +126,18 @@ class Input extends Component {
                                             gridRow:'2/4',
                                             width: '99%',
                                             height: '80%',
-                                            fontSize: '1.2em',
+                                            fontSize: '0.9em',
                                             backgroundColor: 'white',
                                             justifySelf: 'center',
                                             alignSelf:'center',
                                             border:'none'
                                             }}
                                             />
-                    <DivLeft nameOn={this.state.nameOn}/>
-                    <DivRight nameOn={this.state.nameOn}/>
+                    <DivLeft emailOn={this.state.emailOn}/>
+                    <DivRight emailOn={this.state.emailOn}/>
             </div>
         );
     }
 }
 
-export default Input;
+export default InputEmail;

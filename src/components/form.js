@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
-
+import InputName from './InputName';
+import InputEmail from './InputEmail';
 import {
     Link,
     Element,
@@ -129,18 +130,7 @@ class Form extends Component {
           delay: 0,
           smooth: "easeInOutQuint"
         });
-      }
-    nameOnLauncher = () => {
-        this.setState({
-            nameOn:!this.state.nameOn
-        })
-    }
-    emailOnLauncher = () => {
-        this.setState({
-            emailOn:!this.state.emailOn
-        })
-    }
-    
+      }  
 
     render() {
 
@@ -212,43 +202,10 @@ class Form extends Component {
                                             justifySelf:'center',
                                             display:'grid',
                                             gridRow:'1/2',
-                                            // height:'20%',
-                                            // border:'2px solid black'
-                                        }}>Podaj imie</label>
-                            <div style={{
-                                display:'grid', 
-                                gridRow:'2/3',  
-                                width:'50%', 
-                                height:'5vh',
-                                justifySelf:'center',
-                                gridTemplateColumns:'1% 98% 1%',
-                                gridTemplateRows: "4% 46% 46% 4%"
-                            }}>     
+                                        }}>Podaj imie
+                            </label>
+                            <InputName/>
 
-                                <DivUp nameOn={this.state.nameOn}/>
-                                <DivDown nameOn={this.state.nameOn}/>
-                                <input
-                                        onClick={this.nameOnLauncher}
-                                        autoComplete='off'
-                                        type="text" 
-                                        className="form-control" 
-                                        id="name" 
-                                        style={{
-                                            display:'grid',
-                                            gridRow:'2/4',
-                                            width: '99%',
-                                            height: '80%',
-                                            fontSize: '1.2em',
-                                            backgroundColor: 'white',
-                                            justifySelf: 'center',
-                                            alignSelf:'center',
-                                            border:'none'
-                                            }}
-                                            />
-                                <DivLeft nameOn={this.state.nameOn}/>
-                                <DivRight nameOn={this.state.nameOn}/>
-                            </div>
-                       
                             <label 
                                 for="exampleInputEmail1"
                                 style={{
@@ -256,42 +213,7 @@ class Form extends Component {
                                     gridRow:'3/4',
                                     justifySelf:'center',
                                 }}>Podaj e-mail</label>
-                            <div style={{
-                                display:'grid', 
-                                gridRow:'4/5',  
-                                width:'50%', 
-                                height:'5vh',
-                                justifySelf:'center',
-                                gridTemplateColumns:'1% 98% 1%',
-                                gridTemplateRows: "4% 46% 46% 4%"
-                                }}>
-                                
-                                <DivUp animate={this.state.emailOn}/>
-                                <DivDown animate={this.state.emailOn}/>
-                                <input
-                                    onClick={this.emailOnLauncher}
-                                    autoComplete='off'
-                                    type="email" 
-                                    className="form-control" 
-                                    id="email"
-                                    aria-describedby="emailHelp" 
-                                    style={{
-                                        // border: '1px solid blue',
-                                        border:'none',
-                                        // borderBottom:'2px solid darkred',
-                                        display:'grid',
-                                        gridRow:'2/4',
-                                        width: '99%',
-                                        height: '80%',
-                                        fontSize: '1.2em',
-                                        backgroundColor: 'white',
-                                        justifySelf: 'center',
-                                        alignSelf:'center'
-                                        }}
-                                />
-                                <DivLeft animate={this.state.emailOn}/>
-                                <DivRight animate={this.state.emailOn}/>
-                            </div>
+                            <InputEmail/>
                         
                             <label 
                                 for="message"
@@ -313,13 +235,13 @@ class Form extends Component {
                                 height:'50%',
                                 justifySelf:'center',
                                 resize:'none',
-                                border:'1px solid darkred',
-                                fontSize:'1em',
+                                border:'2px solid darkred',
+                                fontSize:'0.9em',
                                 alignSelf:'start'
                                 
                             }}></textarea>
                         
-                        <ContactSubmit onMouseEnter={this.print}
+                        <ContactSubmit
                             type="submit" 
                             className="btn btn-primary"
                             style={{
