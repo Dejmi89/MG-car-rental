@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
-import Fade, {Zoom} from 'react-reveal';
 import {Grid, Cell} from 'styled-css-grid';
-import {
-    Link,
-    Element,
-    Events,
-    animateScroll as scroll,
-    scrollSpy,
-    scroller
-  } from "react-scroll";
 import img1 from './resources/images/wedding/0022_M&D_1080p.jpg';
 import img2 from './resources/images/wedding/0189_M&D_1080p.jpg';
 import img3 from './resources/images/wedding/0071_M&D_1080p.jpg';
@@ -22,14 +13,6 @@ import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
 import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
 import img11 from './resources/images/gearbox_stick.jpg';
 
-const fadeIn = keyframes`
-    from{
-        opacity:0
-        }
-    to{
-        opacity:1
-        }
-`;
 
 const shineEffect = keyframes`
   0% {
@@ -155,12 +138,6 @@ const Cells = [
     
 ]
 
-const ImageContainerWrapper = styled.div`
-        /* border: 2px solid black; */
-        width: 100%;
-        height: 100%;
-        `;
-
 const ImageContainer = styled.div`
         background-image:  url(${props => props.img});
         background-position:center;
@@ -246,7 +223,7 @@ class Gallery extends Component {
         })
     }
     findPrev = (e) => {
-        if (e != undefined) {
+        if (e !== undefined) {
           e.preventDefault();
         }
         this.setState(prevState => ({
@@ -254,7 +231,7 @@ class Gallery extends Component {
         }));
       }
       findNext = (e) => {
-        if (e != undefined) {
+        if (e !== undefined) {
           e.preventDefault();
         }
         this.setState(prevState => ({

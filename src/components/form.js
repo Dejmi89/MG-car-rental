@@ -86,13 +86,89 @@ const borderLeft = keyframes`
     animation: ${changeButtonColor} 1s forwards;
   }
 `;
+const DivLeft = styled.div`
+  display: grid;
+  grid-column: 1/1;
+  grid-row: 1/4;
+  border-left: ${props =>
+    props.nameOn == false ? "none" : "2px solid darkred"};
+  animation: ${props => (props.nameOn === true ? borderLeft : "none")} 2s
+    reverse forwards;
+`;
+const DivRight = styled.div`
+  display: grid;
+  grid-column: 4/4;
+  grid-row: 1/4;
+  border-left: ${props =>
+    props.nameOn == false ? "none" : "2px solid darkred"};
+  animation: ${props => props.nameOn === true && borderRight} reverse 2s
+    forwards;
+`;
+
+const DivUp = styled.div`
+  display: grid;
+  grid-column: 1/4;
+  grid-row: 1/1;
+  border-top: ${props =>
+    props.nameOn == false ? "none" : "2px solid darkred"};
+  animation: ${props => props.nameOn === true && borderUp} 2s reverse forwards;
+`;
+const DivDown = styled.div`
+  display: grid;
+  justify-self: center;
+  grid-column: 1/4;
+  grid-row: 4/4;
+  border-bottom: 2px solid darkred;
+  width: 100%;
+  animation: ${props => (props.nameOn === true ? borderDown : "none")} 2s
+    forwards;
+`;
+
+const DivLeft2 = styled.div`
+  display: grid;
+  grid-column: 1/1;
+  grid-row: 1/4;
+  border-left: ${props =>
+    props.emailOn == false ? "none" : "2px solid darkred"};
+  animation: ${props => (props.emailOn === true ? borderLeft : "none")} 2s
+    reverse forwards;
+`;
+const DivRight2 = styled.div`
+  display: grid;
+  grid-column: 4/4;
+  grid-row: 1/4;
+  border-left: ${props =>
+    props.emailOn == false ? "none" : "2px solid darkred"};
+  animation: ${props => (props.emailOn === true ? borderRight : "none")} reverse
+    2s forwards;
+`;
+
+const DivUp2 = styled.div`
+  display: grid;
+  grid-column: 1/4;
+  grid-row: 1/1;
+  border-top: ${props =>
+    props.emailOn == false ? "none" : "2px solid darkred"};
+  animation: ${props => (props.emailOn === true ? borderUp : "none")} 2s reverse
+    forwards;
+`;
+const DivDown2 = styled.div`
+  display: grid;
+  justify-self: center;
+  grid-column: 1/4;
+  grid-row: 4/4;
+  border-bottom: 2px solid darkred;
+  width: 100%;
+  animation: ${props => (props.emailOn === true ? borderDown : "none")} 2s
+    forwards;
+`;
 
 class Form extends Component {
     constructor(props){
         super(props);
         this.state={
-            emailOn: false,
-            nameOn: false
+            emailOn: ".",
+            nameOn: "."
         }
     }
     
@@ -131,42 +207,30 @@ class Form extends Component {
           smooth: "easeInOutQuint"
         });
       }  
+      nameOnLauncher = () => {
+        if (this.state.nameOn == ".") {
+          this.setState({
+            nameOn: true
+          });
+        } else {
+          this.setState({
+            nameOn: false
+          });
+        }
+      };
+      emailOnLauncher = () => {
+        if (this.state.emailOn == ".") {
+          this.setState({
+            emailOn: true
+          });
+        } else {
+          this.setState({
+            emailOn: false
+          });
+        }
+      };
 
-    render() {
-
-        const DivLeft = styled.div `
-            display:grid;
-            grid-column:1/1;
-            grid-row:1/4;
-            border-left:2px solid darkred;
-            animation:${props => props.animate === true? borderLeft : 'none' } 2s reverse forwards;
-            `;
-        const DivRight = styled.div `
-            display:grid;
-            grid-column:4/4;
-            grid-row:1/4;
-            border-left:2px solid darkred;
-            animation:${props => props.animate === true ? borderRight : 'none' } reverse 2s forwards;
-            `;
-
-        const DivUp = styled.div `
-            display:grid;
-            grid-column:1/4;
-            grid-row:1/1;
-            border-top:2px solid darkred;
-            animation:${props => props.animate === true ? borderUp : 'none' } 2s reverse forwards;
-            `;
-        const DivDown = styled.div `
-            display:grid;
-            justify-self:center;
-            grid-column:1/4;
-            grid-row:4/4;
-            border-bottom:2px solid darkred;
-            width: 100%;
-            animation:${props => props.animate ===true ? borderDown : 'none' } 2s forwards;
-            `;
-
-            
+    render() {      
 
         return (
             <div name={this.props.name} 
@@ -176,9 +240,9 @@ class Form extends Component {
                 gridTemplateRows:'auto',
                 marginTop:'5%'}}>
                 
-                    <form 
-                    id="contact-form" 
-                    onSubmit={this.handleSubmit.bind(this)} 
+                <form
+                    id="contact-form"
+                    onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
                     style={{
                         display: "grid",
@@ -186,73 +250,139 @@ class Form extends Component {
                         gridRow: "auto",
                         gridTemplateColumns: "100%",
                         gridTemplateRows: "10% 10% 10% 10% 10% 30% 10% 10%",
-                        fontSize:'1.7em',
+                        fontSize: "1.7em",
                         // border: "2px solid black",
                         width: "100%",
                         height: "50vh",
-                        alignContent:'center',
-                        alignItems:'center'
-                        
+                        alignContent: "center",
+                        alignItems: "center"
+                    }}
+                >
+                    <label
+                        for="name"
+                        style={{
+                            alignSelf: "start",
+                            justifySelf: "center",
+                            display: "grid",
+                            gridRow: "1/2"
                         }}
-                        >
+                    >
+                        Podaj imie
+          </label>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridRow: "2/3",
+                            width: "50%",
+                            height: "5vh",
+                            justifySelf: "center",
+                            gridTemplateColumns: "1% 98% 1%",
+                            gridTemplateRows: "4% 46% 46% 4%"
+                        }}
+                    >
+                        <DivUp nameOn={this.state.nameOn} />
+                        <DivDown nameOn={this.state.nameOn} />
+                        <input
+                            onClick={this.nameOnLauncher}
+                            autoComplete="off"
+                            type="text"
+                            className="form-control"
+                            id="name"
+                            style={{
+                                display: "grid",
+                                gridRow: "2/4",
+                                width: "99%",
+                                height: "80%",
+                                fontSize: "0.9em",
+                                backgroundColor: "white",
+                                justifySelf: "center",
+                                alignSelf: "center",
+                                border: "none"
+                            }}
+                        />
+                        <DivLeft nameOn={this.state.nameOn} />
+                        <DivRight nameOn={this.state.nameOn} />
+                    </div>
+                    <label
+                            for="exampleInputEmail1"
+                            style={{
+                                display: 'grid',
+                                gridRow: '3/4',
+                                justifySelf: 'center',
+                            }}>Podaj e-mail</label>              
+                    <div
+                        style={{
+                            display: "grid",
+                            gridRow: "4/5",
+                            width: "50%",
+                            height: "5vh",
+                            justifySelf: "center",
+                            gridTemplateColumns: "1% 98% 1%",
+                            gridTemplateRows: "4% 46% 46% 4%"
+                        }}
+                    >
                         
-                            <label for="name" 
-                                        style={{
-                                            alignSelf:'start',
-                                            justifySelf:'center',
-                                            display:'grid',
-                                            gridRow:'1/2',
-                                        }}>Podaj imie
-                            </label>
-                            <InputName/>
+                        <DivUp2 emailOn={this.state.emailOn} />
+                        <DivDown2 emailOn={this.state.emailOn} />
+                        <input
+                            onClick={this.emailOnLauncher}
+                            autoComplete="off"
+                            type="text"
+                            className="form-control"
+                            id="email"
+                            style={{
+                                display: "grid",
+                                gridRow: "2/4",
+                                width: "99%",
+                                height: "80%",
+                                fontSize: "0.9em",
+                                backgroundColor: "white",
+                                justifySelf: "center",
+                                alignSelf: "center",
+                                border: "none"
+                            }}
+                        />
+                        <DivLeft2 emailOn={this.state.emailOn} />
+                        <DivRight2 emailOn={this.state.emailOn} />
+                    </div>
+                    <label
+                        for="message"
+                        style={{
+                            display: 'grid',
+                            gridRow: '5/6',
+                            height: '3vh',
+                            justifySelf: 'center',
+                        }}>Twoja wiadomosc</label>
+                    <textarea
+                        maxLength='350'
+                        className="form-control"
+                        rows="5"
+                        id="message"
+                        style={{
+                            display: 'grid',
+                            gridRow: '6/7',
+                            width: '50%',
+                            height: '50%',
+                            justifySelf: 'center',
+                            resize: 'none',
+                            border: '2px solid darkred',
+                            fontSize: '0.9em',
+                            alignSelf: 'start'
 
-                            <label 
-                                for="exampleInputEmail1"
-                                style={{
-                                    display:'grid',
-                                    gridRow:'3/4',
-                                    justifySelf:'center',
-                                }}>Podaj e-mail</label>
-                            <InputEmail/>
-                        
-                            <label 
-                                for="message"
-                                style={{
-                                    display:'grid',
-                                    gridRow:'5/6',
-                                    height:'3vh',
-                                    justifySelf:'center',
-                                }}>Twoja wiadomosc</label>
-                            <textarea 
-                            maxLength='350'
-                            className="form-control" 
-                            rows="5" 
-                            id="message"
-                            style={{
-                                display:'grid',
-                                gridRow:'6/7',
-                                width:'50%',
-                                height:'50%',
-                                justifySelf:'center',
-                                resize:'none',
-                                border:'2px solid darkred',
-                                fontSize:'0.9em',
-                                alignSelf:'start'
-                                
-                            }}></textarea>
-                        
-                        <ContactSubmit
-                            type="submit" 
-                            className="btn btn-primary"
-                            style={{
-                                display:'grid',
-                                gridRow:'7/8',
-                                justifySelf:'center',
-                                width:'20%',
-                                textAlign:'center'
-                                }}>submit
+                        }}></textarea>
+
+                    <ContactSubmit
+                        type="submit"
+                        className="btn btn-primary"
+                        style={{
+                            display: 'grid',
+                            gridRow: '7/8',
+                            justifySelf: 'center',
+                            width: '20%',
+                            textAlign: 'center'
+                        }}>submit
                                 </ContactSubmit>
-                    </form>
+                </form>
 
                 
 

@@ -1,13 +1,7 @@
 import React , { Component }from 'react';
 import styled, {keyframes} from 'styled-components';
-import {Grid, Cell} from 'styled-css-grid';
-import Fade, {Zoom} from 'react-reveal';
 import {
-    Link,
-    Element,
-    Events,
     animateScroll as scroll,
-    scrollSpy,
     scroller
   } from "react-scroll";
 
@@ -19,14 +13,7 @@ const image1 = img;
 const image2 = img2;
 const image3 = img3;
 
-const fadeIn = keyframes`
-    from{
-        opacity:0.6
-        }
-    to{
-        opacity:1
-        }
-        `;
+
 const lineGrow = keyframes`
 0% {
 width: 0;
@@ -90,87 +77,9 @@ const bounceFromRight = keyframes`
     }
 `;
 
-// const Cells = [
-  
-//        {
-//         width: 1,
-//         height: 2,
-//         left:1,
-//         top: 1,
-//         img: '',
-//         animation: fadeIn  
-//     },
-//     {
-//         width: 1,
-//         height: 2,
-//         left:2,
-//         top: 1,
-//         img: '',
-//         animation: '',
-//         text:'kajsdhkjashdklajsdlaksdh askdhkasjhdkjashdk askdjaksdaksjdhifsadasd askdj akjsdhkalsjdhkasljdhuh a sudaksdhkass',
-//         title: 'Opcja 1'   
-//     },
-//     {
-//         width: 1,
-//         height: 2,
-//         left:1,
-//         top: 3,
-//         img: '',
-//         animation: '',
-//         text: 'asdjahgdsjasgdjkashgdjkasasassagdkajsgdjkashgdjahgdjasgdjhgsd  sadhgajksdhga  djaasdasdas asdasdas asdasshgdjahs',
-//         title: 'Opcja 2'   
-//     },
-//     {
-//         width: 1,
-//         height: 2,
-//         left:2,
-//         top: 3,
-//         img: '',
-//         animation: fadeIn  
-//     },
-//     {
-//         width: 1,
-//         height: 2,
-//         left:1,
-//         top: 5,
-//         img: '',
-//         animation: fadeIn   
-//     },
-//     {
-//         width: 1,
-//         height: 2,
-//         left:2,
-//         top: 5,
-//         img: '',
-//         animation: '',
-//         text:'asd',
-//         title:'Opcja 3'   
-//     }
-    
-// ]
-
-const ImageContainerWrapper = styled.div`
-        /* border: 2px solid black; */
-        width: 100%;
-        height: 100%;
-        overflow:hidden;
-        `;
-        
-const ImageContainer = styled.div`
-        background-image:  url(${props => props.img});
-        background-position:center;
-        background-size:cover;
-        width:100%;
-        height:100%;
-        animation: ${props => props.animation} 2s;
-        /* border: 2px solid black; */
-        
-    `;
-
 const Line = styled.div`
     height:2px;
     background-color: red;
-    /* margin-top:35px; */
     animation: ${lineGrow} 1s forwards;
 `;
 const Line2 = styled.div`
@@ -178,22 +87,9 @@ const Line2 = styled.div`
     animation: ${lineGrow2} 0.5s forwards;
     animation-delay:1s;
 `;    
-const OfferTitle = styled.div`
-    width: 80%;
-    font-size:2.2em; 
-    margin:auto;
-    margin-top:-3%;
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid black; */
-    p {
-    animation: ${fadeIn} 3s forwards;
 
-    }
-`;
 const offerStyle={
         display:'grid',
-        // border:'2px solid black',
         backgroundSize:'cover',
         backgroundPosition:'center',
         fontFamily:'Dosis, cursive'
@@ -217,43 +113,6 @@ class Offer extends Component {
           }  
         
     }
-
-    // showHeroes = () => 
-    // Cells.map((cell, i) => (
-            
-    //         <Cell key={i+' offer'}
-    //         width={cell.width} 
-    //         height={cell.height} 
-    //         left={cell.left} 
-    //         top={cell.top} 
-    //         >
-    //             <ImageContainerWrapper >
-    //                 <ImageContainer 
-    //                 img={cell.img}
-    //                 animation={cell.animation && this.props.offerReveal === true ? cell.animation : ''}
-    //                 >
-                    
-    //                 <OfferTitle style={{display: cell.text ? 'flex' : 'none', fontFamily:'Dosis, cursive'}}>
-    //                     <p>{cell.title}</p>
-    //                 </OfferTitle>
-    //                 <Line/>
-    //                 <Line2/>
-    //                 <div style={{textAlign:'center',
-    //                             justifySelf:'center', 
-    //                             marginTop:'10px', 
-    //                             fontSize:'1.5em',
-    //                             fontFamily:'Dosis, cursive', 
-    //                             border:'2px solid black', 
-    //                             width:'70%' }}>
-    //                     {cell.text ? cell.text : ''}
-    //                 </div>
-                    
-    //                 </ImageContainer>
-    //             </ImageContainerWrapper>
-                
-    //             </Cell>
-        
-    // ))
 
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
