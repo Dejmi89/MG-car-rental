@@ -229,6 +229,12 @@ class Form extends Component {
           });
         }
       };
+      resetFormState = () => {
+          this.setState({
+              emailOn:'.',
+              nameOn:'.'
+          })
+      }
 
     render() {      
 
@@ -372,6 +378,7 @@ class Form extends Component {
                         }}></textarea>
 
                     <ContactSubmit
+                        onClick={this.resetFormState}
                         type="submit"
                         className="btn btn-primary"
                         style={{
