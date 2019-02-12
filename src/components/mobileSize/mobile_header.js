@@ -13,7 +13,7 @@ import {
   scrollSpy,
   scroller
 } from "react-scroll";
-import img from '../src/resources/images/carIntheWoods.jpg';
+import img from '../../resources/images/carIntheWoods.jpg';
 
 
 library.add(fab);
@@ -41,18 +41,18 @@ const HeaderSection = styled.div`
     background-image: url(${img});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y:65%;
+    background-position-x:50%;
     min-height:100vh;
     width: 100%;
     /* border: 2px solid black; */
-    display:flex;
-    align-items: center;
+    /* display:flex; */
+    /* align-items: center; */
     
 
 `;
 
 const HeaderWrapper = styled.div`
-    width:80%;
+    width:100%;
     height: 80vh;
     /* border: 2px solid white; */
     display:flex;
@@ -61,22 +61,22 @@ const HeaderWrapper = styled.div`
 `;
 
 const SCWrapper = styled.div`
-    width: 10%;
-    height: 15vh;
+    width: 20%;
+    height: 5vh;
     /* border: 2px solid white; */
     display:flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;    
-    
+    font-size:0.4em;
 
 `;
 
 
 const MenuWrapper = styled.div`
-    width: 80%;
+    width: 100%;
     height: 50%;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     margin-left: 10px;
     display: flex;
     align-self: flex-start;
@@ -87,7 +87,7 @@ const MenuWrapper = styled.div`
 `;
 
 const Menu = styled.div`
-    width: 80%;
+    width: 100%;
     height: 30%;
     display:flex;
     flex-direction: row;
@@ -95,7 +95,7 @@ const Menu = styled.div`
     justify-content: space-around;
     /* border: 2px solid black; */
     color: white;
-    font-size: 1.5em;
+    font-size: 1em;
     /* position:fixed; */
     top: 1%;
         div {
@@ -104,55 +104,64 @@ const Menu = styled.div`
                 cursor: pointer;
             }
         }
+        
 `;
 
 const CarAnimation = styled.div`
-    font-size: 2em;
-`;
+    font-size: 1.3em;
+    /* border: 2px solid white; */
+    text-align:center;
+    width:20%;
+    height:5vh;
+    `;
 
 const MenuText = styled.h2`
     width: 50%;
-    height: 30%;
-    /* border: 2px solid black; */
+    height: 20%;
+    /* border: 2px solid white; */
     text-align: center;
     color: #ffffff;
-          
+    font-size:1em;
+    
+            
 `;
 const HeaderOnScrollWrapper = styled.div`
     display: flex;
-    align-items:center;
-    justify-content:right;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:center;
     margin-right:0.3%;
-    flex-wrap:wrap;
+    /* flex-wrap:wrap; */
     position:fixed;
     right:0;
-    width:8%;
+    width:30%;
     height:20vh;
     z-index:1;
     animation:${fadeIn} 2s forwards; 
-    /* background-color:orange; */
+    font-size: 0.6em;
+    /* border:2px solid white; */
 `;
 const HeaderOnScrollField = styled.div`
     display: flex;
-    width:90%;
+    width:10%;
     height:20%;
-    border:1px solid white;
+    /* border:1px solid black; */
+    margin-top:1%;
     justify-content:center;
     align-items:center;
     background-color:white;
     font-family: 'Satisfy', cursive;
-    font-size:1.3em;
     animation: ${bounceFromRight} 1s forwards;
     animation-delay: ${props=>props.delay}s;
     &:hover {
         background-color:black;
         color:white;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         
     }
 `;
 
-class Header extends React.Component {
+class MobileHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -208,7 +217,8 @@ class Header extends React.Component {
             
         <div>
             <HeaderSection>
-            <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
+                
+            <SCWrapper style={{alignSelf:'center', marginLeft:'1%'}}>
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -239,9 +249,10 @@ class Header extends React.Component {
                     </SCWrapper>
 
                 <HeaderWrapper>
+                    
                         <MenuWrapper>
                             {this.state.scrolling === true ? 
-                            <HeaderOnScrollWrapper>
+                            <HeaderOnScrollWrapper >
                                 <HeaderOnScrollField  delay={0.2} onClick={this.props.toTop}>Do góry</HeaderOnScrollField>
                                 <HeaderOnScrollField  delay={0.3}><Link to='offer' smooth={true} duration={1000}>Oferta</Link></HeaderOnScrollField>
                                 <HeaderOnScrollField  delay={0.4}><Link to='gallery' smooth={true} duration={1000}>Galeria</Link></HeaderOnScrollField>
@@ -262,7 +273,7 @@ class Header extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Offer</div>
+                                    <div onClick={this.props.scrollFunc}>Oferta</div>
                                 </Link>
                             
                             <CarAnimation >Czerwony Kabriolet</CarAnimation>
@@ -271,14 +282,14 @@ class Header extends React.Component {
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Gallery</div>
+                                    <div onClick={this.props.scrollFunc}>Galeria</div>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Contact</div>
+                                    <div onClick={this.props.scrollFunc}>Kontakt</div>
                                 </Link>
                                                    
                          </Menu>
@@ -297,4 +308,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default MobileHeader;

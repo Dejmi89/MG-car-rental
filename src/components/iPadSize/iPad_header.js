@@ -13,7 +13,7 @@ import {
   scrollSpy,
   scroller
 } from "react-scroll";
-import img from '../src/resources/images/carIntheWoods.jpg';
+import img from '../../resources/images/carIntheWoods.jpg';
 
 
 library.add(fab);
@@ -45,14 +45,14 @@ const HeaderSection = styled.div`
     min-height:100vh;
     width: 100%;
     /* border: 2px solid black; */
-    display:flex;
-    align-items: center;
+    /* display:flex;
+    align-items: center; */
     
 
 `;
 
 const HeaderWrapper = styled.div`
-    width:80%;
+    width:100%;
     height: 80vh;
     /* border: 2px solid white; */
     display:flex;
@@ -61,39 +61,40 @@ const HeaderWrapper = styled.div`
 `;
 
 const SCWrapper = styled.div`
-    width: 10%;
-    height: 15vh;
+    width: 20%;
+    height: 5vh;
     /* border: 2px solid white; */
     display:flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;    
-    
+    font-size: 0.7em;
 
 `;
 
 
 const MenuWrapper = styled.div`
-    width: 80%;
+    width: 100%;
     height: 50%;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     margin-left: 10px;
     display: flex;
     align-self: flex-start;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    font-size: 0.8em;
 
 `;
 
 const Menu = styled.div`
-    width: 80%;
+    width: 100%;
     height: 30%;
     display:flex;
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     color: white;
     font-size: 1.5em;
     /* position:fixed; */
@@ -104,7 +105,7 @@ const Menu = styled.div`
                 cursor: pointer;
             }
         }
-`;
+      `;
 
 const CarAnimation = styled.div`
     font-size: 2em;
@@ -112,11 +113,16 @@ const CarAnimation = styled.div`
 
 const MenuText = styled.h2`
     width: 50%;
-    height: 30%;
-    /* border: 2px solid black; */
+    height: 20%;
+    /* border: 2px solid white; */
     text-align: center;
     color: #ffffff;
-          
+    font-size: 1.3em;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    margin-top:0;
+               
 `;
 const HeaderOnScrollWrapper = styled.div`
     display: flex;
@@ -126,11 +132,10 @@ const HeaderOnScrollWrapper = styled.div`
     flex-wrap:wrap;
     position:fixed;
     right:0;
-    width:8%;
+    width:18%;
     height:20vh;
     z-index:1;
     animation:${fadeIn} 2s forwards; 
-    /* background-color:orange; */
 `;
 const HeaderOnScrollField = styled.div`
     display: flex;
@@ -144,6 +149,7 @@ const HeaderOnScrollField = styled.div`
     font-size:1.3em;
     animation: ${bounceFromRight} 1s forwards;
     animation-delay: ${props=>props.delay}s;
+    
     &:hover {
         background-color:black;
         color:white;
@@ -152,7 +158,7 @@ const HeaderOnScrollField = styled.div`
     }
 `;
 
-class Header extends React.Component {
+class IpadHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -297,4 +303,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default IpadHeader;

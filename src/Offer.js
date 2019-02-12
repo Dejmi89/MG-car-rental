@@ -103,6 +103,7 @@ const pStyle = {
     fontFamily:'Work Sans, sans-serif', 
     textAlign:'center',
     fontWeight:'500'
+    
 }
 
 class Offer extends Component {
@@ -125,11 +126,11 @@ class Offer extends Component {
     render() {
         return (
             <div>
-                <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
+                {/* <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                     gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                     najważniejszego dnia w Waszym życiu ?
                     </p>
-                    <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
+                    <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p> */}
 
                     <div style={{
                         // border:'2px solid black',
@@ -192,14 +193,14 @@ class Offer extends Component {
                                     <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        <ul style={{marginTop:'0'}}>
+                                        {/* <ul style={{marginTop:'0'}}>
                                             <li>Śluby</li>
                                             <li>Sesje fotograficzne</li>
                                             <li>Reklamy</li>
                                             <li>Filmy</li>
                                             <li>Imprezy okolicznościowe</li>
                                             <li>Niespodzianki</li>
-                                         </ul>
+                                         </ul> */}
                                     </div>
                                     </div>
                                 </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as Scroll from "react-scroll";
+import MediaQuery from 'react-responsive';
 import {
   animateScroll as scroll,
   scroller
@@ -7,12 +8,11 @@ import {
 
 import Form from '../src/components/form';
 import Header from './Header';
+import MobileHeader from './components/mobileSize/mobile_header';
+import IpadHeader from './components/iPadSize/iPad_header';
 import Offer from './Offer';
 import Gallery from './Gallery';
 import Footer from './Footer';
-
-
-
 
 
 class App extends Component {
@@ -22,7 +22,9 @@ class App extends Component {
     this.state = { 
       apiResponse: "",
       galleryReveal:false,
-      offerReveal:false
+      offerReveal:false,
+      windowWidth:'',
+      windowHeight:''
     };
   }
   
@@ -33,6 +35,10 @@ class App extends Component {
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleReveal);
+    this.setState({
+      windowWidth: window.innerWidth, 
+      windowHeight: window.innerHeight
+    })
 }
 
   componentWillMount() {
@@ -66,24 +72,39 @@ class App extends Component {
     scroll.scrollToTop();
   }
   
+  
+
 
   render() {
-    
+      const windowHeight = this.state.windowHeight;
+      const windowWidth = this.state.windowWidth;
     return (
       <div style={{fontFamily:'satisfy, cursive'}}>
-        <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>
+      
+        <MediaQuery maxWidth = {767}>
+            <MobileHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {768} maxWidth = {991}>
+            <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {1024}>
+            <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>
+        </MediaQuery>
+
+        
         <h1 style={{
           textAlign:'center', 
           marginTop:'2%', 
           marginBottom:'2%',
           fontWeight:'500', 
-          fontSize:'2.3em',
           }} name="offer">Oferta</h1>
         <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal}></Offer>
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="gallery">Galeria</h1>
-        <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
+          
+          <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
+          
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="contact">Kontakt</h1>
-        <Form toTop={this.scrollToTop}></Form>
+        <Form toTop={this.scrollToTop} windowWidth={windowWidth} windowHeight={windowHeight}></Form>
         {/* {this.state.apiResponse} */}
         <Footer/>
       </div>
