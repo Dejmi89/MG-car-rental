@@ -11,7 +11,11 @@ import Header from './Header';
 import MobileHeader from './components/mobileSize/mobile_header';
 import IpadHeader from './components/iPadSize/iPad_header';
 import Offer from './Offer';
+import MobileOffer from './components/mobileSize/mobile_offer';
+import IpadOffer from './components/iPadSize/iPad_offer';
 import Gallery from './Gallery';
+import MobileGallery from './components/mobileSize/mobile_gallery';
+import IpadGallery from './components/iPadSize/ipad_gallery';
 import Footer from './Footer';
 
 
@@ -92,16 +96,36 @@ class App extends Component {
         </MediaQuery>
 
         
-        <h1 style={{
+         <h1 style={{
           textAlign:'center', 
           marginTop:'2%', 
           marginBottom:'2%',
           fontWeight:'500', 
           }} name="offer">Oferta</h1>
-        <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal}></Offer>
+
+          <MediaQuery maxWidth = {767}>
+            <MobileOffer toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {768} maxWidth = {991}>
+            <IpadOffer toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {1024}>
+            <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal}></Offer> 
+        </MediaQuery>
+        
+
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="gallery">Galeria</h1>
+        
+        <MediaQuery maxWidth = {767}>
+            <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {768} maxWidth = {991}>
+            <IpadGallery toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {1024}>
+        <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
+        </MediaQuery>
           
-          <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
           
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="contact">Kontakt</h1>
         <Form toTop={this.scrollToTop} windowWidth={windowWidth} windowHeight={windowHeight}></Form>

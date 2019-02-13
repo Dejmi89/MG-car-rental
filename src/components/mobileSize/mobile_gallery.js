@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 import {Grid, Cell} from 'styled-css-grid';
-import img1 from './resources/images/wedding/0022_M&D_1080p.jpg';
-import img2 from './resources/images/wedding/0189_M&D_1080p.jpg';
-import img3 from './resources/images/wedding/0071_M&D_1080p.jpg';
-import img4 from './resources/images/wedding/0070_M&D_1080p.jpg';
-import img5 from './resources/images/mg_hood.jpg';
-import img6 from './resources/images/steering_wheel.jpg';
-import img7 from './resources/images/wedding/0191_M&D_1080p.jpg';
-import img8 from './resources/images/wedding/0186_M&D_1080p.jpg';
-import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
-import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
-import img11 from './resources/images/gearbox_stick.jpg';
+import img1 from '../../resources/images/wedding/0022_M&D_1080p.jpg';
+import img2 from '../../resources/images/wedding/0189_M&D_1080p.jpg';
+import img3 from '../../resources/images/wedding/0071_M&D_1080p.jpg';
+import img4 from '../../resources/images/wedding/0070_M&D_1080p.jpg';
+import img5 from '../../resources/images/mg_hood.jpg';
+import img6 from '../../resources/images/steering_wheel.jpg';
+import img7 from '../../resources/images/wedding/0191_M&D_1080p.jpg';
+import img8 from '../../resources/images/wedding/0186_M&D_1080p.jpg';
+import img9 from '../../resources/images/wedding/0184_M&D_1080p.jpg';
+import img10 from '../../resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
+import img11 from '../../resources/images/gearbox_stick.jpg';
 
 
 const shineEffect = keyframes`
@@ -37,9 +37,9 @@ const shineEffect = keyframes`
 const Cells = [
     
     {
-        width: 3,
-        height: 3,
-        left:2,
+        width: 1,
+        height: 1,
+        left:1,
         top: 1,
         img: img2,
         animation: shineEffect,
@@ -49,7 +49,7 @@ const Cells = [
         width: 1,
         height: 1,
         left: 2,
-        top: 4,
+        top: 1,
         img: img3,
         animation: shineEffect,
         animationDelay:2
@@ -57,8 +57,8 @@ const Cells = [
     {
         width: 1,
         height: 1,
-        left: 3,
-        top: 4,
+        left: 1,
+        top: 2,
         img: img4,
         animation: shineEffect,
         animationDelay:1
@@ -66,8 +66,8 @@ const Cells = [
     {
         width: 1,
         height: 1,
-        left: 4,
-        top: 4,
+        left:2,
+        top: 2,
         img: img5,
         animation: shineEffect,
         animationDelay:2
@@ -75,8 +75,8 @@ const Cells = [
     {
         width: 1,
         height: 1,
-        left: 7,
-        top: 1,
+        left: 1,
+        top: 3,
         img: img6,
         animation: shineEffect,
         animationDelay:3
@@ -84,35 +84,35 @@ const Cells = [
     {
         width:1 ,
         height: 1,
-        left: 8,
-        top: 1,
+        left: 2,
+        top: 3,
         img: img7,
         animation: shineEffect,
         animationDelay:2
     },
     {
-        width: 2,
-        height: 2,
-        left: 5,
-        top: 1,
+        width: 1,
+        height: 1,
+        left: 1,
+        top: 4,
         img: img8,
         animation: shineEffect,
         animationDelay:1
     },
     {
-        width: 2,
-        height: 2,
-        left: 5,
-        top: 3,
+        width: 1,
+        height: 1,
+        left: 2,
+        top: 4,
         img: img9,
         animation: shineEffect,
         animationDelay:3 
     },
     {
-        width: 2,
-        height: 2,
-        left: 7,
-        top: 2,
+        width: 1,
+        height: 1,
+        left: 1,
+        top: 5,
         img: img10,
         animation: shineEffect,
         animationDelay: 1
@@ -120,17 +120,17 @@ const Cells = [
     {
         width: 1,
         height: 1,
-        left: 7,
-        top: 4,
+        left: 2,
+        top: 5,
         img: img11,
         animation: shineEffect,
         animationDelay:2 
     },
     {
-        width: 1,
+        width: 2,
         height: 1,
-        left: 8,
-        top: 4,
+        left: 1,
+        top: 6,
         img: img1,
         animation: shineEffect,
         animationDelay:4 
@@ -168,21 +168,21 @@ const ClickedImageWrapper = styled.div`
 
 const ClickedImage = styled.div`
     position:fixed;
-    top:8%;
-    left:17%;
+    top:26%;
+    left:0;
     z-index:1;
-    width: 65%;
-    height: 85%;
+    width: 100%;
+    height: 42%;
     border:5px solid white;
         a{
             color:black;
-            font-size:2.3em;
+            font-size:1.3em;
             position:absolute;
-            right:0;
+            right:2px;
             top:0;
             background-color:white;
-            width:4%;
-            height:4%;
+            width:7%;
+            height:6%;
             display:flex;
             justify-content:center;
             align-items:center;
@@ -194,16 +194,9 @@ const ClickedImage = styled.div`
             width:100%;
             height:100%;
         }
-        @media(max-width: 1024px){
-        width:100%;
-        height:50%;
-        top:20%;
-        left:0%
-        
-    }
-    `;
+     `;
 
-class Gallery extends Component {
+class MobileGallery extends Component {
     constructor(props){
         super(props);
           this.state = {
@@ -271,7 +264,7 @@ class Gallery extends Component {
                     <Grid
                         name={this.props.name}
                         style={{opacity:this.state.opacity}}
-                        columns={'repeat(9,minmax(max-content,auto))'}
+                        columns={'repeat(2,50%)'}
                         rows={'repeat(6, minmax(150px, auto))'}
                         gap='5px'
                         
@@ -294,7 +287,7 @@ class Gallery extends Component {
     }
 }
 
-export default Gallery;
+export default MobileGallery;
 
 
 
