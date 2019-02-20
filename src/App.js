@@ -6,7 +6,7 @@ import {
   scroller
 } from "react-scroll";
 
-import Form from '../src/components/form';
+
 import Header from './Header';
 import MobileHeader from './components/mobileSize/mobile_header';
 import IpadHeader from './components/iPadSize/iPad_header';
@@ -16,6 +16,9 @@ import IpadOffer from './components/iPadSize/iPad_offer';
 import Gallery from './Gallery';
 import MobileGallery from './components/mobileSize/mobile_gallery';
 import IpadGallery from './components/iPadSize/ipad_gallery';
+import Form from '../src/components/form';
+import MobileForm from './components/mobileSize/mobile_form';
+import IpadForm from './components/iPadSize/iPad_form';
 import Footer from './Footer';
 
 
@@ -80,8 +83,7 @@ class App extends Component {
 
 
   render() {
-      const windowHeight = this.state.windowHeight;
-      const windowWidth = this.state.windowWidth;
+      
     return (
       <div style={{fontFamily:'satisfy, cursive'}}>
       
@@ -123,12 +125,21 @@ class App extends Component {
             <IpadGallery toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
         </MediaQuery>
         <MediaQuery minWidth = {1024}>
-        <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
+            <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
         </MediaQuery>
           
           
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="contact">Kontakt</h1>
-        <Form toTop={this.scrollToTop} windowWidth={windowWidth} windowHeight={windowHeight}></Form>
+        <MediaQuery maxWidth = {767}>
+            <MobileForm toTop={this.scrollToTop}></MobileForm>        
+        </MediaQuery>
+        <MediaQuery minWidth = {768} maxWidth = {991}>
+            <IpadForm toTop={this.scrollToTop}></IpadForm>        
+        </MediaQuery>
+        <MediaQuery minWidth = {1024}>
+            <Form toTop={this.scrollToTop}></Form>
+        </MediaQuery>
+        
         {/* {this.state.apiResponse} */}
         <Footer/>
       </div>

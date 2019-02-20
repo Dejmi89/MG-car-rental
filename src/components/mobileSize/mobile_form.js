@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
-import InputName from './InputName';
-import InputEmail from './InputEmail';
+
 import {
     Link,
     Element,
@@ -167,7 +166,7 @@ const DivDown2 = styled.div`
   
 `;
 
-class Form extends Component {
+class MobileForm extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -242,15 +241,13 @@ class Form extends Component {
       }
       
     render() {      
-        if (this.props.windowWidth >= 768){
-            return <div style={{display:'grid', gridTemplateColumns:'50% 50%', border:'2px solid black', height:'20vh'}}></div>
-        }
+        
          
         return (
             <div name={this.props.name} 
             style={{
                 display:'grid', 
-                gridTemplateColumns: '50% 50%', 
+                gridTemplateColumns: '10% 80% 10%', 
                 gridTemplateRows:'auto',
                 marginTop:'5%'}}>
                 
@@ -264,7 +261,7 @@ class Form extends Component {
                         gridRow: "auto",
                         gridTemplateColumns: "100%",
                         gridTemplateRows: "10% 10% 10% 10% 10% 30% 10% 10%",
-                        fontSize: "1.7em",
+                        fontSize: "1.2em",
                         // border: "2px solid black",
                         width: "100%",
                         height: "50vh",
@@ -394,7 +391,9 @@ class Form extends Component {
                             gridRow: '7/8',
                             justifySelf: 'center',
                             width: '20%',
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            alignItems:'center',
+                            fontSize:'0.7em'
                         }}>submit
                                 </ContactSubmit>
                 </form>
@@ -406,4 +405,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default MobileForm;

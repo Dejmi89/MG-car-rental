@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
-import InputName from './InputName';
-import InputEmail from './InputEmail';
+
 import {
     Link,
     Element,
@@ -167,7 +166,7 @@ const DivDown2 = styled.div`
   
 `;
 
-class Form extends Component {
+class IpadForm extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -242,15 +241,12 @@ class Form extends Component {
       }
       
     render() {      
-        if (this.props.windowWidth >= 768){
-            return <div style={{display:'grid', gridTemplateColumns:'50% 50%', border:'2px solid black', height:'20vh'}}></div>
-        }
-         
+       
         return (
             <div name={this.props.name} 
             style={{
                 display:'grid', 
-                gridTemplateColumns: '50% 50%', 
+                gridTemplateColumns: '10% 80% 10%', 
                 gridTemplateRows:'auto',
                 marginTop:'5%'}}>
                 
@@ -406,4 +402,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default IpadForm;

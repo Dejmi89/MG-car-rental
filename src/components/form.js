@@ -242,9 +242,7 @@ class Form extends Component {
       }
       
     render() {      
-        if (this.props.windowWidth >= 768){
-            return <div style={{display:'grid', gridTemplateColumns:'50% 50%', border:'2px solid black', height:'20vh'}}></div>
-        }
+        
          
         return (
             <div name={this.props.name} 
