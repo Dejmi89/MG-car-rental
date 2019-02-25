@@ -283,7 +283,7 @@ class IpadForm extends Component {
                         style={{
                             display: "grid",
                             gridRow: "2/3",
-                            width: "50%",
+                            width: "65%",
                             height: "5vh",
                             justifySelf: "center",
                             gridTemplateColumns: "1% 98% 1%",
@@ -324,7 +324,7 @@ class IpadForm extends Component {
                         style={{
                             display: "grid",
                             gridRow: "4/5",
-                            width: "50%",
+                            width: "65%",
                             height: "5vh",
                             justifySelf: "center",
                             gridTemplateColumns: "1% 98% 1%",
@@ -371,7 +371,7 @@ class IpadForm extends Component {
                         style={{
                             display: 'grid',
                             gridRow: '6/7',
-                            width: '50%',
+                            width: '63%',
                             height: '50%',
                             justifySelf: 'center',
                             resize: 'none',
@@ -390,8 +390,10 @@ class IpadForm extends Component {
                             gridRow: '7/8',
                             justifySelf: 'center',
                             width: '20%',
-                            textAlign: 'center'
-                        }}>submit
+                            textAlign: 'center',
+                            fontFamily:'Satisfy',
+                            height:'4vh'
+                        }}>Submit
                                 </ContactSubmit>
                 </form>
 

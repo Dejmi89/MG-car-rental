@@ -284,7 +284,7 @@ class MobileForm extends Component {
                         style={{
                             display: "grid",
                             gridRow: "2/3",
-                            width: "50%",
+                            width: "70%",
                             height: "5vh",
                             justifySelf: "center",
                             gridTemplateColumns: "1% 98% 1%",
@@ -325,7 +325,7 @@ class MobileForm extends Component {
                         style={{
                             display: "grid",
                             gridRow: "4/5",
-                            width: "50%",
+                            width: "70%",
                             height: "5vh",
                             justifySelf: "center",
                             gridTemplateColumns: "1% 98% 1%",
@@ -372,7 +372,7 @@ class MobileForm extends Component {
                         style={{
                             display: 'grid',
                             gridRow: '6/7',
-                            width: '50%',
+                            width: '68%',
                             height: '50%',
                             justifySelf: 'center',
                             resize: 'none',
@@ -387,14 +387,16 @@ class MobileForm extends Component {
                         type="submit"
                         className="btn btn-primary"
                         style={{
+                            fontFamily:'Satisfy',
                             display: 'grid',
                             gridRow: '7/8',
                             justifySelf: 'center',
-                            width: '20%',
+                            width: '27%',
                             textAlign: 'center',
                             alignItems:'center',
-                            fontSize:'0.7em'
-                        }}>submit
+                            fontSize:'0.9em',
+                            height:'6vh'
+                        }}>Submit
                                 </ContactSubmit>
                 </form>
 

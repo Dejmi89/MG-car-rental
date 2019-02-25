@@ -4,9 +4,9 @@ import styled, {keyframes} from 'styled-components';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SCWrapper from './Header';
 
-class Footer extends Component {
+
+class IpadFooter extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,7 +35,7 @@ class Footer extends Component {
     render() {
         return (
             <div style={{display: 'flex', justifyContent:'flex-end'}}>
-                    <div style={{ marginRight:'2%', marginBottom:'1%', height:'5vh', width:'8%', display:'flex'}}>
+                    <div style={{ marginRight:'9%', marginTop:'2%', height:'5vh', width:'8%', display:'flex'}}>
         
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
@@ -71,4 +71,4 @@ class Footer extends Component {
     }
 }
 
-export default Footer;
+export default IpadFooter;

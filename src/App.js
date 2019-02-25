@@ -20,6 +20,8 @@ import Form from '../src/components/form';
 import MobileForm from './components/mobileSize/mobile_form';
 import IpadForm from './components/iPadSize/iPad_form';
 import Footer from './Footer';
+import MobileFooter from './components/mobileSize/mobile_footer';
+import IpadFooter from './components/iPadSize/iPad_footer';
 
 
 class App extends Component {
@@ -141,7 +143,15 @@ class App extends Component {
         </MediaQuery>
         
         {/* {this.state.apiResponse} */}
-        <Footer/>
+        <MediaQuery maxWidth = {767}>
+            <MobileFooter/>        
+        </MediaQuery>
+        <MediaQuery minWidth = {768} maxWidth = {991}>
+            <IpadFooter/>        
+        </MediaQuery>
+        <MediaQuery minWidth = {1024}>
+            <Footer/>
+        </MediaQuery>
       </div>
     );
   }

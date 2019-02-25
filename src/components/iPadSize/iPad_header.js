@@ -128,10 +128,10 @@ const HeaderOnScrollWrapper = styled.div`
     display: flex;
     align-items:center;
     justify-content:right;
-    margin-right:0.3%;
+    /* margin-right:0.3%; */
     flex-wrap:wrap;
     position:fixed;
-    right:0;
+    right:-67px;
     width:18%;
     height:20vh;
     z-index:1;

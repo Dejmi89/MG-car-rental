@@ -29,7 +29,7 @@ const fadeIn = keyframes`
 
 const bounceFromRight = keyframes`
     0%{
-        width:90%
+        width:100%
     }
     
     100%{
@@ -121,12 +121,13 @@ const MenuText = styled.h2`
 const HeaderOnScrollWrapper = styled.div`
     display: flex;
     align-items:center;
+    justify-self:right;
     justify-content:right;
     margin-right:0.3%;
     flex-wrap:wrap;
     position:fixed;
-    right:0;
-    width:8%;
+    right:0%;
+    width:11%;
     height:20vh;
     z-index:1;
     animation:${fadeIn} 2s forwards; 
