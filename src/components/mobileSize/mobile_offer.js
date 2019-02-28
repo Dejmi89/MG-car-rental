@@ -161,15 +161,15 @@ class MobileOffer extends Component {
                             gridTemplateColumns:'100%',
                             gridTemplateRows:'15% 2% 2% 81%'
                             }}>
-                             <div style={{
+                                <div style={{
                                  ...offerStyle,
                                  ...offerStyleText
-                             }}>
+                                }}>
                                 <h2 style={{fontSize:'0.5em'}}>MG model MGB, rocznik 1977</h2>
-                             </div>
-                             <div style={{
+                                </div>
+                                <div style={{
                                  ...offerStyle,
-                             }}>
+                                }}>
                                 <Line style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
@@ -183,10 +183,10 @@ class MobileOffer extends Component {
                                     alignSelf:'center'
                                 }}/>
                              </div>
-                             <div style={{
+                                <div style={{
                                  ...offerStyle,
                                 width:'100%'
-                             }}>
+                                }}>
                                 <div style={{height:'80%', alignItems:'center'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
                                     <p style={{

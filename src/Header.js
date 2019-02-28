@@ -256,14 +256,14 @@ class Header extends React.Component {
                                 to='galeria' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Home</div>
+                                    <div onClick={this.props.scrollFunc}>Odswiez</div>
                                 </Link>
                             
                                 <Link 
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Offer</div>
+                                    <div onClick={this.props.scrollFunc}>Oferta</div>
                                 </Link>
                             
                             <CarAnimation >Czerwony Kabriolet</CarAnimation>
@@ -272,14 +272,14 @@ class Header extends React.Component {
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Gallery</div>
+                                    <div onClick={this.props.scrollFunc}>Galeria</div>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Contact</div>
+                                    <div onClick={this.props.scrollFunc}>Kontakt</div>
                                 </Link>
                                                    
                          </Menu>

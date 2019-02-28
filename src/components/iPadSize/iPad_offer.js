@@ -145,17 +145,18 @@ class IpadOffer extends Component {
                         <div style={{
                             ...offerStyle,
                             backgroundImage: `url(${image1})`,
-                            
+                            maxHeight:'100%'
                             }}>
                         </div>
 
                         <div style={{
-                            ...offerStyle
+                            ...offerStyle,
+                            maxHeight:'100%'
                             }}>
                             <div style={{
                             ...offerStyle,
                             overflow:'hidden',
-                            fontSize:'2em',
+                            fontSize:'1.3em',
                             gridTemplateColumns:'100%',
                             gridTemplateRows:'15% 2% 2% 81%'
                             }}>
@@ -186,21 +187,22 @@ class IpadOffer extends Component {
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText,
-                                width:'90%'
+                                width:'90%',
+                                
                              }}>
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
                                     <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        {/* <ul style={{marginTop:'0'}}>
+                                        <ul style={{marginTop:'0'}}>
                                             <li>Śluby</li>
                                             <li>Sesje fotograficzne</li>
                                             <li>Reklamy</li>
                                             <li>Filmy</li>
                                             <li>Imprezy okolicznościowe</li>
                                             <li>Niespodzianki</li>
-                                         </ul> */}
+                                         </ul>
                                     </div>
                                     </div>
                                 </div>
@@ -211,9 +213,10 @@ class IpadOffer extends Component {
                         <div style={{
                             ...offerStyle,
                             overflow:'hidden',
-                            fontSize:'2em',
+                            fontSize:'1.3em',
                             gridTemplateColumns:'100%',
-                            gridTemplateRows:'15% 2% 2% 81%'
+                            gridTemplateRows:'15% 2% 2% 81%',
+                            height:'30vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
@@ -252,23 +255,26 @@ class IpadOffer extends Component {
                         
                         <div style={{
                             ...offerStyle,
-                            backgroundImage: `url(${image2})`
-                            }}>4
-                        </div>
-
-                        <div style={{
-                            ...offerStyle,
-                            backgroundImage: `url(${image3})`
+                            backgroundImage: `url(${image2})`,
+                            maxHeight:'100%'
                             }}>
                         </div>
 
                         <div style={{
-                            ...offerStyle
+                            ...offerStyle,
+                            backgroundImage: `url(${image3})`,
+                            maxHeight:'80%'
+                            }}>
+                        </div>
+
+                        <div style={{
+                            ...offerStyle,
+                            maxHeight:'80%'
                             }}>
                             <div style={{
                             ...offerStyle,
                             overflow:'hidden',
-                            fontSize:'2em',
+                            fontSize:'1.3em',
                             gridTemplateColumns:'100%',
                             gridTemplateRows:'15% 2% 2% 81%'
                             }}>

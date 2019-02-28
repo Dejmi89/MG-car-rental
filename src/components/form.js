@@ -392,8 +392,9 @@ class Form extends Component {
                             gridRow: '7/8',
                             justifySelf: 'center',
                             width: '20%',
-                            textAlign: 'center'
-                        }}>submit
+                            textAlign: 'center',
+                            fontFamily:'Satisfy'
+                        }}>Submit
                                 </ContactSubmit>
                 </form>
 
