@@ -31,7 +31,11 @@ class App extends Component {
     this.state = { 
       apiResponse: "",
       galleryReveal:false,
+      iGalleryReveal: false,
+      mobGalleryReveal:false,
       offerReveal:false,
+      iOfferReveal:false,
+      mobOfferReveal:false,
       windowWidth:'',
       windowHeight:''
     };
@@ -47,11 +51,24 @@ class App extends Component {
     this.setState({
       windowWidth: window.innerWidth, 
       windowHeight: window.innerHeight
-    })
+    });
+    window.addEventListener("scroll", this.handleIpadReveal);
+    this.setState({
+      windowWidth: window.innerWidth, 
+      windowHeight: window.innerHeight
+    });
+    window.addEventListener("scroll", this.handleMobileReveal);
+    this.setState({
+      windowWidth: window.innerWidth, 
+      windowHeight: window.innerHeight
+    });
+    
 }
 
   componentWillMount() {
     window.removeEventListener("scroll", this.handleReveal);
+    window.removeEventListener("scroll", this.handleIpadReveal);
+    window.removeEventListener("scroll", this.handleMobileReveal);
     this.callAPI();
   }
 
@@ -67,6 +84,32 @@ class App extends Component {
     else if (window.scrollY >= 610 && this.state.offerReveal !== true) {
       this.setState({ offerReveal: true });
     }
+}
+handleIpadReveal = () =>  {
+  if (window.scrollY <= 2500 && this.state.iGalleryReveal === true) {
+      this.setState({ iGalleryReveal: false });
+  } else if (window.scrollY >= 2500 && this.state.iGalleryReveal !== true) {
+      this.setState({ iGalleryReveal: true });
+  }
+  else if (window.scrollY <= 1200 && this.state.iOfferReveal === true) {
+    this.setState({ iOfferReveal: false });
+  }
+  else if (window.scrollY >= 1210 && this.state.iOfferReveal !== true) {
+    this.setState({ iOfferReveal: true });
+  }
+}
+handleMobileReveal = () =>  {
+  if (window.scrollY <= 1650 && this.state.mobGalleryReveal === true) {
+      this.setState({ mobGalleryReveal: false });
+  } else if (window.scrollY >= 1650 && this.state.mobGalleryReveal !== true) {
+      this.setState({ mobGalleryReveal: true });
+  }
+  else if (window.scrollY <= 770 && this.state.mobOfferReveal === true) {
+    this.setState({ mobOfferReveal: false });
+  }
+  else if (window.scrollY >= 780 && this.state.mobOfferReveal !== true) {
+    this.setState({ mobOfferReveal: true });
+  }
 }
 
   scrollTo() {
@@ -108,10 +151,10 @@ class App extends Component {
           }} name="offer">Oferta</h1>
 
           <MediaQuery maxWidth = {767}>
-            <MobileOffer toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+            <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal}/>
         </MediaQuery>
         <MediaQuery minWidth = {768} maxWidth = {991}>
-            <IpadOffer toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+            <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal}/>
         </MediaQuery>
         <MediaQuery minWidth = {1024}>
             <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal}></Offer> 
@@ -121,10 +164,10 @@ class App extends Component {
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="gallery">Galeria</h1>
         
         <MediaQuery maxWidth = {767}>
-            <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+            <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal}/>
         </MediaQuery>
         <MediaQuery minWidth = {768} maxWidth = {991}>
-            <IpadGallery toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}/>
+            <IpadGallery toTop={this.scrollToTop} galleryReveal={this.state.iGalleryReveal}/>
         </MediaQuery>
         <MediaQuery minWidth = {1024}>
             <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>

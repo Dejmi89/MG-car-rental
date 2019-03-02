@@ -299,6 +299,7 @@ class IpadForm extends Component {
                             className="form-control"
                             id="name"
                             style={{
+                                outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
                                 width: "99%",
@@ -341,6 +342,7 @@ class IpadForm extends Component {
                             className="form-control"
                             id="email"
                             style={{
+                                outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
                                 width: "99%",
@@ -386,6 +388,7 @@ class IpadForm extends Component {
                         type="submit"
                         className="btn btn-primary"
                         style={{
+                            outline:'none',
                             display: 'grid',
                             gridRow: '7/8',
                             justifySelf: 'center',

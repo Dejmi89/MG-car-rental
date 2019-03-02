@@ -33,6 +33,14 @@ const shineEffect = keyframes`
     height:100%;
   }
 `;
+const fadeIn = keyframes`
+    from{
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+`;
 
 const Cells = [
     
@@ -167,6 +175,7 @@ const ClickedImageWrapper = styled.div`
 `;
 
 const ClickedImage = styled.div`
+    animation: ${fadeIn} 0.5s linear forwards;
     position:fixed;
     top:8%;
     left:17%;
@@ -194,13 +203,6 @@ const ClickedImage = styled.div`
             width:100%;
             height:100%;
         }
-        @media(max-width: 1024px){
-        width:100%;
-        height:50%;
-        top:20%;
-        left:0%
-        
-    }
     `;
 
 class Gallery extends Component {

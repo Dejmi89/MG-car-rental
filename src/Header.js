@@ -210,6 +210,7 @@ class Header extends React.Component {
         <div>
             <HeaderSection>
             <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
+                        <a href="www.facebook.com">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -219,6 +220,8 @@ class Header extends React.Component {
                                              
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
+                        </a>
+                        <a href="www.instagram.com">
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 
@@ -228,6 +231,8 @@ class Header extends React.Component {
                                             }}
                                             onMouseEnter={this.handleSocialIconStyle2}
                                             onMouseLeave={this.handleSocialIconStyle2}/>
+                        </a>
+                        <a href="youtube.com">
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
                                             fontSize: this.state.hovered3 ? '3em': '2em',
@@ -237,6 +242,7 @@ class Header extends React.Component {
                                             }}
                                             onMouseEnter={this.handleSocialIconStyle3}
                                             onMouseLeave={this.handleSocialIconStyle3}/>
+                        </a>
                     </SCWrapper>
 
                 <HeaderWrapper>

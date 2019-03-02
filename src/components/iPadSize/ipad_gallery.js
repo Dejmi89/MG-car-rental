@@ -34,6 +34,15 @@ const shineEffect = keyframes`
   }
 `;
 
+const fadeIn = keyframes`
+    from{
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+`;
+
 const Cells = [
     
     {
@@ -167,6 +176,7 @@ const ClickedImageWrapper = styled.div`
 `;
 
 const ClickedImage = styled.div`
+    animation: ${fadeIn} 0.5s linear forwards;
     position:fixed;
     top:19%;
     left:0;

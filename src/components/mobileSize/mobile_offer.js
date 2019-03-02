@@ -80,13 +80,14 @@ const bounceFromRight = keyframes`
 const Line = styled.div`
     height:2px;
     background-color: red;
-    animation: ${lineGrow} 1s forwards;
+    animation: ${props => props.mobOfferReveal === true ? lineGrow : 'none'} 1s forwards;
 `;
 const Line2 = styled.div`
     height: 2px;
-    animation: ${lineGrow2} 0.5s forwards;
+    animation: ${props => props.mobOfferReveal === true ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;    
+
 
 const offerStyle={
         display:'grid',
