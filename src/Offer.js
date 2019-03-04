@@ -92,7 +92,8 @@ const offerStyle={
         display:'grid',
         backgroundSize:'cover',
         backgroundPosition:'center',
-        fontFamily:'Dosis, cursive'
+        fontFamily:'Dosis, cursive',
+        
 }
 const offerStyleText ={
     justifyContent:'center',
@@ -193,14 +194,14 @@ class Offer extends Component {
                                     <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        {/* <ul style={{marginTop:'0'}}>
+                                        <ul style={{marginTop:'0'}}>
                                             <li>Śluby</li>
                                             <li>Sesje fotograficzne</li>
                                             <li>Reklamy</li>
                                             <li>Filmy</li>
                                             <li>Imprezy okolicznościowe</li>
                                             <li>Niespodzianki</li>
-                                         </ul> */}
+                                         </ul>
                                     </div>
                                     </div>
                                 </div>
@@ -253,7 +254,7 @@ class Offer extends Component {
                         <div style={{
                             ...offerStyle,
                             backgroundImage: `url(${image2})`
-                            }}>4
+                            }}>
                         </div>
 
                         <div style={{

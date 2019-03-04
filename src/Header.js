@@ -28,16 +28,6 @@ const fadeIn = keyframes`
         }
 `;
 
-const bounceFromRight = keyframes`
-    0%{
-        width:80%
-    }
-    
-    100%{
-        width:0%
-        }
-`;
-
 const HeaderSection = styled.div`
     background-image: url(${img});
     background-repeat: no-repeat;
@@ -70,7 +60,6 @@ const SCWrapper = styled.div`
     justify-content:center;
     align-items: center;    
     
-
 `;
 
 
@@ -111,13 +100,22 @@ const CarAnimation = styled.div`
     font-size: 2em;
 `;
 
+
 const MenuText = styled.h2`
     width: 50%;
     height: 30%;
     /* border: 2px solid black; */
     text-align: center;
-    color: #ffffff;
-          
+    display:flex;
+    justify-content:center;
+    color: #ffffff;  
+`;
+
+const Nouns = styled.h4`
+    margin-right:5%;
+    opacity:0;
+    animation: ${fadeIn} 2s forwards;
+    animation-delay: ${props => props.delay}s;
 `;
 const HeaderOnScrollWrapper = styled.div`
 
@@ -148,9 +146,9 @@ const HeaderOnScrollField = styled.div`
         background-color:black;
         color:white;
         border: 1px solid black;
-        
     }
 `;
+
 
 class Header extends React.Component {
     constructor(props) {
@@ -214,7 +212,7 @@ class Header extends React.Component {
         <div>
             <HeaderSection>
             <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -295,7 +293,9 @@ class Header extends React.Component {
                          </Menu>
                         
                         <MenuText>
-                            <Fade><h4 >Piękno Styl Elegancja</h4></Fade>
+                            <Nouns delay={0.5}>Piękno</Nouns>
+                            <Nouns delay={0.8}>Styl</Nouns>
+                            <Nouns delay={1.1}>Elegancja</Nouns>
                         </MenuText>
                     </MenuWrapper>
                     

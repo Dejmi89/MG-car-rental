@@ -121,9 +121,15 @@ const MenuText = styled.h2`
     /* border: 2px solid white; */
     text-align: center;
     color: #ffffff;
-    font-size:1em;
-    
-            
+    font-size:0.8em;
+    display:flex;
+    justify-content:center;
+`;
+const Nouns = styled.h4`
+    margin-right:5%;
+    opacity:0;
+    animation: ${fadeIn} 2s forwards;
+    animation-delay: ${props => props.delay}s;
 `;
 const HeaderOnScrollWrapper = styled.div`
     display:grid;
@@ -220,7 +226,7 @@ class MobileHeader extends React.Component {
             <HeaderSection>
                 
             <SCWrapper style={{alignSelf:'center', marginLeft:'1%'}}>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -303,7 +309,9 @@ class MobileHeader extends React.Component {
                          </Menu>
                         
                         <MenuText>
-                            <Fade><h4>Piękno Styl Elegancja</h4></Fade>
+                            <Nouns delay={0.5}>Piękno</Nouns>
+                            <Nouns delay={0.8}>Styl</Nouns>
+                            <Nouns delay={1.1}>Elegancja</Nouns>
                         </MenuText>
                     </MenuWrapper>
                     

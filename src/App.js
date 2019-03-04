@@ -36,8 +36,8 @@ class App extends Component {
       offerReveal:false,
       iOfferReveal:false,
       mobOfferReveal:false,
-      windowWidth:'',
-      windowHeight:''
+      pageXOffSet:'',
+      pageYOffset:''
     };
   }
   
@@ -62,6 +62,8 @@ class App extends Component {
       windowWidth: window.innerWidth, 
       windowHeight: window.innerHeight
     });
+    window.addEventListener("scroll", this.setInnerHeight);
+    
     
 }
 
@@ -112,6 +114,7 @@ handleMobileReveal = () =>  {
   }
 }
 
+
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {
       duration: 800,
@@ -123,8 +126,13 @@ handleMobileReveal = () =>  {
   scrollToTop() {
     scroll.scrollToTop();
   }
-  
-  
+  setInnerHeight = () => {
+    this.setState({
+      pageXOffSet:window.pageXOffset,
+      pageYOffset:window.pageYOffset
+    });
+  }
+ 
 
 
   render() {
@@ -138,8 +146,11 @@ handleMobileReveal = () =>  {
         <MediaQuery minWidth = {768} maxWidth = {991}>
             <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery>
+        <MediaQuery minWidth = {1024} maxWidth = {768}>
+            <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
+        </MediaQuery>
         <MediaQuery minWidth = {1024}>
-            <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop} name="header"></Header>
+            <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop} ></Header>
         </MediaQuery>
 
         
@@ -151,20 +162,20 @@ handleMobileReveal = () =>  {
           }} name="offer">Oferta</h1>
 
           <MediaQuery maxWidth = {767}>
-            <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal}/>
+            <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
         <MediaQuery minWidth = {768} maxWidth = {991}>
-            <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal}/>
+            <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
         <MediaQuery minWidth = {1024}>
-            <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal}></Offer> 
+            <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset}></Offer> 
         </MediaQuery>
         
 
         <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'2.3em'}} name="gallery">Galeria</h1>
         
         <MediaQuery maxWidth = {767}>
-            <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal}/>
+            <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal} />
         </MediaQuery>
         <MediaQuery minWidth = {768} maxWidth = {991}>
             <IpadGallery toTop={this.scrollToTop} galleryReveal={this.state.iGalleryReveal}/>
