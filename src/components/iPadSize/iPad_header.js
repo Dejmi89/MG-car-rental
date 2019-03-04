@@ -125,22 +125,20 @@ const MenuText = styled.h2`
                
 `;
 const HeaderOnScrollWrapper = styled.div`
-    display: flex;
-    align-items:center;
-    justify-content:right;
-    /* margin-right:0.3%; */
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:100%;
+    justify-items:end;
     position:fixed;
-    right:-67px;
+    right:0%;
     width:18%;
     height:20vh;
     z-index:1;
     animation:${fadeIn} 2s forwards; 
 `;
 const HeaderOnScrollField = styled.div`
-    display: flex;
+    display: grid;
     width:90%;
-    height:20%;
+    height:90%;
     border:1px solid white;
     justify-content:center;
     align-items:center;
@@ -207,6 +205,10 @@ class IpadHeader extends React.Component {
             hovered3: !this.state.hovered3
         })
     }
+    reload = () => {
+        window.location.reload();
+        window.scrollTo(0,0);
+    }
 
     render() {
         
@@ -215,6 +217,7 @@ class IpadHeader extends React.Component {
         <div>
             <HeaderSection>
             <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
+                        <a href="https://www.facebook.com/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -224,6 +227,8 @@ class IpadHeader extends React.Component {
                                              
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 
@@ -233,6 +238,8 @@ class IpadHeader extends React.Component {
                                             }}
                                             onMouseEnter={this.handleSocialIconStyle2}
                                             onMouseLeave={this.handleSocialIconStyle2}/>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
                                             fontSize: this.state.hovered3 ? '3em': '2em',
@@ -242,6 +249,7 @@ class IpadHeader extends React.Component {
                                             }}
                                             onMouseEnter={this.handleSocialIconStyle3}
                                             onMouseLeave={this.handleSocialIconStyle3}/>
+                        </a>
                     </SCWrapper>
 
                 <HeaderWrapper>
@@ -261,7 +269,7 @@ class IpadHeader extends React.Component {
                                 to='galeria' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Home</div>
+                                    <div onClick={this.reload}>Odswiez</div>
                                 </Link>
                             
                                 <Link 

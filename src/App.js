@@ -139,7 +139,7 @@ handleMobileReveal = () =>  {
             <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery>
         <MediaQuery minWidth = {1024}>
-            <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop}></Header>
+            <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop} name="header"></Header>
         </MediaQuery>
 
         

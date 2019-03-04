@@ -303,8 +303,8 @@ class MobileForm extends Component {
                                 outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
-                                width: "99%",
-                                height: "80%",
+                                minWidth: "99%",
+                                minHeight: "80%",
                                 fontSize: "0.9em",
                                 backgroundColor: "white",
                                 justifySelf: "center",
@@ -346,8 +346,8 @@ class MobileForm extends Component {
                                 outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
-                                width: "99%",
-                                height: "80%",
+                                minWidth: "99%",
+                                minHeight: "80%",
                                 fontSize: "0.9em",
                                 backgroundColor: "white",
                                 justifySelf: "center",
@@ -374,8 +374,9 @@ class MobileForm extends Component {
                         style={{
                             display: 'grid',
                             gridRow: '6/7',
-                            width: '68%',
+                            minWidth: '68%',
                             height: '50%',
+                            minHeight:'40%',
                             justifySelf: 'center',
                             resize: 'none',
                             border: '2px solid darkred',
@@ -393,11 +394,11 @@ class MobileForm extends Component {
                             display: 'grid',
                             gridRow: '7/8',
                             justifySelf: 'center',
-                            width: '27%',
+                            minWidth: '27%',
                             textAlign: 'center',
                             alignItems:'center',
                             fontSize:'0.9em',
-                            height:'6vh'
+                            minHeight:'5vh'
                         }}>Submit
                                 </ContactSubmit>
                 </form>

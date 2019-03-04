@@ -36,7 +36,7 @@ class Footer extends Component {
         return (
             <div style={{display: 'flex', justifyContent:'flex-end'}}>
                     <div style={{ marginRight:'2%', marginBottom:'1%', height:'5vh', width:'8%', display:'flex'}}>
-        
+                        <a href="https://www.facebook.com/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -46,7 +46,8 @@ class Footer extends Component {
                                              
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
-                                            
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">                   
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 
@@ -56,6 +57,8 @@ class Footer extends Component {
                                             }}
                                             onMouseEnter={this.handleSocialIconStyle2}
                                             onMouseLeave={this.handleSocialIconStyle2}/>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
                                             fontSize: this.state.hovered3 ? '3em': '2em',
@@ -65,6 +68,7 @@ class Footer extends Component {
                                             }}
                                             onMouseEnter={this.handleSocialIconStyle3}
                                             onMouseLeave={this.handleSocialIconStyle3}/>
+                        </a>
                     </div>
             </div>
         );
