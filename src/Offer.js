@@ -13,6 +13,14 @@ const image1 = img;
 const image2 = img2;
 const image3 = img3;
 
+const fadeIn = keyframes`
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+        }
+`;
 
 const lineGrow = keyframes`
 0% {
@@ -40,60 +48,98 @@ margin-left:20%;
 `;
 const bounceFromRight = keyframes`
     0% {
-      opacity:0;
-    margin-left: 1000%;
+        opacity:0;
+       right:-20%;
     }
-    20% {
-    margin-left: -150%;
-    }
-    40% {
-    margin-left: 100%;
+    30% {
+       right:20%;
     }
     60% {
-    margin-left: -100%;
+       right:-5%;
+       opacity:0.4;
     }
-    70% {
-    margin-left: 50%;
-    }
-    80% {
-    margin-left: -50%;
-    }
-    90% {
-    margin-left: 25%;
-    }
-    95% {
-    margin-left: -25%;
-    }
-     97% {
-    margin-left: 13%;
-    }
-     99% {
-    margin-left: -7%;
-    }
-   
+    
     100% {
-      opacity:1;
-    margin-left: 0;
+        opacity:1;
+      right: 12%;
     }
+`;
+const bounceFromLeft = keyframes`
+    0% {
+        opacity:0;
+       left:-20%;
+    }
+    30% {
+       left:30%;
+    }
+    60% {
+       left: 5%;
+       opacity:0.4;
+    }
+    
+    100% {
+        opacity:1;
+      left: 20%;
+    }
+`;
+
+
+const Heading = styled.h2`
+    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    position:absolute;
+    right:-30%;
+`;
+
+const Heading2 = styled.h2`
+    animation: ${props => props.positionY >= '1380' ? bounceFromLeft : 'none'} 1.5s ease-in-out forwards;
+    position:absolute;
+    left:-30%;
+`;
+
+const Heading3 = styled.h2`
+    animation: ${props => props.positionY >= '1555' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    position:absolute;
+    right:-30%;
 `;
 
 const Line = styled.div`
     height:2px;
     background-color: red;
-    animation: ${lineGrow} 1s forwards;
+    animation: ${props => props.positionY >= '825' ? lineGrow : 'none'} 1s forwards;
 `;
 const Line2 = styled.div`
     height: 2px;
-    animation: ${lineGrow2} 0.5s forwards;
+    animation: ${props => props.positionY >= '825' ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;    
+const Line3 = styled.div`
+    height:2px;
+    background-color: red;
+    animation: ${props => props.positionY >= '1380' ? lineGrow : 'none'} 1s forwards;
+`;
+const Line4 = styled.div`
+    height: 2px;
+    animation: ${props => props.positionY >= '1380' ? lineGrow2 : 'none'} 0.5s forwards;
+    animation-delay:1s;
+`;  
+const Line5 = styled.div`
+    height:2px;
+    background-color: red;
+    animation: ${props => props.positionY >= '1755' ? lineGrow : 'none'} 1s forwards;
+`;
+const Line6 = styled.div`
+    height: 2px;
+    animation: ${props => props.positionY >= '1755' ? lineGrow2 : 'none'} 0.5s forwards;
+    animation-delay:1s;
+`;
 
-const offerStyle={
-        display:'grid',
-        backgroundSize:'cover',
-        backgroundPosition:'center',
-        fontFamily:'Dosis, cursive',
-        
+const offerStyle = {
+    display: 'grid',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    fontFamily: 'Dosis, cursive',
+    minWidth: '50%'
+
 }
 const offerStyleText ={
     justifyContent:'center',
@@ -115,7 +161,7 @@ class Offer extends Component {
           }  
         
     }
-
+    
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
           duration: 800,
@@ -125,6 +171,8 @@ class Offer extends Component {
       }
     
     render() {
+        const positionY = this.props.positionY;
+
         return (
             <div>
                 <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
@@ -158,19 +206,21 @@ class Offer extends Component {
                             overflow:'hidden',
                             fontSize:'2em',
                             gridTemplateColumns:'100%',
-                            gridTemplateRows:'15% 2% 2% 81%'
+                            gridTemplateRows:'15% 2% 2% 81%',
+                            minHeight:'50vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>MG model MGB, rocznik 1977</h2>
+                                <Heading positionY={this.props.positionY}>MG model MGB, rocznik 1977</Heading>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line style={{
+                                <Line positionY={this.props.positionY}
+                                    style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
                                     }}/>
@@ -179,7 +229,8 @@ class Offer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 style={{
+                                <Line2 positionY={this.props.positionY}
+                                    style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
                                 }}/>
@@ -191,10 +242,10 @@ class Offer extends Component {
                              }}>
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                    <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
+                                    <p style={{width:'100%',  textAlign:'center', fontSize:'1em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        <ul style={{marginTop:'0'}}>
+                                        <ul style={{marginTop:'0', fontSize:'0.8em'}}>
                                             <li>Śluby</li>
                                             <li>Sesje fotograficzne</li>
                                             <li>Reklamy</li>
@@ -214,28 +265,30 @@ class Offer extends Component {
                             overflow:'hidden',
                             fontSize:'2em',
                             gridTemplateColumns:'100%',
-                            gridTemplateRows:'15% 2% 2% 81%'
+                            gridTemplateRows:'15% 2% 2% 81%',
+                            minHeight:'50vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Dojazd</h2>
+                                 <Heading2 positionY={this.props.positionY}>Dojazd</Heading2>
                              </div>
                              <div style={{
-                                 ...offerStyle,
-                                //  ...offerStyleText
+                                 ...offerStyle
                              }}>
-                                <Line style={{
+                                <Line3 positionY={this.props.positionY}
+                                    style={{
                                     justifySelf:'center', 
-                                    alignSelf:'center'
+                                    alignSelf:'center',
                                     }}/>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 style={{
+                                <Line4 positionY={this.props.positionY}
+                                    style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
                                 }}/>
@@ -244,7 +297,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <p style={{textAlign:'center', fontSize:'1.3em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                <p style={{textAlign:'center', fontSize:'1em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
@@ -271,19 +324,21 @@ class Offer extends Component {
                             overflow:'hidden',
                             fontSize:'2em',
                             gridTemplateColumns:'100%',
-                            gridTemplateRows:'15% 2% 2% 81%'
+                            gridTemplateRows:'15% 2% 2% 81%',
+                            minHeight:'50vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Dekoracje i rekwizyty</h2>
+                                <Heading3 positionY={this.props.positionY} >Dekoracje i rekwizyty</Heading3>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line style={{
+                                <Line5 positionY={this.props.positionY}
+                                    style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
                                     }}/>
@@ -292,7 +347,8 @@ class Offer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 style={{
+                                <Line6 positionY={this.props.positionY}
+                                    style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
                                 }}/>
@@ -301,7 +357,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <p style={{textAlign:'center', fontSize:'1.3em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>
@@ -309,15 +365,6 @@ class Offer extends Component {
                         </div>
                         </div>
                     </div>
-            {/* <Grid
-            name={this.props.name}
-                style={{opacity:this.state.opacity, marginTop:'5%'}}
-                columns={'repeat(2,minmax(max-content,auto))'}
-                rows={'repeat(6, minmax(200px, auto))'}
-                gap='10px'
-                >
-            {this.showHeroes()}
-            </Grid> */}
             </div>
         );
     }

@@ -168,7 +168,7 @@ handleMobileReveal = () =>  {
             <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
         <MediaQuery minWidth = {1024}>
-            <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset}></Offer> 
+            <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset} style={{marginTop:'200px'}}></Offer> 
         </MediaQuery>
         
 

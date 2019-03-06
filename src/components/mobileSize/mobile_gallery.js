@@ -78,7 +78,8 @@ const Cells = [
         top: 2,
         img: img5,
         animation: shineEffect,
-        animationDelay:2
+        animationDelay:2,
+        text:"follow"
     },
     {
         width: 1,
