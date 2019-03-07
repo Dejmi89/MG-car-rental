@@ -13,7 +13,7 @@ import {
   scrollSpy,
   scroller
 } from "react-scroll";
-import img from '../src/resources/images/carIntheWoods.jpg';
+import img from '../src/resources/images/carIntheWoods2.jpg.svg.png';
 
 
 library.add(fab);

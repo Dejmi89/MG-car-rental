@@ -64,42 +64,48 @@ const bounceFromRight = keyframes`
       right: 12%;
     }
 `;
-const bounceFromLeft = keyframes`
-    0% {
-        opacity:0;
-       left:-20%;
-    }
-    30% {
-       left:30%;
-    }
-    60% {
-       left: 5%;
-       opacity:0.4;
-    }
-    
-    100% {
-        opacity:1;
-      left: 20%;
-    }
+
+const FadeIn = styled.div`
+    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+const FadeIn2 = styled.div`
+    animation: ${props => props.positionY >= '1380' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+const FadeIn3 = styled.div`
+    animation: ${props => props.positionY >= '1855' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
 `;
 
+const List = styled.h2`
+    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
 
 const Heading = styled.h2`
-    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
-    position:absolute;
-    right:-30%;
+    animation: ${props => props.positionY >= '825' ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    opacity:0;
+    /* position:absolute;
+    right:-30%; */
 `;
 
 const Heading2 = styled.h2`
-    animation: ${props => props.positionY >= '1380' ? bounceFromLeft : 'none'} 1.5s ease-in-out forwards;
-    position:absolute;
-    left:-30%;
+    animation: ${props => props.positionY >= '1380' ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    opacity:0;
+    /* position:absolute;
+    left:-30%; */
 `;
 
 const Heading3 = styled.h2`
-    animation: ${props => props.positionY >= '1555' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
-    position:absolute;
-    right:-30%;
+    animation: ${props => props.positionY >= '1855' ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    opacity:0;
+    /* position:absolute;
+    right:-30%; */
 `;
 
 const Line = styled.div`
@@ -125,11 +131,11 @@ const Line4 = styled.div`
 const Line5 = styled.div`
     height:2px;
     background-color: red;
-    animation: ${props => props.positionY >= '1755' ? lineGrow : 'none'} 1s forwards;
+    animation: ${props => props.positionY >= '1855' ? lineGrow : 'none'} 1s forwards;
 `;
 const Line6 = styled.div`
     height: 2px;
-    animation: ${props => props.positionY >= '1755' ? lineGrow2 : 'none'} 0.5s forwards;
+    animation: ${props => props.positionY >= '1855' ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;
 
@@ -171,8 +177,8 @@ class Offer extends Component {
       }
     
     render() {
+        
         const positionY = this.props.positionY;
-
         return (
             <div>
                 <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
@@ -242,16 +248,18 @@ class Offer extends Component {
                              }}>
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
+                                    <FadeIn positionY={positionY} delay={0.3}>
                                     <p style={{width:'100%',  textAlign:'center', fontSize:'1em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
+                                    </FadeIn>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        <ul style={{marginTop:'0', fontSize:'0.8em'}}>
-                                            <li>Śluby</li>
-                                            <li>Sesje fotograficzne</li>
-                                            <li>Reklamy</li>
-                                            <li>Filmy</li>
-                                            <li>Imprezy okolicznościowe</li>
-                                            <li>Niespodzianki</li>
+                                        <ul style={{marginTop:'0', fontSize:'0.4em'}}>
+                                            <List positionY={positionY} ><li>Śluby</li></List>
+                                            <List positionY={positionY} delay={0.7}><li>Sesje fotograficzne</li></List>
+                                            <List positionY={positionY} delay={0.9}><li>Reklamy</li></List>
+                                            <List positionY={positionY} delay={1.1}><li>Filmy</li></List>
+                                            <List positionY={positionY} delay={1.3}><li>Imprezy okolicznościowe</li></List>
+                                            <List positionY={positionY} delay={1.5}><li>Niespodzianki</li></List>
                                          </ul>
                                     </div>
                                     </div>
@@ -266,7 +274,7 @@ class Offer extends Component {
                             fontSize:'2em',
                             gridTemplateColumns:'100%',
                             gridTemplateRows:'15% 2% 2% 81%',
-                            minHeight:'50vh'
+                            minHeight:'40vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
@@ -297,10 +305,12 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <p style={{textAlign:'center', fontSize:'1em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                <FadeIn2 positionY={positionY} delay={0.5}>
+                                    <p style={{textAlign:'center', fontSize:'1em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
+                                </FadeIn2>
                              </div>
                         </div>
                         
@@ -325,7 +335,7 @@ class Offer extends Component {
                             fontSize:'2em',
                             gridTemplateColumns:'100%',
                             gridTemplateRows:'15% 2% 2% 81%',
-                            minHeight:'50vh'
+                            minHeight:'30vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
@@ -357,10 +367,11 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={positionY} delay={0.5}><p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>
+                                </FadeIn3>
                              </div>
                         </div>
                         </div>

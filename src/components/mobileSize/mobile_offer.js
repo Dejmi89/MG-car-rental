@@ -40,42 +40,45 @@ margin-left:20%;
 `;
 const bounceFromRight = keyframes`
     0% {
-      opacity:0;
-    margin-left: 1000%;
+        opacity:0;
+       right:-20%;
     }
-    20% {
-    margin-left: -150%;
-    }
-    40% {
-    margin-left: 100%;
+    30% {
+       right:20%;
     }
     60% {
-    margin-left: -100%;
+       right:-5%;
+       opacity:0.4;
     }
-    70% {
-    margin-left: 50%;
-    }
-    80% {
-    margin-left: -50%;
-    }
-    90% {
-    margin-left: 25%;
-    }
-    95% {
-    margin-left: -25%;
-    }
-     97% {
-    margin-left: 13%;
-    }
-     99% {
-    margin-left: -7%;
-    }
-   
+    
     100% {
-      opacity:1;
-    margin-left: 0;
+        opacity:1;
+      right: 12%;
     }
 `;
+
+const FadeIn = styled.div`
+    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+const FadeIn2 = styled.div`
+    animation: ${props => props.positionY >= '1380' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+const FadeIn3 = styled.div`
+    animation: ${props => props.positionY >= '1855' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+
+const List = styled.h2`
+    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+
 
 const Line = styled.div`
     height:2px;
