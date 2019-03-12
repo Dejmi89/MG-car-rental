@@ -13,7 +13,14 @@ const image1 = img;
 const image2 = img2;
 const image3 = img3;
 
-
+const fadeIn = keyframes`
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+        }
+`;
 const lineGrow = keyframes`
 0% {
 width: 0;
@@ -40,53 +47,91 @@ margin-left:20%;
 `;
 const bounceFromRight = keyframes`
     0% {
-      opacity:0;
-    margin-left: 1000%;
+        opacity:0;
+       right:-20%;
     }
-    20% {
-    margin-left: -150%;
-    }
-    40% {
-    margin-left: 100%;
+    30% {
+       right:20%;
     }
     60% {
-    margin-left: -100%;
+       right:-5%;
+       opacity:0.4;
     }
-    70% {
-    margin-left: 50%;
-    }
-    80% {
-    margin-left: -50%;
-    }
-    90% {
-    margin-left: 25%;
-    }
-    95% {
-    margin-left: -25%;
-    }
-     97% {
-    margin-left: 13%;
-    }
-     99% {
-    margin-left: -7%;
-    }
-   
+    
     100% {
-      opacity:1;
-    margin-left: 0;
+        opacity:1;
+      right: 12%;
     }
+`;
+
+const FadeIn = styled.div`
+    animation: ${props => props.positionY ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+const FadeIn2 = styled.div`
+    animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+const FadeIn3 = styled.div`
+    animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+`;
+
+const List = styled.h2`
+    animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation-delay: ${props => props.delay}s ;
+    opacity:0;
+    font-size:0.7em;
+`;
+
+const Heading = styled.h2`
+    animation: ${props => props.positionY  ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    opacity:0;
+`;
+
+const Heading2 = styled.h2`
+    animation: ${props => props.positionY  ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    opacity:0;
+`;
+
+const Heading3 = styled.h2`
+    animation: ${props => props.positionY ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    opacity:0;
 `;
 
 const Line = styled.div`
     height:2px;
     background-color: red;
-    animation: ${lineGrow} 1s forwards;
+    animation: ${props => props.positionY ? lineGrow : 'none'} 1s forwards;
 `;
 const Line2 = styled.div`
     height: 2px;
-    animation: ${lineGrow2} 0.5s forwards;
+    animation: ${props => props.positionY ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;    
+const Line3 = styled.div`
+    height:2px;
+    background-color: red;
+    animation: ${props => props.positionY  ? lineGrow : 'none'} 1s forwards;
+`;
+const Line4 = styled.div`
+    height: 2px;
+    animation: ${props => props.positionY  ? lineGrow2 : 'none'} 0.5s forwards;
+    animation-delay:1s;
+`;  
+const Line5 = styled.div`
+    height:2px;
+    background-color: red;
+    animation: ${props => props.positionY  ? lineGrow : 'none'} 1s forwards;
+`;
+const Line6 = styled.div`
+    height: 2px;
+    animation: ${props => props.positionY  ? lineGrow2 : 'none'} 0.5s forwards;
+    animation-delay:1s;
+`;   
 
 const offerStyle={
         display:'grid',
@@ -109,21 +154,46 @@ const pStyle = {
 class IpadOffer extends Component {
     constructor(props){
         super(props);
-          this.state = {
-            opacity: '1'
+        this.state = {
+            revealedFirst:'',
+            revealedSecond:'',
+            revealedThird:''
           }  
         
     }
 
-    scrollTo() {
-        scroller.scrollTo("scroll-to-element", {
-          duration: 800,
-          delay: 0,
-          smooth: "easeInOutQuint"
-        });
-      }
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleOfferReveal);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleOfferReveal);
+    }
+
+    handleOfferReveal = () => {
+        let props = this.props.positionY;
+
+        if (props > '1174'){
+            this.setState({
+                revealedFirst:true
+            })
+        } 
+        if (props > '1662'){
+            this.setState({
+                revealedSecond:true
+            })
+        }
+        if (props > '1976'){
+            this.setState({
+                revealedThird:true
+            })
+        };
+    }
+   
+    
     
     render() {
+        const {revealedFirst, revealedSecond, revealedThird} = this.state;
         return (
             <div>
                 <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
@@ -151,7 +221,8 @@ class IpadOffer extends Component {
 
                         <div style={{
                             ...offerStyle,
-                            maxHeight:'100%'
+                            maxHeight:'100%',
+                            height:'50vh'
                             }}>
                             <div style={{
                             ...offerStyle,
@@ -164,13 +235,13 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>MG model MGB, rocznik 1977</h2>
+                                <Heading positionY={revealedFirst}>MG model MGB, rocznik 1977</Heading>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line style={{
+                                <Line positionY={revealedFirst} style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
                                     }}/>
@@ -179,7 +250,7 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 style={{
+                                <Line2 positionY={revealedFirst} style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
                                 }}/>
@@ -192,16 +263,17 @@ class IpadOffer extends Component {
                              }}>
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                    <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
+                                    <FadeIn positionY={revealedFirst} delay={0.3}><p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
+                                    </FadeIn>
                                     <div style={{display:'grid', justifyContent:'center'}}>
                                         <ul style={{marginTop:'0'}}>
-                                            <li>Śluby</li>
-                                            <li>Sesje fotograficzne</li>
-                                            <li>Reklamy</li>
-                                            <li>Filmy</li>
-                                            <li>Imprezy okolicznościowe</li>
-                                            <li>Niespodzianki</li>
+                                        <List positionY={revealedFirst} ><li>Śluby</li></List>
+                                        <List positionY={revealedFirst} delay={0.7}><li>Sesje fotograficzne</li></List>
+                                        <List positionY={revealedFirst} delay={0.9}><li>Reklamy</li></List>
+                                        <List positionY={revealedFirst} delay={1.1}><li>Filmy</li></List>
+                                        <List positionY={revealedFirst} delay={1.3}><li>Imprezy okolicznościowe</li></List>
+                                        <List positionY={revealedFirst} delay={1.5}><li>Niespodzianki</li></List>
                                          </ul>
                                     </div>
                                     </div>
@@ -216,19 +288,19 @@ class IpadOffer extends Component {
                             fontSize:'1.3em',
                             gridTemplateColumns:'100%',
                             gridTemplateRows:'15% 2% 2% 81%',
-                            height:'30vh'
+                            height:'40vh'
                             }}>
                              <div style={{
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Dojazd</h2>
+                                <Heading2 positionY={revealedSecond}>Dojazd</Heading2>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line style={{
+                                <Line3 positionY={revealedSecond} style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
                                     }}/>
@@ -237,7 +309,7 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 style={{
+                                <Line4 positionY={revealedSecond} style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
                                 }}/>
@@ -246,10 +318,11 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <p style={{textAlign:'center', fontSize:'1.3em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                <FadeIn2 positionY={revealedSecond} delay={0.5}><p style={{textAlign:'center', fontSize:'1.3em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
+                                </FadeIn2>
                              </div>
                         </div>
                         
@@ -269,7 +342,8 @@ class IpadOffer extends Component {
 
                         <div style={{
                             ...offerStyle,
-                            maxHeight:'80%'
+                            maxHeight:'80%',
+                            height:'40vh'
                             }}>
                             <div style={{
                             ...offerStyle,
@@ -282,13 +356,13 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <h2>Dekoracje i rekwizyty</h2>
+                                <Heading3 positionY={revealedThird} >Dekoracje i rekwizyty</Heading3>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line style={{
+                                <Line5 positionY={revealedThird} style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
                                     }}/>
@@ -297,7 +371,7 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 style={{
+                                <Line6 positionY={revealedThird} style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
                                 }}/>
@@ -306,10 +380,11 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <p style={{textAlign:'center', fontSize:'1.3em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{textAlign:'center', fontSize:'1.3em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>
+                                </FadeIn3>
                              </div>
                         </div>
                         </div>

@@ -66,7 +66,7 @@ const SCWrapper = styled.div`
 const MenuWrapper = styled.div`
     width: 80%;
     height: 50%;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     margin-left: 10px;
     display: flex;
     align-self: flex-start;
@@ -83,7 +83,7 @@ const Menu = styled.div`
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     color: white;
     font-size: 1.5em;
     /* position:fixed; */
@@ -98,6 +98,7 @@ const Menu = styled.div`
 
 const CarAnimation = styled.div`
     font-size: 2em;
+    /* border: 2px solid white; */
 `;
 
 
@@ -260,12 +261,12 @@ class Header extends React.Component {
 
                         <Menu opacity={0.3}>
                             
-                                <Link 
+                                {/* <Link 
                                 to='header' 
                                 smooth={true} 
                                 duration={1000}>
                                     <div onClick={this.reload}>Odswiez</div>
-                                </Link>
+                                </Link> */}
                             
                                 <Link 
                                 to='offer' 

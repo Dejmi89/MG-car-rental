@@ -66,76 +66,70 @@ const bounceFromRight = keyframes`
 `;
 
 const FadeIn = styled.div`
-    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
     animation-delay: ${props => props.delay}s ;
     opacity:0;
 `;
 const FadeIn2 = styled.div`
-    animation: ${props => props.positionY >= '1380' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
     animation-delay: ${props => props.delay}s ;
     opacity:0;
 `;
 const FadeIn3 = styled.div`
-    animation: ${props => props.positionY >= '1855' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
     animation-delay: ${props => props.delay}s ;
     opacity:0;
 `;
 
 const List = styled.h2`
-    animation: ${props => props.positionY >= '825' ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
     animation-delay: ${props => props.delay}s ;
     opacity:0;
 `;
 
 const Heading = styled.h2`
-    animation: ${props => props.positionY >= '825' ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY  ? fadeIn : 'none'} 1.5s ease-in-out forwards;
     opacity:0;
-    /* position:absolute;
-    right:-30%; */
 `;
 
 const Heading2 = styled.h2`
-    animation: ${props => props.positionY >= '1380' ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY  ? fadeIn : 'none'} 1.5s ease-in-out forwards;
     opacity:0;
-    /* position:absolute;
-    left:-30%; */
 `;
 
 const Heading3 = styled.h2`
-    animation: ${props => props.positionY >= '1855' ? fadeIn : 'none'} 1.5s ease-in-out forwards;
+    animation: ${props => props.positionY ? fadeIn : 'none'} 1.5s ease-in-out forwards;
     opacity:0;
-    /* position:absolute;
-    right:-30%; */
 `;
 
 const Line = styled.div`
     height:2px;
     background-color: red;
-    animation: ${props => props.positionY >= '825' ? lineGrow : 'none'} 1s forwards;
+    animation: ${props => props.positionY ? lineGrow : 'none'} 1s forwards;
 `;
 const Line2 = styled.div`
     height: 2px;
-    animation: ${props => props.positionY >= '825' ? lineGrow2 : 'none'} 0.5s forwards;
+    animation: ${props => props.positionY ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;    
 const Line3 = styled.div`
     height:2px;
     background-color: red;
-    animation: ${props => props.positionY >= '1380' ? lineGrow : 'none'} 1s forwards;
+    animation: ${props => props.positionY  ? lineGrow : 'none'} 1s forwards;
 `;
 const Line4 = styled.div`
     height: 2px;
-    animation: ${props => props.positionY >= '1380' ? lineGrow2 : 'none'} 0.5s forwards;
+    animation: ${props => props.positionY  ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;  
 const Line5 = styled.div`
     height:2px;
     background-color: red;
-    animation: ${props => props.positionY >= '1855' ? lineGrow : 'none'} 1s forwards;
+    animation: ${props => props.positionY  ? lineGrow : 'none'} 1s forwards;
 `;
 const Line6 = styled.div`
     height: 2px;
-    animation: ${props => props.positionY >= '1855' ? lineGrow2 : 'none'} 0.5s forwards;
+    animation: ${props => props.positionY  ? lineGrow2 : 'none'} 0.5s forwards;
     animation-delay:1s;
 `;
 
@@ -163,22 +157,51 @@ class Offer extends Component {
     constructor(props){
         super(props);
           this.state = {
-            opacity: '1'
+            revealedFirst:'',
+            revealedSecond:'',
+            revealedThird:''
           }  
         
     }
     
-    scrollTo() {
-        scroller.scrollTo("scroll-to-element", {
-          duration: 800,
-          delay: 0,
-          smooth: "easeInOutQuint"
-        });
-      }
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleOfferReveal);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleOfferReveal);
+    }
+
+    handleOfferReveal = () => {
+        let props = this.props.positionY;
+
+        if (props > '825'){
+            this.setState({
+                revealedFirst:true
+            })
+        } 
+        if (props > '1380'){
+            this.setState({
+                revealedSecond:true
+            })
+        }
+        if (props > '1855'){
+            this.setState({
+                revealedThird:true
+            })
+        };
+    }
+    // scrollTo() {
+    //     scroller.scrollTo("scroll-to-element", {
+    //       duration: 800,
+    //       delay: 0,
+    //       smooth: "easeInOutQuint"
+    //     });
+    //   }
     
     render() {
         
-        const positionY = this.props.positionY;
+        const {revealedFirst, revealedSecond, revealedThird} = this.state;
         return (
             <div>
                 <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
@@ -219,13 +242,13 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <Heading positionY={this.props.positionY}>MG model MGB, rocznik 1977</Heading>
+                                <Heading positionY={revealedFirst}>MG model MGB, rocznik 1977</Heading>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line positionY={this.props.positionY}
+                                <Line positionY={revealedFirst}
                                     style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
@@ -235,7 +258,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line2 positionY={this.props.positionY}
+                                <Line2 positionY={revealedFirst}
                                     style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
@@ -248,18 +271,18 @@ class Offer extends Component {
                              }}>
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                    <FadeIn positionY={positionY} delay={0.3}>
+                                    <FadeIn positionY={revealedFirst} delay={0.3}>
                                     <p style={{width:'100%',  textAlign:'center', fontSize:'1em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak:</p>
                                     </FadeIn>
                                     <div style={{display:'grid', justifyContent:'center'}}>
                                         <ul style={{marginTop:'0', fontSize:'0.4em'}}>
-                                            <List positionY={positionY} ><li>Śluby</li></List>
-                                            <List positionY={positionY} delay={0.7}><li>Sesje fotograficzne</li></List>
-                                            <List positionY={positionY} delay={0.9}><li>Reklamy</li></List>
-                                            <List positionY={positionY} delay={1.1}><li>Filmy</li></List>
-                                            <List positionY={positionY} delay={1.3}><li>Imprezy okolicznościowe</li></List>
-                                            <List positionY={positionY} delay={1.5}><li>Niespodzianki</li></List>
+                                            <List positionY={revealedFirst} ><li>Śluby</li></List>
+                                            <List positionY={revealedFirst} delay={0.7}><li>Sesje fotograficzne</li></List>
+                                            <List positionY={revealedFirst} delay={0.9}><li>Reklamy</li></List>
+                                            <List positionY={revealedFirst} delay={1.1}><li>Filmy</li></List>
+                                            <List positionY={revealedFirst} delay={1.3}><li>Imprezy okolicznościowe</li></List>
+                                            <List positionY={revealedFirst} delay={1.5}><li>Niespodzianki</li></List>
                                          </ul>
                                     </div>
                                     </div>
@@ -280,12 +303,12 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                 <Heading2 positionY={this.props.positionY}>Dojazd</Heading2>
+                                 <Heading2 positionY={revealedSecond}>Dojazd</Heading2>
                              </div>
                              <div style={{
                                  ...offerStyle
                              }}>
-                                <Line3 positionY={this.props.positionY}
+                                <Line3 positionY={revealedSecond}
                                     style={{
                                     justifySelf:'center', 
                                     alignSelf:'center',
@@ -295,7 +318,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line4 positionY={this.props.positionY}
+                                <Line4 positionY={revealedSecond}
                                     style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
@@ -305,7 +328,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <FadeIn2 positionY={positionY} delay={0.5}>
+                                <FadeIn2 positionY={revealedSecond} delay={0.5}>
                                     <p style={{textAlign:'center', fontSize:'1em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
@@ -341,13 +364,13 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <Heading3 positionY={this.props.positionY} >Dekoracje i rekwizyty</Heading3>
+                                <Heading3 positionY={revealedThird} >Dekoracje i rekwizyty</Heading3>
                              </div>
                              <div style={{
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line5 positionY={this.props.positionY}
+                                <Line5 positionY={revealedThird}
                                     style={{
                                     justifySelf:'center', 
                                     alignSelf:'center'
@@ -357,7 +380,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                 //  ...offerStyleText
                              }}>
-                                <Line6 positionY={this.props.positionY}
+                                <Line6 positionY={revealedThird}
                                     style={{
                                     justifySelf:'center',
                                     alignSelf:'center'
@@ -367,7 +390,7 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <FadeIn3 positionY={positionY} delay={0.5}><p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>

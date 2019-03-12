@@ -138,7 +138,7 @@ handleMobileReveal = () =>  {
   render() {
       
     return (
-      <div style={{fontFamily:'satisfy, cursive'}}>
+      <div style={{fontFamily:'satisfy, cursive', width:'100%'}}>
       
         <MediaQuery maxWidth = {767}>
             <MobileHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
