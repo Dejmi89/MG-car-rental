@@ -137,7 +137,7 @@ const offerStyle={
         display:'grid',
         backgroundSize:'cover',
         backgroundPosition:'center',
-        fontFamily:'Dosis, cursive'
+        fontFamily: 'Roboto, sans-serif',
 }
 const offerStyleText ={
     justifyContent:'center',
@@ -145,7 +145,7 @@ const offerStyleText ={
 }
 const pStyle = {
     fontSize:'1.7em', 
-    fontFamily:'Work Sans, sans-serif', 
+    fontFamily:'Lato, sans-serif',  
     textAlign:'center',
     fontWeight:'500'
     

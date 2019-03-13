@@ -23,6 +23,13 @@ import Footer from './Footer';
 import MobileFooter from './components/mobileSize/mobile_footer';
 import IpadFooter from './components/iPadSize/iPad_footer';
 
+import { createGlobalStyle } from "styled-components";
+const GlobalStyles = createGlobalStyle`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300i');
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+`
 
 class App extends Component {
 
@@ -139,7 +146,7 @@ handleMobileReveal = () =>  {
       
     return (
       <div style={{fontFamily:'satisfy, cursive', width:'100%'}}>
-      
+        <GlobalStyles/>
         <MediaQuery maxWidth = {767}>
             <MobileHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery>

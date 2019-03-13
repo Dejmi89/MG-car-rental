@@ -9,6 +9,7 @@ import img from '../../resources/images/gearbox_stick.jpg';
 import img2 from '../../resources/images/mg_hood.jpg';
 import img3 from '../../resources/images/maskaPrzod.jpg';
 
+
 const image1 = img;
 const image2 = img2;
 const image3 = img3;
@@ -143,7 +144,7 @@ const offerStyle={
         display:'grid',
         backgroundSize:'cover',
         backgroundPosition:'center',
-        fontFamily:'Dosis, cursive',
+        fontFamily: 'Roboto, sans-serif',
         // border:'2px solid black'
 }
 const offerStyleText ={
@@ -152,7 +153,7 @@ const offerStyleText ={
 }
 const pStyle = {
     fontSize:'0.9em', 
-    fontFamily:'Work Sans, sans-serif', 
+    fontFamily:'Lato, sans-serif',  
     textAlign:'center',
     fontWeight:'500'
     
@@ -322,7 +323,7 @@ class MobileOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <FadeIn2 positionY={revealedSecond} delay={0.5}><p style={{textAlign:'center', fontSize:'0.5em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                <FadeIn2 positionY={revealedSecond} delay={0.5}><p style={{textAlign:'center', fontSize:'0.45em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
@@ -382,7 +383,7 @@ class MobileOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{textAlign:'center', fontSize:'0.5em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{textAlign:'center', fontSize:'0.45em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>

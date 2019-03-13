@@ -85,11 +85,14 @@ const List = styled.h2`
     animation: ${props => props.positionY  ? bounceFromRight : 'none'} 1.5s ease-in-out forwards;
     animation-delay: ${props => props.delay}s ;
     opacity:0;
+    font-family: 'Roboto', sans-serif;
 `;
 
 const Heading = styled.h2`
     animation: ${props => props.positionY  ? fadeIn : 'none'} 1.5s ease-in-out forwards;
     opacity:0;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
 `;
 
 const Heading2 = styled.h2`
@@ -137,7 +140,8 @@ const offerStyle = {
     display: 'grid',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    fontFamily: 'Dosis, cursive',
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: '800',
     minWidth: '50%'
 
 }
@@ -147,9 +151,9 @@ const offerStyleText ={
 }
 const pStyle = {
     fontSize:'2em', 
-    fontFamily:'Work Sans, sans-serif', 
+    fontFamily:'Lato, sans-serif', 
     textAlign:'center',
-    fontWeight:'500'
+    fontWeight:'300'
     
 }
 
@@ -191,14 +195,7 @@ class Offer extends Component {
             })
         };
     }
-    // scrollTo() {
-    //     scroller.scrollTo("scroll-to-element", {
-    //       duration: 800,
-    //       delay: 0,
-    //       smooth: "easeInOutQuint"
-    //     });
-    //   }
-    
+  
     render() {
         
         const {revealedFirst, revealedSecond, revealedThird} = this.state;
@@ -279,10 +276,10 @@ class Offer extends Component {
                                         <ul style={{marginTop:'0', fontSize:'0.4em'}}>
                                             <List positionY={revealedFirst} ><li>Śluby</li></List>
                                             <List positionY={revealedFirst} delay={0.7}><li>Sesje fotograficzne</li></List>
-                                            <List positionY={revealedFirst} delay={0.9}><li>Reklamy</li></List>
-                                            <List positionY={revealedFirst} delay={1.1}><li>Filmy</li></List>
-                                            <List positionY={revealedFirst} delay={1.3}><li>Imprezy okolicznościowe</li></List>
-                                            <List positionY={revealedFirst} delay={1.5}><li>Niespodzianki</li></List>
+                                            <List positionY={revealedFirst} delay={0.8}><li>Reklamy</li></List>
+                                            <List positionY={revealedFirst} delay={0.9}><li>Filmy</li></List>
+                                            <List positionY={revealedFirst} delay={1}><li>Imprezy okolicznościowe</li></List>
+                                            <List positionY={revealedFirst} delay={1.1}><li>Niespodzianki</li></List>
                                          </ul>
                                     </div>
                                     </div>
