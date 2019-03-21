@@ -83,6 +83,7 @@ const Menu = styled.div`
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
+    align-items:center;
     /* border: 2px solid white; */
     color: white;
     font-size: 1.5em;
@@ -97,8 +98,16 @@ const Menu = styled.div`
 `;
 
 const CarAnimation = styled.div`
-    font-size: 2em;
+    font-size: 7.3em;
+    color:white;
     /* border: 2px solid white; */
+    text-align:center;
+    width:80%;
+    height:15vh;
+    display:flex;
+    align-items:center;
+    justify-self:center;
+    justify-content:center;
 `;
 
 
@@ -261,21 +270,12 @@ class Header extends React.Component {
 
                         <Menu opacity={0.3}>
                             
-                                {/* <Link 
-                                to='header' 
-                                smooth={true} 
-                                duration={1000}>
-                                    <div onClick={this.reload}>Odswiez</div>
-                                </Link> */}
-                            
                                 <Link 
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
                                     <div onClick={this.props.scrollFunc}>Oferta</div>
                                 </Link>
-                            
-                            <CarAnimation >Czerwony Kabriolet</CarAnimation>
                             
                                 <Link 
                                 to='gallery' 
@@ -292,7 +292,9 @@ class Header extends React.Component {
                                 </Link>
                                                    
                          </Menu>
-                        
+
+                         <CarAnimation >Czerwony Kabriolet</CarAnimation>
+
                         <MenuText>
                             <Nouns delay={0.5}>Piękno</Nouns>
                             <Nouns delay={0.8}>Styl</Nouns>
