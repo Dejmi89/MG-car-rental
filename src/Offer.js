@@ -208,7 +208,6 @@ class Offer extends Component {
                     <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
 
                     <div style={{
-                        // border:'2px solid black',
                         display:'grid',
                         width:'100%',
                         height:'150vh',
