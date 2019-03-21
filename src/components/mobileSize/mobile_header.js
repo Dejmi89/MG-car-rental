@@ -93,10 +93,10 @@ const Menu = styled.div`
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
-    /* border: 2px solid black; */
+    /* border: 2px solid white; */
     color: white;
     font-size: 1em;
-    /* position:fixed; */
+    align-items:flex-end;
     top: 1%;
         div {
             &:hover{
@@ -108,11 +108,16 @@ const Menu = styled.div`
 `;
 
 const CarAnimation = styled.div`
-    font-size: 1.3em;
+    font-size: 2.3em;
+    color:white;
     /* border: 2px solid white; */
     text-align:center;
-    width:20%;
-    height:5vh;
+    width:80%;
+    height:15vh;
+    display:flex;
+    align-items:center;
+    justify-self:center;
+    justify-content:center;
     `;
 
 const MenuText = styled.h2`
@@ -130,6 +135,7 @@ const Nouns = styled.h4`
     opacity:0;
     animation: ${fadeIn} 2s forwards;
     animation-delay: ${props => props.delay}s;
+    font-size: 1.3em;
 `;
 const HeaderOnScrollWrapper = styled.div`
     display:grid;
@@ -276,21 +282,13 @@ class MobileHeader extends React.Component {
 
                         <Menu opacity={0.3}>
                             
-                                <Link 
-                                to='galeria' 
-                                smooth={true} 
-                                duration={1000}>
-                                    <div onClick={this.reload}>Odswiez</div>
-                                </Link>
-                            
+                                                          
                                 <Link 
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
                                     <div onClick={this.props.scrollFunc}>Oferta</div>
                                 </Link>
-                            
-                            <CarAnimation >Czerwony Kabriolet</CarAnimation>
                             
                                 <Link 
                                 to='gallery' 
@@ -305,9 +303,9 @@ class MobileHeader extends React.Component {
                                 duration={1000}>
                                     <div onClick={this.props.scrollFunc}>Kontakt</div>
                                 </Link>
-                                                   
+                                                  
                          </Menu>
-                        
+                         <CarAnimation >Czerwony Kabriolet</CarAnimation>       
                         <MenuText>
                             <Nouns delay={0.5}>Piękno</Nouns>
                             <Nouns delay={0.8}>Styl</Nouns>

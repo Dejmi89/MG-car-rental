@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
 import InputName from './InputName';
 import InputEmail from './InputEmail';
+import Beznazwy from '../resources/images/Bez_nazwy.png'
 import {
     Link,
     Element,
@@ -82,6 +83,7 @@ const borderLeft = keyframes`
     opacity:1;
   }
 `;
+
 
   const ContactSubmit = styled.button`
   width: 50%;
@@ -164,7 +166,6 @@ const DivDown2 = styled.div`
   border-bottom: 2px solid darkred;
   width: 100%;
   animation: ${props => (props.emailOn === true ? borderDown : "none")} 2s forwards;
-  
 `;
 
 class Form extends Component {
@@ -251,7 +252,14 @@ class Form extends Component {
                 gridTemplateColumns: '50% 50%', 
                 gridTemplateRows:'auto',
                 marginTop:'5%'}}>
-                
+                <div style={{ 
+                  // border:'2px solid black',
+                  gridColumn:'1/2', 
+                  display:'grid', 
+                  backgroundImage:`url(${Beznazwy})`, 
+                  backgroundSize:'100%',
+                  backgroundRepeat:'no-repeat', 
+                  backgroundPosition:'0% 20%'}}> </div>
                 <form
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}

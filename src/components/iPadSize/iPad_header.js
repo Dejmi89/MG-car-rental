@@ -94,10 +94,10 @@ const Menu = styled.div`
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
+    align-items:flex-end;
     /* border: 2px solid white; */
     color: white;
-    font-size: 1.5em;
-    /* position:fixed; */
+    font-size: 2.4em;
     top: 1%;
         div {
             &:hover{
@@ -108,7 +108,16 @@ const Menu = styled.div`
       `;
 
 const CarAnimation = styled.div`
-    font-size: 2em;
+    font-size: 4.3em;
+    color:white;
+    /* border: 2px solid white; */
+    text-align:center;
+    width:80%;
+    height:15vh;
+    display:flex;
+    align-items:center;
+    justify-self:center;
+    justify-content:center;
 `;
 
 const MenuText = styled.h2`
@@ -117,7 +126,7 @@ const MenuText = styled.h2`
     /* border: 2px solid white; */
     text-align: center;
     color: #ffffff;
-    font-size: 1.3em;
+    font-size: 1.8em;
     display:flex;
     justify-content:center;
     align-items:flex-start;
@@ -270,23 +279,14 @@ class IpadHeader extends React.Component {
                         : ''}
 
                         <Menu opacity={0.3}>
-                            
-                                <Link 
-                                to='galeria' 
-                                smooth={true} 
-                                duration={1000}>
-                                    <div onClick={this.reload}>Odswiez</div>
-                                </Link>
-                            
+                                                      
                                 <Link 
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
                                     <div onClick={this.props.scrollFunc}>Offer</div>
                                 </Link>
-                            
-                            <CarAnimation >Czerwony Kabriolet</CarAnimation>
-                            
+                        
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
@@ -302,7 +302,7 @@ class IpadHeader extends React.Component {
                                 </Link>
                                                    
                          </Menu>
-                        
+                         <CarAnimation >Czerwony Kabriolet</CarAnimation>
                         <MenuText>
                             <Nouns delay={0.5}>Piękno</Nouns>
                             <Nouns delay={0.8}>Styl</Nouns>
