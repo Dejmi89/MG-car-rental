@@ -1,3 +1,10 @@
+Hello everybody!
+I am a beginner front end developer and this is my first website that is going to be published soon. It will present the legendary car MG MGB model from 1977. As I am passionate about React library and learn it everyday , I tried to develop this website using mainly React.
+
+As soon as I am finished with this website, I will write more about it.
+Many thanks for reading!
+--------------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
