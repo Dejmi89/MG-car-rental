@@ -274,7 +274,7 @@ class Gallery extends Component {
                         name={this.props.name}
                         style={{opacity:this.state.opacity}}
                         columns={'repeat(9,minmax(max-content,auto))'}
-                        rows={'repeat(6, minmax(150px, auto))'}
+                        rows={'repeat(4, minmax(150px, auto))'}
                         gap='5px'
                         
                     >
