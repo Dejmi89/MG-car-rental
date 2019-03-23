@@ -198,7 +198,12 @@ class MobileForm extends Component {
             }
         })
     }
-
+    // componentDidMount(){
+    //   window.addEventListener('resize', this.preventResize);
+    // }
+    // componentWillUnmount(){
+    //   window.removeEventListener('resize', this.preventResize);
+    // }
     resetForm() {
         document.getElementById('contact-form').reset();
     }
@@ -212,7 +217,7 @@ class MobileForm extends Component {
         });
       }  
       nameOnLauncher = () => {
-        if (this.state.nameOn == ".") {
+        if (this.state.nameOn === ".") {
           this.setState({
             nameOn: true
           });
@@ -239,7 +244,17 @@ class MobileForm extends Component {
               nameOn:'.'
           })
       }
+      preventResize = () => {
+        let screenWidth = this.screen.width;
+        let screenHeight = this.screen.height;
+        this.setState({
+          screenX:screenWidth,
+          screenY:screenHeight
+        })
+      }
+    
       
+
     render() {      
         
          
@@ -263,10 +278,11 @@ class MobileForm extends Component {
                         gridTemplateRows: "10% 10% 10% 10% 10% 30% 10% 10%",
                         fontSize: "1.2em",
                         // border: "2px solid black",
-                        width: "100%",
-                        height: "50vh",
+                        minWidth: "85vw",
+                        height: "55vh",
                         alignContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        justifySelf:'center'
                     }}
                 >
                     <label

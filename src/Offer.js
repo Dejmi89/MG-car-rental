@@ -200,7 +200,7 @@ class Offer extends Component {
         
         const {revealedFirst, revealedSecond, revealedThird} = this.state;
         return (
-            <div>
+            <div style={{width:'100%'}}>
                 <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                     gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                     najważniejszego dnia w Waszym życiu ?

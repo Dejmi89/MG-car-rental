@@ -1,10 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import Fade from 'react-reveal';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Scroll from "react-scroll";
 import {
   Link,
   Element,
@@ -14,6 +12,7 @@ import {
   scroller
 } from "react-scroll";
 import img from '../src/resources/images/carIntheWoods2.jpg.svg.png';
+
 
 
 library.add(fab);
@@ -34,11 +33,10 @@ const HeaderSection = styled.div`
     background-size: cover;
     background-position-y:65%;
     min-height:100vh;
-    width: 100%;
-    /* border: 2px solid black; */
+    max-width:100vw;
+    /* border: 2px solid red; */
     display:flex;
     align-items: center;
-    
 
 `;
 
@@ -219,7 +217,7 @@ class Header extends React.Component {
         
         return (
             
-        <div>
+        <div style={{width:'100vw'}}>
             <HeaderSection>
             <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">

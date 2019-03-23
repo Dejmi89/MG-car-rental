@@ -231,7 +231,7 @@ class IpadHeader extends React.Component {
             
         <div>
             <HeaderSection>
-            <SCWrapper style={{alignSelf:'flex-start', marginTop:'-1%'}}>
+            <SCWrapper style={{alignSelf:'flex-start', marginTop:'0%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
