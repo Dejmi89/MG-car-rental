@@ -87,7 +87,7 @@ const borderLeft = keyframes`
   height: 4vh;
   font-size: 1em;
   color: darkred;
-  border: 1px solid darkred;
+  border: 3px solid darkred;
   background-color: white;
   &:hover {
     animation: ${changeButtonColor} 1s forwards;
@@ -99,7 +99,7 @@ const DivLeft = styled.div`
   grid-column: 1/1;
   grid-row: 1/4;
   border-left: ${props =>
-    props.nameOn == false ? "none" : "2px solid darkred"};
+    props.nameOn == false ? "none" : "4px solid darkred"};
   animation: ${props => (props.nameOn === true ? borderLeft : "none")} 2s reverse forwards;
 `;
 const DivRight = styled.div`
@@ -107,7 +107,7 @@ const DivRight = styled.div`
   grid-column: 4/4;
   grid-row: 1/4;
   border-left: ${props =>
-    props.nameOn == false ? "none" : "2px solid darkred"};
+    props.nameOn == false ? "none" : "4px solid darkred"};
   animation: ${props => props.nameOn === true && borderRight} reverse 2s forwards;
 `;
 
@@ -116,7 +116,7 @@ const DivUp = styled.div`
   grid-column: 1/4;
   grid-row: 1/1;
   border-top: ${props =>
-    props.nameOn == false ? "none" : "2px solid darkred"};
+    props.nameOn == false ? "none" : "4px solid darkred"};
   animation: ${props => props.nameOn === true && borderUp} 2s reverse forwards;
 `;
 const DivDown = styled.div`
@@ -124,7 +124,7 @@ const DivDown = styled.div`
   justify-self: center;
   grid-column: 1/4;
   grid-row: 4/4;
-  border-bottom: 2px solid darkred;
+  border-bottom: 4px solid darkred;
   width: 100%;
   animation: ${props => (props.nameOn === true ? borderDown : "none")} 2s forwards;
 `;
@@ -134,7 +134,7 @@ const DivLeft2 = styled.div`
   grid-column: 1/1;
   grid-row: 1/4;
   border-left: ${props =>
-    props.emailOn == false ? "none" : "2px solid darkred"};
+    props.emailOn == false ? "none" : "4px solid darkred"};
   animation: ${props => (props.emailOn === true ? borderLeft : "none")} 2s reverse forwards;
 `;
 const DivRight2 = styled.div`
@@ -142,7 +142,7 @@ const DivRight2 = styled.div`
   grid-column: 4/4;
   grid-row: 1/4;
   border-right: ${props =>
-    props.emailOn == false ? "none" : "2px solid darkred"};
+    props.emailOn == false ? "none" : "4px solid darkred"};
   animation: ${props => (props.emailOn === true ? borderRight : "none")} reverse 2s forwards;
 `;
 
@@ -151,7 +151,7 @@ const DivUp2 = styled.div`
   grid-column: 1/4;
   grid-row: 1/1;
   border-top: ${props =>
-    props.emailOn == false ? "none" : "2px solid darkred"};
+    props.emailOn == false ? "none" : "4px solid darkred"};
   animation: ${props => (props.emailOn === true ? borderUp : "none")} 2s reverse forwards;
   
 `;
@@ -160,7 +160,7 @@ const DivDown2 = styled.div`
   justify-self: center;
   grid-column: 1/4;
   grid-row: 4/4;
-  border-bottom: 2px solid darkred;
+  border-bottom: 4px solid darkred;
   width: 100%;
   animation: ${props => (props.emailOn === true ? borderDown : "none")} 2s forwards;
   
@@ -377,7 +377,7 @@ class IpadForm extends Component {
                             height: '50%',
                             justifySelf: 'center',
                             resize: 'none',
-                            border: '2px solid darkred',
+                            border: '4px solid darkred',
                             fontSize: '0.9em',
                             alignSelf: 'start'
 
@@ -392,10 +392,10 @@ class IpadForm extends Component {
                             display: 'grid',
                             gridRow: '7/8',
                             justifySelf: 'center',
-                            width: '20%',
+                            width: '22%',
                             textAlign: 'center',
                             fontFamily:'Satisfy',
-                            height:'4vh'
+                            height:'5vh'
                         }}>Submit
                                 </ContactSubmit>
                 </form>

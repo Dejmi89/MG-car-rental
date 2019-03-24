@@ -196,11 +196,11 @@ class IpadOffer extends Component {
         const {revealedFirst, revealedSecond, revealedThird} = this.state;
         return (
             <div>
-                <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
+                <p style={{...pStyle, padding:'20px 59px 20px 59px'}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                     gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                     najważniejszego dnia w Waszym życiu ?
                     </p>
-                    <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
+                    <p style={{...pStyle, padding:'10px 59px 65px 59px'}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
 
                     <div style={{
                         // border:'2px solid black',
@@ -235,7 +235,7 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <Heading positionY={revealedFirst}>MG model MGB, rocznik 1977</Heading>
+                                <Heading positionY={revealedFirst} style={{padding:'10px 40px 0 10px', textAlign:'center'}}>MG model MGB, rocznik 1977</Heading>
                              </div>
                              <div style={{
                                  ...offerStyle,
@@ -263,11 +263,12 @@ class IpadOffer extends Component {
                              }}>
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                    <FadeIn positionY={revealedFirst} delay={0.3}><p style={{width:'100%',  textAlign:'center', fontSize:'1.3em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
-                                    takie jak:</p>
+                                    <FadeIn positionY={revealedFirst} delay={0.3}>
+                                        <p style={{width:'100%',  textAlign:'center', fontSize:'1.3em', fontFamily:'Lato'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
+                                        takie jak:</p>
                                     </FadeIn>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        <ul style={{marginTop:'0'}}>
+                                        <ul style={{marginTop:'0', fontFamily:'Lato', fontSize:'1.3em'}}>
                                         <List positionY={revealedFirst} ><li>Śluby</li></List>
                                         <List positionY={revealedFirst} delay={0.7}><li>Sesje fotograficzne</li></List>
                                         <List positionY={revealedFirst} delay={0.9}><li>Reklamy</li></List>
@@ -318,7 +319,8 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <FadeIn2 positionY={revealedSecond} delay={0.5}><p style={{textAlign:'center', fontSize:'1.3em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                <FadeIn2 positionY={revealedSecond} delay={0.5}>
+                                    <p style={{textAlign:'center', fontSize:'1.3em', padding:'0 34px', fontFamily:'Lato'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
@@ -380,7 +382,8 @@ class IpadOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{textAlign:'center', fontSize:'1.3em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={revealedThird} delay={0.5}>
+                                    <p style={{textAlign:'center', fontSize:'1.3em', fontFamily:'Lato', padding:'0 40px 0 24px'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>
