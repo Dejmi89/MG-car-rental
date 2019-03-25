@@ -2,3 +2,13 @@ body {
     margin:0;
     padding:0;
 }
+
+@font-face{
+    font-family: 'Lato';
+    src: local('Lato'), url(./fonts/Lato/Lato-LightItalic.ttf) format('woff')
+}
+
+@font-face{
+    font-family: 'Roboto';
+    src: local('Roboto'), url(./fonts/Roboto/Roboto-ThinItalic.ttf) format('woff')
+}
