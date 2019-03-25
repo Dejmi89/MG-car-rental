@@ -270,7 +270,7 @@ class Gallery extends Component {
         return (
             
                 <div>
-                    <h1 name="gallery">Galeria</h1>
+                    
                     <Grid
                         name={this.props.name}
                         style={{opacity:this.state.opacity}}

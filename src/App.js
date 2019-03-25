@@ -175,7 +175,7 @@ handleMobileReveal = () =>  {
         </MediaQuery>
         
 
-        <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', paddingTop:'120px'}} >Galeria</h1>
+        <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', paddingTop:'120px'}} name='gallery' >Galeria</h1>
         
         <MediaQuery maxWidth = {767}>
             <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal} />
