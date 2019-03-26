@@ -16,6 +16,7 @@ import {
 import img from '../../resources/images/carIntheWoods2.jpg.svg.png';
 
 
+
 library.add(fab);
 
 const fadeIn = keyframes`
@@ -284,21 +285,21 @@ class IpadHeader extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Offer</div>
+                                    <div onClick={this.props.scrollFunc}>Oferta</div>
                                 </Link>
                         
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Gallery</div>
+                                    <div onClick={this.props.scrollFunc}>Galeria</div>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Contact</div>
+                                    <div onClick={this.props.scrollFunc}>Kontakt</div>
                                 </Link>
                                                    
                          </Menu>

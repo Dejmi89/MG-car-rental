@@ -196,6 +196,15 @@ class IpadOffer extends Component {
         const {revealedFirst, revealedSecond, revealedThird} = this.state;
         return (
             <div>
+                <h1 style={{
+                    textAlign: 'center',
+                    marginTop: '2%',
+                    marginBottom: '2%',
+                    fontWeight: '500',
+                    fontSize: '3em',
+                    padding: '20px 0 10px 0 '
+                }} name="offer">Oferta</h1>
+
                 <p style={{...pStyle, padding:'20px 59px 20px 59px'}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                     gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                     najważniejszego dnia w Waszym życiu ?

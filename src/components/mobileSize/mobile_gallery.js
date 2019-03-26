@@ -271,6 +271,10 @@ class MobileGallery extends Component {
         return (
             
                 <div>
+                    <h1 style={{
+                    textAlign: 'center', fontWeight: '500',
+                    fontSize: '1.8em', paddingTop: '30px'
+                    }} name="gallery" >Galeria</h1>
                     <Grid
                         name={this.props.name}
                         style={{opacity:this.state.opacity}}

@@ -246,12 +246,19 @@ class Form extends Component {
         
          
         return (
+          <div>
+            <h1 style={{
+              textAlign: 'center', fontWeight: '500',
+              fontSize: '3em', marginTop: '15vh', marginBottom: '20vh'
+            }} name="contact">Kontakt</h1>
+            
             <div name={this.props.name} 
             style={{
                 display:'grid', 
                 gridTemplateColumns: '50% 50%', 
                 gridTemplateRows:'auto',
                 marginTop:'5%'}}>
+                
                 <div style={{ 
                   // border:'2px solid black',
                   gridColumn:'1/2', 
@@ -408,6 +415,7 @@ class Form extends Component {
 
                 
 
+            </div>
             </div>
         );
     }

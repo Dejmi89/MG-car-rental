@@ -243,6 +243,11 @@ class IpadForm extends Component {
     render() {      
        
         return (
+          <div>
+            <h1 style={{
+              textAlign: 'center', fontWeight: '500',
+              fontSize: '3em', padding:'45px 0 40px'
+              }} name="contact">Kontakt</h1>
             <div name={this.props.name} 
             style={{
                 display:'grid', 
@@ -402,6 +407,7 @@ class IpadForm extends Component {
 
                 
 
+            </div>
             </div>
         );
     }

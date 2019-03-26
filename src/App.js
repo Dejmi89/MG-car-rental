@@ -155,14 +155,14 @@ handleMobileReveal = () =>  {
         </MediaQuery>
 
         
-         <h1 style={{
+         {/* <h1 style={{
           textAlign:'center', 
           marginTop:'2%', 
           marginBottom:'2%',
           fontWeight:'500', 
           fontSize: '3em',
           padding:'20px'
-          }} name="offer">Oferta</h1>
+          }} name="offer">Oferta</h1> */}
 
           <MediaQuery maxWidth = {767}>
             <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal} positionY={this.state.pageYOffset}/>
@@ -175,7 +175,7 @@ handleMobileReveal = () =>  {
         </MediaQuery>
         
 
-        <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', paddingTop:'120px'}} name='gallery' >Galeria</h1>
+        {/* <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', paddingTop:'120px'}} >Galeria</h1> */}
         
         <MediaQuery maxWidth = {767}>
             <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal} />
@@ -188,7 +188,7 @@ handleMobileReveal = () =>  {
         </MediaQuery>
           
           
-        <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', marginTop:'15vh', marginBottom:'20vh'}} name="contact">Kontakt</h1>
+        {/* <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', marginTop:'15vh', marginBottom:'20vh'}} name="contact">Kontakt</h1> */}
         <MediaQuery maxWidth = {767}>
             <MobileForm toTop={this.scrollToTop}></MobileForm>        
         </MediaQuery>

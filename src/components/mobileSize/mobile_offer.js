@@ -93,6 +93,7 @@ const Heading = styled.h2`
     animation: ${props => props.positionY  ? fadeIn : 'none'} 1.5s ease-in-out forwards;
     opacity:0;
     font-size:0.5em;
+    text-align:center;
 `;
 
 const Heading2 = styled.h2`
@@ -104,7 +105,7 @@ const Heading2 = styled.h2`
 const Heading3 = styled.h2`
     animation: ${props => props.positionY ? fadeIn : 'none'} 1.5s ease-in-out forwards;
     opacity:0;
-    font-size:0.6em;
+    font-size:0.5em;
     text-align:center;
 `;
 
@@ -204,11 +205,20 @@ class MobileOffer extends Component {
 
         return (
             <div>
-                 <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
+                 <h1 style={{
+                    textAlign: 'center',
+                    marginTop: '2%',
+                    marginBottom: '2%',
+                    fontWeight: '500',
+                    fontSize: '1.8em',
+                    padding: '20px 0 10px 0 '
+                }} name="offer">Oferta</h1>
+
+                 <p style={{...pStyle, padding:'10px 30px'}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                     gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                     najważniejszego dnia w Waszym życiu ?
                     </p>
-                    <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p> 
+                    <p style={{...pStyle, padding:'10px 30px 25px'}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p> 
 
                     <div style={{
                         // border:'2px solid black',
@@ -243,7 +253,7 @@ class MobileOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                                 }}>
-                                <Heading positionY={revealedFirst}>MG model MGB, rocznik 1977</Heading>
+                                <Heading positionY={revealedFirst} style={{padding:'10px'}}>MG model MGB, rocznik 1977</Heading>
                                 </div>
                                 <div style={{
                                  ...offerStyle,
@@ -323,7 +333,8 @@ class MobileOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText,
                              }}>
-                                <FadeIn2 positionY={revealedSecond} delay={0.5}><p style={{textAlign:'center', fontSize:'0.45em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                <FadeIn2 positionY={revealedSecond} delay={0.5}>
+                                <p style={{textAlign:'center', fontSize:'0.45em', padding:'0px 15px'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
@@ -383,7 +394,8 @@ class MobileOffer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{textAlign:'center', fontSize:'0.45em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={revealedThird} delay={0.5}>
+                                <p style={{textAlign:'center', fontSize:'0.4em', padding:'0 17px'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>

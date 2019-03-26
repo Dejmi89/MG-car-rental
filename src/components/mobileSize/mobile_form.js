@@ -259,6 +259,12 @@ class MobileForm extends Component {
         
          
         return (
+          
+          <div>
+            <h1 style={{
+              textAlign: 'center', fontWeight: '500',
+              fontSize: '1.8em', padding:'10px 0 30px'
+              }} name="contact">Kontakt</h1>
             <div name={this.props.name} 
             style={{
                 display:'grid', 
@@ -421,6 +427,7 @@ class MobileForm extends Component {
 
                 
 
+            </div>
             </div>
         );
     }
