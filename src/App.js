@@ -13,6 +13,7 @@ import IpadHeader from './components/iPadSize/iPad_header';
 import Offer from './Offer';
 import MobileOffer from './components/mobileSize/mobile_offer';
 import IpadOffer from './components/iPadSize/iPad_offer';
+import IpadOfferHorizontal from './components/iPadSize/iPad_offer_horizontal';
 import Gallery from './Gallery';
 import MobileGallery from './components/mobileSize/mobile_gallery';
 import IpadGallery from './components/iPadSize/ipad_gallery';
@@ -33,9 +34,11 @@ class App extends Component {
       apiResponse: "",
       galleryReveal:false,
       iGalleryReveal: false,
+      iGalleryHorizontalReveal: false,
       mobGalleryReveal:false,
       offerReveal:false,
       iOfferReveal:false,
+      iOfferHorizontalReveal:false,
       mobOfferReveal:false,
       pageXOffSet:'',
       pageYOffset:''
@@ -101,6 +104,19 @@ handleIpadReveal = () =>  {
     this.setState({ iOfferReveal: true });
   }
 }
+handleIpadHorizontalReveal = () =>  {
+  if (window.scrollY <= 2500 && this.state.iGalleryHorizontalReveal === true) {
+      this.setState({ iGalleryHorizontalReveal: false });
+  } else if (window.scrollY >= 2500 && this.state.iGalleryHorizontalReveal !== true) {
+      this.setState({ iGalleryHorizontalReveal: true });
+  }
+  else if (window.scrollY <= 1200 && this.state.iOfferHorizontalReveal === true) {
+    this.setState({ iOfferHorizontalReveal: false });
+  }
+  else if (window.scrollY >= 1210 && this.state.iOfferHorizontalReveal !== true) {
+    this.setState({ iOfferHorizontalReveal: true });
+  }
+}
 handleMobileReveal = () =>  {
   if (window.scrollY <= 1650 && this.state.mobGalleryReveal === true) {
       this.setState({ mobGalleryReveal: false });
@@ -154,28 +170,22 @@ handleMobileReveal = () =>  {
             <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop} ></Header>
         </MediaQuery>
 
-        
-         {/* <h1 style={{
-          textAlign:'center', 
-          marginTop:'2%', 
-          marginBottom:'2%',
-          fontWeight:'500', 
-          fontSize: '3em',
-          padding:'20px'
-          }} name="offer">Oferta</h1> */}
-
+        {/* -------------------Offer------------------------------- */}
           <MediaQuery maxWidth = {767}>
             <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
         <MediaQuery minWidth = {768} maxWidth = {991}>
             <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
-        <MediaQuery minWidth = {1024}>
+        <MediaQuery minWidth = {1024} minHeight={768}>
+            <IpadOfferHorizontal iOfferHorizontalReveal={this.state.iOfferHorizontalReveal} positionY={this.state.pageYOffset}/>
+        </MediaQuery>
+        <MediaQuery minWidth = {1224}>
             <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset}></Offer> 
         </MediaQuery>
         
 
-        {/* <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', paddingTop:'120px'}} >Galeria</h1> */}
+        {/* -------------------Gallery----------------------------- */}
         
         <MediaQuery maxWidth = {767}>
             <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal} />
@@ -188,7 +198,8 @@ handleMobileReveal = () =>  {
         </MediaQuery>
           
           
-        {/* <h1 style={{textAlign:'center', fontWeight:'500', fontSize:'3em', marginTop:'15vh', marginBottom:'20vh'}} name="contact">Kontakt</h1> */}
+        {/* -------------------Form----------------------------- */}
+
         <MediaQuery maxWidth = {767}>
             <MobileForm toTop={this.scrollToTop}></MobileForm>        
         </MediaQuery>
@@ -198,6 +209,10 @@ handleMobileReveal = () =>  {
         <MediaQuery minWidth = {1024}>
             <Form toTop={this.scrollToTop}></Form>
         </MediaQuery>
+        
+
+
+        {/* -------------------Footer----------------------------- */}
         
         {/* {this.state.apiResponse} */}
         <MediaQuery maxWidth = {767}>

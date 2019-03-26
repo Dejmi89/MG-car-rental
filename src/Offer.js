@@ -209,11 +209,11 @@ class Offer extends Component {
                     fontSize: '3em',
                     padding: '20px'
                 }} name="offer">Oferta</h1>
-                <p style={{...pStyle}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
+                <p style={{...pStyle, padding:'0 80px 40px'}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                     gościach ? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                     najważniejszego dnia w Waszym życiu ?
                     </p>
-                    <p style={{...pStyle}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
+                    <p style={{...pStyle, paddingBottom:'40px'}}>Nasze czerwone MG pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !</p>
 
                     <div style={{
                         display:'grid',
@@ -333,7 +333,7 @@ class Offer extends Component {
                                  ...offerStyleText,
                              }}>
                                 <FadeIn2 positionY={revealedSecond} delay={0.5}>
-                                    <p style={{textAlign:'center', fontSize:'1em'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                    <p style={{textAlign:'center', fontSize:'1em', padding:'0 52px'}}>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                     odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                     z formularza kontaktowego.
                                 </p>
@@ -394,7 +394,8 @@ class Offer extends Component {
                                  ...offerStyle,
                                  ...offerStyleText
                              }}>
-                                <FadeIn3 positionY={revealedThird} delay={0.5}><p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
+                                <FadeIn3 positionY={revealedThird} delay={0.5}>
+                                    <p style={{maxWidth:'90%', textAlign:'center', fontSize:'1em', padding:'0 58px'}}>Dysponujemy również dwoma koszykami wiklinowymi o wymiarach aa x bb cm
                                     oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                                     uroczystość. Oferujemy je Młodej Parze GRATIS!
                                 </p>
