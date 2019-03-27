@@ -202,7 +202,8 @@ class IpadOfferHorizontal extends Component {
                     marginBottom: '2%',
                     fontWeight: '500',
                     fontSize: '3em',
-                    padding: '20px 0 10px 0 '
+                    padding: '20px 0 10px 0 ',
+                    
                 }} name="offer">Oferta</h1>
 
                 <p style={{...pStyle, padding:'20px 59px 20px 58px'}}>Szukacie wyjątkowego auta do ślubu ? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
@@ -277,7 +278,7 @@ class IpadOfferHorizontal extends Component {
                                         takie jak:</p>
                                     </FadeIn>
                                     <div style={{display:'grid', justifyContent:'center'}}>
-                                        <ul style={{marginTop:'0', fontFamily:'Lato', fontSize:'1.3em'}}>
+                                        <ul style={{marginTop:'0', fontFamily:'Lato', fontSize:'0.9em'}}>
                                         <List positionY={revealedFirst} ><li>Śluby</li></List>
                                         <List positionY={revealedFirst} delay={0.7}><li>Sesje fotograficzne</li></List>
                                         <List positionY={revealedFirst} delay={0.9}><li>Reklamy</li></List>

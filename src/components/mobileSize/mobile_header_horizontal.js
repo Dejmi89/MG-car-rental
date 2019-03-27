@@ -16,7 +16,6 @@ import {
 import img from '../../resources/images/carIntheWoods2.jpg.svg.png';
 
 
-
 library.add(fab);
 
 const fadeIn = keyframes`
@@ -27,6 +26,7 @@ const fadeIn = keyframes`
         opacity:1
         }
 `;
+
 const bounceFromRight = keyframes`
     0%{
         width:90%
@@ -37,17 +37,16 @@ const bounceFromRight = keyframes`
         }
 `;
 
-
 const HeaderSection = styled.div`
     background-image: url(${img});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y:65%;
+    background-position-x:50%;
     min-height:100vh;
     width: 100%;
     /* border: 2px solid black; */
-    /* display:flex;
-    align-items: center; */
+    /* display:flex; */
+    /* align-items: center; */
     
 
 `;
@@ -59,32 +58,33 @@ const HeaderWrapper = styled.div`
     display:flex;
     justify-content:center;
     
+    
 `;
 
 const SCWrapper = styled.div`
-    width: 20%;
+    width: 10%;
     height: 5vh;
     /* border: 2px solid white; */
     display:flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;    
-    font-size: 0.7em;
+    font-size:0.5em;
+    padding:2% 0 0 1%;
 
 `;
 
 
 const MenuWrapper = styled.div`
+    padding-top:65px;
     width: 100%;
     height: 50%;
     /* border: 2px solid white; */
-    margin-left: 10px;
     display: flex;
     align-self: flex-start;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    font-size: 0.8em;
 
 `;
 
@@ -95,10 +95,10 @@ const Menu = styled.div`
     flex-direction: row;
     justify-self: center;
     justify-content: space-around;
-    align-items:flex-end;
     /* border: 2px solid white; */
     color: white;
-    font-size: 2.4em;
+    font-size: 1.3em;
+    align-items:flex-end;
     top: 1%;
         div {
             &:hover{
@@ -106,10 +106,11 @@ const Menu = styled.div`
                 cursor: pointer;
             }
         }
-      `;
+        
+`;
 
 const CarAnimation = styled.div`
-    font-size: 5.3em;
+    font-size: 3.3em;
     color:white;
     /* border: 2px solid white; */
     text-align:center;
@@ -119,7 +120,8 @@ const CarAnimation = styled.div`
     align-items:center;
     justify-self:center;
     justify-content:center;
-`;
+    padding:35px 0 10px;
+    `;
 
 const MenuText = styled.h2`
     width: 50%;
@@ -127,52 +129,51 @@ const MenuText = styled.h2`
     /* border: 2px solid white; */
     text-align: center;
     color: #ffffff;
-    font-size: 1.8em;
+    font-size:0.8em;
     display:flex;
     justify-content:center;
-    align-items:flex-start;
-    margin-top:0;             
 `;
-
 const Nouns = styled.h4`
     margin-right:5%;
     opacity:0;
     animation: ${fadeIn} 2s forwards;
     animation-delay: ${props => props.delay}s;
+    font-size: 1.3em;
 `;
 const HeaderOnScrollWrapper = styled.div`
     display:grid;
     grid-template-columns:100%;
     justify-items:end;
     position:fixed;
-    right:0%;
-    width:18%;
+    right:0;
+    width:30%;
     height:20vh;
     z-index:1;
     animation:${fadeIn} 2s forwards; 
+    font-size: 0.8em;
+    /* border:2px solid white; */
 `;
 const HeaderOnScrollField = styled.div`
     display: grid;
-    width:90%;
+    width:10%;
     height:90%;
-    border:1px solid white;
+    /* border:1px solid black; */
+    margin-top:1%;
     justify-content:center;
     align-items:center;
     background-color:white;
     font-family: 'Satisfy', cursive;
-    font-size:1.3em;
     animation: ${bounceFromRight} 1s forwards;
     animation-delay: ${props=>props.delay}s;
-    
     &:hover {
         background-color:black;
         color:white;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         
     }
 `;
 
-class IpadHeader extends React.Component {
+class MobileHeaderHorizontal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -232,7 +233,8 @@ class IpadHeader extends React.Component {
             
         <div>
             <HeaderSection>
-            <SCWrapper style={{alignSelf:'flex-start', marginTop:'0%'}}>
+                
+            <SCWrapper style={{alignSelf:'center', marginLeft:'1%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
@@ -266,12 +268,14 @@ class IpadHeader extends React.Component {
                                             onMouseEnter={this.handleSocialIconStyle3}
                                             onMouseLeave={this.handleSocialIconStyle3}/>
                         </a>
+                        
                     </SCWrapper>
 
                 <HeaderWrapper>
+                    
                         <MenuWrapper>
                             {this.state.scrolling === true ? 
-                            <HeaderOnScrollWrapper>
+                            <HeaderOnScrollWrapper >
                                 <HeaderOnScrollField  delay={0.2} onClick={this.props.toTop}>Do góry</HeaderOnScrollField>
                                 <HeaderOnScrollField  delay={0.3}><Link to='offer' smooth={true} duration={1000}>Oferta</Link></HeaderOnScrollField>
                                 <HeaderOnScrollField  delay={0.4}><Link to='gallery' smooth={true} duration={1000}>Galeria</Link></HeaderOnScrollField>
@@ -280,14 +284,15 @@ class IpadHeader extends React.Component {
                         : ''}
 
                         <Menu opacity={0.3}>
-                                                      
+                            
+                                                          
                                 <Link 
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
                                     <div onClick={this.props.scrollFunc}>Oferta</div>
                                 </Link>
-                        
+                            
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
@@ -301,9 +306,9 @@ class IpadHeader extends React.Component {
                                 duration={1000}>
                                     <div onClick={this.props.scrollFunc}>Kontakt</div>
                                 </Link>
-                                                   
+                                                  
                          </Menu>
-                         <CarAnimation >Czerwony Kabriolet</CarAnimation>
+                         <CarAnimation >Czerwony Kabriolet</CarAnimation>       
                         <MenuText>
                             <Nouns delay={0.5}>Piękno</Nouns>
                             <Nouns delay={0.8}>Styl</Nouns>
@@ -320,4 +325,4 @@ class IpadHeader extends React.Component {
     }
 }
 
-export default IpadHeader;
+export default MobileHeaderHorizontal;

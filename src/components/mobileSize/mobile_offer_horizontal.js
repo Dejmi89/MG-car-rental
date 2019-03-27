@@ -160,7 +160,7 @@ const pStyle = {
     
 }
 
-class MobileOffer extends Component {
+class MobileOfferHorizontal extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -409,7 +409,7 @@ class MobileOffer extends Component {
     }
 }
 
-export default MobileOffer;
+export default MobileOfferHorizontal;
 
 
 

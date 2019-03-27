@@ -58,19 +58,20 @@ const HeaderWrapper = styled.div`
     /* border: 2px solid white; */
     display:flex;
     justify-content:center;
+    padding:20px 0;
     
 `;
 
 const SCWrapper = styled.div`
-    width: 20%;
+    width: 10%;
     height: 5vh;
     /* border: 2px solid white; */
     display:flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;    
-    font-size: 0.7em;
-
+    font-size: 0.5em;
+    padding: 1% ;
 `;
 
 
@@ -98,7 +99,7 @@ const Menu = styled.div`
     align-items:flex-end;
     /* border: 2px solid white; */
     color: white;
-    font-size: 2.4em;
+    font-size: 1.8em;
     top: 1%;
         div {
             &:hover{
@@ -109,7 +110,7 @@ const Menu = styled.div`
       `;
 
 const CarAnimation = styled.div`
-    font-size: 5.3em;
+    font-size: 6.3em;
     color:white;
     /* border: 2px solid white; */
     text-align:center;
@@ -119,6 +120,7 @@ const CarAnimation = styled.div`
     align-items:center;
     justify-self:center;
     justify-content:center;
+    padding: 25px 0;
 `;
 
 const MenuText = styled.h2`
@@ -127,7 +129,7 @@ const MenuText = styled.h2`
     /* border: 2px solid white; */
     text-align: center;
     color: #ffffff;
-    font-size: 1.8em;
+    font-size: 1.5em;
     display:flex;
     justify-content:center;
     align-items:flex-start;
@@ -172,7 +174,7 @@ const HeaderOnScrollField = styled.div`
     }
 `;
 
-class IpadHeader extends React.Component {
+class IpadHeaderHorizontal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -320,4 +322,4 @@ class IpadHeader extends React.Component {
     }
 }
 
-export default IpadHeader;
+export default IpadHeaderHorizontal;

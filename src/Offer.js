@@ -276,8 +276,8 @@ class Offer extends Component {
                                 <div style={{height:'80%'}}>
                                     <div style={{display:'grid', justifyContent:'center'}}>
                                     <FadeIn positionY={revealedFirst} delay={0.3}>
-                                    <p style={{width:'100%',  textAlign:'center', fontSize:'1em'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
-                                    takie jak:</p>
+                                    <p style={{width:'100%',  textAlign:'center', fontSize:'1em', padding:'0 20px'}}> Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
+                                    takie jak :</p>
                                     </FadeIn>
                                     <div style={{display:'grid', justifyContent:'center'}}>
                                         <ul style={{marginTop:'0', fontSize:'0.4em'}}>
@@ -287,7 +287,7 @@ class Offer extends Component {
                                             <List positionY={revealedFirst} delay={0.9}><li>Filmy</li></List>
                                             <List positionY={revealedFirst} delay={1}><li>Imprezy okolicznościowe</li></List>
                                             <List positionY={revealedFirst} delay={1.1}><li>Niespodzianki</li></List>
-                                         </ul>
+                                        </ul>
                                     </div>
                                     </div>
                                 </div>
