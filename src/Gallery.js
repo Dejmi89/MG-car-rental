@@ -12,7 +12,9 @@ import img8 from './resources/images/wedding/0186_M&D_1080p.jpg';
 import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
 import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
 import img11 from './resources/images/gearbox_stick.jpg';
-
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const shineEffect = keyframes`
   0% {
@@ -72,11 +74,11 @@ const Cells = [
         animationDelay:1
     },
     {
-        width: 1,
-        height: 1,
-        left: 4,
-        top: 4,
-        img: img5,
+        width: '',
+        height: '',
+        left: '',
+        top: '',
+        
         animation: shineEffect,
         animationDelay:2
     },
@@ -284,6 +286,38 @@ class Gallery extends Component {
                     >
                         
                         {this.showHeroes()} 
+                         
+                                <div style={{
+                                    display:'grid',
+                                    gridColumn:'4/5',
+                                    gridRow:'4/5',
+                                    width:'100%', 
+                                    height:'100%', 
+                                    textAlign:'center',
+                                    // padding:'10px 10px 20px 30px',
+                                    fontSize:'1.5em',
+                                    backgroundColor:'white',
+                                    textAlign:'center',
+                                    display:'grid',
+                                    justifyContent:'center',
+                                    justifySelf:'center'
+                                    
+                                    }}>
+                                    <a href="https://www.instagram.com/" target="_blank"> 
+                                        <div style={{
+                                            display:'grid', 
+                                            fontSize:'2.5em',
+                                            width:'100%',
+                                            height:'100%',
+                                            justifyContent:'center',
+                                            alignItems:'center',
+                                            fontFamily:'Loved by the King'}}>
+                                                              
+                                                <FontAwesomeIcon icon={['fab', 'instagram']} />                                       
+                                        </div>
+                                    </a>
+                                </div>
+                    
                         
                     </Grid>
                     <GalleryModal 

@@ -316,6 +316,7 @@ class Form extends Component {
                             className="form-control"
                             id="name"
                             style={{
+                                outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
                                 width: "99%",
@@ -358,6 +359,7 @@ class Form extends Component {
                             className="form-control"
                             id="email"
                             style={{
+                                outline:'none', 
                                 display: "grid",
                                 gridRow: "2/4",
                                 width: "99%",

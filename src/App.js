@@ -168,18 +168,18 @@ handleMobileReveal = () =>  {
     return (
       <div style={{fontFamily:'satisfy, cursive', width:'100vw', overflowX:'hidden'}}>
         
-        <MediaQuery maxWidth = {767} minHeight ={550}>
+        <MediaQuery maxWidth = {767} >
             <MobileHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery>
-        <MediaQuery minWidth = {667} maxHeight={414}>
+        {/* <MediaQuery minWidth = {667} maxHeight={414}>
             <MobileHeaderHorizontal scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
-        </MediaQuery>
-        <MediaQuery minWidth = {768} maxWidth = {991}>
+        </MediaQuery> */}
+        <MediaQuery  maxWidth = {1024}>
             <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery>
-        <MediaQuery width = {1024} height = {768}>
+        {/* <MediaQuery width = {1024} height = {768}>
             <IpadHeaderHorizontal scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
-        </MediaQuery>
+        </MediaQuery> */}
         <MediaQuery minWidth = {1025}>
             <Header scrollFunc={this.scrollTo} toTop={this.scrollToTop} ></Header>
         </MediaQuery>
@@ -188,12 +188,12 @@ handleMobileReveal = () =>  {
           <MediaQuery maxWidth = {767}>
             <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
-        <MediaQuery minWidth = {768} maxWidth = {1023}>
+        <MediaQuery  maxWidth = {1024}>
             <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
-        <MediaQuery width = {1024} height={768}>
+        {/* <MediaQuery width = {1024} height={768}>
             <IpadOfferHorizontal iOfferHorizontalReveal={this.state.iOfferHorizontalReveal} positionY={this.state.pageYOffset}/>
-        </MediaQuery>
+        </MediaQuery> */}
         <MediaQuery minWidth = {1025}>
             <Offer toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset}></Offer> 
         </MediaQuery>
@@ -204,12 +204,12 @@ handleMobileReveal = () =>  {
         <MediaQuery maxWidth = {767}>
             <MobileGallery toTop={this.scrollToTop} galleryReveal={this.state.mobGalleryReveal} />
         </MediaQuery>
-        <MediaQuery minWidth = {768} maxWidth = {1023}>
+        <MediaQuery minWidth = {768} maxWidth = {1024}>
             <IpadGallery toTop={this.scrollToTop} galleryReveal={this.state.iGalleryReveal}/>
         </MediaQuery>
-        <MediaQuery width = {1024} height = {768}>
+        {/* <MediaQuery width = {1024} height = {768}>
             <IpadGalleryHorizontal toTop={this.scrollToTop} galleryReveal={this.state.iGalleryReveal}/>
-        </MediaQuery>
+        </MediaQuery> */}
         <MediaQuery minWidth = {1025}>
             <Gallery  toTop={this.scrollToTop} galleryReveal={this.state.galleryReveal}></Gallery>
         </MediaQuery>
@@ -220,12 +220,12 @@ handleMobileReveal = () =>  {
         <MediaQuery maxWidth = {767}>
             <MobileForm toTop={this.scrollToTop}></MobileForm>        
         </MediaQuery>
-        <MediaQuery minWidth = {768} maxWidth = {1023}>
+        <MediaQuery minWidth = {768} maxWidth = {1024}>
             <IpadForm toTop={this.scrollToTop}></IpadForm>        
         </MediaQuery>
-        <MediaQuery width = {1024} height = {768}>
+        {/* <MediaQuery width = {1024} height = {768}>
             <IpadFormHorizontal toTop={this.scrollToTop}></IpadFormHorizontal>        
-        </MediaQuery>
+        </MediaQuery> */}
         <MediaQuery minWidth = {1025}>
             <Form toTop={this.scrollToTop}></Form>
         </MediaQuery>
@@ -238,12 +238,12 @@ handleMobileReveal = () =>  {
         <MediaQuery maxWidth = {767}>
             <MobileFooter/>        
         </MediaQuery>
-        <MediaQuery minWidth = {768} maxWidth = {1023}>
+        <MediaQuery  maxWidth = {1024}>
             <IpadFooter/>        
         </MediaQuery>
-        <MediaQuery width = {1024} height  = {768}>
+        {/* <MediaQuery width = {1024} height  = {768}>
             <IpadFooterHorizontal/>        
-        </MediaQuery>
+        </MediaQuery> */}
         <MediaQuery minWidth = {1025}>
             <Footer/>
         </MediaQuery>
