@@ -14,6 +14,7 @@ import {
   scroller
 } from "react-scroll";
 import img from '../../resources/images/carIntheWoods2.jpg.svg.png';
+import Handwriting from '../../components/Handwriting';
 
 
 
@@ -109,7 +110,7 @@ const Menu = styled.div`
       `;
 
 const CarAnimation = styled.div`
-    font-size: 5.3em;
+    margin-top:40px;
     color:white;
     /* border: 2px solid white; */
     text-align:center;
@@ -303,7 +304,7 @@ class IpadHeader extends React.Component {
                                 </Link>
                                                    
                          </Menu>
-                         <CarAnimation >Czerwony Kabriolet</CarAnimation>
+                         <CarAnimation ><Handwriting /></CarAnimation>
                         <MenuText>
                             <Nouns delay={0.5}>Piękno</Nouns>
                             <Nouns delay={0.8}>Styl</Nouns>

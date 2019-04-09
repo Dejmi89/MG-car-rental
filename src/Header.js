@@ -12,6 +12,7 @@ import {
   scroller
 } from "react-scroll";
 import img from '../src/resources/images/carIntheWoods2.jpg.svg.png';
+import Handwriting from './components/Handwriting';
 
 
 
@@ -291,7 +292,7 @@ class Header extends React.Component {
                                                    
                          </Menu>
 
-                         <CarAnimation >Czerwony Kabriolet</CarAnimation>
+                         <CarAnimation ><Handwriting/></CarAnimation>
 
                         <MenuText>
                             <Nouns delay={0.5}>Piękno</Nouns>

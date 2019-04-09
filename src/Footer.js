@@ -70,6 +70,7 @@ class Footer extends Component {
                                             onMouseLeave={this.handleSocialIconStyle3}/>
                         </a>
                     </div>
+                    
             </div>
         );
     }
