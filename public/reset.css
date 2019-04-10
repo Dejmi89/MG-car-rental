@@ -12,3 +12,109 @@ body {
     font-family: 'Roboto';
     src: local('Roboto'), url(./fonts/Roboto/Roboto-ThinItalic.ttf) format('woff')
 }
+
+@font-face{
+    font-family: 'Loved by the King';
+    src: local('Loved by the King'), url(./fonts/Loved_by_the_King/LovedbytheKing.ttf) format('woff')
+}
+#C-1, #zerw, #o-1, #ny, #K, #a1, #b1,#r2, #i, #o2, #l, #et, #kreska_od_t, #kropka_nad_i {
+    fill:none;
+    stroke:white;
+    stroke-width:8;
+    animation: letters-animate linear forwards;
+    opacity:0;
+  }
+  #C-1 {
+    stroke-dasharray:143;
+    stroke-dashoffset:143;
+    animation-duration: 1s;
+    
+  }
+  #zerw {
+    stroke-dasharray:533;
+    stroke-dashoffset:533;
+    animation-duration: 1.5s;
+    animation-delay: 1.3s;
+  }
+  #o-1 {
+    stroke-dasharray:119;
+    stroke-dashoffset:119;
+    animation-duration: 1s;
+    animation-delay: 2.8s;
+  }
+  #ny {
+    stroke-dasharray:272;
+    stroke-dashoffset:272;
+    animation-duration: 1s;
+    animation-delay: 3.6s;
+  }
+  #K {
+    stroke-dasharray:272;
+    stroke-dashoffset:272;
+    animation-duration: 1s;
+    animation-delay: 4.8s;
+  }
+  #a1 {
+    stroke-dasharray:109;
+    stroke-dashoffset:109;
+    animation-duration: 1s;
+    animation-delay: 5.5s;
+  }
+  #b1 {
+    stroke-dasharray:154;
+    stroke-dashoffset:154;
+    animation-duration: 0.5s;
+    animation-delay: 6.3s;
+  }
+  #r2 {
+    stroke-dasharray:117;
+    stroke-dashoffset:117;
+    animation-duration: 1s;
+    animation-delay: 6.9s;
+  }
+  #i {
+    stroke-dasharray:48;
+    stroke-dashoffset:48;
+    animation-duration: 1s;
+    animation-delay: 8.0s;
+  }
+  #kropka_nad_i {
+    stroke-dasharray:31;
+    stroke-dashoffset:31;
+    animation-duration: 1s;
+    animation-delay: 8.8s;
+  }
+  #o2 {
+    stroke-dasharray:136;
+    stroke-dashoffset:136;
+    animation-duration: 1s;
+    animation-delay: 9.5s;
+  }
+  
+  #l {
+    stroke-dasharray:91;
+    stroke-dashoffset:91;
+    animation-duration: 0.5s;
+    animation-delay: 10.5s;
+  }
+  #et {
+    stroke-dasharray:207;
+    stroke-dashoffset:207;
+    animation-duration: 1s;
+    animation-delay: 11.0s;
+  }
+  #kreska_od_t {
+    stroke-dasharray:36;
+    stroke-dashoffset:36;
+    animation-duration: 1s;
+    animation-delay: 11.8s;
+  }
+  
+  
+  
+  @keyframes letters-animate{
+    100%{
+      opacity:1;
+      stroke-dashoffset:0;
+      
+    }
