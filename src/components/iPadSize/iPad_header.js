@@ -14,7 +14,7 @@ import {
   scroller
 } from "react-scroll";
 import img from '../../resources/images/carIntheWoods2.jpg.svg.png';
-import Handwriting from '../../components/Handwriting';
+import Handwriting from './iPad_Handwriting';
 
 
 
@@ -71,7 +71,9 @@ const SCWrapper = styled.div`
     justify-content:center;
     align-items: center;    
     font-size: 0.7em;
-
+    animation: ${fadeIn} 3s linear forwards;
+    animation-delay: ${props => props.delay}s;
+    opacity:0;
 `;
 
 
@@ -99,15 +101,20 @@ const Menu = styled.div`
     align-items:flex-end;
     /* border: 2px solid white; */
     color: white;
-    font-size: 2.4em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.9em;
     top: 1%;
         div {
             &:hover{
-                opacity: ${props => `${props.opacity}`};
                 cursor: pointer;
             }
         }
       `;
+const LinkMenu = styled.div`
+    animation: ${fadeIn} 2s linear forwards;
+    animation-delay: ${props => props.delay}s;
+    opacity:0;
+`;
 
 const CarAnimation = styled.div`
     margin-top:40px;
@@ -122,25 +129,27 @@ const CarAnimation = styled.div`
     justify-content:center;
 `;
 
-const MenuText = styled.h2`
+const MenuText = styled.div`
     width: 50%;
     height: 20%;
     /* border: 2px solid white; */
     text-align: center;
-    color: #ffffff;
-    font-size: 1.8em;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.4em;
     display:flex;
     justify-content:center;
     align-items:flex-start;
     margin-top:0;             
 `;
 
-const Nouns = styled.h4`
-    margin-right:5%;
+const Nouns = styled.div`
+    margin-right:10%;
     opacity:0;
     animation: ${fadeIn} 2s forwards;
     animation-delay: ${props => props.delay}s;
 `;
+
 const HeaderOnScrollWrapper = styled.div`
     display:grid;
     grid-template-columns:100%;
@@ -233,7 +242,7 @@ class IpadHeader extends React.Component {
             
         <div>
             <HeaderSection>
-            <SCWrapper style={{alignSelf:'flex-start', marginTop:'0%'}}>
+            <SCWrapper delay={10} style={{alignSelf:'flex-start', marginTop:'0%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
@@ -286,29 +295,29 @@ class IpadHeader extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Oferta</div>
+                                    <LinkMenu delay={8.7}onClick={this.props.scrollFunc}>Oferta</LinkMenu>
                                 </Link>
                         
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Galeria</div>
+                                    <LinkMenu delay={9}onClick={this.props.scrollFunc}>Galeria</LinkMenu>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Kontakt</div>
+                                    <LinkMenu delay={9.3} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
                                 </Link>
                                                    
                          </Menu>
                          <CarAnimation ><Handwriting /></CarAnimation>
                         <MenuText>
-                            <Nouns delay={0.5}>Piękno</Nouns>
-                            <Nouns delay={0.8}>Styl</Nouns>
-                            <Nouns delay={1.1}>Elegancja</Nouns>
+                            <Nouns delay={7.8}>Piękno</Nouns>
+                            <Nouns delay={8.1}>Styl</Nouns>
+                            <Nouns style={{marginRight:'0%'}}delay={8.4}>Elegancja</Nouns>
                         </MenuText>
                     </MenuWrapper>
                     

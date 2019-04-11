@@ -1,18 +1,19 @@
 
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
+
 
 
 
 class Handwriting extends Component {
     render() {
         return (
-            <div>
+            <div style={{display:'flex', alignItems:'center'}}>
                 <svg
                     id="svg2"
                     viewBox="0 0 518.53663 82.167968"
-                    height="23.189627mm"
-                    width="146.34256mm"
+                    height="34.7844mm"
+                    width="219.51384mm"
+                    
                 >
                     <defs>
                         <clipPath id="clipC" transform="translate(-41.399166,-46.088364)">
