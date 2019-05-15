@@ -43,6 +43,15 @@ const fadeIn = keyframes`
         opacity:1;
     }
 `;
+const jumpFromRight = keyframes`
+    from{
+        opacity:0;
+
+    }
+    to {
+        opacity:1;
+    }
+`;
 
 const Cells = [
     
@@ -73,15 +82,7 @@ const Cells = [
         animation: shineEffect,
         animationDelay:1
     },
-    {
-        width: '',
-        height: '',
-        left: '',
-        top: '',
-        
-        animation: shineEffect,
-        animationDelay:2
-    },
+    
     {
         width: 1,
         height: 1,
@@ -207,6 +208,26 @@ const ClickedImage = styled.div`
         }
     `;
 
+    const Instastory = styled.div`
+        grid-column:3/4;
+        grid-row:1/5;
+        display:grid ;
+        font-size:3.5em;
+        width:100%;
+        height:100%;
+        align-items:center;
+        font-family:'Loved by the King';
+        animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 6s forwards;                                    
+    `;
+    const Instastory2 = styled.div`
+    display:grid;
+    grid-column:1/3;
+    grid-row:1/5;
+    color:white;
+    font-size: 1.6em;
+    animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 6s forwards; 
+    `;
+
 class Gallery extends Component {
     constructor(props){
         super(props);
@@ -291,31 +312,42 @@ class Gallery extends Component {
                                     display:'grid',
                                     gridColumn:'4/5',
                                     gridRow:'4/5',
+                                    gridTemplateColumns:'33% 33% 32%',
+                                    gridTemplateRows:'25% 25% 25% 25%',
                                     width:'100%', 
                                     height:'100%', 
                                     textAlign:'center',
                                     // padding:'10px 10px 20px 30px',
                                     fontSize:'1.5em',
-                                    backgroundColor:'white',
+                                    backgroundColor:'#ed9aa9',
                                     textAlign:'center',
                                     display:'grid',
                                     justifyContent:'center',
-                                    justifySelf:'center'
+                                    justifySelf:'center',
+                                    
+                                                                       
                                     
                                     }}>
-                                    <a href="https://www.instagram.com/" target="_blank"> 
-                                        <div style={{
+                                    <a href="https://www.instagram.com/" target="blank" 
+                                        style={{
                                             display:'grid', 
-                                            fontSize:'2.5em',
-                                            width:'100%',
-                                            height:'100%',
-                                            justifyContent:'center',
-                                            alignItems:'center',
-                                            fontFamily:'Loved by the King'}}>
-                                                              
-                                                <FontAwesomeIcon icon={['fab', 'instagram']} />                                       
-                                        </div>
+                                            gridColumn:'1/4',
+                                            gridRow:'1/5', 
+                                            gridTemplateColumns:'33% 33% 32%',
+                                            gridTemplateRows:'25% 25% 25% 25%',
+                                            textDecoration:'none'
+                                            // border:'2px solid black'
+                                            }}> 
+                                        <Instastory galleryReveal={this.props.galleryReveal}>
+                                                <FontAwesomeIcon   
+                                                style={{color:'white', }}icon={['fab', 'instagram']} /> 
+                                        </Instastory>
+                                        <Instastory2 galleryReveal={this.props.galleryReveal}>
+                                            <p>Sledz <br/>nas na <br/>Instagramie!</p>
+                                            </Instastory2>
+                                        
                                     </a>
+                                   
                                 </div>
                     
                         
