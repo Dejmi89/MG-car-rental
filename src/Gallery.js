@@ -320,8 +320,6 @@ class Gallery extends Component {
                                     // padding:'10px 10px 20px 30px',
                                     fontSize:'1.5em',
                                     backgroundColor:'#ed9aa9',
-                                    textAlign:'center',
-                                    display:'grid',
                                     justifyContent:'center',
                                     justifySelf:'center',
                                     
@@ -343,7 +341,7 @@ class Gallery extends Component {
                                                 style={{color:'white', }}icon={['fab', 'instagram']} /> 
                                         </Instastory>
                                         <Instastory2 galleryReveal={this.props.galleryReveal}>
-                                            <p>Sledz <br/>nas na <br/>Instagramie!</p>
+                                            <p style={{fontFamily:'Dancing Script'}}>Śledź <br/>nas na <br/>Instagramie!</p>
                                             </Instastory2>
                                         
                                     </a>

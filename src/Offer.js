@@ -1,9 +1,5 @@
 import React , { Component }from 'react';
 import styled, {keyframes} from 'styled-components';
-import {
-    animateScroll as scroll,
-    scroller
-  } from "react-scroll";
 
 import img from './resources/images/gearbox_stick.jpg';
 import img2 from './resources/images/mg_hood.jpg';

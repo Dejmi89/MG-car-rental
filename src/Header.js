@@ -282,21 +282,21 @@ class Header extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.4} onClick={this.props.scrollFunc}>Oferta</LinkMenu>
+                                    <LinkMenu delay={4.8} onClick={this.props.scrollFunc}>Oferta</LinkMenu>
                                 </Link>
                             
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.6} onClick={this.props.scrollFunc}>Galeria</LinkMenu>
+                                    <LinkMenu delay={5.1} onClick={this.props.scrollFunc}>Galeria</LinkMenu>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.8} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
+                                    <LinkMenu delay={5.4} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
                                 </Link>
                                                    
                          </Menu>
