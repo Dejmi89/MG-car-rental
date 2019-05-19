@@ -157,7 +157,7 @@ const ImageContainer = styled.div`
         height:100%;
         overflow:hidden;
         &:hover{
-            opacity:0.7; 
+           animation:${fadeIn} 0.6s linear forwards;
         }
     `;
 
@@ -217,7 +217,8 @@ const ClickedImage = styled.div`
         height:100%;
         align-items:center;
         font-family:'Loved by the King';
-        animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 6s forwards;                                    
+        animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 6s forwards;        
+                                  
     `;
     const Instastory2 = styled.div`
     display:grid;
