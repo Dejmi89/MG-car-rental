@@ -11,7 +11,7 @@ import img7 from './resources/images/wedding/0191_M&D_1080p.jpg';
 import img8 from './resources/images/wedding/0186_M&D_1080p.jpg';
 import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
 import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
-import img11 from './resources/images/gearbox_stick.jpg';
+import img11 from './resources/images/pastele.png';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -217,7 +217,7 @@ const ClickedImage = styled.div`
         height:100%;
         align-items:center;
         font-family:'Loved by the King';
-        animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 6s forwards;        
+        animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 2s forwards;        
                                   
     `;
     const Instastory2 = styled.div`
@@ -226,7 +226,7 @@ const ClickedImage = styled.div`
     grid-row:1/5;
     color:white;
     font-size: 1.6em;
-    animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 6s forwards; 
+    animation: ${props => props.galleryReveal === true ? fadeIn :'none'} 2s forwards; 
     `;
 
 class Gallery extends Component {
@@ -320,12 +320,9 @@ class Gallery extends Component {
                                     textAlign:'center',
                                     // padding:'10px 10px 20px 30px',
                                     fontSize:'1.5em',
-                                    backgroundColor:'#ed9aa9',
+                                    backgroundColor:'#E64F64',
                                     justifyContent:'center',
                                     justifySelf:'center',
-                                    
-                                                                       
-                                    
                                     }}>
                                     <a href="https://www.instagram.com/" target="blank" 
                                         style={{

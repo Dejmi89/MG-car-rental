@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import img from './resources/images/jaguar.jpg';
-import img2 from './resources/images/rollsroyce.jpg';
 
 const SlideIn = keyframes`
     40%{
@@ -31,36 +29,42 @@ const OfferOne = styled.div`
 
     display:grid;
     grid-column:1/7;
-    grid-row:1/4;
+    grid-row:1/5;
     grid-template-columns:25% 25% 25% 25%;
     grid-template-rows:16.5% 16.5% 16.5% 16.5% 16.5% 16.5%;
     background-color: #890025;
     transform: translate(0, 50%);
     opacity:0;
+    height:80%;
+    margin-top:10%;
     animation: ${props => props.positionY ? SlideIn :'none'} 2s ease-in-out forwards;
 `;
 const OfferTwo = styled.div`
 
     display:grid;
     grid-column:1/6;
-    grid-row:1/4;
+    grid-row:1/5;
     grid-template-columns:25% 25% 25% 25%;
     grid-template-rows:16.5% 16.5% 16.5% 16.5% 16.5% 16.5%;
     background-color: #E64F64;
     transform: translate(0, -50%);
     opacity:0;
+    height:80%;
+    margin-top:10%;
     animation: ${props => props.positionY ? SlideIn :'none'} 2s ease-in-out forwards;
 `;
 const OfferThree = styled.div`
 
     display:grid;
     grid-column:1/7;
-    grid-row:1/4;
+    grid-row:1/5;
     grid-template-columns:25% 25% 25% 25%;
     grid-template-rows:16.5% 16.5% 16.5% 16.5% 16.5% 16.5%;
     background-color: #c19ac7;
     transform: translate(0, 50%);
     opacity:0;
+    height:80%;
+    margin-top:10%;
     animation: ${props => props.positionY ? SlideIn :'none'} 2s ease-in-out forwards;
 `;
 
@@ -154,7 +158,7 @@ class Offer_new extends Component {
                    gridColumn:'2/4',
                    gridRow:'3/7',
                    gridTemplateColumns:'16.5% 16.5% 16.5% 16.5% 16.5% 17.5%',
-                   gridTemplateRows:'25% 25% 25% 25%',
+                   gridTemplateRows:'25% 25% 25% 25% ',
                    color:'white'
                }}>
                     <OfferOne positionY={revealedFirst}>
@@ -163,11 +167,12 @@ class Offer_new extends Component {
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'1/2',
-                            fontSize:'1.7em',
+                            fontSize:'2.7em',
                             justifyContent:'center',
-                            alignItems:'center'
+                            alignItems:'center',
+                            fontFamily:'Josefin Sans, sans-serif'
                             }}>
-                                <p>MG model MGB, rocznik 1977</p>
+                                <p>MG model MGB 1977'</p>
                         </div>
                         <div className="offer1_text" style={{
                             // border:'2px solid black',
@@ -177,15 +182,17 @@ class Offer_new extends Component {
                             gridTemplateColumns:'25% 25% 25% 25%',
                             gridTemplateRows:'25% 25% 25% 25%',
                             justifyContent:'center',
-                            textAlign:'center',
-                            fontSize:'1.7em',
-                            // padding:'0 5px 0 3px'
+                            textAlign:'justify',
+                            fontSize:'1.4em',
+                            fontFamily:'Josefin Sans, sans-serif',
+                            padding:'0 9% 0 9%'
                         }}>
                                 <div  style={{
                                 // border:'2px solid black',
                                 display:'grid',
                                 gridColumn:'1/5',
-                                gridRow:'1/2'
+                                gridRow:'1/2',
+                                padding:'0 2% 0 2%'
                                 }}>
                                     <p>Z przyjemnością umilamy wszelkie uroczystości wymagające oryginalności, prestiżu i klasy,
                                     takie jak :</p>
@@ -198,11 +205,13 @@ class Offer_new extends Component {
                                     gridRow:'2/5',
                                     justifyContent:'center',
                                     alignItems:'center',
+                                    textAlign:'justify',
                                     listStyle:'none',
+                                    padding: '3% 0 3% 0'
 
                                     
                                 }}>
-                                    <li>- Sluby</li>
+                                    <li>- Śluby</li>
                                     <li>- Sesje fotograficzne</li>
                                     <li>- Reklamy</li>
                                     <li>- Filmy</li>
@@ -216,7 +225,7 @@ class Offer_new extends Component {
 
                {/* OFFER 2 */}
                <div className="offer2" style={{
-                   border:'20px solid white',
+                //    border:'20px solid white',
                    display:'grid',
                    gridColumn:'4/6',
                    gridRow:'3/7',
@@ -231,9 +240,10 @@ class Offer_new extends Component {
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'1/2',
-                            fontSize:'1.7em',
+                            fontSize:'3.2em',
                             justifyContent:'center',
-                            alignItems:'center'
+                            alignItems:'center',
+                            fontFamily:'PT Sans, sans-serif'
                             }}>
                                 <p>Dojazd</p>
                         </div>
@@ -242,11 +252,11 @@ class Offer_new extends Component {
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'2/7',
-                            justifyContent:'center',
                             alignContent:'center',
-                            textAlign:'center',
-                            fontSize:'2em',
-                            padding:'0 20px 0 20px'
+                            textAlign:'justify',
+                            fontSize:'1.5em',
+                            fontFamily:'PT Sans, sans-serif',
+                            padding:'0 13% 0 13%'
                         }}>
                             <p>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                 odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
@@ -273,7 +283,8 @@ class Offer_new extends Component {
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'1/2',
-                            fontSize:'1.7em',
+                            fontSize:'3.2em',
+                            fontFamily:'PT Sans, sans-serif',
                             justifyContent:'center',
                             alignItems:'center'
                             }}>
@@ -286,9 +297,10 @@ class Offer_new extends Component {
                             gridRow:'2/7',
                             justifyContent:'center',
                             alignContent:'center',
-                            textAlign:'center',
-                            fontSize:'2em',
-                            padding:'0 20px 0 20px'
+                            textAlign:'justify',
+                            fontSize:'1.5em',
+                            fontFamily:'PT Sans, sans-serif',
+                            padding:'0 11% 0 11%'
                         }}><p>Dysponujemy również dwoma  koszykami wiklinowymi o wymiarach aa x bb cm
                         oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                         uroczystość. Oferujemy je Młodej Parze GRATIS!</p>
