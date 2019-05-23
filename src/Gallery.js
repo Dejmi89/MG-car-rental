@@ -11,7 +11,7 @@ import img7 from './resources/images/wedding/0191_M&D_1080p.jpg';
 import img8 from './resources/images/wedding/0186_M&D_1080p.jpg';
 import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
 import img10 from './resources/images/jaguar-oldtimer-red-auto-163224.jpeg';
-import img11 from './resources/images/pastele.png';
+import img11 from './resources/images/wedding/0023_M&D_1080p.jpg';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

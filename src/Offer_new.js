@@ -5,9 +5,11 @@ const SlideIn = keyframes`
     40%{
         opacity:0;
     }
+    
     100% {
         transform:translate(0,0);
         opacity: 1;
+
     }
 `;
 
@@ -24,6 +26,7 @@ const FadeIn = styled.div`
     }
     
 `;
+
 
 const OfferOne = styled.div`
 
@@ -163,13 +166,13 @@ class Offer_new extends Component {
                }}>
                     <OfferOne positionY={revealedFirst}>
                         <div className='title_1' style={{
-                            // border:'2px solid red',
+                            border:'2px solid white',
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'1/2',
                             fontSize:'2.7em',
                             justifyContent:'center',
-                            alignItems:'center',
+                            alignContent:'center',
                             fontFamily:'Josefin Sans, sans-serif'
                             }}>
                                 <p>MG model MGB 1977'</p>
@@ -236,14 +239,14 @@ class Offer_new extends Component {
                }}>
                     <OfferTwo positionY={revealedFirst}>
                         <div className='title_2' style={{
-                            // border:'2px solid red',
+                            // border:'2px solid white',
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'1/2',
                             fontSize:'3.2em',
                             justifyContent:'center',
-                            alignItems:'center',
-                            fontFamily:'PT Sans, sans-serif'
+                            alignContent:'center',
+                            fontFamily:'Josefin Sans, sans-serif'
                             }}>
                                 <p>Dojazd</p>
                         </div>
@@ -255,7 +258,7 @@ class Offer_new extends Component {
                             alignContent:'center',
                             textAlign:'justify',
                             fontSize:'1.5em',
-                            fontFamily:'PT Sans, sans-serif',
+                            fontFamily:'Josefin Sans, sans-serif',
                             padding:'0 13% 0 13%'
                         }}>
                             <p>W przypadku gdu impreza odbywa sie w dalszej odległości od Poznania doliczamy
@@ -279,14 +282,14 @@ class Offer_new extends Component {
                }}>
                     <OfferThree positionY={revealedFirst}>
                         <div className='title_3' style={{
-                            // border:'2px solid red',
+                            border:'2px solid white',
                             display:'grid',
                             gridColumn:'1/5',
                             gridRow:'1/2',
                             fontSize:'3.2em',
-                            fontFamily:'PT Sans, sans-serif',
+                            fontFamily:'Josefin Sans, sans-serif',
                             justifyContent:'center',
-                            alignItems:'center'
+                            alignContent:'center',
                             }}>
                             <p>Rekwizyty</p>
                         </div>
@@ -299,7 +302,7 @@ class Offer_new extends Component {
                             alignContent:'center',
                             textAlign:'justify',
                             fontSize:'1.5em',
-                            fontFamily:'PT Sans, sans-serif',
+                            fontFamily:'Josefin Sans, sans-serif',
                             padding:'0 11% 0 11%'
                         }}><p>Dysponujemy również dwoma  koszykami wiklinowymi o wymiarach aa x bb cm
                         oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
