@@ -161,9 +161,9 @@ const HeaderOnScrollField = styled.div`
     animation: ${fadeIn} 3s forwards;
     animation-delay: ${props=>props.delay}s;
     &:hover {
-        background-color:black;
+        background-color:#B90000;
         color:white;
-        border: 1px solid black;
+        border: 1px solid #B90000;
     }
 `;
 
@@ -218,10 +218,6 @@ class Header extends React.Component {
         })
     }
 
-    reload = () => {
-        window.location.reload();
-        window.scrollTo(0,0);
-    }
 
     render() {
         

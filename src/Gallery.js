@@ -106,7 +106,7 @@ const Cells = [
         height: 2,
         left: 5,
         top: 1,
-        img: img8,
+        img: img11,
         animation: shineEffect,
         animationDelay:1
     },
@@ -133,7 +133,7 @@ const Cells = [
         height: 1,
         left: 7,
         top: 4,
-        img: img11,
+        img: img8,
         animation: shineEffect,
         animationDelay:2 
     },

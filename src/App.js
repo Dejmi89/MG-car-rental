@@ -12,7 +12,7 @@ import MobileHeader from './components/mobileSize/mobile_header';
 import MobileHeaderHorizontal from './components/mobileSize/mobile_header_horizontal';
 import IpadHeader from './components/iPadSize/iPad_header';
 import IpadHeaderHorizontal from './components/iPadSize/iPad_header_horizontal';
-import Offer_new from './Offer_new';
+import OfferNew from './Offer_new2';
 // import Offer from './Offer';
 import MobileOffer from './components/mobileSize/mobile_offer';
 import MobileOfferHorizontal from './components/mobileSize/mobile_offer_horizontal';
@@ -196,7 +196,7 @@ handleMobileReveal = () =>  {
             <IpadOfferHorizontal iOfferHorizontalReveal={this.state.iOfferHorizontalReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery> */}
         <MediaQuery minWidth = {1025}>
-            <Offer_new toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset}></Offer_new> 
+            <OfferNew toTop={this.scrollToTop} offerReveal={this.state.offerReveal} positionY={this.state.pageYOffset}></OfferNew> 
         </MediaQuery>
         
 
