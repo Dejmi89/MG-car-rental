@@ -12,7 +12,7 @@ import MobileHeader from './components/mobileSize/mobile_header';
 import MobileHeaderHorizontal from './components/mobileSize/mobile_header_horizontal';
 import IpadHeader from './components/iPadSize/iPad_header';
 import IpadHeaderHorizontal from './components/iPadSize/iPad_header_horizontal';
-import OfferNew from './Offer_new2';
+import OfferNew from './Offer_new';
 // import Offer from './Offer';
 import MobileOffer from './components/mobileSize/mobile_offer';
 import MobileOfferHorizontal from './components/mobileSize/mobile_offer_horizontal';
