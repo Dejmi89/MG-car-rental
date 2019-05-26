@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import img from './resources/images/wedding/0023_M&D_1080p.jpg';
+import img1 from './resources/images/wedding/mgPNG/1.png'
+import img2 from './resources/images/wedding/mgPNG/2.png'
+import img3 from './resources/images/wedding/mgPNG/3.png'
+import img4 from './resources/images/wedding/mgPNG/4.png'
+import img5 from './resources/images/wedding/mgPNG/5.png'
+import img6 from './resources/images/wedding/mgPNG/6.png'
+import img7 from './resources/images/wedding/mgPNG/7.png'
 
 const SlideIn = keyframes`
     40%{
@@ -28,7 +35,14 @@ const FadeIn = styled.div`
     
 `;
 
-
+const PhotoGridContainer = styled.div`
+    display:grid;
+    grid-column: ${props => props.gridColumn};
+    grid-row: ${props => props.gridRow};;
+    background-image:url(${props => props.img});
+    background-size:cover;
+    background-position:center;
+`;
 
 class OfferNew extends Component {
     constructor(props){
@@ -86,27 +100,42 @@ class OfferNew extends Component {
                     height:'85%',
                     gridColumn:'1/2',
                     gridRow:'3/11',
-                    gridTemplateColumns:'repeat(50,2%)',
-                    gridTemplateRows:'repeat(50,2%)',
+                    gridTemplateColumns:'repeat(53,1.88%)',
+                    gridTemplateRows:'repeat(40,2.5%)',
                     display:'grid',
                     // border:'2px solid black',
                     justifySelf:'center',
                     alignSelf:'center',
-                    backgroundImage:`url(${img})`,
-                    backgroundPosition:'center',
-                    backgroundSize:'cover',
-                    gridGap:'5px'
+                    // backgroundImage:`url(${img})`,
+                    // backgroundPosition:'center',
+                    // backgroundSize:'cover',
+                    // gridGap:'5px'
                     
                 }}>
                     
                     <div style={{
                         display:'grid',
-                        gridColumn:'16/30',
-                        gridRow:'6/34',
-                        backgroundColor:'transparent',
-                        border:'2px solid white'
-                    }}>1</div>
+                        gridColumn:'30/39',
+                        gridRow:'1/15',
+                        // border:'2px solid white',
+                        backgroundImage:`url(${img2})`,
+                        backgroundSize:'cover',
+                        backgroundPosition:'center',
+                        // margin:'15px',
+                        marginTop:'20px',
+                        marginLeft:'10px'
+                    }}></div>
                     <div style={{
+                        display:'grid',
+                        gridColumn:'14/30',
+                        gridRow:'4/30',
+                        // border:'2px solid white',
+                        backgroundImage:`url(${img1})`,
+                        backgroundSize:'cover',
+                        backgroundPosition:'center'
+                    }}></div>
+                    <PhotoGridContainer img={img3} gridColumn={'30/46'} gridRow={'15/24'}/>
+                    {/* <div style={{
                         display:'grid',
                         gridColumn:'9/24',
                         gridRow:'3/6',
@@ -119,7 +148,7 @@ class OfferNew extends Component {
                         gridRow:'9/14',
                         backgroundColor:'transparent',
                         border:'2px solid white'
-                    }}>3</div>
+                    }}>3</div> */}
                     {/* <div style={{
                         display:'grid',
                         gridColumn:'30/48',
