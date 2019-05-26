@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import img from './resources/images/wedding/0023_M&D_1080p.jpg';
-import img1 from './resources/images/wedding/mgPNG/1.png'
-import img2 from './resources/images/wedding/mgPNG/2.png'
-import img3 from './resources/images/wedding/mgPNG/3.png'
-import img4 from './resources/images/wedding/mgPNG/4.png'
-import img5 from './resources/images/wedding/mgPNG/5.png'
-import img6 from './resources/images/wedding/mgPNG/6.png'
-import img7 from './resources/images/wedding/mgPNG/7.png'
+import img1 from './resources/images/wedding/mgPNG/1.png';
+import img2 from './resources/images/wedding/mgPNG/2.png';
+import img3 from './resources/images/wedding/mgPNG/3.png';
+import img4 from './resources/images/wedding/mgPNG/4.png';
+import img5 from './resources/images/wedding/mgPNG/5.png';
+import img6 from './resources/images/wedding/mgPNG/6.png';
+import img7 from './resources/images/wedding/mgPNG/7.png';
+import img8 from './resources/images/wedding/mgPNG/8.png';
+import img9 from './resources/images/wedding/mgPNG/9.png';
+import img10 from './resources/images/wedding/mgPNG/10.png';
+import img11 from './resources/images/wedding/mgPNG/11.png';
+import img12 from './resources/images/wedding/mgPNG/12.png';
+import img13 from './resources/images/wedding/mgPNG/13.png';
+import img14 from './resources/images/wedding/mgPNG/14.png';
 
 const SlideIn = keyframes`
     40%{
@@ -42,6 +49,7 @@ const PhotoGridContainer = styled.div`
     background-image:url(${props => props.img});
     background-size:cover;
     background-position:center;
+    margin:${props => props.margin};
 `;
 
 class OfferNew extends Component {
@@ -105,128 +113,24 @@ class OfferNew extends Component {
                     display:'grid',
                     // border:'2px solid black',
                     justifySelf:'center',
-                    alignSelf:'center',
-                    // backgroundImage:`url(${img})`,
-                    // backgroundPosition:'center',
-                    // backgroundSize:'cover',
-                    // gridGap:'5px'
-                    
+                    alignSelf:'center'                    
                 }}>
                     
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'30/39',
-                        gridRow:'1/15',
-                        // border:'2px solid white',
-                        backgroundImage:`url(${img2})`,
-                        backgroundSize:'cover',
-                        backgroundPosition:'center',
-                        // margin:'15px',
-                        marginTop:'20px',
-                        marginLeft:'10px'
-                    }}></div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'14/30',
-                        gridRow:'4/30',
-                        // border:'2px solid white',
-                        backgroundImage:`url(${img1})`,
-                        backgroundSize:'cover',
-                        backgroundPosition:'center'
-                    }}></div>
-                    <PhotoGridContainer img={img3} gridColumn={'30/46'} gridRow={'15/24'}/>
-                    {/* <div style={{
-                        display:'grid',
-                        gridColumn:'9/24',
-                        gridRow:'3/6',
-                        backgroundColor:'transparent',
-                        border:'2px solid white'
-                    }}>2</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'2/16',
-                        gridRow:'9/14',
-                        backgroundColor:'transparent',
-                        border:'2px solid white'
-                    }}>3</div> */}
-                    {/* <div style={{
-                        display:'grid',
-                        gridColumn:'30/48',
-                        gridRow:'5/10',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>4</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'3/16',
-                        gridRow:'14/48',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>5</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'5/9',
-                        gridRow:'3/6',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>6</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'16/24',
-                        gridRow:'34/51',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>7</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'8/16',
-                        gridRow:'6/9',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>8</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'30/44',
-                        gridRow:'20/34',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>9</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'30/40',
-                        gridRow:'10/20',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>10</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'24/49',
-                        gridRow:'34/40',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>11</div>
-                     <div style={{
-                        display:'grid',
-                        gridColumn:'40/49',
-                        gridRow:'10/14',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>12</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'38/49',
-                        gridRow:'40/48',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>13</div>
-                    <div style={{
-                        display:'grid',
-                        gridColumn:'44/48',
-                        gridRow:'15/34',
-                        backgroundColor:'transparent',
-                        // border:'8px solid white'
-                    }}>14</div>
-                     */}
+                    <PhotoGridContainer img={img1} gridColumn={'14/30'} gridRow={'4/30'} margin={'3%'}/>
+                    <PhotoGridContainer img={img2} gridColumn={'30/39'} gridRow={'3/15'} margin={'5%'}/>
+                    <PhotoGridContainer img={img3} gridColumn={'30/46'} gridRow={'15/24'} margin={'3%'}/>
+                    <PhotoGridContainer img={img4} gridColumn={'30/43'} gridRow={'24/31'} margin={'5%'}/>
+                    <PhotoGridContainer img={img5} gridColumn={'39/49'} gridRow={'1/15'} margin={'5%'}/>
+                    <PhotoGridContainer img={img6} gridColumn={'5/14'} gridRow={'12/35'} margin={'5%'}/>
+                    {/* <PhotoGridContainer img={img7} gridColumn={'1/5'} gridRow={'18/40'} margin={'5%'}/> */}
+                    <PhotoGridContainer img={img8} gridColumn={'9/14'} gridRow={'1/12'} margin={'5%'}/>
+                    <PhotoGridContainer img={img9} gridColumn={'43/46'} gridRow={'24/40'} margin={'5%'}/>
+                    <PhotoGridContainer img={img10} gridColumn={'46/49'} gridRow={'15/34'} margin={'3%'}/>
+                    <PhotoGridContainer img={img11} gridColumn={'49/54'} gridRow={'13/32'} margin={'5%'}/>
+                    <PhotoGridContainer img={img12} gridColumn={'49/54'} gridRow={'32/41'} margin={'7%'}/>
+                    <PhotoGridContainer img={img13} gridColumn={'18/26'} gridRow={'30/41'} margin={'5%'}/>
+                    <PhotoGridContainer img={img14} gridColumn={'38/43'} gridRow={'31/36'} margin={'5%'}/>
+                    
 
                     
                 </div>
