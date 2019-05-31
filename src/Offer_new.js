@@ -23,7 +23,8 @@ import img17 from './resources/images/wedding/mgPNG/photos/17.png';
 const flipImageY = keyframes`
     
     100% {
-        transform: rotateY(180deg);
+        transform: rotateY(360deg);
+        opacity:1;
         
     }
 `;
@@ -61,19 +62,43 @@ const PhotoGridContainer = styled.div`
     display:grid;
     justify-self: center;
     align-self:center;
+    grid-template-columns: repeat(8,12.5%);
+    grid-template-rows: repeat(8,12.5%);
     grid-column: ${props => props.gridColumn};
     grid-row: ${props => props.gridRow};
     background-image:url(${props => props.img});
     background-size:cover;
     background-position:center;
     margin:${props => props.margin};
-    opacity:0;
-    animation: ${props => props.offerReveal === true ? props.animation : 'none'} 2s forwards ;
-    animation-delay: ${props => props.delay}s;
+    opacity:1;
+    /* animation: ${props => props.offerReveal === true ? props.animation : 'none'} 1s forwards ; */
+    /* animation-delay: ${props => props.delay}s; */
         /* animation-fill-mode:${props => props.fillMode}; */
    
 `;
 
+const PhotoGridContainerOfferText = styled.div`
+    width:100%;
+    height: 100%;
+    display:grid;
+    grid-column:1/9;
+    grid-row:1/9;
+    grid-template-columns: repeat(8,12.5%);
+    grid-template-rows: repeat(8,12.5%);
+    justify-content:center;
+    justify-self: center;
+    align-self:center;
+    opacity:1;
+    background-color: #ffac81;
+    background-image: linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
+
+    font-family:Josefin Sans, sans-serif ;
+    color:white;
+    /* animation: ${props => props.offerReveal === true ? props.animation : 'none'} 1s forwards ; */
+    /* animation-delay: ${props => props.delay}s; */
+        /* animation-fill-mode:${props => props.fillMode}; */
+   
+`;
 class OfferNew extends Component {
     constructor(props){
         super(props);
@@ -127,8 +152,8 @@ class OfferNew extends Component {
                     Oferta
                 </div>
                 <div className='photo' style={{
-                    width:'85%',
-                    height:'85%',
+                    width:'90%',
+                    height:'90%',
                     gridColumn:'1/2',
                     gridRow:'3/11',
                     gridTemplateColumns:'repeat(53,1.85%)',
@@ -141,22 +166,73 @@ class OfferNew extends Component {
                     alignContent:'center'                   
                 }}>
                     
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img1} gridColumn={'1/13'} gridRow={'1/11'} width={100} height={100} margin={'0% 0 17% -6%'}  animation={fadeIn} delay={3.2} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img2} gridColumn={'1/13'} gridRow={'11/21'} width={100} height={100} margin={'0% 0 0 -19%'}  animation={fadeIn} delay={2.1} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img3} gridColumn={'1/13'} gridRow={'21/25'} width={95} height={95} margin={'7% 22% 0 8%'} animation={fadeIn} delay={4.4} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img4} gridColumn={'4/12'} gridRow={'25/29'} width={100} height={90} margin={'15% 0 0-3%'} animation={fadeIn} delay={5.6} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img1} gridColumn={'1/13'} gridRow={'1/11'} width={100} height={100} margin={'0% 0 17% -6%'}  animation={fadeIn} delay={1.2} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img2} gridColumn={'1/13'} 
+                                        gridRow={'11/21'} width={100} height={100} margin={'0% 0 0 -19%'}  
+                                        animation={fadeIn} delay={2.1} fillMode={'forwards'}>
+                        
+                    </PhotoGridContainer>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img3} gridColumn={'1/13'} gridRow={'21/25'} width={95} height={95} margin={'7% 22% 0 8%'} animation={fadeIn} delay={3.4} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img4} gridColumn={'4/12'} gridRow={'25/29'} width={100} height={90} margin={'15% 0 0-3%'} animation={flipImageX} delay={3.6} fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img5} gridColumn={'4/12'} gridRow={'29/32'} width={100} height={100} margin={'18% -0% 0 0%'}  animation={fadeIn} delay={3.3} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img6} gridColumn={'6/12'} gridRow={'32/34'} width={100} height={93} margin={'31% 0 0 0%'}  animation={fadeIn} delay={1.9} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img7} gridColumn={'13/28'} gridRow={'1/21'} width={100} height={94} margin={'-15% 0 0 8%'} animation={fadeIn} delay={1.9} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img6} gridColumn={'6/12'} gridRow={'32/34'} width={100} height={93} margin={'31% 0 0 0%'}animation={fadeIn} delay={1.9} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img7} gridColumn={'13/28'} 
+                                        gridRow={'1/21'} width={100} height={94} margin={'-15% 0 0 8%'} 
+                                        animation={fadeIn} delay={1.9} fillMode={'forwards'}>
+                        <PhotoGridContainerOfferText className="okazje" offerReveal={revealedFirst} animation={fadeIn} delay={2.7}>
+                                <p style={{textAlign:'center', alignSelf:'center' ,padding:'5px', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.9em'}}>Okazje</p>
+                            <p style={{textAlign:'justify', padding: '0 7%', display:'grid', gridColumn:'1/9', gridRow:'2/4', fontSize:'1em'}}>
+                             Z przyjemnością umilamy wszelkie uroczystości, które wymagają oryginalności, prestiżu i klasy,
+                                    takie jak :
+                            </p>   
+                            <div style={{
+                                display:'grid', 
+                                gridColumn:'1/9', 
+                                gridRow:'4/9', 
+                                listStyle:'none', 
+                                justifyContent:'center', 
+                                alignItems:'center',
+                                padding:'15% 0'}}>
+                                    <li>- Śluby</li>
+                                    <li>- Sesje fotograficzne</li>
+                                    <li>- Reklamy</li>
+                                    <li>- Filmy</li>
+                                    <li>- Imprezy okolicznościowe</li>
+                                    <li>- Niespodzianki</li>
+                            </div>
+                        </PhotoGridContainerOfferText>    
+                    </PhotoGridContainer>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img8} gridColumn={'13/28'} gridRow={'21/25'} width={84} height={84} margin={'-3% 0 0 -16%'}   animation={fadeIn} delay={1.3} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img9} gridColumn={'13/47'} gridRow={'25/32'} width={100} height={100} margin={'3% 0 0 0%'} animation={fadeIn} delay={2.4} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img9} gridColumn={'13/47'} 
+                                        gridRow={'25/32'} width={100} height={100} margin={'3% 0 0 0%'} 
+                                        animation={fadeIn} delay={2.4} fillMode={'forwards'}>
+                        <PhotoGridContainerOfferText className="rekwizyty" offerReveal={revealedFirst} animation={fadeIn} delay={2.7}>
+                        <p style={{textAlign:'center', padding:'3px ', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.3em'}}>Rekwizyty</p>
+                             <p style={{textAlign:'justify', padding: '0 7%', display:'grid', gridColumn:'1/9', gridRow:'3/7', fontSize:'1em'}}>
+                             Dysponujemy również dwoma  koszykami wiklinowymi o wymiarach aa x bb cm
+                        oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
+                        uroczystość. Oferujemy je Młodej Parze GRATIS!
+                             </p>
+                        </PhotoGridContainerOfferText>
+                    </PhotoGridContainer>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img10} gridColumn={'13/47'} gridRow={'32/34'} width={100} height={100} margin={'8% 0 0 0%'} animation={fadeIn} delay={1.5} fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img11} gridColumn={'28/54'} gridRow={'1/9'} width={80} height={84} margin={'-10% 0 0 -1%'}animation={fadeIn} delay={1.6} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img12} gridColumn={'28/44'} gridRow={'9/25'} width={85} height={99} margin={'-10% 0 0% 6%'}animation={fadeIn} delay={1.7} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img12} gridColumn={'28/44'} 
+                                        gridRow={'9/25'} width={85} height={99} margin={'-10% 0 0% 6%'}
+                                        animation={fadeIn} delay={1.7} fillMode={'forwards'}>
+                         <PhotoGridContainerOfferText className="dojazd" offerReveal={revealedFirst} animation={fadeIn} delay={2.7}>
+                             <p style={{textAlign:'center', padding:'05px', display:'grid', gridColumn:'1/9', gridRow:'1/3', fontSize:'1.9em'}}>Dojazd</p>
+                             <p style={{textAlign:'justify', padding: '0 7%', display:'grid', gridColumn:'1/9', gridRow:'3/7', fontSize:'1em'}}>
+                             W przypadku gdy impreza odbywa sie w dalszej odległości od Poznania doliczamy
+                                odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
+                                z formularza kontaktowego.
+                             </p>
+                         </PhotoGridContainerOfferText>
+                    </PhotoGridContainer>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img13} gridColumn={'44/49'} gridRow={'9/25'} width={122} height={100} margin={'-30% 0 0 40%'}animation={fadeIn} delay={2.5}fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img14} gridColumn={'49/54'} gridRow={'9/25'} width={100} height={100} margin={'-29% 0 0 99%'}animation={fadeIn} delay={1.4}fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img15} gridColumn={'47/54'} gridRow={'25/30'} width={95} height={95} margin={'4% 0 0 40%'}animation={fadeIn} delay={1.3}fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img16} gridColumn={'47/49'} gridRow={'30/34'} width={100} height={90} margin={'73% 0 0 66%'}animation={fadeIn} delay={2.1}fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img16} gridColumn={'47/49'} gridRow={'30/34'} width={100} height={90} margin={'73% 0 0 66%'}animation={flipImageY} delay={4.1}fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img17} gridColumn={'49/54'} gridRow={'30/34'} width={118} height={100} margin={'41% 0 0 78%'}animation={fadeIn} delay={1.2}fillMode={'forwards'}/> 
                     
                     
