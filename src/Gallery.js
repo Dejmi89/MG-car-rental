@@ -320,7 +320,7 @@ class Gallery extends Component {
                                     textAlign:'center',
                                     // padding:'10px 10px 20px 30px',
                                     fontSize:'1.5em',
-                                    backgroundColor:'#E64F64',
+                                    backgroundImage: 'linear-gradient(326deg, #bd4f6c 0%, #d7816a 74%)',
                                     justifyContent:'center',
                                     justifySelf:'center',
                                     }}>

@@ -71,8 +71,8 @@ const PhotoGridContainer = styled.div`
     background-position:center;
     margin:${props => props.margin};
     opacity:0;
-    animation: ${props => props.animation} 1s forwards;
-    /* animation: ${props => props.offerReveal === true ? props.animation : 'none'} 1s forwards ; */
+    /* animation: ${props => props.animation} 1s forwards; */
+    animation: ${props => props.offerReveal === true ? props.animation : 'none'} 1s forwards ;
     animation-delay: ${props => props.delay}s;
         /* animation-fill-mode:${props => props.fillMode}; */
    
@@ -90,11 +90,11 @@ const PhotoGridContainerOfferText = styled.div`
     justify-self: center;
     align-self:center;
     opacity:0;
-    background: linear-gradient(360deg, #01a99c 10%, #0698b1 360%); 
-    /* background-image: linear-gradient(315deg, #ffac81 0%, #ff928b 74%); */
+    background-color: #bd4f6c;
+    background-image: linear-gradient(326deg, #bd4f6c 0%, #d7816a 74%);
     font-family:Josefin Sans, sans-serif ;
     color:white;
-    animation: ${props => props.animation} 1s forwards ease-out ;
+    animation: ${props => props.offerReveal === true ? props.animation : 'none'} 1s forwards ease-out ;
     animation-delay: ${props => props.delay}s;
         /* animation-fill-mode:${props => props.fillMode}; */
    
