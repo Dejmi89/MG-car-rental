@@ -175,9 +175,9 @@ handleMobileReveal = () =>  {
         {/* <MediaQuery minWidth = {667} maxHeight={414}>
             <MobileHeaderHorizontal scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery> */}
-        <MediaQuery  maxWidth = {1024}>
+        {/* <MediaQuery  maxWidth = {1024}>
             <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
-        </MediaQuery>
+        </MediaQuery> */}
         {/* <MediaQuery width = {1024} height = {768}>
             <IpadHeaderHorizontal scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery> */}
@@ -189,9 +189,9 @@ handleMobileReveal = () =>  {
           <MediaQuery maxWidth = {767}>
             <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
-        <MediaQuery  maxWidth = {1024}>
+        {/* <MediaQuery  maxWidth = {1024}>
             <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal} positionY={this.state.pageYOffset}/>
-        </MediaQuery>
+        </MediaQuery> */}
         {/* <MediaQuery width = {1024} height={768}>
             <IpadOfferHorizontal iOfferHorizontalReveal={this.state.iOfferHorizontalReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery> */}

@@ -166,20 +166,20 @@ class OfferNew extends Component {
                     alignContent:'center'                   
                 }}>
                     
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img1} gridColumn={'1/13'} gridRow={'1/11'} width={100} height={100} margin={'0% 0 17% -6%'}  animation={fadeIn} delay={1.2} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img1} gridColumn={'1/13'} gridRow={'1/11'} width={100} height={100} margin={'0% 0 17% -6%'}  animation={fadeIn} delay={0.2} fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img2} gridColumn={'1/13'} 
                                         gridRow={'11/21'} width={100} height={100} margin={'0% 0 0 -19%'}  
-                                        animation={fadeIn} delay={2.1} fillMode={'forwards'}>
+                                        animation={fadeIn} delay={1.1} fillMode={'forwards'}>
                         
                     </PhotoGridContainer>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img3} gridColumn={'1/13'} gridRow={'21/25'} width={95} height={95} margin={'7% 22% 0 8%'} animation={fadeIn} delay={3.4} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img4} gridColumn={'4/12'} gridRow={'25/29'} width={100} height={90} margin={'15% 0 0-3%'} animation={flipImageX} delay={3.6} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img5} gridColumn={'4/12'} gridRow={'29/32'} width={100} height={100} margin={'18% -0% 0 0%'}  animation={fadeIn} delay={3.3} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img6} gridColumn={'6/12'} gridRow={'32/34'} width={100} height={93} margin={'31% 0 0 0%'}animation={fadeIn} delay={1.9} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img3} gridColumn={'1/13'} gridRow={'21/25'} width={95} height={95} margin={'7% 22% 0 8%'} animation={fadeIn} delay={2.4} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img4} gridColumn={'4/12'} gridRow={'25/29'} width={100} height={90} margin={'15% 0 0-3%'} animation={flipImageX} delay={2.6} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img5} gridColumn={'4/12'} gridRow={'29/32'} width={100} height={100} margin={'18% -0% 0 0%'}  animation={fadeIn} delay={2.3} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img6} gridColumn={'6/12'} gridRow={'32/34'} width={100} height={93} margin={'31% 0 0 0%'}animation={fadeIn} delay={0.9} fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img7} gridColumn={'13/28'} 
                                         gridRow={'1/21'} width={100} height={94} margin={'-15% 0 0 8%'} 
                                         animation={fadeIn} delay={1.9} fillMode={'forwards'}>
-                        <PhotoGridContainerOfferText className="okazje" offerReveal={revealedFirst} animation={flipImageY} delay={2.9}>
+                        <PhotoGridContainerOfferText className="okazje" offerReveal={revealedFirst} animation={flipImageY} delay={1.9}>
                                 <p style={{textAlign:'center', alignSelf:'center' ,paddingTop:'10%', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.9em'}}>Okazje</p>
                             <p style={{textAlign:'justify', padding: '0 4%', display:'grid', gridColumn:'1/9', gridRow:'2/4', fontSize:'1.1em'}}>
                              Z przyjemnością umilamy wszelkie uroczystości, które wymagają oryginalności, prestiżu i klasy,
@@ -203,12 +203,12 @@ class OfferNew extends Component {
                             </div>
                         </PhotoGridContainerOfferText>    
                     </PhotoGridContainer>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img8} gridColumn={'13/28'} gridRow={'21/25'} width={100} height={100} margin={'-14% 0 0 8%'} animation={fadeIn} delay={1.3} fillMode={'forwards'}
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img8} gridColumn={'13/28'} gridRow={'21/25'} width={100} height={100} margin={'-14% 0 0 8%'} animation={fadeIn} delay={0.3} fillMode={'forwards'}
                                         style={{backgroundPosition:'top left'}}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img9} gridColumn={'13/47'} 
                                         gridRow={'25/32'} width={100} height={100} margin={'3% 0 0 0%'} 
-                                        animation={fadeIn} delay={2.4} fillMode={'forwards'}>
-                        <PhotoGridContainerOfferText className="rekwizyty" offerReveal={revealedFirst} animation={flipImageX} delay={3.4}>
+                                        animation={fadeIn} delay={1.4} fillMode={'forwards'}>
+                        <PhotoGridContainerOfferText className="rekwizyty" offerReveal={revealedFirst} animation={flipImageX} delay={2.4}>
                         <p style={{textAlign:'center', alignSelf:'center',paddingTop:'10% ', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.9em'}}>Rekwizyty</p>
                              <p style={{textAlign:'justify', padding: '4% 2% 0%', display:'grid', gridColumn:'1/9', gridRow:'2/7', fontSize:'1.1em'}}>
                              Dysponujemy również dwoma  koszykami wiklinowymi o wymiarach aa x bb cm
@@ -217,12 +217,12 @@ class OfferNew extends Component {
                              </p>
                         </PhotoGridContainerOfferText>
                     </PhotoGridContainer>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img10} gridColumn={'13/47'} gridRow={'32/34'} width={100} height={100} margin={'8% 0 0 0%'} animation={fadeIn} delay={1.5} fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img11} gridColumn={'28/54'} gridRow={'1/9'} width={80} height={84} margin={'-10% 0 0 -1%'}animation={fadeIn} delay={1.6} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img10} gridColumn={'13/47'} gridRow={'32/34'} width={100} height={100} margin={'8% 0 0 0%'} animation={fadeIn} delay={0.5} fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img11} gridColumn={'28/54'} gridRow={'1/9'} width={80} height={84} margin={'-10% 0 0 -1%'}animation={fadeIn} delay={0.6} fillMode={'forwards'}/>
                     <PhotoGridContainer offerReveal={revealedFirst} img={img12} gridColumn={'28/44'} 
                                         gridRow={'9/25'} width={85} height={99} margin={'-10% 0 0% 6%'}
-                                        animation={fadeIn} delay={1.7} fillMode={'forwards'}>
-                         <PhotoGridContainerOfferText className="dojazd" offerReveal={revealedFirst} animation={flipImageY} delay={2.7}>
+                                        animation={fadeIn} delay={0.7} fillMode={'forwards'}>
+                         <PhotoGridContainerOfferText className="dojazd" offerReveal={revealedFirst} animation={flipImageY} delay={1.7}>
                              <p style={{textAlign:'center', paddingTop:'10%', alignSelf:'center', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.9em'}}>Dojazd</p>
                              <p style={{textAlign:'justify', alignSelf: 'center', padding: '0 5%', display:'grid', gridColumn:'1/9', gridRow:'2/8', fontSize:'1.1em'}}>
                              W przypadku gdy impreza odbywa sie w dalszej odległości od Poznania doliczamy
@@ -231,11 +231,11 @@ class OfferNew extends Component {
                              </p>
                          </PhotoGridContainerOfferText>
                     </PhotoGridContainer>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img13} gridColumn={'44/49'} gridRow={'9/25'} width={122} height={100} margin={'-30% 0 0 40%'}animation={fadeIn} delay={2.5}fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img14} gridColumn={'49/54'} gridRow={'9/25'} width={100} height={100} margin={'-29% 0 0 99%'}animation={fadeIn} delay={1.4}fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img15} gridColumn={'47/54'} gridRow={'25/30'} width={95} height={95} margin={'4% 0 0 40%'}animation={fadeIn} delay={1.3}fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img16} gridColumn={'47/49'} gridRow={'30/34'} width={100} height={90} margin={'73% 0 0 66%'}animation={flipImageY} delay={4.1}fillMode={'forwards'}/>
-                    <PhotoGridContainer offerReveal={revealedFirst} img={img17} gridColumn={'49/54'} gridRow={'30/34'} width={118} height={100} margin={'41% 0 0 78%'}animation={fadeIn} delay={1.2}fillMode={'forwards'}/> 
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img13} gridColumn={'44/49'} gridRow={'9/25'} width={122} height={100} margin={'-30% 0 0 40%'}animation={fadeIn} delay={1.5}fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img14} gridColumn={'49/54'} gridRow={'9/25'} width={100} height={100} margin={'-29% 0 0 99%'}animation={fadeIn} delay={0.4}fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img15} gridColumn={'47/54'} gridRow={'25/30'} width={95} height={95} margin={'4% 0 0 40%'}animation={fadeIn} delay={0.3}fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img16} gridColumn={'47/49'} gridRow={'30/34'} width={100} height={90} margin={'73% 0 0 66%'}animation={flipImageY} delay={3.1}fillMode={'forwards'}/>
+                    <PhotoGridContainer offerReveal={revealedFirst} img={img17} gridColumn={'49/54'} gridRow={'30/34'} width={118} height={100} margin={'41% 0 0 78%'}animation={fadeIn} delay={0.2}fillMode={'forwards'}/> 
                     
                     
 
