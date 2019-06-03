@@ -75,7 +75,7 @@ const PhotoGridContainer = styled.div`
     /* animation: ${props => props.animation} 1s forwards; */
     animation: ${props => props.offerReveal === true ? props.animation : 'none'} 1s forwards ;
     animation-delay: ${props => props.delay}s;
-        /* animation-fill-mode:${props => props.fillMode}; */
+        
    
 `;
 
