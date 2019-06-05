@@ -182,7 +182,7 @@ class OfferNew extends Component {
                                         animation={fadeIn} delay={1.9} fillMode={'forwards'}>
                         <PhotoGridContainerOfferText className="okazje" offerReveal={revealedFirst} animation={flipImageY} delay={1.9}>
                                 <p style={{textAlign:'center', alignSelf:'center' ,paddingTop:'10%', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.1em'}}>Okazje</p>
-                            <p style={{textAlign:'center', padding: '0 4%', display:'grid', gridColumn:'1/9', gridRow:'2/4', fontSize:'0.8em'}}>
+                            <p style={{textAlign:'center', padding: '0 4%', display:'grid', gridColumn:'1/9', gridRow:'2/4', fontSize:'0.5em'}}>
                              Z przyjemnością umilamy wszelkie uroczystości, które wymagają oryginalności, prestiżu i klasy,
                                     takie jak :
                             </p>   
@@ -194,7 +194,7 @@ class OfferNew extends Component {
                                 justifyContent:'center', 
                                 alignItems:'center',
                                 padding:'15% 5%',
-                                fontSize:'0.8em'}}>
+                                fontSize:'0.5em'}}>
                                     <li>- Śluby</li>
                                     <li>- Sesje fotograficzne</li>
                                     <li>- Reklamy</li>
@@ -211,7 +211,7 @@ class OfferNew extends Component {
                                         animation={fadeIn} delay={1.4} fillMode={'forwards'}>
                         <PhotoGridContainerOfferText className="rekwizyty" offerReveal={revealedFirst} animation={flipImageX} delay={2.4}>
                         <p style={{textAlign:'center', alignSelf:'center',paddingTop:'10% ', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.1em'}}>Rekwizyty</p>
-                             <p style={{textAlign:'center', padding: '4% 2% 0%', display:'grid', gridColumn:'1/9', gridRow:'2/7', fontSize:'0.8em'}}>
+                             <p style={{textAlign:'center', padding: '4% 2% 0%', display:'grid', gridColumn:'1/9', gridRow:'2/7', fontSize:'0.5em'}}>
                              Dysponujemy również dwoma  koszykami wiklinowymi o wymiarach aa x bb cm
                         oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                         uroczystość. Oferujemy je Młodej Parze GRATIS!
@@ -225,7 +225,7 @@ class OfferNew extends Component {
                                         animation={fadeIn} delay={0.7} fillMode={'forwards'}>
                          <PhotoGridContainerOfferText className="dojazd" offerReveal={revealedFirst} animation={flipImageY} delay={1.7}>
                              <p style={{textAlign:'center', paddingTop:'10%', alignSelf:'center', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.1em'}}>Dojazd</p>
-                             <p style={{textAlign:'center', alignSelf: 'center', padding: '0 5%', display:'grid', gridColumn:'1/9', gridRow:'2/8', fontSize:'0.8em'}}>
+                             <p style={{textAlign:'center', alignSelf: 'center', padding: '0 5%', display:'grid', gridColumn:'1/9', gridRow:'2/8', fontSize:'0.5em'}}>
                              W przypadku gdy impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                 odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                 z formularza  kontaktowego.
@@ -258,14 +258,15 @@ class OfferNew extends Component {
                         display:'grid',
                         // border:'2px solid black',
                         gridColumn:'1/11',
-                        gridRow:'3/10'
+                        gridRow:'3/10',
+                        padding:'0 6%'
                         
                     }}>
                         <p style={{ 
                             // padding:'5%',                     
                             textAlign:'justify',
                             fontFamily:'Josefin Sans, sans-serif',
-                            fontSize:'1.3em' 
+                            fontSize:'0.7em' 
                             }}>Szukacie wyjątkowego auta do ślubu? Lubicie być oryginalni i chcecie zrobić piorunujące wrażenie na
                         gościach? A może po prostu chcielibyście przenieść się w czasie i zapewnić niepowtarzalny klimat tego
                         najważniejszego dnia w Waszym życiu?  Nasze czerwone MG, model MGB rocznik 1977 pomoże Wam spełnić te marzenia i zapewni niepowtarzalne wspomnienia !

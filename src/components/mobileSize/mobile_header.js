@@ -1,10 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import Fade from 'react-reveal';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Scroll from "react-scroll";
 import {
   Link,
   Element,
@@ -13,7 +11,9 @@ import {
   scrollSpy,
   scroller
 } from "react-scroll";
-import img from '../../resources/images/carIntheWoods2.jpg.svg.png';
+
+import img from '../../resources/images/carIntheWoods.png';
+import Handwriting from '../../components/mobileSize/mobile_Handwriting';
 
 
 library.add(fab);
@@ -47,8 +47,6 @@ const HeaderSection = styled.div`
     /* border: 2px solid black; */
     /* display:flex; */
     /* align-items: center; */
-    
-
 `;
 
 const HeaderWrapper = styled.div`
@@ -57,7 +55,6 @@ const HeaderWrapper = styled.div`
     /* border: 2px solid white; */
     display:flex;
     justify-content:center;
-    
 `;
 
 const SCWrapper = styled.div`
@@ -69,7 +66,9 @@ const SCWrapper = styled.div`
     justify-content:center;
     align-items: center;    
     font-size:0.4em;
-
+    animation: ${fadeIn} 3s linear forwards;
+    animation-delay: ${props => props.delay}s;
+    opacity:0;
 `;
 
 
@@ -83,7 +82,6 @@ const MenuWrapper = styled.div`
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-
 `;
 
 const Menu = styled.div`
@@ -96,6 +94,7 @@ const Menu = styled.div`
     /* border: 2px solid white; */
     color: white;
     font-size: 1em;
+    font-family: 'Dancing Script', cursive;
     align-items:flex-end;
     top: 1%;
         div {
@@ -104,7 +103,6 @@ const Menu = styled.div`
                 cursor: pointer;
             }
         }
-        
 `;
 
 const CarAnimation = styled.div`
@@ -120,7 +118,7 @@ const CarAnimation = styled.div`
     justify-content:center;
     `;
 
-const MenuText = styled.h2`
+const MenuText = styled.div`
     width: 50%;
     height: 20%;
     /* border: 2px solid white; */
@@ -129,8 +127,9 @@ const MenuText = styled.h2`
     font-size:0.8em;
     display:flex;
     justify-content:center;
+    font-family: 'Dancing Script', cursive;
 `;
-const Nouns = styled.h4`
+const Nouns = styled.div`
     margin-right:5%;
     opacity:0;
     animation: ${fadeIn} 2s forwards;
@@ -165,9 +164,14 @@ const HeaderOnScrollField = styled.div`
     &:hover {
         background-color:black;
         color:white;
-        /* border: 1px solid black; */
-        
+        /* border: 1px solid black; */  
     }
+`;
+
+const LinkMenu = styled.div`
+    animation: ${fadeIn} 2s linear forwards;
+    animation-delay: ${props => props.delay}s;
+    opacity:0;
 `;
 
 class MobileHeader extends React.Component {
@@ -231,7 +235,7 @@ class MobileHeader extends React.Component {
         <div>
             <HeaderSection>
                 
-            <SCWrapper style={{alignSelf:'center', marginLeft:'1%'}}>
+            <SCWrapper delay={6} style={{alignSelf:'center', marginLeft:'1%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
@@ -287,29 +291,29 @@ class MobileHeader extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Oferta</div>
+                                    <LinkMenu delay={4.8} onClick={this.props.scrollFunc}>Oferta</LinkMenu>
                                 </Link>
                             
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Galeria</div>
+                                    <LinkMenu delay={5.1} onClick={this.props.scrollFunc}>Galeria</LinkMenu>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <div onClick={this.props.scrollFunc}>Kontakt</div>
+                                    <LinkMenu delay={5.4} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
                                 </Link>
                                                   
                          </Menu>
-                         <CarAnimation >Czerwony Kabriolet</CarAnimation>       
+                         <CarAnimation ><Handwriting/></CarAnimation>       
                         <MenuText>
-                            <Nouns delay={0.5}>Piękno</Nouns>
-                            <Nouns delay={0.8}>Styl</Nouns>
-                            <Nouns delay={1.1}>Elegancja</Nouns>
+                            <Nouns delay={4.7}>Piękno</Nouns>
+                            <Nouns delay={5.0}>Styl</Nouns>
+                            <Nouns delay={5.3}>Elegancja</Nouns>
                         </MenuText>
                     </MenuWrapper>
                     
