@@ -236,10 +236,10 @@ handleMobileReveal = () =>  {
         {/* -------------------Footer----------------------------- */}
         
         {/* {this.state.apiResponse} */}
-        <MediaQuery minWidth = {320}>
+        <MediaQuery maxWidth = {764}>
             <MobileFooter/>        
         </MediaQuery>
-        <MediaQuery  minWidth = {765} and maxWidth={1024}>
+        <MediaQuery  minWidth = {765} maxWidth={1024}>
             <IpadFooter/>        
         </MediaQuery>
         {/* <MediaQuery width = {1024} height  = {768}>
