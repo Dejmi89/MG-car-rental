@@ -153,8 +153,8 @@ class OfferNew extends Component {
                     Oferta
                 </div>
                 <div className='photo' style={{
-                    width:'90%',
-                    height:'90%',
+                    width:'80%',
+                    height:'80%',
                     gridColumn:'1/3',
                     gridRow:'5/11',
                     gridTemplateColumns:'repeat(53,1.85%)',
