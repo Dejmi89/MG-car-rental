@@ -211,6 +211,10 @@ class MobileForm extends Component {
      componentDidMount() {
         window.addEventListener("resize", this.setHeight);
     }
+
+    componentWillMount() {
+      window.addEventListener("resize", this.setHeight);
+  }
     // componentDidMount(){
     //   window.addEventListener('resize', this.preventResize);
     // }
@@ -320,7 +324,7 @@ class MobileForm extends Component {
                             display: "grid",
                             gridRow: "2/3",
                             width: "70%",
-                            height: "5vh",
+                            height: height < 500 ? '10vh' : '5vh',
                             justifySelf: "center",
                             gridTemplateColumns: "1% 98% 1%",
                             gridTemplateRows: "4% 46% 46% 4%"
@@ -362,7 +366,7 @@ class MobileForm extends Component {
                             display: "grid",
                             gridRow: "4/5",
                             width: "70%",
-                            height: "5vh",
+                            height: height < 500 ? '10vh' : '5vh',
                             justifySelf: "center",
                             gridTemplateColumns: "1% 98% 1%",
                             gridTemplateRows: "4% 46% 46% 4%"
@@ -398,7 +402,7 @@ class MobileForm extends Component {
                         style={{
                             display: 'grid',
                             gridRow: '5/6',
-                            height: '3vh',
+                            height: height < 500 ? '8vh' : '3vh',
                             justifySelf: 'center',
                         }}>Twoja wiadomosc</label>
                     <textarea
@@ -434,7 +438,7 @@ class MobileForm extends Component {
                             alignItems:'center',
                             fontSize:'0.9em',
                             minHeight:'5vh',
-                            height:  height < 500 ? '20vh' : '5vh'
+                            height:  height < 500 ? '13vh' : '5vh'
                         }}>Submit
                                 </ContactSubmit>
                 </form>
