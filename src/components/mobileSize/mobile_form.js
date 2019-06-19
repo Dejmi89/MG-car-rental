@@ -172,9 +172,18 @@ class MobileForm extends Component {
         this.state={
             emailOn: ".",
             nameOn: ".",
-            border: true
+            border: true,
+            height: window.innerHeight
         }
     }
+    
+    setHeight = () => {
+        this.setState({
+            height: window.innerHeight
+        });
+        };
+
+  
     
     handleSubmit(e) {
         e.preventDefault();
@@ -197,6 +206,10 @@ class MobileForm extends Component {
                 alert("Message failed to send.")
             }
         })
+    }
+
+     componentDidMount() {
+        window.addEventListener("resize", this.setHeight);
     }
     // componentDidMount(){
     //   window.addEventListener('resize', this.preventResize);
@@ -257,7 +270,7 @@ class MobileForm extends Component {
 
     render() {      
         
-         
+         const { height } = this.state;
         return (
           
           <div>
@@ -285,7 +298,7 @@ class MobileForm extends Component {
                         fontSize: "1.2em",
                         // border: "2px solid black",
                         minWidth: "85vw",
-                        height: "55vh",
+                        height: height < 400 ? '110vh' : '55vh',
                         alignContent: "center",
                         alignItems: "center",
                         justifySelf:'center'
