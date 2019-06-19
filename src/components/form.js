@@ -3,7 +3,7 @@ import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
 import InputName from './InputName';
 import InputEmail from './InputEmail';
-import Beznazwy from '../resources/images/Bez_nazwy.png'
+import mgProfil from '../resources/images/mgProfil.png'
 import {
     Link,
     Element,
@@ -263,7 +263,7 @@ class Form extends Component {
                   // border:'2px solid black',
                   gridColumn:'1/2', 
                   display:'grid', 
-                  backgroundImage:`url(${Beznazwy})`, 
+                  backgroundImage:`url(${mgProfil})`, 
                   backgroundSize:'100%',
                   backgroundRepeat:'no-repeat', 
                   backgroundPosition:'0% 20%'}}> </div>

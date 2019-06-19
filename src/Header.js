@@ -12,6 +12,7 @@ import {
   scroller
 } from "react-scroll";
 import img from '../src/resources/images/carIntheWoods2.jpg.svg.png';
+import img2 from '../src/resources/images/sesja/DSC_0257.JPG'
 import Handwriting from './components/Handwriting';
 
 
@@ -224,7 +225,7 @@ class Header extends React.Component {
         return (
             
         <div style={{width:'100vw'}}>
-            <HeaderSection>
+        <HeaderSection >
             <SCWrapper delay={6} style={{alignSelf:'flex-start', marginTop:'-1%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
