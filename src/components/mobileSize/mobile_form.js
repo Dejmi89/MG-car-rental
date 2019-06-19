@@ -298,7 +298,7 @@ class MobileForm extends Component {
                         fontSize: "1.2em",
                         // border: "2px solid black",
                         minWidth: "85vw",
-                        height: height < 400 ? '110vh' : '55vh',
+                        height: height < 500 ? '160vh' : '55vh',
                         alignContent: "center",
                         alignItems: "center",
                         justifySelf:'center'
