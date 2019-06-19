@@ -433,7 +433,8 @@ class MobileForm extends Component {
                             textAlign: 'center',
                             alignItems:'center',
                             fontSize:'0.9em',
-                            minHeight:'5vh'
+                            minHeight:'5vh',
+                            height:  height < 500 ? '20vh' : '5vh'
                         }}>Submit
                                 </ContactSubmit>
                 </form>
