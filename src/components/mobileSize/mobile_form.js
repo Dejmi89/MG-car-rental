@@ -276,7 +276,7 @@ class MobileForm extends Component {
           <div>
             <h1 style={{
               textAlign: 'center', fontWeight: '500',
-              fontSize: '1.9em', padding:'10px 0 30px'
+              fontSize: '1.8em', padding:'10px 0 30px'
               }} name="contact">Kontakt</h1>
             <div name={this.props.name} 
             style={{
