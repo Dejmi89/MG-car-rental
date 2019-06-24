@@ -264,9 +264,9 @@ class Form extends Component {
                   gridColumn:'1/2', 
                   display:'grid', 
                   backgroundImage:`url(${mgProfil})`, 
-                  backgroundSize:'100%',
+                  backgroundSize:'150%',
                   backgroundRepeat:'no-repeat', 
-                  backgroundPosition:'0% 20%'}}> </div>
+                  backgroundPosition:'120% 0%'}}> </div>
                 <form
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}

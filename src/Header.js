@@ -12,7 +12,9 @@ import {
   scroller
 } from "react-scroll";
 import img from '../src/resources/images/carIntheWoods2.jpg.svg.png';
-import img2 from '../src/resources/images/sesja/DSC_0257.JPG'
+import img2 from '../src/resources/images/sesja/DSC_0257.JPG';
+import img7 from '../src/resources/images/sesja/DSC_0259.JPG';
+import img8 from '../src/resources/images/sesja/DSC_0281.JPG';
 import Handwriting from './components/Handwriting';
 
 
@@ -30,7 +32,7 @@ const fadeIn = keyframes`
 `;
 
 const HeaderSection = styled.div`
-    background-image: url(${img});
+    background-image: url(${img7});
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y:65%;
