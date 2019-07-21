@@ -185,13 +185,14 @@ class Form extends Component {
         const message = document.getElementById('message').value;
         axios({
             method: "POST",
-            url: "http://localhost:9000/send",
+            url: "https://nodejs-express-carrental.sticktothecode89.now.sh/send",
             data: {
                 name: name,
                 email: email,
-                messsage: message
+                message: message
             }
-        }).then((response) => {
+        }).then((response) => 
+            {
             if (response.data.msg === 'success') {
                 alert("Message Sent.");
                 this.resetForm()

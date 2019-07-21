@@ -58,9 +58,10 @@ class App extends Component {
   }
   
   callAPI() {
-    fetch("http://localhost:9000/testAPI")
+    fetch("https://nodejs-express-carrental.sticktothecode89.now.sh/")
       .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }));
+      .then(res => this.setState({ apiResponse: res }))
+      .then(console.log('Good d'));
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleReveal);
@@ -91,9 +92,9 @@ class App extends Component {
   }
 
   handleReveal = () =>  {
-    if (window.scrollY <= 2000 && this.state.galleryReveal === true) {
+    if (window.scrollY <= 1800 && this.state.galleryReveal === true) {
         this.setState({ galleryReveal: false });
-    } else if (window.scrollY >= 2100 && this.state.galleryReveal !== true) {
+    } else if (window.scrollY >= 1900 && this.state.galleryReveal !== true) {
         this.setState({ galleryReveal: true });
     }
     else if (window.scrollY <= 600 && this.state.offerReveal === true) {
