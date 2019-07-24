@@ -268,7 +268,8 @@ class Form extends Component {
                   backgroundSize:'150%',
                   backgroundRepeat:'no-repeat', 
                   backgroundPosition:'120% 0%'}}> </div>
-                <form
+                <form 
+                    data-netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
