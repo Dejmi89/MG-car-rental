@@ -288,7 +288,7 @@ class Form extends Component {
                         alignItems: "center"
                     }}
                 > 
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="contact_form" />
                     <label
                         for="name"
                         style={{
