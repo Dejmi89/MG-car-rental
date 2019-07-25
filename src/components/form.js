@@ -240,6 +240,7 @@ class Form extends Component {
           this.setState({
               emailOn:'.',
               nameOn:'.'
+
           })
       }
       
@@ -286,7 +287,8 @@ class Form extends Component {
                         alignContent: "center",
                         alignItems: "center"
                     }}
-                >
+                > 
+                <input type="hidden" name="form-name" value="contact" />
                     <label
                         for="name"
                         style={{
