@@ -168,39 +168,62 @@ const DivDown2 = styled.div`
   animation: ${props => (props.emailOn === true ? borderDown : "none")} 2s forwards;
 `;
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class Form extends Component {
     constructor(props){
         super(props);
         this.state={
             emailOn: ".",
             nameOn: ".",
-            border: true
+            border: true,
+            name:'',
+            email:'',
+            message:''
         }
     }
-    
-    handleSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        axios({
-            method: "POST",
-            url: "https://nodejs-express-carrental.sticktothecode89.now.sh/send",
-            data: {
-                name: name,
-                email: email,
-                message: message
-            }
-        }).then((response) => 
-            {
-            if (response.data.msg === 'success') {
-                alert("Message Sent.");
-                this.resetForm()
-            } else if (response.data.msg === 'fail') {
-                alert("Message failed to send.")
-            }
-        })
-    }
+
+    handleChange = e => this.setState({[e.target.name]: e.target.value});
+
+    handleSubmit = e => {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact_form", ...this.state })
+      })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
+
+      e.preventDefault();
+    };
+
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     const name = document.getElementById('name').value;
+    //     const email = document.getElementById('email').value;
+    //     const message = document.getElementById('message').value;
+    //     axios({
+    //         method: "POST",
+    //         url: "https://nodejs-express-carrental.sticktothecode89.now.sh/send",
+    //         data: {
+    //             name: name,
+    //             email: email,
+    //             message: message
+    //         }
+    //     }).then((response) => 
+    //         {
+    //         if (response.data.msg === 'success') {
+    //             alert("Message Sent.");
+    //             this.resetForm()
+    //         } else if (response.data.msg === 'fail') {
+    //             alert("Message failed to send.")
+    //         }
+    //     })
+    // }
 
     resetForm() {
         document.getElementById('contact-form').reset();
@@ -246,7 +269,7 @@ class Form extends Component {
       
     render() {      
         
-         
+         const { name, email, message} = this.state;
         return (
           <div>
             <h1 style={{
@@ -314,7 +337,10 @@ class Form extends Component {
                         <DivUp nameOn={this.state.nameOn} />
                         <DivDown nameOn={this.state.nameOn} />
                         <input
+                            name="name"
+                            value={name}
                             onClick={this.nameOnLauncher}
+                            onChange={this.handleChange}
                             autoComplete="off"
                             type="text"
                             className="form-control"
@@ -357,7 +383,10 @@ class Form extends Component {
                         <DivUp2 emailOn={this.state.emailOn} />
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
+                            name="email"
                             onClick={this.emailOnLauncher}
+                            onChange={this.handleChange}
+                            value={email}
                             autoComplete="off"
                             type="text"
                             className="form-control"
@@ -387,6 +416,9 @@ class Form extends Component {
                             justifySelf: 'center',
                         }}>Twoja wiadomosc</label>
                     <textarea
+                        value={message}
+                        onChange={this.handleChange}
+                        name="message"
                         maxLength='350'
                         className="form-control"
                         rows="5"
