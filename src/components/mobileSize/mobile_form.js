@@ -451,7 +451,7 @@ class MobileForm extends Component {
                         }}></textarea>
 
                     <ContactSubmit
-                        onClick={this.handleResetForm}
+                        // onClick={this.handleResetForm}
                         type="submit"
                         className="btn btn-primary"
                         style={{
