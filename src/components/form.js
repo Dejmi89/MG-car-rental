@@ -298,7 +298,6 @@ class Form extends Component {
                   backgroundPosition:'120% 0%'}}> </div>
                 <form 
                     netlify
-                    // netlify-honeypot="bot-field" data-netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
@@ -317,7 +316,7 @@ class Form extends Component {
                     }}
                 > 
                 <input type="hidden" name="form-name" value="contact_form" />
-                {/* <input type="hidden" name="bot-field"/> */}
+                <input />
                     <label
                         for="name"
                         style={{
@@ -390,9 +389,9 @@ class Form extends Component {
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
                             name="email"
-                            value={email}
                             onClick={this.emailOnLauncher}
                             onChange={this.handleChange}
+                            value={email}
                             autoComplete="off"
                             type="text"
                             className="form-control"
