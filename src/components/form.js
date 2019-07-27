@@ -225,8 +225,12 @@ class Form extends Component {
     //     })
     // }
 
-    resetForm() {
-        document.getElementById('contact-form').reset();
+    handleResetForm = () => {
+      this.setState({
+        name:'',
+        email:'',
+        message:''
+      })
     }
     
 
@@ -294,6 +298,7 @@ class Form extends Component {
                   backgroundPosition:'120% 0%'}}> </div>
                 <form 
                     netlify
+                    netlify-honeypot="bot-field" data-netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
@@ -312,6 +317,7 @@ class Form extends Component {
                     }}
                 > 
                 <input type="hidden" name="form-name" value="contact_form" />
+                <input type="hidden" name="bot-field"/>
                     <label
                         for="name"
                         style={{
@@ -437,7 +443,7 @@ class Form extends Component {
                         }}></textarea>
 
                     <ContactSubmit
-                        onClick={this.resetFormState}
+                        onClick={this.handleResetForm}
                         type="submit"
                         className="btn btn-primary"
                         style={{

@@ -165,6 +165,11 @@ const DivDown2 = styled.div`
   animation: ${props => (props.emailOn === true ? borderDown : "none")} 2s forwards;
   
 `;
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
 
 class MobileForm extends Component {
     constructor(props){
@@ -173,7 +178,10 @@ class MobileForm extends Component {
             emailOn: ".",
             nameOn: ".",
             border: true,
-            height: window.innerHeight
+            height: window.innerHeight,
+            name:'',
+            email:'',
+            message:''
         }
     }
     
@@ -183,30 +191,42 @@ class MobileForm extends Component {
         });
         };
 
-  
-    
-    handleSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        axios({
+        handleChange = e => this.setState({[e.target.name]: e.target.value});
+
+        handleSubmit = e => {
+          fetch("/", {
             method: "POST",
-            url: "http://localhost:9000/send",
-            data: {
-                name: name,
-                email: email,
-                messsage: message
-            }
-        }).then((response) => {
-            if (response.data.msg === 'success') {
-                alert("Message Sent.");
-                this.resetForm()
-            } else if (response.data.msg === 'fail') {
-                alert("Message failed to send.")
-            }
-        })
-    }
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact_form", ...this.state })
+          })
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
+    
+          e.preventDefault();
+        };
+    
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     const name = document.getElementById('name').value;
+    //     const email = document.getElementById('email').value;
+    //     const message = document.getElementById('message').value;
+    //     axios({
+    //         method: "POST",
+    //         url: "http://localhost:9000/send",
+    //         data: {
+    //             name: name,
+    //             email: email,
+    //             messsage: message
+    //         }
+    //     }).then((response) => {
+    //         if (response.data.msg === 'success') {
+    //             alert("Message Sent.");
+    //             this.resetForm()
+    //         } else if (response.data.msg === 'fail') {
+    //             alert("Message failed to send.")
+    //         }
+    //     })
+    // }
 
      componentDidMount() {
         window.addEventListener("resize", this.setHeight);
@@ -215,16 +235,14 @@ class MobileForm extends Component {
     componentWillMount() {
       window.addEventListener("resize", this.setHeight);
   }
-    // componentDidMount(){
-    //   window.addEventListener('resize', this.preventResize);
-    // }
-    // componentWillUnmount(){
-    //   window.removeEventListener('resize', this.preventResize);
-    // }
-    resetForm() {
-        document.getElementById('contact-form').reset();
-    }
-    
+   
+  handleResetForm = () => {
+    this.setState({
+      name:'',
+      email:'',
+      message:''
+    })
+  }
 
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
@@ -255,12 +273,7 @@ class MobileForm extends Component {
           });
         }
       };
-      resetFormState = () => {
-          this.setState({
-              emailOn:'.',
-              nameOn:'.'
-          })
-      }
+      
       preventResize = () => {
         let screenWidth = this.screen.width;
         let screenHeight = this.screen.height;
@@ -274,7 +287,7 @@ class MobileForm extends Component {
 
     render() {      
         
-         const { height } = this.state;
+         const { height, name, email, message } = this.state;
         return (
           
           <div>
@@ -290,6 +303,8 @@ class MobileForm extends Component {
                 marginTop:'5%'}}>
                 
                 <form
+                    netlify
+                    netlify-honeypot="bot-field" data-netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
@@ -308,6 +323,8 @@ class MobileForm extends Component {
                         justifySelf:'center'
                     }}
                 >
+                  <input type="hidden" name="form-name" value="contact_form" />
+                  <input type="hidden" name="bot-field"/>
                     <label
                         for="name"
                         style={{
@@ -333,6 +350,9 @@ class MobileForm extends Component {
                         <DivUp nameOn={this.state.nameOn} />
                         <DivDown nameOn={this.state.nameOn} />
                         <input
+                            name="name"
+                            value={name}
+                            onChange={this.handleChange}
                             onClick={this.nameOnLauncher}
                             autoComplete="off"
                             type="text"
@@ -376,6 +396,9 @@ class MobileForm extends Component {
                         <DivUp2 emailOn={this.state.emailOn} />
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
+                            name="email"
+                            value={email}
+                            onChange={this.handleChange}
                             onClick={this.emailOnLauncher}
                             autoComplete="off"
                             type="text"
@@ -406,6 +429,9 @@ class MobileForm extends Component {
                             justifySelf: 'center',
                         }}>Twoja wiadomosc</label>
                     <textarea
+                        value={message}
+                        onChange={this.handleChange}
+                        name="message"
                         maxLength='350'
                         className="form-control"
                         rows="5"
@@ -425,7 +451,7 @@ class MobileForm extends Component {
                         }}></textarea>
 
                     <ContactSubmit
-                        onClick={this.resetFormState}
+                        onClick={this.handleResetForm}
                         type="submit"
                         className="btn btn-primary"
                         style={{
