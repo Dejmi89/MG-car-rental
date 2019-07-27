@@ -298,7 +298,7 @@ class Form extends Component {
                   backgroundPosition:'120% 0%'}}> </div>
                 <form 
                     netlify
-                    netlify-honeypot="bot-field" data-netlify="true"
+                    // netlify-honeypot="bot-field" data-netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
