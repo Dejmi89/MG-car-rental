@@ -179,9 +179,9 @@ class MobileForm extends Component {
             nameOn: ".",
             border: true,
             height: window.innerHeight,
-            name:'',
-            email:'',
-            message:''
+            nameMobile:'',
+            emailMobile:'',
+            messageMobile:''
         }
     }
     
@@ -238,9 +238,9 @@ class MobileForm extends Component {
    
   handleResetForm = () => {
     this.setState({
-      name:'',
-      email:'',
-      message:''
+      nameMobile:'',
+      emailMobile:'',
+      messageMobile:''
     })
   }
 
@@ -287,7 +287,7 @@ class MobileForm extends Component {
 
     render() {      
         
-         const { height, name, email, message } = this.state;
+         const { height, nameMobile, emailMobile, messageMobile } = this.state;
         return (
           
           <div>
@@ -350,8 +350,8 @@ class MobileForm extends Component {
                         <DivUp nameOn={this.state.nameOn} />
                         <DivDown nameOn={this.state.nameOn} />
                         <input
-                            name="name"
-                            value={name}
+                            name="name_mobile"
+                            value={nameMobile}
                             onChange={this.handleChange}
                             onClick={this.nameOnLauncher}
                             autoComplete="off"
@@ -396,8 +396,8 @@ class MobileForm extends Component {
                         <DivUp2 emailOn={this.state.emailOn} />
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
-                            name="email"
-                            value={email}
+                            name="email_mobile"
+                            value={emailMobile}
                             onChange={this.handleChange}
                             onClick={this.emailOnLauncher}
                             autoComplete="off"
@@ -429,9 +429,9 @@ class MobileForm extends Component {
                             justifySelf: 'center',
                         }}>Twoja wiadomosc</label>
                     <textarea
-                        value={message}
+                        value={messageMobile}
                         onChange={this.handleChange}
-                        name="message"
+                        name="message_mobile"
                         maxLength='350'
                         className="form-control"
                         rows="5"
