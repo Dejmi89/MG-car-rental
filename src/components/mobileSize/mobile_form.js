@@ -235,14 +235,6 @@ class MobileForm extends Component {
     componentWillMount() {
       window.addEventListener("resize", this.setHeight);
   }
-   
-  handleResetForm = () => {
-    this.setState({
-      name:'',
-      email:'',
-      message:''
-    })
-  }
 
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
@@ -451,7 +443,7 @@ class MobileForm extends Component {
                         }}></textarea>
 
                     <ContactSubmit
-                        // onClick={this.handleResetForm}
+                        
                         type="submit"
                         className="btn btn-primary"
                         style={{
