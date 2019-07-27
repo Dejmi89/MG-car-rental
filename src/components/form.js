@@ -316,7 +316,7 @@ class Form extends Component {
                     }}
                 > 
                 <input type="hidden" name="form-name" value="contact_form" />
-                <input />
+                
                     <label
                         for="name"
                         style={{
