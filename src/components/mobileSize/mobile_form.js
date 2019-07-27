@@ -324,7 +324,7 @@ class MobileForm extends Component {
                     }}
                 >
                   <input type="hidden" name="form-name" value="contact_form" />
-                  <input type="hidden" name="bot-field"/>
+                  {/* <input type="hidden" name="bot-field"/> */}
                     <label
                         for="name"
                         style={{

@@ -317,7 +317,7 @@ class Form extends Component {
                     }}
                 > 
                 <input type="hidden" name="form-name" value="contact_form" />
-                <input type="hidden" name="bot-field"/>
+                {/* <input type="hidden" name="bot-field"/> */}
                     <label
                         for="name"
                         style={{
@@ -390,9 +390,9 @@ class Form extends Component {
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
                             name="email"
+                            value={email}
                             onClick={this.emailOnLauncher}
                             onChange={this.handleChange}
-                            value={email}
                             autoComplete="off"
                             type="text"
                             className="form-control"
