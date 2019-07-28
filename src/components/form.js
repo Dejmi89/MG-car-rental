@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
-import InputName from './InputName';
-import InputEmail from './InputEmail';
 import mgProfil from '../resources/images/mgProfil.png'
 import {
-    Link,
-    Element,
-    Events,
-    animateScroll as scroll,
-    scrollSpy,
     scroller
   } from "react-scroll";
 
@@ -24,14 +16,6 @@ import {
         border: 1px solid white;
     }
   `;
-const borderOpacityOn = keyframes`
-    0% {
-        border:2px solid black;
-    }
-    100%{
-        border:0;
-    }
-`;
 
 const borderUp = keyframes`
     0% {
@@ -102,7 +86,7 @@ const DivLeft = styled.div`
   grid-column: 1/1;
   grid-row: 1/4;
   border-left: ${props =>
-    props.nameOn == false ? "none" : "2px solid darkred"};
+    props.nameOn === false ? "none" : "2px solid darkred"};
   animation: ${props => (props.nameOn === true ? borderLeft : "none")} 2s reverse forwards;
 `;
 const DivRight = styled.div`
@@ -110,7 +94,7 @@ const DivRight = styled.div`
   grid-column: 4/4;
   grid-row: 1/4;
   border-left: ${props =>
-    props.nameOn == false ? "none" : "2px solid darkred"};
+    props.nameOn === false ? "none" : "2px solid darkred"};
   animation: ${props => props.nameOn === true && borderRight} reverse 2s forwards;
 `;
 
@@ -119,7 +103,7 @@ const DivUp = styled.div`
   grid-column: 1/4;
   grid-row: 1/1;
   border-top: ${props =>
-    props.nameOn == false ? "none" : "2px solid darkred"};
+    props.nameOn === false ? "none" : "2px solid darkred"};
   animation: ${props => props.nameOn === true && borderUp} 2s reverse forwards;
 `;
 const DivDown = styled.div`
@@ -137,7 +121,7 @@ const DivLeft2 = styled.div`
   grid-column: 1/1;
   grid-row: 1/4;
   border-left: ${props =>
-    props.emailOn == false ? "none" : "2px solid darkred"};
+    props.emailOn === false ? "none" : "2px solid darkred"};
   animation: ${props => (props.emailOn === true ? borderLeft : "none")} 2s reverse forwards;
 `;
 const DivRight2 = styled.div`
@@ -145,7 +129,7 @@ const DivRight2 = styled.div`
   grid-column: 4/4;
   grid-row: 1/4;
   border-right: ${props =>
-    props.emailOn == false ? "none" : "2px solid darkred"};
+    props.emailOn === false ? "none" : "2px solid darkred"};
   animation: ${props => (props.emailOn === true ? borderRight : "none")} reverse 2s forwards;
 `;
 
@@ -154,7 +138,7 @@ const DivUp2 = styled.div`
   grid-column: 1/4;
   grid-row: 1/1;
   border-top: ${props =>
-    props.emailOn == false ? "none" : "2px solid darkred"};
+    props.emailOn ===false ? "none" : "2px solid darkred"};
   animation: ${props => (props.emailOn === true ? borderUp : "none")} 2s reverse forwards;
   
 `;
@@ -196,35 +180,13 @@ class Form extends Component {
         body: encode({ "form-name": "contact_form", ...this.state })
       })
         .then(() => alert("Success!"))
+        .then(this.handleResetForm)
         .catch(error => alert(error));
 
       e.preventDefault();
     };
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     const name = document.getElementById('name').value;
-    //     const email = document.getElementById('email').value;
-    //     const message = document.getElementById('message').value;
-    //     axios({
-    //         method: "POST",
-    //         url: "https://nodejs-express-carrental.sticktothecode89.now.sh/send",
-    //         data: {
-    //             name: name,
-    //             email: email,
-    //             message: message
-    //         }
-    //     }).then((response) => 
-    //         {
-    //         if (response.data.msg === 'success') {
-    //             alert("Message Sent.");
-    //             this.resetForm()
-    //         } else if (response.data.msg === 'fail') {
-    //             alert("Message failed to send.")
-    //         }
-    //     })
-    // }
-
+  
     handleResetForm = () => {
       this.setState({
         name:'',
@@ -242,7 +204,7 @@ class Form extends Component {
         });
       }  
       nameOnLauncher = () => {
-        if (this.state.nameOn == ".") {
+        if (this.state.nameOn === ".") {
           this.setState({
             nameOn: true
           });
@@ -297,7 +259,7 @@ class Form extends Component {
                   backgroundRepeat:'no-repeat', 
                   backgroundPosition:'120% 0%'}}> </div>
                 <form 
-                    netlify
+                    netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
@@ -318,7 +280,7 @@ class Form extends Component {
                 <input type="hidden" name="form-name" value="contact_form" />
                 
                     <label
-                        for="name"
+                        htmlFor="name"
                         style={{
                             alignSelf: "start",
                             justifySelf: "center",
@@ -367,7 +329,7 @@ class Form extends Component {
                         <DivRight nameOn={this.state.nameOn} />
                     </div>
                     <label
-                            for="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             style={{
                                 display: 'grid',
                                 gridRow: '3/4',
@@ -413,7 +375,7 @@ class Form extends Component {
                         <DivRight2 emailOn={this.state.emailOn} borderOn={this.state.border}/>
                     </div>
                     <label
-                        for="message"
+                        htmlFor="message"
                         style={{
                             display: 'grid',
                             gridRow: '5/6',
@@ -442,7 +404,6 @@ class Form extends Component {
                         }}></textarea>
 
                     <ContactSubmit
-                        // onClick={this.handleResetForm}
                         type="submit"
                         className="btn btn-primary"
                         style={{

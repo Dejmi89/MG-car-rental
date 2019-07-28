@@ -5,15 +5,12 @@ import img1 from './resources/images/wedding/0186_M&D_1080p.jpg';
 import img2 from './resources/images/wedding/0189_M&D_1080p.jpg';
 import img3 from './resources/images/wedding/0071_M&D_1080p.jpg';
 import img4 from './resources/images/wedding/0070_M&D_1080p.jpg';
-import img5 from './resources/images/mg_hood.jpg';
 import img6 from './resources/images/wedding/wnetrze.png';
 import img7 from './resources/images/sesja/DSC_0259.png';
 import img8 from './resources/images/wedding/0191_M&D_1080p.jpg';
 import img9 from './resources/images/wedding/0184_M&D_1080p.jpg';
 import img10 from './resources/images/wedding/16.png';
 import img11 from './resources/images/wedding/0023_M&D_1080p.jpg';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const shineEffect = keyframes`
@@ -38,15 +35,6 @@ const shineEffect = keyframes`
 const fadeIn = keyframes`
     from{
         opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-`;
-const jumpFromRight = keyframes`
-    from{
-        opacity:0;
-
     }
     to {
         opacity:1;

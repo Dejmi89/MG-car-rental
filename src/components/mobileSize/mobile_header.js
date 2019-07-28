@@ -5,10 +5,6 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
   scroller
 } from "react-scroll";
 
@@ -236,7 +232,7 @@ class MobileHeader extends React.Component {
             <HeaderSection>
                 
             <SCWrapper delay={6} style={{alignSelf:'center', marginLeft:'1%'}}>
-                        <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
+                        <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -247,7 +243,7 @@ class MobileHeader extends React.Component {
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
                         </a>
-                        <a href="https://www.instagram.com/" target="_blank">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 
@@ -258,7 +254,7 @@ class MobileHeader extends React.Component {
                                             onMouseEnter={this.handleSocialIconStyle2}
                                             onMouseLeave={this.handleSocialIconStyle2}/>
                         </a>
-                        <a href="https://www.youtube.com/" target="_blank">
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
                                             fontSize: this.state.hovered3 ? '3em': '2em',

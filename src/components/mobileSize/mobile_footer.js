@@ -1,8 +1,5 @@
 
 import React, { Component } from 'react';
-import styled, {keyframes} from 'styled-components';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -36,7 +33,7 @@ class MobileFooter extends Component {
         return (
             <div style={{display: 'flex', justifyContent:'flex-end'}}>
                     <div style={{ marginRight:'17%', marginTop:'5%', height:'5vh', width:'8%', display:'flex'}}>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '2em': '1em',
@@ -47,7 +44,7 @@ class MobileFooter extends Component {
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
                         </a>
-                        <a href="https://www.instagram.com/" target="_blank">                
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">                
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '2em': '1em', 
@@ -58,7 +55,7 @@ class MobileFooter extends Component {
                                             onMouseEnter={this.handleSocialIconStyle2}
                                             onMouseLeave={this.handleSocialIconStyle2}/>
                         </a>
-                        <a href="https://www.youtube.com/" target="_blank">
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
                                             fontSize: this.state.hovered3 ? '2em': '1em',

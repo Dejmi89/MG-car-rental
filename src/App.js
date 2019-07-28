@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as Scroll from "react-scroll";
 import MediaQuery from 'react-responsive';
 import {
   animateScroll as scroll,
@@ -9,30 +8,30 @@ import {
 
 import Header from './Header';
 import MobileHeader from './components/mobileSize/mobile_header';
-import MobileHeaderHorizontal from './components/mobileSize/mobile_header_horizontal';
-import IpadHeader from './components/iPadSize/iPad_header';
-import IpadHeaderHorizontal from './components/iPadSize/iPad_header_horizontal';
+// import MobileHeaderHorizontal from './components/mobileSize/mobile_header_horizontal';
+// import IpadHeader from './components/iPadSize/iPad_header';
+// import IpadHeaderHorizontal from './components/iPadSize/iPad_header_horizontal';
 import OfferNew from './Offer_new';
 // import Offer from './Offer';
 import MobileOffer from './components/mobileSize/mobile_offer';
-import MobileOfferHorizontal from './components/mobileSize/mobile_offer_horizontal';
-import IpadOffer from './components/iPadSize/iPad_offer';
-import IpadOfferHorizontal from './components/iPadSize/iPad_offer_horizontal';
+// import MobileOfferHorizontal from './components/mobileSize/mobile_offer_horizontal';
+// import IpadOffer from './components/iPadSize/iPad_offer';
+// import IpadOfferHorizontal from './components/iPadSize/iPad_offer_horizontal';
 import Gallery from './Gallery';
 import MobileGallery from './components/mobileSize/mobile_gallery';
-import MobileGalleryHorizontal from './components/mobileSize/mobile_gallery_horizontal';
+// import MobileGalleryHorizontal from './components/mobileSize/mobile_gallery_horizontal';
 import IpadGallery from './components/iPadSize/ipad_gallery';
-import IpadGalleryHorizontal from './components/iPadSize/ipad_gallery_horizontal';
+// import IpadGalleryHorizontal from './components/iPadSize/ipad_gallery_horizontal';
 import Form from '../src/components/form';
 import MobileForm from './components/mobileSize/mobile_form';
-import MobileFormHorizontal from './components/mobileSize/mobile_form_horizontal';
+// import MobileFormHorizontal from './components/mobileSize/mobile_form_horizontal';
 import IpadForm from './components/iPadSize/iPad_form';
-import IpadFormHorizontal from './components/iPadSize/iPad_form_horizontal';
+// import IpadFormHorizontal from './components/iPadSize/iPad_form_horizontal';
 import Footer from './Footer';
 import MobileFooter from './components/mobileSize/mobile_footer';
-import MobileFooterHorizontal from './components/mobileSize/mobile_footer_horizontal';
+// import MobileFooterHorizontal from './components/mobileSize/mobile_footer_horizontal';
 import IpadFooter from './components/iPadSize/iPad_footer';
-import IpadFooterHorizontal from './components/iPadSize/iPad_footer_horizontal';
+// import IpadFooterHorizontal from './components/iPadSize/iPad_footer_horizontal';
 
 
 
@@ -57,12 +56,12 @@ class App extends Component {
     };
   }
   
-  callAPI() {
-    fetch("https://nodejs-express-carrental.sticktothecode89.now.sh/")
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-      .then(console.log('Good d'));
-  }
+  // callAPI() {
+  //   fetch("https://nodejs-express-carrental.sticktothecode89.now.sh/")
+  //     .then(res => res.text())
+  //     .then(res => this.setState({ apiResponse: res }))
+  //     .then(console.log('Good d'));
+  // }
   componentDidMount() {
     window.addEventListener("scroll", this.handleReveal);
     this.setState({
@@ -88,7 +87,7 @@ class App extends Component {
     window.removeEventListener("scroll", this.handleReveal);
     window.removeEventListener("scroll", this.handleIpadReveal);
     window.removeEventListener("scroll", this.handleMobileReveal);
-    this.callAPI();
+    // this.callAPI();
   }
 
   handleReveal = () =>  {

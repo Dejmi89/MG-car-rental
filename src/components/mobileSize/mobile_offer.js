@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import img from '../../resources/images/wedding/0023_M&D_1080p.jpg';
 import img1 from '../../resources/images/wedding/mgPNG/photos/1.png';
 import img2 from '../../resources/images/wedding/mgPNG/photos/2.png';
 import img3 from '../../resources/images/wedding/mgPNG/photos/3.png';
@@ -41,20 +40,6 @@ const fadeIn = keyframes`
     100% {
         opacity: 1;
     }
-`;
-
-const FadeIn = styled.div`
-    animation: fadeIn 2s forwards; 
-
-    @keyframes fadeIn {
-        from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-    }
-    
 `;
 
 const PhotoGridContainer = styled.div`
