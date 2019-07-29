@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import styled, {keyframes} from 'styled-components';
 
 import {
@@ -153,43 +152,47 @@ const DivDown2 = styled.div`
   
 `;
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class IpadForm extends Component {
     constructor(props){
         super(props);
         this.state={
             emailOn: ".",
             nameOn: ".",
-            border: true
+            border: true,
+            email:'',
+            name:'',
+            message:''
         }
     }
     
-    handleSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        axios({
-            method: "POST",
-            url: "http://localhost:9000/send",
-            data: {
-                name: name,
-                email: email,
-                messsage: message
-            }
-        }).then((response) => {
-            if (response.data.msg === 'success') {
-                alert("Message Sent.");
-                this.resetForm()
-            } else if (response.data.msg === 'fail') {
-                alert("Message failed to send.")
-            }
-        })
-    }
+    handleChange = e => this.setState({[e.target.name]: e.target.value});
 
-    resetForm() {
-        document.getElementById('contact-form').reset();
-    }
-    
+    handleSubmit = e => {
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact_form", ...this.state })
+      })
+        .then(() => alert("Success!"))
+        .then(this.handleResetForm)
+        .catch(error => alert(error));
+      e.preventDefault();
+    };
+
+    handleResetForm = () => {
+      this.setState({
+        name:'',
+        email:'',
+        message:''
+      })
+    }   
 
     scrollTo() {
         scroller.scrollTo("scroll-to-element", {
@@ -198,6 +201,7 @@ class IpadForm extends Component {
           smooth: "easeInOutQuint"
         });
       }  
+
       nameOnLauncher = () => {
         if (this.state.nameOn === ".") {
           this.setState({
@@ -220,15 +224,9 @@ class IpadForm extends Component {
           });
         }
       };
-      resetFormState = () => {
-          this.setState({
-              emailOn:'.',
-              nameOn:'.'
-          })
-      }
-      
+            
     render() {      
-       
+       const { name, email, message} = this.state;
         return (
           <div>
             <h1 style={{
@@ -243,6 +241,7 @@ class IpadForm extends Component {
                 marginTop:'5%'}}>
                 
                 <form
+                    netlify="true"
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
@@ -260,6 +259,7 @@ class IpadForm extends Component {
                         alignItems: "center"
                     }}
                 >
+                    <input type="hidden" name="form-name" value="contact_form" />
                     <label
                         for="name"
                         style={{
@@ -285,7 +285,10 @@ class IpadForm extends Component {
                         <DivUp nameOn={this.state.nameOn} />
                         <DivDown nameOn={this.state.nameOn} />
                         <input
+                            name="name"
                             onClick={this.nameOnLauncher}
+                            onChange={this.handleChange}
+                            value={name}
                             autoComplete="off"
                             type="text"
                             className="form-control"
@@ -328,7 +331,10 @@ class IpadForm extends Component {
                         <DivUp2 emailOn={this.state.emailOn} />
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
+                            name="email"
+                            value={email}
                             onClick={this.emailOnLauncher}
+                            onChange={this.handleChange}
                             autoComplete="off"
                             type="text"
                             className="form-control"
@@ -358,6 +364,9 @@ class IpadForm extends Component {
                             justifySelf: 'center',
                         }}>Twoja wiadomosc</label>
                     <textarea
+                        onChange={this.handleChange}
+                        value={message}
+                        name="message"
                         maxLength='350'
                         className="form-control"
                         rows="5"
@@ -376,7 +385,6 @@ class IpadForm extends Component {
                         }}></textarea>
 
                     <ContactSubmit
-                        onClick={this.resetFormState}
                         type="submit"
                         className="btn btn-primary"
                         style={{
