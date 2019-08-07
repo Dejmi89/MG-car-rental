@@ -8,6 +8,7 @@ import {
   scroller
 } from "react-scroll";
 import img7 from '../src/resources/images/sesja/DSC_0259.JPG';
+import mainIMG from '../src/resources/images/sesja/DSC_0223.JPG';
 import Handwriting from './components/Handwriting';
 
 
@@ -25,8 +26,8 @@ const fadeIn = keyframes`
 `;
 
 const HeaderSection = styled.div`
-    background-image: url(${img7});
-    background-repeat: no-repeat;
+    background-image: url(${mainIMG}); 
+    background-repeat: no-repeat; 
     background-size: cover;
     background-position-y:65%;
     min-height:100vh;
@@ -34,7 +35,6 @@ const HeaderSection = styled.div`
     /* border: 2px solid red; */
     display:flex;
     align-items: center;
-
 `;
 
 const HeaderWrapper = styled.div`
@@ -221,6 +221,7 @@ class Header extends React.Component {
             
         <div style={{width:'100vw'}}>
         <HeaderSection >
+            {/* <HeaderSectionImageContainer/> */}
             <SCWrapper delay={6} style={{alignSelf:'flex-start', marginTop:'-1%'}}>
                         <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 

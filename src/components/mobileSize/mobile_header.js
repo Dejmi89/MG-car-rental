@@ -9,6 +9,7 @@ import {
 } from "react-scroll";
 
 import img from '../../resources/images/carIntheWoods.png';
+import mainIMG from '../../../src/resources/images/sesja/DSC_0257.JPG';
 import Handwriting from '../../components/mobileSize/mobile_Handwriting';
 
 

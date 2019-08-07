@@ -397,7 +397,7 @@ class Form extends Component {
                         style={{
                             display: 'grid',
                             gridRow: '6/7',
-                            width: '47%',
+                            width: '48%',
                             height: '50%',
                             justifySelf: 'center',
                             resize: 'none',
