@@ -166,8 +166,8 @@ class OfferNew extends Component {
                                         gridRow={'1/21'} width={100} height={94} margin={'-15% 0 0 8%'} 
                                         animation={fadeIn} delay={1.9} fillMode={'forwards'}>
                         <PhotoGridContainerOfferText className="okazje" offerReveal={revealedFirst} animation={flipImageY} delay={1.9}>
-                                <p style={{textAlign:'center', alignSelf:'center' ,paddingTop:'10%', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.1em'}}>Okazje</p>
-                            <p style={{textAlign:'center', padding: '0 4%', display:'grid', gridColumn:'1/9', gridRow:'2/4', fontSize:'0.5em'}}>
+                                <p style={{textAlign:'center', alignSelf:'center' ,paddingTop:'10%', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.05em'}}>Okazje</p>
+                            <p style={{textAlign:'center', padding: '0 4%', display:'grid', gridColumn:'1/9', gridRow:'2/4', fontSize:'0.45em'}}>
                              Z przyjemnością umilamy wszelkie uroczystości, które wymagają oryginalności, prestiżu i klasy,
                                     takie jak :
                             </p>   
@@ -179,7 +179,7 @@ class OfferNew extends Component {
                                 justifyContent:'center', 
                                 alignItems:'center',
                                 padding:'15% 5%',
-                                fontSize:'0.5em'}}>
+                                fontSize:'0.4em'}}>
                                     <li>- Śluby</li>
                                     <li>- Sesje fotograficzne</li>
                                     <li>- Reklamy</li>
@@ -195,8 +195,8 @@ class OfferNew extends Component {
                                         gridRow={'25/32'} width={100} height={100} margin={'3% 0 0 0%'} 
                                         animation={fadeIn} delay={1.4} fillMode={'forwards'}>
                         <PhotoGridContainerOfferText className="rekwizyty" offerReveal={revealedFirst} animation={flipImageX} delay={2.4}>
-                        <p style={{textAlign:'center', alignSelf:'center',paddingTop:'10% ', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.1em'}}>Rekwizyty</p>
-                             <p style={{textAlign:'center', padding: '4% 2% 0%', display:'grid', gridColumn:'1/9', gridRow:'2/7', fontSize:'0.5em'}}>
+                        <p style={{textAlign:'center', alignSelf:'center',paddingTop:'10% ', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.05em'}}>Rekwizyty</p>
+                             <p style={{textAlign:'center', padding: '4% 2% 0%', display:'grid', gridColumn:'1/9', gridRow:'2/7', fontSize:'0.45em'}}>
                              Dysponujemy również dwoma  koszykami wiklinowymi o wymiarach aa x bb cm
                         oraz okazjonalną tablicą rejestracyjną, które mogą uatrakcyjnić Waszą
                         uroczystość. Oferujemy je Młodej Parze GRATIS!
@@ -209,8 +209,8 @@ class OfferNew extends Component {
                                         gridRow={'9/25'} width={85} height={99} margin={'-10% 0 0% 6%'}
                                         animation={fadeIn} delay={0.7} fillMode={'forwards'}>
                          <PhotoGridContainerOfferText className="dojazd" offerReveal={revealedFirst} animation={flipImageY} delay={1.7}>
-                             <p style={{textAlign:'center', paddingTop:'10%', alignSelf:'center', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.1em'}}>Dojazd</p>
-                             <p style={{textAlign:'center', alignSelf: 'center', padding: '0 5%', display:'grid', gridColumn:'1/9', gridRow:'2/8', fontSize:'0.5em'}}>
+                             <p style={{textAlign:'center', paddingTop:'10%', alignSelf:'center', display:'grid', gridColumn:'1/9', gridRow:'1/2', fontSize:'1.05em'}}>Dojazd</p>
+                             <p style={{textAlign:'center', alignSelf: 'center', padding: '0 5%', display:'grid', gridColumn:'1/9', gridRow:'2/8', fontSize:'0.45em'}}>
                              W przypadku gdy impreza odbywa sie w dalszej odległości od Poznania doliczamy
                                 odpowiednią kwotę za dojazd. W sprawie dostępności zachęcamy do skorzystania 
                                 z formularza  kontaktowego.

@@ -320,11 +320,13 @@ class MobileForm extends Component {
                                 gridRow: "2/4",
                                 minWidth: "99%",
                                 minHeight: "80%",
-                                fontSize: "0.9em",
+                                fontSize: "0.8em",
                                 backgroundColor: "white",
                                 justifySelf: "center",
                                 alignSelf: "center",
-                                border: "none"
+                                border: "none",
+                                paddingLeft:'7%',
+                                fontFamily:'Josefin Sans, sans-serif'
                             }}
                         />
                         <DivLeft nameOn={this.state.nameOn} />
@@ -352,6 +354,7 @@ class MobileForm extends Component {
                         <DivUp2 emailOn={this.state.emailOn} />
                         <DivDown2 emailOn={this.state.emailOn} />
                         <input
+                            
                             name="email"
                             value={email}
                             onChange={this.handleChange}
@@ -366,11 +369,13 @@ class MobileForm extends Component {
                                 gridRow: "2/4",
                                 minWidth: "99%",
                                 minHeight: "80%",
-                                fontSize: "0.9em",
+                                fontSize: "0.8em",
                                 backgroundColor: "white",
                                 justifySelf: "center",
                                 alignSelf: "center",
-                                border: "none"
+                                border: "none",
+                                paddingLeft:'7%',
+                                fontFamily:'Josefin Sans, sans-serif'
                             }}
                         />
                         <DivLeft2 emailOn={this.state.emailOn} />
@@ -396,13 +401,15 @@ class MobileForm extends Component {
                             display: 'grid',
                             gridRow: '6/7',
                             minWidth: '68%',
-                            height: '50%',
+                            height: '47%',
                             minHeight:'40%',
                             justifySelf: 'center',
                             resize: 'none',
                             border: '2px solid darkred',
-                            fontSize: '0.9em',
-                            alignSelf: 'start'
+                            fontSize: '0.8em',
+                            alignSelf: 'start',
+                            paddingLeft:'3%',
+                            fontFamily:'Josefin Sans, sans-serif'
 
                         }}></textarea>
 

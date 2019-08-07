@@ -318,11 +318,13 @@ class Form extends Component {
                                 gridRow: "2/4",
                                 width: "99%",
                                 height: "80%",
-                                fontSize: "0.9em",
+                                fontSize: "0.7em",
                                 backgroundColor: "white",
                                 justifySelf: "center",
                                 alignSelf: "center",
-                                border: "none"
+                                border: "none",
+                                paddingLeft:'10px',
+                                fontFamily:'Josefin Sans, sans-serif'
                             }}
                         />
                         <DivLeft nameOn={this.state.nameOn} />
@@ -364,11 +366,13 @@ class Form extends Component {
                                 gridRow: "2/4",
                                 width: "99%",
                                 height: "80%",
-                                fontSize: "0.9em",
+                                fontSize: "0.7em",
                                 backgroundColor: "white",
                                 justifySelf: "center",
                                 alignSelf: "center",
-                                border: "none"
+                                border: "none",
+                                paddingLeft:'10px',
+                                fontFamily:'Josefin Sans, sans-serif'
                             }}
                         />
                         <DivLeft2 emailOn={this.state.emailOn} />
@@ -393,13 +397,15 @@ class Form extends Component {
                         style={{
                             display: 'grid',
                             gridRow: '6/7',
-                            width: '50%',
+                            width: '47%',
                             height: '50%',
                             justifySelf: 'center',
                             resize: 'none',
                             border: '2px solid darkred',
-                            fontSize: '0.9em',
-                            alignSelf: 'start'
+                            fontSize: '0.7em',
+                            alignSelf: 'start',
+                            paddingLeft:'10px',
+                            fontFamily:'Josefin Sans, sans-serif'
 
                         }}></textarea>
 
