@@ -1,16 +1,11 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import Fade from 'react-reveal';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Scroll from "react-scroll";
 import {
   Link,
-  Element,
-  Events,
   animateScroll as scroll,
-  scrollSpy,
   scroller
 } from "react-scroll";
 import img from '../../resources/images/carIntheWoods2.jpg.svg.png';
@@ -243,7 +238,7 @@ class IpadHeader extends React.Component {
         <div>
             <HeaderSection>
             <SCWrapper delay={6} style={{alignSelf:'flex-start', marginTop:'0%'}}>
-                        <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank">
+                        <a href="https://www.facebook.com/czerwonykabrioletnaslub/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'facebook-f']} 
                                         style={{
                                             fontSize: this.state.hovered ? '3em': '2em',
@@ -254,7 +249,7 @@ class IpadHeader extends React.Component {
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
                         </a>
-                        <a href="https://www.instagram.com/" target="_blank">
+                        <a href="https://www.instagram.com/kabrioletczerwony/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 
@@ -265,7 +260,7 @@ class IpadHeader extends React.Component {
                                             onMouseEnter={this.handleSocialIconStyle2}
                                             onMouseLeave={this.handleSocialIconStyle2}/>
                         </a>
-                        <a href="https://www.youtube.com/" target="_blank">
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'youtube']} 
                                         style={{
                                             fontSize: this.state.hovered3 ? '3em': '2em',
@@ -295,29 +290,29 @@ class IpadHeader extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.4}onClick={this.props.scrollFunc}>Oferta</LinkMenu>
+                                    <LinkMenu delay={2.8}onClick={this.props.scrollFunc}>Oferta</LinkMenu>
                                 </Link>
                         
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.6}onClick={this.props.scrollFunc}>Galeria</LinkMenu>
+                                    <LinkMenu delay={3.1}onClick={this.props.scrollFunc}>Galeria</LinkMenu>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.8} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
+                                    <LinkMenu delay={3.4} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
                                 </Link>
                                                    
                          </Menu>
                          <CarAnimation ><Handwriting /></CarAnimation>
                         <MenuText>
-                            <Nouns delay={4.7}>Piękno</Nouns>
-                            <Nouns delay={5.0}>Styl</Nouns>
-                            <Nouns style={{marginRight:'0%'}}delay={5.3}>Elegancja</Nouns>
+                            <Nouns delay={3.7}>Piękno</Nouns>
+                            <Nouns delay={4.0}>Styl</Nouns>
+                            <Nouns style={{marginRight:'0%'}}delay={4.3}>Elegancja</Nouns>
                         </MenuText>
                     </MenuWrapper>
                     

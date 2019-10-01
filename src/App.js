@@ -9,13 +9,13 @@ import {
 import Header from './Header';
 import MobileHeader from './components/mobileSize/mobile_header';
 // import MobileHeaderHorizontal from './components/mobileSize/mobile_header_horizontal';
-// import IpadHeader from './components/iPadSize/iPad_header';
+import IpadHeader from './components/iPadSize/iPad_header';
 // import IpadHeaderHorizontal from './components/iPadSize/iPad_header_horizontal';
 import OfferNew from './Offer_new';
 // import Offer from './Offer';
 import MobileOffer from './components/mobileSize/mobile_offer';
 // import MobileOfferHorizontal from './components/mobileSize/mobile_offer_horizontal';
-// import IpadOffer from './components/iPadSize/iPad_offer';
+import IpadOffer from './components/iPadSize/iPad_offer';
 // import IpadOfferHorizontal from './components/iPadSize/iPad_offer_horizontal';
 import Gallery from './Gallery';
 import MobileGallery from './components/mobileSize/mobile_gallery';
@@ -56,12 +56,6 @@ class App extends Component {
     };
   }
   
-  // callAPI() {
-  //   fetch("https://nodejs-express-carrental.sticktothecode89.now.sh/")
-  //     .then(res => res.text())
-  //     .then(res => this.setState({ apiResponse: res }))
-  //     .then(console.log('Good d'));
-  // }
   componentDidMount() {
     window.addEventListener("scroll", this.handleReveal);
     this.setState({
@@ -87,7 +81,6 @@ class App extends Component {
     window.removeEventListener("scroll", this.handleReveal);
     window.removeEventListener("scroll", this.handleIpadReveal);
     window.removeEventListener("scroll", this.handleMobileReveal);
-    // this.callAPI();
   }
 
   handleReveal = () =>  {
@@ -116,23 +109,23 @@ handleIpadReveal = () =>  {
     this.setState({ iOfferReveal: true });
   }
 }
-handleIpadHorizontalReveal = () =>  {
-  if (window.scrollY <= 2500 && this.state.iGalleryHorizontalReveal === true) {
-      this.setState({ iGalleryHorizontalReveal: false });
-  } else if (window.scrollY >= 2500 && this.state.iGalleryHorizontalReveal !== true) {
-      this.setState({ iGalleryHorizontalReveal: true });
-  }
-  else if (window.scrollY <= 1200 && this.state.iOfferHorizontalReveal === true) {
-    this.setState({ iOfferHorizontalReveal: false });
-  }
-  else if (window.scrollY >= 1210 && this.state.iOfferHorizontalReveal !== true) {
-    this.setState({ iOfferHorizontalReveal: true });
-  }
-}
+// handleIpadHorizontalReveal = () =>  {
+//   if (window.scrollY <= 2500 && this.state.iGalleryHorizontalReveal === true) {
+//       this.setState({ iGalleryHorizontalReveal: false });
+//   } else if (window.scrollY >= 2500 && this.state.iGalleryHorizontalReveal !== true) {
+//       this.setState({ iGalleryHorizontalReveal: true });
+//   }
+//   else if (window.scrollY <= 1200 && this.state.iOfferHorizontalReveal === true) {
+//     this.setState({ iOfferHorizontalReveal: false });
+//   }
+//   else if (window.scrollY >= 1210 && this.state.iOfferHorizontalReveal !== true) {
+//     this.setState({ iOfferHorizontalReveal: true });
+//   }
+// }
 handleMobileReveal = () =>  {
-  if (window.scrollY <= 1650 && this.state.mobGalleryReveal === true) {
+  if (window.scrollY <= 1250 && this.state.mobGalleryReveal === true) {
       this.setState({ mobGalleryReveal: false });
-  } else if (window.scrollY >= 1650 && this.state.mobGalleryReveal !== true) {
+  } else if (window.scrollY >= 1250 && this.state.mobGalleryReveal !== true) {
       this.setState({ mobGalleryReveal: true });
   }
   else if (window.scrollY <= 770 && this.state.mobOfferReveal === true) {
@@ -175,9 +168,9 @@ handleMobileReveal = () =>  {
         {/* <MediaQuery minWidth = {667} maxHeight={414}>
             <MobileHeaderHorizontal scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery> */}
-        {/* <MediaQuery  maxWidth = {1024}>
+        <MediaQuery  minWidth = {768} maxWidth ={1024}>
             <IpadHeader scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
-        </MediaQuery> */}
+        </MediaQuery>
         {/* <MediaQuery width = {1024} height = {768}>
             <IpadHeaderHorizontal scrollFunc={this.scrollTo} toTop={this.scrollToTop}/>
         </MediaQuery> */}
@@ -189,9 +182,9 @@ handleMobileReveal = () =>  {
           <MediaQuery maxWidth = {767}>
             <MobileOffer toTop={this.scrollToTop} mobOfferReveal={this.state.mobOfferReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery>
-        {/* <MediaQuery  maxWidth = {1024}>
+        <MediaQuery  minWidth = {768} maxWidth ={1024}>
             <IpadOffer toTop={this.scrollToTop} iOfferReveal={this.state.iOfferReveal} positionY={this.state.pageYOffset}/>
-        </MediaQuery> */}
+        </MediaQuery>
         {/* <MediaQuery width = {1024} height={768}>
             <IpadOfferHorizontal iOfferHorizontalReveal={this.state.iOfferHorizontalReveal} positionY={this.state.pageYOffset}/>
         </MediaQuery> */}

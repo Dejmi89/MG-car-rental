@@ -45,7 +45,10 @@ const HeaderSection = styled.div`
     /* display:flex; */
     /* align-items: center; */
 `;
-
+const HeaderSectionBackground = styled.div`
+    background-image: url(${mainIMG});
+    transform: rotate(90deg);
+`;
 const HeaderWrapper = styled.div`
     width:100%;
     height: 80vh;
@@ -244,7 +247,7 @@ class MobileHeader extends React.Component {
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
                         </a>
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/kabrioletczerwony/" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 
@@ -288,29 +291,29 @@ class MobileHeader extends React.Component {
                                 to='offer' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={4.8} onClick={this.props.scrollFunc}>Oferta</LinkMenu>
+                                    <LinkMenu delay={2.8} onClick={this.props.scrollFunc}>Oferta</LinkMenu>
                                 </Link>
                             
                                 <Link 
                                 to='gallery' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.1} onClick={this.props.scrollFunc}>Galeria</LinkMenu>
+                                    <LinkMenu delay={3.1} onClick={this.props.scrollFunc}>Galeria</LinkMenu>
                                 </Link>
                            
                                 <Link 
                                 to='contact' 
                                 smooth={true} 
                                 duration={1000}>
-                                    <LinkMenu delay={5.4} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
+                                    <LinkMenu delay={3.4} onClick={this.props.scrollFunc}>Kontakt</LinkMenu>
                                 </Link>
                                                   
                          </Menu>
                          <CarAnimation ><Handwriting/></CarAnimation>       
                         <MenuText>
-                            <Nouns delay={4.7}>Piękno</Nouns>
-                            <Nouns delay={5.0}>Styl</Nouns>
-                            <Nouns delay={5.3}>Elegancja</Nouns>
+                            <Nouns delay={3.7}>Piękno</Nouns>
+                            <Nouns delay={4.0}>Styl</Nouns>
+                            <Nouns delay={4.3}>Elegancja</Nouns>
                         </MenuText>
                     </MenuWrapper>
                     

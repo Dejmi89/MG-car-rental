@@ -272,7 +272,6 @@ class MobileForm extends Component {
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
-                    action="/submitted/"
                     style={{
                         display: "grid",
                         gridColumn: "2/3",

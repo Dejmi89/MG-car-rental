@@ -294,6 +294,7 @@ class IpadForm extends Component {
                             className="form-control"
                             id="name"
                             style={{
+                                paddingLeft:'3%',
                                 outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
@@ -303,7 +304,8 @@ class IpadForm extends Component {
                                 backgroundColor: "white",
                                 justifySelf: "center",
                                 alignSelf: "center",
-                                border: "none"
+                                border: "none",
+                                fontFamily:'Josefin Sans, sans-serif'
                             }}
                         />
                         <DivLeft nameOn={this.state.nameOn} />
@@ -340,6 +342,7 @@ class IpadForm extends Component {
                             className="form-control"
                             id="email"
                             style={{
+                                paddingLeft:'3%',
                                 outline:'none',
                                 display: "grid",
                                 gridRow: "2/4",
@@ -349,7 +352,8 @@ class IpadForm extends Component {
                                 backgroundColor: "white",
                                 justifySelf: "center",
                                 alignSelf: "center",
-                                border: "none"
+                                border: "none",
+                                fontFamily:'Josefin Sans, sans-serif'
                             }}
                         />
                         <DivLeft2 emailOn={this.state.emailOn} />
@@ -372,6 +376,8 @@ class IpadForm extends Component {
                         rows="5"
                         id="message"
                         style={{
+                            paddingLeft:'3%',
+                            paddingTop:'2%',
                             display: 'grid',
                             gridRow: '6/7',
                             width: '63%',
@@ -380,7 +386,8 @@ class IpadForm extends Component {
                             resize: 'none',
                             border: '4px solid darkred',
                             fontSize: '0.9em',
-                            alignSelf: 'start'
+                            alignSelf: 'start',
+                            fontFamily:'Josefin Sans, sans-serif'
 
                         }}></textarea>
 
