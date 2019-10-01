@@ -43,7 +43,7 @@ class Footer extends Component {
                                             onMouseEnter={this.handleSocialIconStyle}
                                             onMouseLeave={this.handleSocialIconStyle}/>
                         </a>
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">                   
+                        <a href="https://www.instagram.com/kabrioletczerwony/" target="_blank" rel="noopener noreferrer">                   
                         <FontAwesomeIcon icon={['fab', 'instagram']} 
                                         style={{
                                             fontSize: this.state.hovered2 ? '3em': '2em', 

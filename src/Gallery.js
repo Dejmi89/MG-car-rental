@@ -312,7 +312,7 @@ class Gallery extends Component {
                                     justifyContent:'center',
                                     justifySelf:'center',
                                     }}>
-                                    <a href="https://www.instagram.com/" target="blank" 
+                                    <a href="https://www.instagram.com/kabrioletczerwony/" target="blank" 
                                         style={{
                                             display:'grid', 
                                             gridColumn:'1/4',

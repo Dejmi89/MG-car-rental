@@ -191,6 +191,14 @@ class MobileForm extends Component {
     
           e.preventDefault();
         };
+
+        handleResetForm = () => {
+          this.setState({
+            name:'',
+            email:'',
+            message:''
+          })
+        }
     
      componentDidMount() {
         window.addEventListener("resize", this.setHeight);
@@ -264,6 +272,7 @@ class MobileForm extends Component {
                     id="contact-form"
                     onSubmit={this.handleSubmit.bind(this)}
                     method="POST"
+                    action="/submitted/"
                     style={{
                         display: "grid",
                         gridColumn: "2/3",
@@ -409,6 +418,7 @@ class MobileForm extends Component {
                             fontSize: '0.8em',
                             alignSelf: 'start',
                             paddingLeft:'3%',
+                            paddingTop:'2%',
                             fontFamily:'Josefin Sans, sans-serif'
 
                         }}></textarea>
